@@ -1,0 +1,12 @@
+TitleDescriptionModel
+CreationDateTimeField
+ActivatorQuerySet
+_
+ModificationDateTimeField
+ActivatorModelManager
+ActivatorModel
+models
+TimeStampedModel
+AutoSlugField
+TitleSlugDescriptionModel
+now

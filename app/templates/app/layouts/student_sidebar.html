@@ -1,0 +1,57 @@
+﻿<!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section active">
+
+<ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> General <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'student_home' %}"> Home</a></li>
+                      <li><a href="{% url 'student_all_notifications' %}"> View all Notifications</a></li>
+                      <li><a href="{% url 'student_edit_profile' %}"> Edit Profile</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-align-left"></i> PhD Synopsis <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'student_upload_synopsis' %}"> Upload Synopsis</a></li>
+                      <li><a href="{% url 'student_view_synopsis' %}"> View Uploaded Synopsis</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-file-text"></i> PhD Thesis <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'student_upload_thesis' %}"> Upload Thesis</a></li>
+                      <li><a href="{% url 'student_view_thesis' %}"> View Uploaded Thesis</a></li>
+                      <li><a href="{% url 'student_add_keywords' %}"> Add Keywords to Thesis</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-check-square-o"></i> Status <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'student_phd_status' %}"> View PhD Status</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-question"></i> Help <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'student_help_procedure' %}"> Procedure</a></li>
+                      <li><a href="{% url 'student_help_contacts' %}"> Help Contacts</a></li>
+                    </ul>
+                  </li>
+                </ul>
+</div>
+            </div>
+            <!-- /sidebar menu -->
+
+<!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a href="{% url 'student_home' %}" data-toggle="tooltip" data-placement="top" title="Profile">
+                <span class="fa fa-user" aria-hidden="true"></span>
+              </a>
+              <a href="{% url 'student_all_notifications' %}" data-toggle="tooltip" data-placement="top" title="Notifications">
+                <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+              </a>
+              <a href="{% url 'student_phd_status' %}" data-toggle="tooltip" data-placement="top" title="PhD Status">
+                <span class="fa fa-check-square-o" aria-hidden="true"></span>
+              </a>
+              <a href="{% url 'login' %}" data-toggle="tooltip" data-placement="top" title="Logout">
+                <span class="fa fa-sign-out" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->

@@ -1,0 +1,14 @@
+AmbiguityError
+PYC
+six
+BaseCommand
+connections
+inspect
+MigrationLoader
+DEFAULT_DB_ALIAS
+py_from_pyc
+REPLACES_REGEX
+os
+CommandError
+re
+Command

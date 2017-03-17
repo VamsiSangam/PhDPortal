@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} | PhD Evaluation Portal | IIITA</title>
+    {% load staticfiles %}
+    <!-- Bootstrap -->
+    <link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'app/css/nprogress.css' %}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{% static 'app/css/custom.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a class="site_title"><i class="fa fa-book"></i> <span>PhD Portal</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="{% static 'app/images/img.jpg' %}" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+            {% if user == "student" %}
+                {% include 'app/layouts/student_sidebar.html' %}
+            {% elif user == "guide" %}
+                {% include 'app/layouts/guide_sidebar.html' %}
+            {% elif user == "director" %}
+                {% include 'app/layouts/director_sidebar.html' %}
+            {% elif user == "referee" %}
+                {% include 'app/layouts/referee_sidebar.html' %}
+            {% endif %}
+            
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'app/images/img.jpg' %}" alt="">John Doe
+                        <span class="fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        {% if user == "student" %}
+                            {% include 'app/layouts/student_top_navbar.html' %}
+                        {% elif user == "guide" %}
+                            {% include 'app/layouts/guide_top_navbar.html' %}
+                        {% elif user == "director" %}
+                            {% include 'app/layouts/director_top_navbar.html' %}
+                        {% elif user == "referee" %}
+                            {% include 'app/layouts/referee_top_navbar.html' %}
+                        {% endif %}
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="{% static 'app/images/img.jpg' %}" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="{% static 'app/images/img.jpg' %}" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- Page descriptive title -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>{{ descriptive_title }}</h3>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <!-- Page content -->
+            {% block content %}{% endblock %}
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            PhD Evaluation Portal - IIITA
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'app/js/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'app/js/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'app/js/nprogress.js' %}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'app/js/custom.min.js' %}"></script>
+  </body>
+</html>
