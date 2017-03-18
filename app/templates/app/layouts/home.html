@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,6 +15,7 @@
     <link href="{% static 'app/css/nprogress.css' %}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{% static 'app/css/custom.min.css' %}" rel="stylesheet">
+      {% block styles %}{% endblock %}
   </head>
 
   <body class="nav-md">
@@ -113,10 +114,28 @@
                     </li>
                     <li>
                       <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
+                        {% if user == "student" %}
+                            <a href="{% url 'student_all_notifications' %}">
+                              <strong>See All Alerts</strong>
+                              <i class="fa fa-angle-right"></i>
+                            </a>
+                        {% elif user == "guide" %}
+                          <a href="{% url 'guide_all_notifications' %}">
+                              <strong>See All Alerts</strong>
+                              <i class="fa fa-angle-right"></i>
+                          </a>
+                        {% elif user == "director" %}
+                          <a href="{% url 'director_all_notifications' %}">
+                              <strong>See All Alerts</strong>
+                              <i class="fa fa-angle-right"></i>
+                          </a>
+                        {% elif user == "referee" %}
+                          <a href="{% url 'referee_all_notifications' %}">
+                              <strong>See All Alerts</strong>
+                              <i class="fa fa-angle-right"></i>
+                          </a>
+                        {% endif %}
+                        
                       </div>
                     </li>
                   </ul>
@@ -164,5 +183,7 @@
     <script src="{% static 'app/js/nprogress.js' %}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{% static 'app/js/custom.min.js' %}"></script>
+      {% block scripts %}{% endblock %}
   </body>
 </html>
+
