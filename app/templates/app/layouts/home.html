@@ -15,6 +15,7 @@
     <link href="{% static 'app/css/nprogress.css' %}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{% static 'app/css/custom.min.css' %}" rel="stylesheet">
+    {% block styles %}{% endblock %}
   </head>
 
   <body class="nav-md">
@@ -164,5 +165,6 @@
     <script src="{% static 'app/js/nprogress.js' %}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{% static 'app/js/custom.min.js' %}"></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>
