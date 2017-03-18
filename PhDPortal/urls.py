@@ -17,6 +17,7 @@ import app.views
 
 urlpatterns = [
     url(r'^$', app.views.login, name='login'),
+    url(r'^logout/$', app.views.logout, name='logout'),
     
     # student urls
     url(r'^student/$', app.views.student_home, name='student_home'),
@@ -70,5 +71,7 @@ urlpatterns = [
     url(r'^referee/help/contacts/$', app.views.referee_help_contacts, name='referee_help_contacts'),
 
     # other
+    url(r'^404/$', app.views.resource_not_found, name='resource_not_found'),
+    url(r'^403/$', app.views.unauthorized_access, name='unauthorized_access'),
     url(r'[a-zA-Z0-9]*', app.views.resource_not_found, name='resource_not_found'),
     ]

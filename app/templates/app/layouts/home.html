@@ -35,24 +35,23 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>{{ request.session.full_name }}</h2>
               </div>
               <div class="clearfix"></div>
             </div>
             <!-- /menu profile quick info -->
 
             <br />
-            {% if user == "student" %}
+            {% if request.session.type == 'S' %}
                 {% include 'app/layouts/student_sidebar.html' %}
-            {% elif user == "guide" %}
+            {% elif request.session.type == 'G' %}
                 {% include 'app/layouts/guide_sidebar.html' %}
-            {% elif user == "director" %}
+            {% elif request.session.type == 'D' %}
                 {% include 'app/layouts/director_sidebar.html' %}
-            {% elif user == "referee" %}
+            {% elif request.session.type == 'R' %}
                 {% include 'app/layouts/referee_sidebar.html' %}
             {% endif %}
-            
-          </div>
+            </div>
         </div>
 
         <!-- top navigation -->
@@ -66,19 +65,20 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="{% static 'app/images/img.jpg' %}" alt="">John Doe
+                        <img src="{% static 'app/images/img.jpg' %}" alt="">{{ request.session.full_name }}
                         <span class="fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
-                        {% if user == "student" %}
+                        {% if request.session.type == 'S' %}
                             {% include 'app/layouts/student_top_navbar.html' %}
-                        {% elif user == "guide" %}
+                        {% elif request.session.type == 'G' %}
                             {% include 'app/layouts/guide_top_navbar.html' %}
-                        {% elif user == "director" %}
+                        {% elif request.session.type == 'D' %}
                             {% include 'app/layouts/director_top_navbar.html' %}
-                        {% elif user == "referee" %}
+                        {% elif request.session.type == 'R' %}
                             {% include 'app/layouts/referee_top_navbar.html' %}
                         {% endif %}
+                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown">
