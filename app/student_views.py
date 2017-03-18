@@ -6,27 +6,24 @@ from django.contrib import auth
 from datetime import datetime
 from app.models import *
 
+def _get_unread_notifications(username):
+    user = User.objects.get(username = username)
+    unread_notifications = Notifications.objects.filter(username = user).filter(status = 'U')
+
+    return unread_notifications
+
 def student_home(request):
     assert isinstance(request, HttpRequest)
     
+    unread_notifications = _get_unread_notifications(request.session['username'])
+
     return render(
         request,
         'app/student/home.html',
         {
             'title':'Home Page',
             'descriptive_title' : 'Welcome ' + request.session['first_name'] + ' !',
-        }
-    )
-
-def student_all_notifications(request):
-    assert isinstance(request, HttpRequest)
-
-    return render(
-        request,
-        'app/student/notifications.html',
-        {
-            'title':'Notifications',
-            'descriptive_title' : 'All notifications',
+            'unread_notifications' : unread_notifications,
         }
     )
 

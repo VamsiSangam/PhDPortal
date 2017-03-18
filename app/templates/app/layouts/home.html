@@ -85,37 +85,30 @@
                 <li role="presentation" class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
+                      {% if unread_notifications|length != 0 %}
+                        <span class="badge bg-green">{{ unread_notifications|length }}</span>
+                      {% endif %}
                   </a>
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="{% static 'app/images/img.jpg' %}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="{% static 'app/images/img.jpg' %}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
+                    {% for notification in unread_notifications %}
+                        <li>
+                            {% if notification.link is not None %}
+                                <a href="{{ notification.link }}">
+                            {% else %}
+                                <a>
+                            {% endif %}
+                            <span class="message">
+                                {{ notification.message }}
+                                <br />
+                                {{ notification.date }}
+                            </span>
+                          </a>
+                        </li>
+                    {% endfor %}
+                      <li>
                       <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
+                        <a href="{% url 'user_notifications' %}">
+                          <strong>See All Notifications</strong>
                           <i class="fa fa-angle-right"></i>
                         </a>
                       </div>

@@ -1,14 +1,34 @@
 ﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
 {% block styles %}
 <!-- Add any page specific styles here -->
-
+<link href="{% static 'app/css/dropzone.min.css' %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
-<!-- Student's upload PhD thesis page -->
-
-
+<br>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+        <h2>Please Click anywhere to upload your Thesis!</h2>
+                    
+        <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="row">
+                          
+                <div class="col-md-12">
+                <form action="form_upload.html" class="dropzone dz-clickable"></form>
+                            
+                            
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
-
+<script src="{% static 'app/js/dropzone.min.js' %}"></script>
 {% endblock %}

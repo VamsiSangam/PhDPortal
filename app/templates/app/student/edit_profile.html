@@ -5,66 +5,62 @@
 {% endblock %}
 {% block content %}
 <!-- Edit student profile page -->
-<br>       
+ <br>       
 <div class ="main-container">
     <div class="row">
-        <div class= "col-md-8 col-sm-12 col-xs-12">
-            <div class="row">
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-12 col-xs-12" for="first-name">First Name <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
+        <div class= "col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="panel-title">Enter details</span>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-12 col-xs-12" for="last-name">Last Name <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-12 col-xs-12" for="email-id">Email-Id <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <input type="text" id="email-id" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-12 col-xs-12">Address <span class="required">*</span>
-                    </label>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <textarea class="form-control" rows="4" placeholder=''></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class= "col-md-4"></div>
-        <div class= "col-md-3">
-            <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          
-                          <button type="submit" class="btn btn-success">Submit</button>
+                <div class="panel-body">
+                            <div class="row">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12" for="first-name">First Name <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
                         </div>
-                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12" for="last-name">Last Name <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12" for="email-id">Email-Id <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <input type="text" id="email-id" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12">Address <span class="required">*</span>
+                            </label>
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                <textarea class="form-control" rows="4" placeholder=''></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-success pull-right">Submit</button>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
-
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->

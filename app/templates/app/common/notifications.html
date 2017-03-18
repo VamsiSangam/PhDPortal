@@ -1,0 +1,108 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<div class="col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Unread</a>
+                </li>
+                <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Read</a>
+                </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                    {% if unread_notifications|length == 0 %}
+                        <p>All caught up! You have no unread notifications!</p>
+                    {% else %}
+                        <form style="display:none" method="post" action="{{ request.path }}markread/all/" id="form-mark-all-read">
+                            {% csrf_token %}
+                        </form>
+                        <button class="btn btn-success" onclick="$('#form-mark-all-read').submit()">Mark all notifications as Read</button>
+                        <form style="display:none" method="post" action="{{ request.path }}delete/unread/" id="form-delete-all-unread">
+                            {% csrf_token %}
+                        </form>    
+                        <button class="btn btn-danger" onclick="$('#form-delete-all-unread').submit()">Delete all unread notifications</button>
+                        <br /><br />
+                        {% for notification in unread_notifications %}
+                            <form style="display:none" method="post" action="{{ request.path }}delete/{{ notification.id }}" id="delete-form-{{ notification.id }}">
+                                {% csrf_token %}
+                            </form>
+                            <button class="btn btn-danger pull-right" data-toggle="tooltip" data-placement="top" title="Delete" onclick="$('#delete-form-{{ notification.id }}').submit()">
+                                <i class="fa fa-close"></i>
+                            </button>
+                            <form style="display:none" method="post" action="{{ request.path }}markread/{{ notification.id }}" id="markread-form-{{ notification.id }}">
+                                {% csrf_token %}
+                            </form>
+                            <button class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Mark as Read" onclick="$('#markread-form-{{ notification.id }}').submit()">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                            <blockquote>
+                                {% if notification.link is not None %}
+                                    <a href="{{ notification.link }}"><p>{{ notification.message }}</p></a>
+                                {% else %}
+                                    <p>{{ notification.message }}</p>
+                                {% endif %}
+                                <small>{{ notification.date }}</small>
+                            </blockquote>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                    {% if read_notifications|length == 0 %}
+                        <p>All caught up! You have no read notifications!</p>
+                    {% else %}
+                        <form style="display:none" method="post" action="{{ request.path }}delete/read/" id="form-delete-all-read">
+                            {% csrf_token %}
+                        </form>
+                        <button class="btn btn-danger" onclick="$('#form-delete-all-read').submit()">Delete all read notifications</button>
+                        <br /><br />
+                        {% for notification in read_notifications %}
+                            <form style="display:none" method="post" action="{{ request.path }}delete/{{ notification.id }}" id="delete-form-{{ notification.id }}">
+                                {% csrf_token %}
+                            </form>
+                            <a class="btn btn-danger pull-right" data-toggle="tooltip" data-placement="top" title="Delete" onclick="$('#delete-form-{{ notification.id }}').submit()">
+                                <i class="fa fa-close"></i>
+                            </a>
+                            <blockquote>
+                                {% if notification.link is not None %}
+                                    <a href="{{ notification.link }}"><p>{{ notification.message }}</p></a>
+                                {% else %}
+                                    <p>{{ notification.message }}</p>
+                                {% endif %}
+                                <small>{{ notification.date }}</small>
+                            </blockquote>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<script>
+    function deleteNotification(id) {
+        csrf_token = '{{ csrf_token }}'
+        url = '{{ request.path }}'
+
+        $.post(url, { 'csrfmiddlewaretoken' : csrf_token }, function(data) {
+
+        })
+    }
+</script>
+{% endblock %}

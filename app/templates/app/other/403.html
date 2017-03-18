@@ -9,15 +9,15 @@
 
     <title>Unauthorized Access | PhD Portal | IIITA</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    {% load staticfiles %}
+     <!-- Bootstrap -->
+    <link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="css/nprogress.css" rel="stylesheet">
-
+    <link href="{% static 'app/css/nprogress.css' %}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="css/custom.min.css" rel="stylesheet">
+    <link href="{% static 'app/css/custom.min.css' %}" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -29,21 +29,8 @@
             <div class="text-center text-center">
               <h1 class="error-number">403</h1>
               <h2>Access denied</h2>
-              <p>Full authentication is required to access this resource. <a href="#">Report this?</a>
+              <p>Full authentication is required to access this resource.
               </p>
-              <div class="mid_center">
-                <h3>Search</h3>
-                <form>
-                  <div class="col-xs-12 form-group pull-right top_search">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for...">
-                      <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">Go!</button>
-                          </span>
-                    </div>
-                  </div>
-                </form>
-              </div>
             </div>
           </div>
         </div>
