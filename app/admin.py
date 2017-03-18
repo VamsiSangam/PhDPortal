@@ -2,15 +2,48 @@ from django.contrib import admin
 from app.models import *
 
 # Register your models here.
-admin.site.register(User)
-admin.site.register(StatusTypes)
-admin.site.register(Thesis)
 
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email_id')
+    search_fields = ('first_name', 'last_name', 'email_id')
+    list_filter = ('type',)
+
+class StatusTypesAdmin(admin.ModelAdmin):
+    list_display = ('id', 'status_message',)
+    search_fields = ('id', 'status_message',)
+
+class ThesisAdmin(admin.ModelAdmin):
+    list_display = ('title', 'username',)
+    search_fields = ('title', 'abstract')
+    list_filter = ('status',)
+    
 class ThesisGuidesAdmin(admin.ModelAdmin):
     list_display = ('guide_username', 'thesis_id',)
+    search_fields = ('guide_username', 'thesis_id',)
 
+class IEEEKeywordsAdmin(admin.ModelAdmin):
+    list_display = ('keyword', 'parent_keyword_id',)
+    search_fields = ('keyword',)
+
+class ThesisKeywordsAdmin(admin.ModelAdmin):
+    list_display = ('thesis_id', 'keyword_id',)
+    search_fields = ('thesis_id', 'keyword_id',)
+
+class PanelMembersAdmin(admin.ModelAdmin):
+    list_display = ('thesis_id', 'referee_username', 'priority', 'status',)
+    search_fields = ('thesis_id', 'referee_username',)
+    list_filter = ('status', 'priority',)
+
+class NotificationsAdmin(admin.ModelAdmin):
+    list_display = ('username', 'message', 'status')
+    search_fields = ('username', 'message',)
+    list_filter = ('status',)
+
+admin.site.register(User, UserAdmin)
+admin.site.register(StatusTypes, StatusTypesAdmin)
+admin.site.register(Thesis, ThesisAdmin)
 admin.site.register(ThesisGuides, ThesisGuidesAdmin)
-admin.site.register(IEEEKeywords)
-admin.site.register(ThesisKeywords)
-admin.site.register(PanelMembers)
-admin.site.register(Notifications)
+admin.site.register(IEEEKeywords, IEEEKeywordsAdmin)
+admin.site.register(ThesisKeywords, ThesisKeywordsAdmin)
+admin.site.register(PanelMembers, PanelMembersAdmin)
+admin.site.register(Notifications, NotificationsAdmin)
