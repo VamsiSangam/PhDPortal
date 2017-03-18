@@ -103,14 +103,12 @@ class PanelMembers(models.Model):
     )
 
     thesis_id = models.ForeignKey(Thesis, on_delete = models.CASCADE)
-    refereee_username = models.ForeignKey(User, on_delete = models.CASCADE)
+    referee_username = models.ForeignKey(User, on_delete = models.CASCADE)
     priority = models.PositiveIntegerField(null = True)
     status = models.CharField(max_length = 1, choices = STATUS_TYPES)
 
     def __str__(self):
-        user = User.objects.get(self.refereee_username)
-
-        return user.first_name
+        return self.refereee_username.first_name
 
 class Notifications(models.Model):
     class Meta:
@@ -129,4 +127,4 @@ class Notifications(models.Model):
     date = models.DateTimeField(auto_now = True)
 
     def __str__(self):
-        return self.username + ' notification'
+        return self.username.first_name + ' notification'
