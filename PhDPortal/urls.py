@@ -28,8 +28,7 @@ urlpatterns = [
     url(r'^notifications/markread/(?P<id>\d+)$', app.views.mark_notification_read, name='mark_notification_read'),
     
     # student urls
-    url(r'^student/$', app.views.student_home, name='student_home'),
-    url(r'^student/notifications/$', app.views.user_notifications, name='student_all_notifications'),    
+    url(r'^student/$', app.views.student_home, name='student_home'),  
     url(r'^student/profile/edit/$', app.views.student_edit_profile, name='student_edit_profile'),
     url(r'^student/synopsis/upload/$', app.views.student_upload_synopsis, name='student_upload_synopsis'),
     url(r'^student/synopsis/view/$', app.views.student_view_synopsis, name='student_view_synopsis'),
@@ -41,8 +40,7 @@ urlpatterns = [
     url(r'^student/help/contacts/$', app.views.student_help_contacts, name='student_help_contacts'),
 
     # guide urls
-    url(r'^guide/$', app.views.guide_home, name='guide_home'),
-    url(r'^guide/notifications/$', app.views.user_notifications, name='guide_all_notifications'),    
+    url(r'^guide/$', app.views.guide_home, name='guide_home'),   
     url(r'^guide/profile/edit/$', app.views.guide_edit_profile, name='guide_edit_profile'),
     url(r'^guide/students/$', app.views.guide_view_student_info, name='guide_view_student_info'),
     url(r'^guide/synopsis/unevaluated/$', app.views.guide_unevaulated_synopsis, name='guide_unevaulated_synopsis'),
@@ -60,8 +58,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #Director urls
-    url(r'^director/$', app.views.director_home, name='director_home'),
-    url(r'^director/notifications/$', app.views.user_notifications, name='director_all_notifications'),    
+    url(r'^director/$', app.views.director_home, name='director_home'), 
     url(r'^director/profile/edit/$', app.views.director_edit_profile, name='director_edit_profile'),
     url(r'^director/students/$', app.views.director_view_student_info, name='director_view_student_info'),
     url(r'^director/evaluate/$', app.views.director_submit_for_evaluation, name='director_submit_for_evaluation'),
@@ -69,8 +66,7 @@ urlpatterns = [
     url(r'^director/help/contacts/$', app.views.director_help_contacts, name='director_help_contacts'),
 
     #Referee urls
-    url(r'^referee/$', app.views.referee_home, name='referee_home'),
-    url(r'^referee/notifications/$', app.views.user_notifications, name='referee_all_notifications'),    
+    url(r'^referee/$', app.views.referee_home, name='referee_home'),   
     url(r'^referee/profile/edit/$', app.views.referee_edit_profile, name='referee_edit_profile'),
     url(r'^referee/requestedlist/$', app.views.referee_requestedlist, name='referee_requestedlist'),
     url(r'^referee/evaluate/thesis/$', app.views.referee_evaluation, name='referee_evaluation'),

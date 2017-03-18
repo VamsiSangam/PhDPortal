@@ -34,7 +34,7 @@ def user_notifications(request):
 
 def _verify_user_notification(username, id):
     notification = Notifications.objects.get(id = id)
-    print(notification.username)
+    
     return (notification is not None) and (notification.username.username == username)
 
 def delete_user_notification(request, id):
