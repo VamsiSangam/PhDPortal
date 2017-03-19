@@ -35,8 +35,8 @@ class PanelMembersAdmin(admin.ModelAdmin):
     list_filter = ('status', 'priority',)
 
 class NotificationsAdmin(admin.ModelAdmin):
-    list_display = ('username', 'message', 'status')
-    search_fields = ('username', 'message',)
+    list_display = ('receiver', 'sender', 'message', 'status')
+    search_fields = ('receiver', 'sender', 'message',)
     list_filter = ('status',)
 
 admin.site.register(User, UserAdmin)

@@ -16,32 +16,34 @@ import app.views
 # admin.autodiscover()
 
 urlpatterns = [
+    # common urls
     url(r'^$', app.views.login, name='login'),
     url(r'^logout/$', app.views.logout, name='logout'),
-    
-    # common urls
     url(r'^notifications/$', app.views.user_notifications, name='user_notifications'),
     url(r'^notifications/delete/(?P<id>\d+)$', app.views.delete_user_notification, name='delete_user_notification'),
     url(r'^notifications/delete/read/$', app.views.delete_all_read_notifications, name='delete_all_read_notifications'),
     url(r'^notifications/delete/unread/$', app.views.delete_all_unread_notifications, name='delete_all_unread_notifications'),
     url(r'^notifications/markread/all/$', app.views.mark_all_notifications_read, name='mark_all_notifications_read'),
     url(r'^notifications/markread/(?P<id>\d+)$', app.views.mark_notification_read, name='mark_notification_read'),
-    
+    url(r'^edit_profile/$', app.views.user_edit_profile, name='user_edit_profile'),
+
     # student urls
     url(r'^student/$', app.views.student_home, name='student_home'),  
-    url(r'^student/profile/edit/$', app.views.student_edit_profile, name='student_edit_profile'),
     url(r'^student/synopsis/upload/$', app.views.student_upload_synopsis, name='student_upload_synopsis'),
     url(r'^student/synopsis/view/$', app.views.student_view_synopsis, name='student_view_synopsis'),
     url(r'^student/thesis/upload/$', app.views.student_upload_thesis, name='student_upload_thesis'),
     url(r'^student/thesis/view/$', app.views.student_view_thesis, name='student_view_thesis'),
     url(r'^student/keywords/$', app.views.student_add_keywords, name='student_add_keywords'),
+    url(r'^student/keywords/get/$', app.views.get_ieee_keywords, name='get_ieee_keywords'),
+    url(r'^student/keywords/get/parent/$', app.views.get_ieee_keywords_parent, name='get_ieee_keywords_parent'),
+    url(r'^student/keywords/delete/(?P<id>\d+)$', app.views.student_delete_keyword, name='student_delete_keyword'),
+    url(r'^student/keywords/add/$', app.views.student_add_keyword_to_thesis, name='student_add_keyword_to_thesis'),
     url(r'^student/status/$', app.views.student_phd_status, name='student_phd_status'),
     url(r'^student/help/procedure/$', app.views.student_help_procedure, name='student_help_procedure'),
     url(r'^student/help/contacts/$', app.views.student_help_contacts, name='student_help_contacts'),
 
     # guide urls
     url(r'^guide/$', app.views.guide_home, name='guide_home'),   
-    url(r'^guide/profile/edit/$', app.views.guide_edit_profile, name='guide_edit_profile'),
     url(r'^guide/students/$', app.views.guide_view_student_info, name='guide_view_student_info'),
     url(r'^guide/synopsis/unevaluated/$', app.views.guide_unevaulated_synopsis, name='guide_unevaulated_synopsis'),
     url(r'^guide/synopsis/archived/$', app.views.guide_archived_synopsis, name='guide_archived_synopsis'),
@@ -59,7 +61,6 @@ urlpatterns = [
 
     #Director urls
     url(r'^director/$', app.views.director_home, name='director_home'), 
-    url(r'^director/profile/edit/$', app.views.director_edit_profile, name='director_edit_profile'),
     url(r'^director/students/$', app.views.director_view_student_info, name='director_view_student_info'),
     url(r'^director/evaluate/$', app.views.director_submit_for_evaluation, name='director_submit_for_evaluation'),
     url(r'^director/help/procedure/$', app.views.director_help_procedure, name='director_help_procedure'),
@@ -67,7 +68,6 @@ urlpatterns = [
 
     #Referee urls
     url(r'^referee/$', app.views.referee_home, name='referee_home'),   
-    url(r'^referee/profile/edit/$', app.views.referee_edit_profile, name='referee_edit_profile'),
     url(r'^referee/requestedlist/$', app.views.referee_requestedlist, name='referee_requestedlist'),
     url(r'^referee/evaluate/thesis/$', app.views.referee_evaluation, name='referee_evaluation'),
     url(r'^referee/evaluate/feedback/$', app.views.referee_evaluation_report, name='referee_evaluation_report'),

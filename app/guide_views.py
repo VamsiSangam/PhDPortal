@@ -18,18 +18,6 @@ def guide_home(request):
         }
     )
 
-def guide_all_notifications(request):
-    assert isinstance(request, HttpRequest)
-
-    return render(
-        request,
-        'app/guide/notifications.html',
-        {
-            'title':'Notifications',
-            'descriptive_title' : 'All Notifications',
-        }
-    )
-
 def guide_edit_profile(request):
     assert isinstance(request, HttpRequest)
 

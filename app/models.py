@@ -120,11 +120,13 @@ class Notifications(models.Model):
         ('U', 'Unread'),
     )
 
-    username = models.ForeignKey(User, on_delete = models.CASCADE)
+    #username = models.ForeignKey(User, on_delete = models.CASCADE)
+    sender = models.ForeignKey(User, null = True, related_name = 'sender', on_delete = models.CASCADE)
+    receiver = models.ForeignKey(User, null = True, related_name = 'receiver', on_delete = models.CASCADE)
     message = models.TextField(max_length = 200, null = False)
     link = models.CharField(max_length = 200, null = True)
     status = models.CharField(max_length = 1, choices = STATUS_TYPES)
     date = models.DateTimeField(auto_now = True)
 
     def __str__(self):
-        return self.username.first_name + ' notification'
+        return self.receiver.first_name + ' notification'

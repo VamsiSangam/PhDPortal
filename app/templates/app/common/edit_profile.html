@@ -1,0 +1,72 @@
+﻿{% extends "app/layouts/home.html" %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<!-- Edit student profile page -->
+ <br>       
+<div class ="main-container">
+    <div class="row">
+        <div class= "col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="panel-title">Enter details</span>
+                </div>
+                <div class="panel-body">
+                    <form style="" method="post" action="{{ request.path }}" id="edit-user-profile">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-12 col-xs-12" name="first-name">First Name <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <input type="text" id="first-name" name = "first-name" value="{{ user_details.first_name }}" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-12 col-xs-12" name="last-name">Last Name <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <input type="text" id="last-name" name="last-name" value="{{ user_details.last_name }}" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-12 col-xs-12" name="email-id">Email-Id <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <input type="text" id="email-id" name = "email-id" value="{{ user_details.email_id }}" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-12 col-xs-12" name="address">Address <span class="required">*</span>
+                                </label>
+                                <div class="col-md-8 col-sm-12 col-xs-12">
+                                    <textarea class="form-control" rows="4" name = "address" placeholder=''>{{ user_details.address }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                     
+                        <button type="submit" class="btn btn-success pull-right" >Submit</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+
+{% endblock %}

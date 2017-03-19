@@ -48,7 +48,7 @@
                                 {% else %}
                                     <p>{{ notification.message }}</p>
                                 {% endif %}
-                                <small>{{ notification.date }}</small>
+                                <small>From <font color="blue">{{ notification.sender }}</font>, {{ notification.date }}</small>
                             </blockquote>
                         {% endfor %}
                     {% endif %}
@@ -75,7 +75,7 @@
                                 {% else %}
                                     <p>{{ notification.message }}</p>
                                 {% endif %}
-                                <small>{{ notification.date }}</small>
+                                <small>From <font color="blue">{{ notification.sender }}</font>, {{ notification.date }}</small>
                             </blockquote>
                         {% endfor %}
                     {% endif %}

@@ -30,6 +30,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\static\app\css\add_keywords.css" />
     <Content Include="app\static\app\css\animate.min.css" />
     <Content Include="app\static\app\css\basic.min.css" />
     <Content Include="app\static\app\css\bootstrap-theme.min.css" />
@@ -534,10 +535,10 @@
     <Content Include="app\static\app\js\transitionize.min.js" />
     <Content Include="app\static\app\js\validator.js" />
     <Content Include="app\static\app\js\vfs_fonts.js" />
+    <Content Include="app\templates\app\common\edit_profile.html" />
     <Content Include="app\templates\app\director\edit_profile.html" />
     <Content Include="app\templates\app\director\help_contacts.html" />
     <Content Include="app\templates\app\director\home.html" />
-    <Content Include="app\templates\app\director\notifications.html" />
     <Content Include="app\templates\app\director\procedure.html" />
     <Content Include="app\templates\app\director\submit_for_evaluation.html" />
     <Content Include="app\templates\app\director\view_student_info.html" />
@@ -546,7 +547,6 @@
     <Content Include="app\templates\app\guide\edit_profile.html" />
     <Content Include="app\templates\app\guide\help_contacts.html" />
     <Content Include="app\templates\app\guide\home.html" />
-    <Content Include="app\templates\app\guide\notifications.html" />
     <Content Include="app\templates\app\guide\phd_status.html" />
     <Content Include="app\templates\app\guide\procedure.html" />
     <Content Include="app\templates\app\guide\unevaluated_synopsis.html" />
@@ -577,7 +577,7 @@
     <Content Include="app\templates\app\student\edit_profile.html" />
     <Content Include="app\templates\app\student\help_contacts.html" />
     <Content Include="app\templates\app\student\home.html" />
-    <Content Include="app\templates\app\student\notifications.html" />
+    <Content Include="app\templates\app\common\notifications.html" />
     <Content Include="app\templates\app\student\phd_status.html" />
     <Content Include="app\templates\app\student\procedure.html" />
     <Content Include="app\templates\app\student\upload_synopsis.html" />
@@ -638,6 +638,7 @@
     <Folder Include="app\templates\app\director\" />
     <Folder Include="app\templates\app\guide\" />
     <Folder Include="app\templates\app\layouts\" />
+    <Folder Include="app\templates\app\common\" />
     <Folder Include="app\templates\app\other\" />
     <Folder Include="app\templates\app\referee\" />
     <Folder Include="app\templates\app\student\" />

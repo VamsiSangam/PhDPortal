@@ -17,18 +17,6 @@ def director_home(request):
         }
     )
 
-def director_all_notifications(request):
-    assert isinstance(request, HttpRequest)
-
-    return render(
-        request,
-        'app/director/notifications.html',
-        {
-            'title':'Notifications',
-            'descriptive_title' : 'All Notifications',
-        }
-    )
-
 def director_edit_profile(request):
     assert isinstance(request, HttpRequest)
 

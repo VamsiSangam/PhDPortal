@@ -8,11 +8,42 @@ from app.guide_views import *
 from app.director_views import *
 from app.referee_views import *
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 def _get_notifications_for_user(username):
-    notifications = Notifications.objects.filter(username = username);
+    notifications = Notifications.objects.filter(receiver = username)
 
     return notifications
+
+@login_required
+def user_edit_profile(request):
+    assert isinstance(request, HttpRequest)
+    
+    if request.method == 'GET':
+        user_details = User.objects.get(username = request.session['username'])
+
+        return render(request, 'app/common/edit_profile.html', {
+                'title':'Notifications',
+                'descriptive_title' : 'All notifications',
+                'user_details' : user_details
+            })
+    elif request.method == 'POST':
+        user_name = request.session['username']
+        user_details = User.objects.get(username = user_name)
+        first_name = request.POST['first-name']
+        last_name = request.POST['last-name']
+        email_id = request.POST['email-id']
+        address = request.POST['address']
+
+        user_details.first_name = first_name
+        user_details.last_name = last_name
+        user_details.email_id = email_id
+        user_details.address = address
+        user_details.save() 
+
+        return redirect(reverse('user_edit_profile'))
+
+    return redirect(reverse('unauthorized_access'))
 
 def user_notifications(request):
     assert isinstance(request, HttpRequest)
@@ -35,7 +66,8 @@ def user_notifications(request):
 def _verify_user_notification(username, id):
     notification = Notifications.objects.get(id = id)
     
-    return (notification is not None) and (notification.username.username == username)
+    return (notification is not None) and (notification.receiver.username == username)
+
 
 def delete_user_notification(request, id):
     assert isinstance(request, HttpRequest)
@@ -51,7 +83,7 @@ def delete_user_notification(request, id):
 def delete_all_unread_notifications(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
-        notifications = Notifications.objects.filter(username = user).filter(status = 'U')
+        notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
         notifications.delete()
 
         return redirect(reverse('user_notifications'))
@@ -61,7 +93,7 @@ def delete_all_unread_notifications(request):
 def delete_all_read_notifications(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
-        notifications = Notifications.objects.filter(username = user).filter(status = 'R')
+        notifications = Notifications.objects.filter(receiver = user).filter(status = 'R')
         notifications.delete()
 
         return redirect(reverse('user_notifications'))
@@ -71,7 +103,7 @@ def delete_all_read_notifications(request):
 def mark_all_notifications_read(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
-        notifications = Notifications.objects.filter(username = user).filter(status = 'U')
+        notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
 
         for notification in notifications:
             notification.status = 'R'

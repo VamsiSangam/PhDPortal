@@ -18,18 +18,6 @@ def referee_home(request):
         }
     )
 
-def referee_all_notifications(request):
-    assert isinstance(request, HttpRequest)
-
-    return render(
-        request,
-        'app/referee/notifications.html',
-        {
-            'title':'Notifications',
-            'descriptive_title' : 'All Notifications',
-        }
-    )
-
 def referee_edit_profile(request):
     assert isinstance(request, HttpRequest)
 
