@@ -5,9 +5,17 @@ from django.template import RequestContext
 from django.contrib import auth
 from datetime import datetime
 from app.models import *
+from django.contrib.auth.decorators import login_required
+from app.student_views import get_unread_notifications
+import logging
 
+logger = logging.getLogger('django')
+
+@login_required
 def referee_home(request):
     assert isinstance(request, HttpRequest)
+    
+    unread_notifications = get_unread_notifications(request.session['username'])
 
     return render(
         request,
@@ -15,21 +23,11 @@ def referee_home(request):
         {
             'title':'Home Page',
             'descriptive_title' : 'Welcome Prof. Chong Chang!',
+            'unread_notifications' : unread_notifications,
         }
     )
 
-def referee_edit_profile(request):
-    assert isinstance(request, HttpRequest)
-
-    return render(
-        request,
-        'app/referee/edit_profile.html',
-        {
-            'title':'Edit Profile',
-            'descriptive_title' : 'Edit your profile',
-        }
-    )
-
+@login_required
 def referee_requestedlist(request):
     assert isinstance(request, HttpRequest)
 
@@ -42,6 +40,7 @@ def referee_requestedlist(request):
         }
     )
 
+@login_required
 def referee_evaluation(request):
     assert isinstance(request, HttpRequest)
 
@@ -54,6 +53,7 @@ def referee_evaluation(request):
         }
     )
 
+@login_required
 def referee_evaluation_report(request):
     assert isinstance(request, HttpRequest)
 
@@ -66,6 +66,7 @@ def referee_evaluation_report(request):
         }
     )
 
+@login_required
 def referee_help_procedure(request):
     assert isinstance(request, HttpRequest)
 
@@ -78,6 +79,7 @@ def referee_help_procedure(request):
         }
     )
 
+@login_required
 def referee_help_contacts(request):
     assert isinstance(request, HttpRequest)
 

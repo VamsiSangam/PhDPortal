@@ -1,0 +1,38 @@
+2017-03-21 00:41:00 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 00:41:00 - INFO - basehttp:log_message:131 - "GET /favicon.ico HTTP/1.1" 200 1724
+2017-03-21 00:41:00 - INFO - basehttp:log_message:131 - "GET /favicon.ico HTTP/1.1" 200 1724
+2017-03-21 00:41:05 - INFO - views:login:38 - User rit2013063 successfully authenticated
+2017-03-21 00:41:05 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-21 00:41:05 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
+2017-03-21 00:41:08 - INFO - views:logout:63 - User rit2013063 successfully logged out
+2017-03-21 00:41:08 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 00:41:08 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-21 00:56:24 - INFO - views:login:33 - User rit2013063 successfully authenticated
+2017-03-21 00:56:24 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-21 00:56:24 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
+2017-03-21 00:56:27 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 9506
+2017-03-21 00:56:28 - INFO - basehttp:log_message:131 - "GET /edit_profile/ HTTP/1.1" 200 11400
+2017-03-21 00:56:31 - INFO - views:logout:59 - User rit2013063 successfully logged out
+2017-03-21 00:56:31 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 00:56:31 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 00:56:35 - INFO - views:login:33 - User pavan successfully authenticated
+2017-03-21 00:56:35 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-21 00:56:35 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 8312
+2017-03-21 00:56:38 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 12222
+2017-03-21 00:56:42 - INFO - views:logout:59 - User pavan successfully logged out
+2017-03-21 00:56:43 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 00:56:43 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 00:56:47 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 302 0
+2017-03-21 00:56:47 - INFO - basehttp:log_message:131 - "GET /?next=/student/ HTTP/1.1" 200 2145
+2017-03-21 00:56:54 - INFO - views:login:33 - User rit2013063 successfully authenticated
+2017-03-21 00:56:55 - INFO - basehttp:log_message:131 - "POST /?next=/student/ HTTP/1.1" 302 0
+2017-03-21 00:56:55 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
+2017-03-21 00:56:58 - INFO - views:logout:59 - User rit2013063 successfully logged out
+2017-03-21 00:56:58 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 00:56:58 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 01:21:42 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 01:21:58 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145

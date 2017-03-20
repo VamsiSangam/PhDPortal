@@ -6,17 +6,22 @@ from django.contrib import auth
 from datetime import datetime
 from app.models import *
 import json
+from django.contrib.auth.decorators import login_required
+import logging
 
-def _get_unread_notifications(username):
+logger = logging.getLogger('django')
+
+def get_unread_notifications(username):
     user = User.objects.get(username = username)
     unread_notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
 
     return unread_notifications
 
+@login_required
 def student_home(request):
     assert isinstance(request, HttpRequest)
     
-    unread_notifications = _get_unread_notifications(request.session['username'])
+    unread_notifications = get_unread_notifications(request.session['username'])
 
     return render(
         request,
@@ -28,18 +33,7 @@ def student_home(request):
         }
     )
 
-def student_edit_profile(request):
-    assert isinstance(request, HttpRequest)
-
-    return render(
-        request,
-        'app/student/edit_profile.html',
-        {
-            'title':'Edit Profile',
-            'descriptive_title' : 'Edit your profile',
-        }
-    )
-
+@login_required
 def student_upload_synopsis(request):
     assert isinstance(request, HttpRequest)
 
@@ -52,6 +46,7 @@ def student_upload_synopsis(request):
         }
     )
 
+@login_required
 def student_view_synopsis(request):
     assert isinstance(request, HttpRequest)
     
@@ -64,6 +59,7 @@ def student_view_synopsis(request):
         }
     )
 
+@login_required
 def student_upload_thesis(request):
     assert isinstance(request, HttpRequest)
 
@@ -76,6 +72,7 @@ def student_upload_thesis(request):
         }
     )
 
+@login_required
 def student_view_thesis(request):
     assert isinstance(request, HttpRequest)
 
@@ -88,6 +85,7 @@ def student_view_thesis(request):
         }
     )
 
+@login_required
 def student_add_keywords(request):
     assert isinstance(request, HttpRequest)
 
@@ -117,6 +115,7 @@ def _validate_keyword(id, username):
 
     return False
 
+@login_required
 def student_delete_keyword(request, id):
     if request.method == "POST":
         if _validate_keyword(id, request.session['username']):
@@ -145,6 +144,7 @@ def _ieee_keywords_to_list(keywords):
 
     return list
 
+@login_required
 def get_ieee_keywords(request):
     if request.method == "POST":
         parent_id = int(request.POST['parent_id'])
@@ -177,6 +177,7 @@ def get_ieee_keywords(request):
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
 
+@login_required
 def get_ieee_keywords_parent(request):
     if (request.method == "POST"):
         keyword = IEEEKeywords.objects.get(id = request.POST['parent_id'])
@@ -189,6 +190,7 @@ def get_ieee_keywords_parent(request):
     
     return redirect(reverse('unauthorized_access'))
 
+@login_required
 def student_add_keyword_to_thesis(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
@@ -212,6 +214,7 @@ def student_add_keyword_to_thesis(request):
 
         return redirect(reverse('unauthorized_access'))
 
+@login_required
 def student_phd_status(request):
     assert isinstance(request, HttpRequest)
 
@@ -224,6 +227,7 @@ def student_phd_status(request):
         }
     )
 
+@login_required
 def student_help_procedure(request):
     assert isinstance(request, HttpRequest)
 
@@ -236,6 +240,7 @@ def student_help_procedure(request):
         }
     )
 
+@login_required
 def student_help_contacts(request):
     assert isinstance(request, HttpRequest)
 

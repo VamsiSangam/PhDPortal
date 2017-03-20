@@ -5,9 +5,17 @@ from django.template import RequestContext
 from django.contrib import auth
 from datetime import datetime
 from app.models import *
+from django.contrib.auth.decorators import login_required
+from app.student_views import get_unread_notifications
+import logging
 
+logger = logging.getLogger('django')
+
+@login_required
 def guide_home(request):
     assert isinstance(request, HttpRequest)
+
+    unread_notifications = get_unread_notifications(request.session['username'])
 
     return render(
         request,
@@ -15,9 +23,11 @@ def guide_home(request):
         {
             'title':'Home Page',
             'descriptive_title' : 'Welcome ' + request.session['full_name'] + ' !',
+            'unread_notifications' : unread_notifications,
         }
     )
 
+@login_required
 def guide_edit_profile(request):
     assert isinstance(request, HttpRequest)
 
@@ -30,6 +40,7 @@ def guide_edit_profile(request):
         }
     )
 
+@login_required
 def guide_view_student_info(request):
     assert isinstance(request, HttpRequest)
 
@@ -42,6 +53,7 @@ def guide_view_student_info(request):
         }
     )
 
+@login_required
 def guide_unevaulated_synopsis(request):
     assert isinstance(request, HttpRequest)
 
@@ -54,6 +66,7 @@ def guide_unevaulated_synopsis(request):
         }
     )
 
+@login_required
 def guide_archived_synopsis(request):
     assert isinstance(request, HttpRequest)
 
@@ -66,6 +79,7 @@ def guide_archived_synopsis(request):
         }
     )
 
+@login_required
 def guide_unevaluated_thesis(request):
     assert isinstance(request, HttpRequest)
 
@@ -78,6 +92,7 @@ def guide_unevaluated_thesis(request):
         }
     )
 
+@login_required
 def guide_archived_thesis(request):
     assert isinstance(request, HttpRequest)
 
@@ -90,6 +105,7 @@ def guide_archived_thesis(request):
         }
     )
 
+@login_required
 def guide_phd_status(request):
     assert isinstance(request, HttpRequest)
 
@@ -102,6 +118,7 @@ def guide_phd_status(request):
         }
     )
 
+@login_required
 def guide_help_procedure(request):
     assert isinstance(request, HttpRequest)
 
@@ -114,6 +131,7 @@ def guide_help_procedure(request):
         }
     )
 
+@login_required
 def guide_help_contacts(request):
     assert isinstance(request, HttpRequest)
 

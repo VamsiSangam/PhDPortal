@@ -30,6 +30,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\log.txt" />
     <Content Include="app\static\app\css\add_keywords.css" />
     <Content Include="app\static\app\css\animate.min.css" />
     <Content Include="app\static\app\css\basic.min.css" />
@@ -652,9 +653,6 @@
     </Compile>
     <Compile Include="app\forms.py" />
     <Compile Include="app\guide_views.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="app\login_views.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\migrations\__init__.py" />

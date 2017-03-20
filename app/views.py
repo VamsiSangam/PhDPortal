@@ -2,13 +2,64 @@
 Definition of views.
 """
 
-from app.login_views import *
 from app.student_views import *
 from app.guide_views import *
 from app.director_views import *
 from app.referee_views import *
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+
+def _add_user_data_to_session(user, request):
+    request.session['username'] = user.username
+    request.session['first_name'] = user.first_name
+    request.session['last_name'] = user.last_name
+    request.session['full_name'] = user.first_name + ' ' + user.last_name
+    request.session['email_id'] = user.email_id
+    request.session['type'] = user.type
+
+def login(request):
+    assert isinstance(request, HttpRequest)
+
+    if request.method == 'GET':
+        return render(request, 'app/other/login.html', {'title':'Login',})
+    elif request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username = username, password = password)
+        
+        if user is not None:
+            if user.is_active:
+                auth.login(request, user)
+                logger.info('User %s successfully authenticated' % username)
+                next = ''
+
+                if next in request.GET:
+                    next = request.GET['next']
+                if next is None or next == '':
+                    user = User.objects.get(username = username)
+                    _add_user_data_to_session(user, request)
+
+                    if (user.type == 'S'):                        
+                        next = reverse('student_home')
+                    elif (user.type == 'G'):
+                        next = reverse('guide_home')
+                    elif (user.type == 'D'):
+                        next = reverse('director_home')
+                    elif (user.type == 'R'):
+                        next = reverse('referee_home')
+
+                return redirect(next)
+            else:
+                return redirect('403/')
+        else:
+            return redirect('403/')
+
+@login_required
+def logout(request):
+    logger.info('User %s successfully logged out' % request.session['username'])
+    auth.logout(request)
+
+    return redirect('/')
 
 def _get_notifications_for_user(username):
     notifications = Notifications.objects.filter(receiver = username)
@@ -45,6 +96,7 @@ def user_edit_profile(request):
 
     return redirect(reverse('unauthorized_access'))
 
+@login_required
 def user_notifications(request):
     assert isinstance(request, HttpRequest)
 
@@ -68,7 +120,7 @@ def _verify_user_notification(username, id):
     
     return (notification is not None) and (notification.receiver.username == username)
 
-
+@login_required
 def delete_user_notification(request, id):
     assert isinstance(request, HttpRequest)
 
@@ -80,6 +132,7 @@ def delete_user_notification(request, id):
     else:
         return redirect(reverse('unauthorized_access'))
 
+@login_required
 def delete_all_unread_notifications(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
@@ -90,6 +143,7 @@ def delete_all_unread_notifications(request):
     else:
         return redirect(reverse('unauthorized_access'))
 
+@login_required
 def delete_all_read_notifications(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
@@ -100,6 +154,7 @@ def delete_all_read_notifications(request):
     else:
         return redirect(reverse('unauthorized_access'))
 
+@login_required
 def mark_all_notifications_read(request):
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
@@ -113,6 +168,7 @@ def mark_all_notifications_read(request):
     else:
         return redirect(reverse('unauthorized_access'))
 
+@login_required
 def mark_notification_read(request, id):
     assert isinstance(request, HttpRequest)
 
