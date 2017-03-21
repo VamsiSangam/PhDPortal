@@ -1,3 +1,42 @@
 2017-03-21 23:49:01 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 9328
 2017-03-21 23:49:06 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 302 0
 2017-03-21 23:49:06 - WARNING - basehttp:log_message:131 - "GET /403/ HTTP/1.1" 403 1631
+2017-03-21 23:50:30 - INFO - views:logout:102 - User rit2013063 successfully logged out
+2017-03-21 23:50:30 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 23:50:30 - ERROR - exception:handle_uncaught_exception:132 - Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = get_response(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 67, in login
+    return render(request, 'app/other/login.html', {'title':'Login',})
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: app/other/login.html
+2017-03-21 23:50:30 - ERROR - basehttp:log_message:131 - "GET / HTTP/1.1" 500 83718
+2017-03-21 23:50:32 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 302 0
+2017-03-21 23:50:32 - ERROR - exception:handle_uncaught_exception:132 - Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = get_response(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 67, in login
+    return render(request, 'app/other/login.html', {'title':'Login',})
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: app/other/login.html
+2017-03-21 23:50:32 - ERROR - basehttp:log_message:131 - "GET /?next=/student/ HTTP/1.1" 500 84124
