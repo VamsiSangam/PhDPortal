@@ -1,15 +1,4 @@
-from django.core.urlresolvers import reverse
-from django.shortcuts import render, redirect
-from django.http import HttpRequest
-from django.template import RequestContext
-from django.contrib import auth
-from datetime import datetime
-from app.models import *
-from django.contrib.auth.decorators import login_required
-from app.student_views import get_unread_notifications
-import logging
-
-logger = logging.getLogger('django')
+from app.views import *
 
 @login_required
 def director_home(request):

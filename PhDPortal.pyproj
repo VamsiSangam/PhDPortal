@@ -643,6 +643,8 @@
     <Folder Include="app\templates\app\other\" />
     <Folder Include="app\templates\app\referee\" />
     <Folder Include="app\templates\app\student\" />
+    <Folder Include="Media\" />
+    <Folder Include="Media\Synopsis\" />
     <Folder Include="PhDPortal\" />
   </ItemGroup>
   <ItemGroup>

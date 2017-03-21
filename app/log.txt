@@ -1,38 +1,140 @@
-2017-03-21 00:41:00 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 00:41:00 - INFO - basehttp:log_message:131 - "GET /favicon.ico HTTP/1.1" 200 1724
-2017-03-21 00:41:00 - INFO - basehttp:log_message:131 - "GET /favicon.ico HTTP/1.1" 200 1724
-2017-03-21 00:41:05 - INFO - views:login:38 - User rit2013063 successfully authenticated
-2017-03-21 00:41:05 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
-2017-03-21 00:41:05 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
-2017-03-21 00:41:08 - INFO - views:logout:63 - User rit2013063 successfully logged out
-2017-03-21 00:41:08 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
-2017-03-21 00:41:08 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
-2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
-2017-03-21 00:56:18 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
-2017-03-21 00:56:24 - INFO - views:login:33 - User rit2013063 successfully authenticated
-2017-03-21 00:56:24 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
-2017-03-21 00:56:24 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
-2017-03-21 00:56:27 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 9506
-2017-03-21 00:56:28 - INFO - basehttp:log_message:131 - "GET /edit_profile/ HTTP/1.1" 200 11400
-2017-03-21 00:56:31 - INFO - views:logout:59 - User rit2013063 successfully logged out
-2017-03-21 00:56:31 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
-2017-03-21 00:56:31 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 00:56:35 - INFO - views:login:33 - User pavan successfully authenticated
-2017-03-21 00:56:35 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
-2017-03-21 00:56:35 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 8312
-2017-03-21 00:56:38 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 12222
-2017-03-21 00:56:42 - INFO - views:logout:59 - User pavan successfully logged out
-2017-03-21 00:56:43 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
-2017-03-21 00:56:43 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 00:56:47 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 302 0
-2017-03-21 00:56:47 - INFO - basehttp:log_message:131 - "GET /?next=/student/ HTTP/1.1" 200 2145
-2017-03-21 00:56:54 - INFO - views:login:33 - User rit2013063 successfully authenticated
-2017-03-21 00:56:55 - INFO - basehttp:log_message:131 - "POST /?next=/student/ HTTP/1.1" 302 0
-2017-03-21 00:56:55 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
-2017-03-21 00:56:58 - INFO - views:logout:59 - User rit2013063 successfully logged out
-2017-03-21 00:56:58 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
-2017-03-21 00:56:58 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 01:21:42 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
-2017-03-21 01:21:58 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 15:23:08 - INFO - student_views:student_upload_synopsis:39 - student_upload_synopsis
+2017-03-21 15:23:08 - INFO - student_views:student_upload_synopsis:55 - get request to upload synosps
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /student/synopsis/upload/ HTTP/1.1" 200 9507
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/css/dropzone.min.css HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/js/bootstrap.min.js HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/js/jquery.min.js HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/js/fastclick.js HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/js/nprogress.js HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/js/custom.min.js HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/js/dropzone.min.js HTTP/1.1" 304 0
+2017-03-21 15:23:08 - INFO - basehttp:log_message:131 - "GET /static/app/images/img.jpg HTTP/1.1" 304 0
+2017-03-21 15:23:15 - INFO - student_views:student_upload_synopsis:39 - student_upload_synopsis
+2017-03-21 15:23:15 - INFO - student_views:student_upload_synopsis:41 - inside post
+2017-03-21 15:23:15 - INFO - student_views:student_upload_synopsis:44 - form is valid
+2017-03-21 15:23:15 - INFO - basehttp:log_message:131 - "POST /student/synopsis/upload/ HTTP/1.1" 302 0
+2017-03-21 15:23:15 - INFO - student_views:student_upload_synopsis:39 - student_upload_synopsis
+2017-03-21 15:23:15 - INFO - student_views:student_upload_synopsis:55 - get request to upload synosps
+2017-03-21 15:23:15 - INFO - basehttp:log_message:131 - "GET /student/synopsis/upload/ HTTP/1.1" 200 9507
+2017-03-21 16:15:10 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 16:15:10 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 200 1458
+2017-03-21 16:15:10 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 200 62584
+2017-03-21 16:15:10 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 200 121200
+2017-03-21 16:15:17 - INFO - views:login:42 - User rit2013063 successfully authenticated
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 8027
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /static/app/images/img.jpg HTTP/1.1" 200 4077
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /static/app/js/jquery.min.js HTTP/1.1" 200 85578
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /static/app/js/bootstrap.min.js HTTP/1.1" 200 36868
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /static/app/js/nprogress.js HTTP/1.1" 200 11565
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /static/app/js/fastclick.js HTTP/1.1" 200 25965
+2017-03-21 16:15:17 - INFO - basehttp:log_message:131 - "GET /static/app/js/custom.min.js HTTP/1.1" 200 72443
+2017-03-21 16:15:21 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 9506
+2017-03-21 16:15:22 - INFO - basehttp:log_message:131 - "GET /edit_profile/ HTTP/1.1" 200 11400
+2017-03-21 16:15:24 - INFO - student_views:student_upload_synopsis:22 - student_upload_synopsis
+2017-03-21 16:15:24 - INFO - student_views:student_upload_synopsis:38 - get request to upload synosps
+2017-03-21 16:15:24 - INFO - basehttp:log_message:131 - "GET /student/synopsis/upload/ HTTP/1.1" 200 9507
+2017-03-21 16:15:25 - INFO - basehttp:log_message:131 - "GET /student/synopsis/view/ HTTP/1.1" 200 7946
+2017-03-21 16:15:28 - INFO - basehttp:log_message:131 - "GET /student/thesis/upload/ HTTP/1.1" 200 8624
+2017-03-21 16:15:29 - INFO - basehttp:log_message:131 - "GET /student/keywords/ HTTP/1.1" 200 13329
+2017-03-21 16:15:29 - INFO - basehttp:log_message:131 - "GET /static/app/css/add_keywords.css HTTP/1.1" 200 78
+2017-03-21 16:15:29 - ERROR - exception:handle_uncaught_exception:132 - Internal Server Error: /student/keywords/get/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = get_response(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 177, in get_ieee_keywords
+    return HttpResponse(json.dumps(result), content_type = 'application/json')
+NameError: name 'json' is not defined
+2017-03-21 16:15:29 - ERROR - basehttp:log_message:131 - "POST /student/keywords/get/ HTTP/1.1" 500 17050
+2017-03-21 16:15:34 - INFO - basehttp:log_message:131 - "GET /student/status/ HTTP/1.1" 200 7949
+2017-03-21 16:15:36 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 9506
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 9506
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/js/jquery.min.js HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/js/fastclick.js HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/js/bootstrap.min.js HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/js/nprogress.js HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/js/custom.min.js HTTP/1.1" 304 0
+2017-03-21 16:16:24 - INFO - basehttp:log_message:131 - "GET /static/app/images/img.jpg HTTP/1.1" 304 0
+2017-03-21 16:16:26 - INFO - views:logout:68 - User rit2013063 successfully logged out
+2017-03-21 16:16:26 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 16:16:26 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145
+2017-03-21 16:16:29 - INFO - basehttp:log_message:131 - "GET /admin HTTP/1.1" 200 1724
+2017-03-21 16:16:29 - INFO - basehttp:log_message:131 - "GET /js/jquery.min.js HTTP/1.1" 200 1724
+2017-03-21 16:16:29 - INFO - basehttp:log_message:131 - "GET /js/bootstrap.min.js HTTP/1.1" 200 1724
+2017-03-21 16:16:29 - INFO - basehttp:log_message:131 - "GET /js/fastclick.js HTTP/1.1" 200 1724
+2017-03-21 16:16:29 - INFO - basehttp:log_message:131 - "GET /js/nprogress.js HTTP/1.1" 200 1724
+2017-03-21 16:16:29 - INFO - basehttp:log_message:131 - "GET /js/custom.min.js HTTP/1.1" 200 1724
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 302 0
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1657
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /static/admin/css/base.css HTTP/1.1" 304 0
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /static/admin/css/login.css HTTP/1.1" 304 0
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+2017-03-21 16:16:34 - INFO - basehttp:log_message:131 - "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+2017-03-21 16:16:37 - INFO - basehttp:log_message:131 - "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2017-03-21 16:16:37 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9538
+2017-03-21 16:16:37 - INFO - basehttp:log_message:131 - "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+2017-03-21 16:16:37 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+2017-03-21 16:16:37 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+2017-03-21 16:16:37 - INFO - basehttp:log_message:131 - "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+2017-03-21 16:16:40 - ERROR - exception:handle_uncaught_exception:132 - Internal Server Error: /admin/doc/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = get_response(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 215, in _get_response
+    response = response.render()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\response.py", line 109, in render
+    self.content = self.rendered_content
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\response.py", line 66, in resolve_template
+    return select_template(template, using=self.using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: admin_doc/missing_docutils.html
+2017-03-21 16:16:40 - ERROR - basehttp:log_message:131 - "GET /admin/doc/ HTTP/1.1" 500 83636
+2017-03-21 16:17:13 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9451
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9451
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/css/base.css HTTP/1.1" 304 0
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9451
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/css/base.css HTTP/1.1" 304 0
+2017-03-21 16:17:15 - INFO - basehttp:log_message:131 - "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+2017-03-21 16:17:16 - INFO - basehttp:log_message:131 - "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+2017-03-21 16:17:16 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+2017-03-21 16:17:16 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+2017-03-21 16:17:17 - INFO - basehttp:log_message:131 - "GET /admin/logout/ HTTP/1.1" 200 1014
+2017-03-21 16:18:12 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 302 0
+2017-03-21 16:18:12 - INFO - basehttp:log_message:131 - "GET /?next=/guide/ HTTP/1.1" 200 2145
+2017-03-21 16:18:18 - INFO - views:login:42 - User pavan successfully authenticated
+2017-03-21 16:18:18 - INFO - basehttp:log_message:131 - "POST /?next=/guide/ HTTP/1.1" 302 0
+2017-03-21 16:18:18 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 8312
+2017-03-21 16:18:22 - INFO - basehttp:log_message:131 - "GET /notifications/ HTTP/1.1" 200 12222
+2017-03-21 16:18:25 - INFO - basehttp:log_message:131 - "GET /edit_profile/ HTTP/1.1" 200 11754
+2017-03-21 16:18:26 - INFO - basehttp:log_message:131 - "GET /guide/students/ HTTP/1.1" 200 8338
+2017-03-21 16:18:28 - INFO - basehttp:log_message:131 - "GET /guide/synopsis/unevaluated/ HTTP/1.1" 200 8317
+2017-03-21 16:18:29 - INFO - basehttp:log_message:131 - "GET /guide/synopsis/archived/ HTTP/1.1" 200 8301
+2017-03-21 16:18:30 - INFO - basehttp:log_message:131 - "GET /guide/thesis/unevaluated/ HTTP/1.1" 200 8313
+2017-03-21 16:18:31 - INFO - basehttp:log_message:131 - "GET /guide/thesis/archived/ HTTP/1.1" 200 8308
+2017-03-21 16:18:32 - INFO - basehttp:log_message:131 - "GET /guide/status/ HTTP/1.1" 200 8292
+2017-03-21 16:18:34 - INFO - basehttp:log_message:131 - "GET /guide/help/procedure/ HTTP/1.1" 200 8284
+2017-03-21 16:18:39 - INFO - views:logout:68 - User pavan successfully logged out
+2017-03-21 16:18:39 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-21 16:18:39 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2145

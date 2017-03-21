@@ -1,21 +1,4 @@
-from django.core.urlresolvers import reverse
-from django.shortcuts import render, redirect
-from django.http import HttpRequest, HttpResponse
-from django.template import RequestContext
-from django.contrib import auth
-from datetime import datetime
-from app.models import *
-import json
-from django.contrib.auth.decorators import login_required
-import logging
-
-logger = logging.getLogger('django')
-
-def get_unread_notifications(username):
-    user = User.objects.get(username = username)
-    unread_notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
-
-    return unread_notifications
+from app.views import *
 
 @login_required
 def student_home(request):
@@ -36,14 +19,30 @@ def student_home(request):
 @login_required
 def student_upload_synopsis(request):
     assert isinstance(request, HttpRequest)
+    logger.info('student_upload_synopsis')
+    if request.method == 'POST':
+        logger.info('inside post')
+        form = SynopsisForm(request.POST, request.FILES)
+        if form.is_valid():
+            logger.info('form is valid')
 
+            user = User.objects.get(username = request.session['username'])
+            thesis = Thesis.objects.get(username = user)
+            thesis.synopsis = request.FILES['synopsis']
+            thesis.save()
+ 
+            return HttpResponseRedirect(reverse('student_upload_synopsis'))
+        else:
+            logger.info('form is invalid!')
+    else:
+        logger.info('get request to upload synosps')
+        form = SynopsisForm()
+ 
+    data = {'form': form}
     return render(
         request,
         'app/student/upload_synopsis.html',
-        {
-            'title':'Upload Synopsis',
-            'descriptive_title' : 'Upload Synopsis',
-        }
+        data
     )
 
 @login_required

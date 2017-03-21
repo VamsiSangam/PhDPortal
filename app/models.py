@@ -3,6 +3,7 @@ Definition of models.
 """
 
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 
@@ -47,10 +48,16 @@ class Thesis(models.Model):
     username = models.ForeignKey(User, on_delete = models.CASCADE)
     title = models.CharField(max_length = 150, null = False)
     abstract = models.TextField(max_length = 500, null = True)
+    synopsis = models.FileField(upload_to = 'Synopsis', null = True)
     status = models.ForeignKey(StatusTypes, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.title
+
+class SynopsisForm(ModelForm):
+    class Meta:
+        model = Thesis
+        fields = ['synopsis']
 
 class ThesisGuides(models.Model):
     class Meta:

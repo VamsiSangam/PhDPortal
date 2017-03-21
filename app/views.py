@@ -1,13 +1,22 @@
 """
 Definition of views.
 """
-
-from app.student_views import *
-from app.guide_views import *
-from app.director_views import *
-from app.referee_views import *
-from django.http import HttpResponse
+from django.core.urlresolvers import reverse
+from django.shortcuts import render, redirect
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.template import RequestContext
+from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from app.models import *
+import logging
+
+logger = logging.getLogger('django')
+
+def get_unread_notifications(username):
+    user = User.objects.get(username = username)
+    unread_notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
+
+    return unread_notifications
 
 def _add_user_data_to_session(user, request):
     request.session['username'] = user.username
