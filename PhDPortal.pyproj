@@ -563,9 +563,6 @@
     <Content Include="app\templates\app\layouts\referee_top_navbar.html" />
     <Content Include="app\templates\app\layouts\student_sidebar.html" />
     <Content Include="app\templates\app\layouts\student_top_navbar.html" />
-    <Content Include="app\templates\app\other\403.html" />
-    <Content Include="app\templates\app\other\404.html" />
-    <Content Include="app\templates\app\other\500.html" />
     <Content Include="app\templates\app\other\login.html" />
     <Content Include="app\templates\app\referee\edit_profile.html" />
     <Content Include="app\templates\app\referee\help_contacts.html" />

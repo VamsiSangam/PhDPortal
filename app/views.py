@@ -20,6 +20,10 @@ URL_NOT_FOUND = 'not_found'
 URL_INTERNAL_SERVER_ERROR = 'internal_server_error'
 URL_STUDENT_HOME = 'student_home'
 
+def send_notification(sender, receiver, message, link):
+    notification = Notifications(sender = sender, receiver = receiver, message = message, link = link, status = 'U')
+    notification.save()
+
 def validate_request(request):
     if isinstance(request, HttpRequest):
         user = User.objects.get(username = request.session['username'])
@@ -119,6 +123,7 @@ def user_edit_profile(request):
         return render(request, 'app/common/edit_profile.html', {
                 'title':'Notifications',
                 'descriptive_title' : 'All notifications',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
                 'user_details' : user_details
             })
     elif request.method == 'POST':

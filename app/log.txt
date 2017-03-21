@@ -40,3 +40,259 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(template_name, chain=chain)
 django.template.exceptions.TemplateDoesNotExist: app/other/login.html
 2017-03-21 23:50:32 - ERROR - basehttp:log_message:131 - "GET /?next=/student/ HTTP/1.1" 500 84124
+2017-03-21 23:51:42 - INFO - basehttp:log_message:131 - "GET /?next=/student/ HTTP/1.1" 200 2144
+2017-03-22 00:52:23 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 00:52:23 - WARNING - base:get_response:152 - Not Found: /favicon.ico
+2017-03-22 00:52:23 - WARNING - basehttp:log_message:131 - "GET /favicon.ico HTTP/1.1" 404 1671
+2017-03-22 00:52:23 - WARNING - base:get_response:152 - Not Found: /favicon.ico
+2017-03-22 00:52:23 - WARNING - basehttp:log_message:131 - "GET /favicon.ico HTTP/1.1" 404 1671
+2017-03-22 00:52:28 - INFO - views:login:80 - User rit2013063 successfully authenticated
+2017-03-22 00:52:28 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-22 00:52:28 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 9328
+2017-03-22 00:52:40 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 00:52:40 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 200 121200
+2017-03-22 00:52:40 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 200 1458
+2017-03-22 00:52:40 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 200 62584
+2017-03-22 00:52:50 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 302 0
+2017-03-22 00:52:50 - INFO - basehttp:log_message:131 - "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1657
+2017-03-22 00:52:50 - INFO - basehttp:log_message:131 - "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+2017-03-22 00:52:50 - INFO - basehttp:log_message:131 - "GET /static/admin/css/base.css HTTP/1.1" 200 15937
+2017-03-22 00:52:51 - INFO - basehttp:log_message:131 - "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+2017-03-22 00:52:51 - INFO - basehttp:log_message:131 - "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+2017-03-22 00:52:51 - INFO - basehttp:log_message:131 - "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+2017-03-22 00:52:54 - INFO - basehttp:log_message:131 - "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2017-03-22 00:52:54 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9412
+2017-03-22 00:52:54 - INFO - basehttp:log_message:131 - "GET /static/admin/css/dashboard.css HTTP/1.1" 200 434
+2017-03-22 00:52:54 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+2017-03-22 00:52:54 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+2017-03-22 00:52:54 - INFO - basehttp:log_message:131 - "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /admin/app/thesisguides/ HTTP/1.1" 200 4836
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/css/changelists.css HTTP/1.1" 200 6117
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6577
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+2017-03-22 00:52:56 - INFO - basehttp:log_message:131 - "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+2017-03-22 00:52:57 - INFO - basehttp:log_message:131 - "GET /admin/app/thesisguides/1/change/ HTTP/1.1" 200 6821
+2017-03-22 00:52:57 - INFO - basehttp:log_message:131 - "GET /static/admin/css/forms.css HTTP/1.1" 200 7750
+2017-03-22 00:52:57 - INFO - basehttp:log_message:131 - "GET /static/admin/js/change_form.js HTTP/1.1" 200 698
+2017-03-22 00:52:57 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:52:57 - INFO - basehttp:log_message:131 - "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+2017-03-22 00:52:57 - INFO - basehttp:log_message:131 - "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+2017-03-22 00:53:03 - INFO - basehttp:log_message:131 - "GET /admin/app/thesisguides/ HTTP/1.1" 200 4836
+2017-03-22 00:53:03 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:53:07 - INFO - basehttp:log_message:131 - "GET /admin/app/ HTTP/1.1" 200 5082
+2017-03-22 00:53:10 - INFO - basehttp:log_message:131 - "GET /admin/app/user/ HTTP/1.1" 200 5994
+2017-03-22 00:53:10 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:53:16 - INFO - basehttp:log_message:131 - "GET /admin/app/user/add/ HTTP/1.1" 200 6377
+2017-03-22 00:53:16 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:53:42 - INFO - basehttp:log_message:131 - "POST /admin/app/user/add/ HTTP/1.1" 302 0
+2017-03-22 00:53:42 - INFO - basehttp:log_message:131 - "GET /admin/app/user/ HTTP/1.1" 200 6487
+2017-03-22 00:53:42 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:53:43 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+2017-03-22 00:53:44 - INFO - basehttp:log_message:131 - "GET /admin/app/ HTTP/1.1" 200 5082
+2017-03-22 00:53:46 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9342
+2017-03-22 00:53:49 - INFO - basehttp:log_message:131 - "GET /admin/auth/user/ HTTP/1.1" 200 7629
+2017-03-22 00:53:49 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:53:49 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+2017-03-22 00:53:49 - INFO - basehttp:log_message:131 - "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+2017-03-22 00:53:54 - INFO - basehttp:log_message:131 - "GET /admin/auth/user/add/ HTTP/1.1" 200 5166
+2017-03-22 00:53:54 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /admin/auth/user/5/change/ HTTP/1.1" 200 15200
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5755
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/js/calendar.js HTTP/1.1" 200 7790
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12389
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20529
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+2017-03-22 00:54:06 - INFO - basehttp:log_message:131 - "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+2017-03-22 00:54:08 - INFO - basehttp:log_message:131 - "GET /admin/ HTTP/1.1" 200 9313
+2017-03-22 00:54:11 - INFO - basehttp:log_message:131 - "GET /admin/app/thesisguides/ HTTP/1.1" 200 4836
+2017-03-22 00:54:11 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:54:13 - INFO - basehttp:log_message:131 - "GET /admin/app/thesisguides/add/ HTTP/1.1" 200 6636
+2017-03-22 00:54:13 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:54:19 - INFO - basehttp:log_message:131 - "POST /admin/app/thesisguides/add/ HTTP/1.1" 302 0
+2017-03-22 00:54:19 - INFO - basehttp:log_message:131 - "GET /admin/app/thesisguides/ HTTP/1.1" 200 5340
+2017-03-22 00:54:19 - INFO - basehttp:log_message:131 - "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+2017-03-22 00:54:24 - INFO - basehttp:log_message:131 - "GET /admin/logout/ HTTP/1.1" 200 1014
+2017-03-22 00:54:28 - INFO - basehttp:log_message:131 - "GET /student/abstract/ HTTP/1.1" 200 11176
+2017-03-22 00:54:33 - ERROR - exception:handle_uncaught_exception:132 - Internal Server Error: /student/abstract/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = get_response(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 50, in student_add_abstract
+    send_notification_to_guides(request.session['username'], notification_message)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 26, in send_notification_to_guides
+    send_notification(user, guide, message, '')
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 24, in send_notification
+    notification = Notifications(sender = sender, receiver = receiver, message = message, link = link)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\base.py", line 537, in __init__
+    setattr(self, field.name, rel_obj)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 211, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<ThesisGuides: Pavan Chakraborthy>": "Notifications.receiver" must be a "User" instance.
+2017-03-22 00:54:33 - ERROR - basehttp:log_message:131 - "POST /student/abstract/ HTTP/1.1" 500 94925
+2017-03-22 00:56:48 - INFO - basehttp:log_message:131 - "GET /student/abstract/ HTTP/1.1" 200 11195
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /student/abstract/ HTTP/1.1" 200 11195
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/js/nprogress.js HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/js/fastclick.js HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/js/bootstrap.min.js HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/js/jquery.min.js HTTP/1.1" 304 0
+2017-03-22 00:56:49 - INFO - basehttp:log_message:131 - "GET /static/app/js/custom.min.js HTTP/1.1" 304 0
+2017-03-22 00:56:50 - INFO - basehttp:log_message:131 - "GET /static/app/images/img.jpg HTTP/1.1" 304 0
+2017-03-22 00:56:53 - INFO - basehttp:log_message:131 - "POST /student/abstract/ HTTP/1.1" 302 0
+2017-03-22 00:56:53 - INFO - basehttp:log_message:131 - "GET /student/abstract/ HTTP/1.1" 200 11210
+2017-03-22 00:56:55 - INFO - basehttp:log_message:131 - "GET /student/synopsis/upload/ HTTP/1.1" 200 13514
+2017-03-22 00:56:58 - INFO - basehttp:log_message:131 - "POST /student/synopsis/upload/ HTTP/1.1" 302 0
+2017-03-22 00:56:58 - INFO - basehttp:log_message:131 - "GET /student/synopsis/view/ HTTP/1.1" 200 10209
+2017-03-22 00:56:59 - INFO - basehttp:log_message:131 - "GET /static/Synopsis/DIC_rd_theory_quantization_07.pdf HTTP/1.1" 200 1673117
+2017-03-22 00:57:01 - INFO - basehttp:log_message:131 - "GET /student/thesis/upload/ HTTP/1.1" 200 13053
+2017-03-22 00:57:05 - INFO - basehttp:log_message:131 - "POST /student/thesis/upload/ HTTP/1.1" 302 0
+2017-03-22 00:57:05 - INFO - basehttp:log_message:131 - "GET /student/thesis/view/ HTTP/1.1" 200 10306
+2017-03-22 00:57:05 - INFO - basehttp:log_message:131 - "GET /static/Thesis/149.conjunctionschart.pdf HTTP/1.1" 200 190404
+2017-03-22 00:57:10 - INFO - views:logout:106 - User rit2013063 successfully logged out
+2017-03-22 00:57:10 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-22 00:57:10 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 00:57:14 - INFO - views:login:80 - User pavan successfully authenticated
+2017-03-22 00:57:14 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-22 00:57:14 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 8337
+2017-03-22 00:57:16 - INFO - basehttp:log_message:131 - "GET /user/notifications/ HTTP/1.1" 200 12267
+2017-03-22 00:58:24 - INFO - views:logout:106 - User pavan successfully logged out
+2017-03-22 00:58:29 - ERROR - exception:handle_uncaught_exception:132 - Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = get_response(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 107, in logout
+    auth.logout(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\__init__.py", line 148, in logout
+    request.session.flush()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\sessions\backends\base.py", line 302, in flush
+    self.delete()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\sessions\backends\db.py", line 103, in delete
+    self.model.objects.get(session_key=session_key).delete()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\base.py", line 958, in delete
+    return collector.delete()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\deletion.py", line 306, in delete
+    count = query.delete_batch(pk_list, self.using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\subqueries.py", line 46, in delete_batch
+    num_deleted += self.do_query(self.get_meta().db_table, self.where, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\subqueries.py", line 28, in do_query
+    cursor = self.get_compiler(using).execute_sql(CURSOR)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: database is locked
+2017-03-22 00:58:30 - ERROR - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 500 140456
+2017-03-22 00:58:41 - INFO - views:logout:106 - User pavan successfully logged out
+2017-03-22 00:58:41 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-22 00:58:41 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 00:58:41 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-22 00:58:41 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-22 00:58:41 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-22 00:58:50 - INFO - views:login:80 - User rit2013063 successfully authenticated
+2017-03-22 00:58:50 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-22 00:58:50 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 9328
+2017-03-22 00:58:52 - INFO - basehttp:log_message:131 - "GET /user/notifications/ HTTP/1.1" 200 16313
+2017-03-22 00:58:53 - INFO - basehttp:log_message:131 - "GET /user/edit_profile/ HTTP/1.1" 200 11680
+2017-03-22 00:58:57 - INFO - basehttp:log_message:131 - "GET /user/notifications/ HTTP/1.1" 200 16313
+2017-03-22 00:58:58 - INFO - basehttp:log_message:131 - "GET /user/notifications/ HTTP/1.1" 200 16313
+2017-03-22 00:58:59 - INFO - basehttp:log_message:131 - "GET /user/edit_profile/ HTTP/1.1" 200 11680
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /user/edit_profile/ HTTP/1.1" 200 12830
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/js/jquery.min.js HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/js/bootstrap.min.js HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/js/fastclick.js HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/js/nprogress.js HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/js/custom.min.js HTTP/1.1" 304 0
+2017-03-22 01:00:25 - INFO - basehttp:log_message:131 - "GET /static/app/images/img.jpg HTTP/1.1" 304 0
+2017-03-22 01:00:29 - INFO - basehttp:log_message:131 - "GET /student/abstract/ HTTP/1.1" 200 11210
+2017-03-22 01:00:32 - INFO - basehttp:log_message:131 - "POST /student/abstract/ HTTP/1.1" 302 0
+2017-03-22 01:00:33 - INFO - basehttp:log_message:131 - "GET /student/abstract/ HTTP/1.1" 200 11222
+2017-03-22 01:00:34 - INFO - basehttp:log_message:131 - "GET /student/synopsis/upload/ HTTP/1.1" 200 13514
+2017-03-22 01:00:37 - INFO - basehttp:log_message:131 - "POST /student/synopsis/upload/ HTTP/1.1" 302 0
+2017-03-22 01:00:37 - INFO - basehttp:log_message:131 - "GET /student/synopsis/view/ HTTP/1.1" 200 10215
+2017-03-22 01:00:37 - INFO - basehttp:log_message:131 - "GET /static/Synopsis/srs_example_2010_group2_VVob3Mh.pdf HTTP/1.1" 200 2370740
+2017-03-22 01:00:40 - INFO - basehttp:log_message:131 - "GET /student/thesis/upload/ HTTP/1.1" 200 13053
+2017-03-22 01:00:43 - INFO - basehttp:log_message:131 - "POST /student/thesis/upload/ HTTP/1.1" 302 0
+2017-03-22 01:00:43 - WARNING - basehttp:log_message:131 - "GET /400/ HTTP/1.1" 400 1690
+2017-03-22 01:00:45 - INFO - basehttp:log_message:131 - "GET /student/thesis/upload/ HTTP/1.1" 200 13053
+2017-03-22 01:00:50 - INFO - basehttp:log_message:131 - "POST /student/thesis/upload/ HTTP/1.1" 302 0
+2017-03-22 01:00:50 - INFO - basehttp:log_message:131 - "GET /student/thesis/view/ HTTP/1.1" 200 10330
+2017-03-22 01:00:50 - INFO - basehttp:log_message:131 - "GET /static/Thesis/149.conjunctionschart_gqMMTgz.pdf HTTP/1.1" 200 190404
+2017-03-22 01:00:54 - INFO - basehttp:log_message:131 - "GET /student/keywords/ HTTP/1.1" 200 14754
+2017-03-22 01:00:54 - INFO - basehttp:log_message:131 - "GET /static/app/css/add_keywords.css HTTP/1.1" 304 0
+2017-03-22 01:00:54 - INFO - basehttp:log_message:131 - "POST /student/keywords/get/ HTTP/1.1" 200 3587
+2017-03-22 01:00:56 - INFO - basehttp:log_message:131 - "POST /student/keywords/get/ HTTP/1.1" 200 1038
+2017-03-22 01:00:58 - INFO - basehttp:log_message:131 - "POST /student/keywords/get/ HTTP/1.1" 200 298
+2017-03-22 01:01:01 - INFO - basehttp:log_message:131 - "POST /student/keywords/add/ HTTP/1.1" 302 0
+2017-03-22 01:01:01 - INFO - basehttp:log_message:131 - "GET /student/keywords/ HTTP/1.1" 200 15591
+2017-03-22 01:01:02 - INFO - basehttp:log_message:131 - "POST /student/keywords/get/ HTTP/1.1" 200 3587
+2017-03-22 01:01:04 - INFO - views:logout:106 - User rit2013063 successfully logged out
+2017-03-22 01:01:04 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-22 01:01:04 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 01:01:11 - INFO - views:login:80 - User pavan successfully authenticated
+2017-03-22 01:01:11 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-22 01:01:11 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 10961
+2017-03-22 01:02:53 - INFO - views:logout:106 - User pavan successfully logged out
+2017-03-22 01:02:53 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-22 01:02:53 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 01:03:11 - INFO - views:login:80 - User rahul successfully authenticated
+2017-03-22 01:03:11 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-22 01:03:11 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 10937
+2017-03-22 01:03:16 - INFO - basehttp:log_message:131 - "GET /user/notifications/ HTTP/1.1" 200 20053
+2017-03-22 01:03:39 - INFO - views:logout:106 - User rahul successfully logged out
+2017-03-22 01:03:39 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-22 01:03:39 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144
+2017-03-22 01:03:43 - INFO - views:login:80 - User pavan successfully authenticated
+2017-03-22 01:03:43 - INFO - basehttp:log_message:131 - "POST / HTTP/1.1" 302 0
+2017-03-22 01:03:43 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 200 10961
+2017-03-22 01:03:51 - INFO - views:logout:106 - User pavan successfully logged out
+2017-03-22 01:03:51 - INFO - basehttp:log_message:131 - "GET /logout/ HTTP/1.1" 302 0
+2017-03-22 01:03:51 - INFO - basehttp:log_message:131 - "GET / HTTP/1.1" 200 2144

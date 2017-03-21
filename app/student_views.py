@@ -18,6 +18,14 @@ def student_home(request):
         }
     )
 
+def send_notification_to_guides(username, message):
+    user = User.objects.get(username = username)
+    thesis = Thesis.objects.get(username = user)
+
+    for guide in ThesisGuides.objects.filter(thesis_id = thesis):
+        receiver = User.objects.get(username = guide.guide_username.username)
+        send_notification(user, receiver, message, '')
+
 @login_required
 def student_add_abstract(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
@@ -37,6 +45,11 @@ def student_add_abstract(request):
         abstract = request.POST['abstract']
         thesis.abstract = abstract
         thesis.save()
+
+        notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD abstract '
+        notification_message += 'for the PhD titled "' + thesis.title + '"'
+        send_notification_to_guides(request.session['username'], notification_message)
+        
 
         return redirect(reverse(URL_STUDENT_ADD_ABSTRACT))
     else:
@@ -70,6 +83,10 @@ def student_upload_synopsis(request):
         if form.is_valid() and validate_pdf(request.FILES['synopsis']):
             thesis.synopsis = request.FILES['synopsis']
             thesis.save()
+
+            notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD synopsis '
+            notification_message += 'for the PhD titled "' + thesis.title + '"'
+            send_notification_to_guides(request.session['username'], notification_message)
  
             return redirect(reverse('student_view_synopsis'))
         else:
@@ -127,6 +144,10 @@ def student_upload_thesis(request):
         if form.is_valid() and validate_pdf(request.FILES['thesis']):    
             thesis.thesis = request.FILES['thesis']
             thesis.save()
+
+            notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD thesis document '
+            notification_message += 'for the PhD titled "' + thesis.title + '"'
+            send_notification_to_guides(request.session['username'], notification_message)
  
             return redirect(reverse(URL_STUDENT_VIEW_THESIS))
         else:
@@ -281,9 +302,6 @@ def student_add_keyword_to_thesis(request):
         user = User.objects.get(username = request.session['username'])
         keyword = IEEEKeywords.objects.get(id = int(request.POST['id']))
         thesis = Thesis.objects.get(username = user)
-        
-        print('keyword - ' + keyword.keyword)
-        print('thesis - ' + thesis.title)
 
         if thesis is not None:
             print('thesis is not none')
@@ -294,6 +312,10 @@ def student_add_keyword_to_thesis(request):
                 print('thesis_keyword is none')
                 thesis_keyword = ThesisKeywords(thesis_id = thesis, keyword_id = keyword)
                 thesis_keyword.save()
+
+                notification_message = 'Student ' + request.session['full_name'] + ' has added the keyword ' + keyword.keyword
+                notification_message += ' for the PhD titled "' + thesis.title + '"'
+                send_notification_to_guides(request.session['username'], notification_message)
 
                 return redirect(reverse(URL_STUDENT_ADD_KEYWORDS))
         else:

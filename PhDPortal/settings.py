@@ -156,3 +156,17 @@ LOGGING = {
 # File Upload paths
 MEDIA_ROOT = os.path.join(BASE_DIR, 'app/static/')
 MEDIA_URL = '/app/static/'
+
+
+
+
+#Email Settings
+#For email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'akshaych974@gmail.com'
+#Must generate specific password for your app in gmail settings
+EMAIL_HOST_PASSWORD = 'hasanparthy'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'IIITA Application Portal <' + EMAIL_HOST_USER + '>'
