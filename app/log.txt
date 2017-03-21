@@ -1,0 +1,3 @@
+2017-03-21 23:49:01 - INFO - basehttp:log_message:131 - "GET /student/ HTTP/1.1" 200 9328
+2017-03-21 23:49:06 - INFO - basehttp:log_message:131 - "GET /guide/ HTTP/1.1" 302 0
+2017-03-21 23:49:06 - WARNING - basehttp:log_message:131 - "GET /403/ HTTP/1.1" 403 1631
