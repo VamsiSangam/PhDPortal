@@ -2,7 +2,7 @@
 Definition of views.
 """
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib import auth
@@ -13,9 +13,31 @@ import logging, json
 logger = logging.getLogger('django')
 CONTENT_TYPE_PDF = 'application/pdf'
 MAX_SIZE_PDF = 5 * 1024 * 1024   # in bytes (currently 5 MB)
-URL_UNAUTHORISED_ACCESS = 'unauthorized_access'
-URL_RESOURCE_NOT_FOUND = 'resource_not_found'
+URL_BAD_REQUEST = 'bad_request'
+URL_UNAUTHORIZED_ACCESS = 'unauthorized_access'
+URL_FORBIDDEN = 'forbidden'
+URL_NOT_FOUND = 'not_found'
+URL_INTERNAL_SERVER_ERROR = 'internal_server_error'
+URL_STUDENT_HOME = 'student_home'
 
+def validate_request(request):
+    if isinstance(request, HttpRequest):
+        user = User.objects.get(username = request.session['username'])
+        type = user.type
+        path = request.path
+
+        if type == "S" and not (path.startswith('/user') or path.startswith('/student')):
+            return False
+        elif type == "G" and not (path.startswith('/user') or path.startswith('/guide')):
+            return False
+        elif type == "D" and not (path.startswith('/user') or path.startswith('/director')):
+            return False
+        elif type == "R" and not (path.startswith('/user') or path.startswith('/referee')):
+            return False
+        return True
+    else:
+        return False
+        
 def validate_pdf(file_dict):
     if file_dict.name.endswith('.pdf'):
         if file_dict.content_type == CONTENT_TYPE_PDF:
@@ -89,7 +111,7 @@ def _get_notifications_for_user(username):
 
 @login_required
 def user_edit_profile(request):
-    assert isinstance(request, HttpRequest)
+    validate_request(request)
     
     if request.method == 'GET':
         user_details = User.objects.get(username = request.session['username'])
@@ -119,7 +141,7 @@ def user_edit_profile(request):
 
 @login_required
 def user_notifications(request):
-    assert isinstance(request, HttpRequest)
+    validate_request(request)
 
     notifications = _get_notifications_for_user(request.session['username'])
     read_notifications = notifications.filter(status = 'R')
@@ -143,7 +165,7 @@ def _verify_user_notification(username, id):
 
 @login_required
 def delete_user_notification(request, id):
-    assert isinstance(request, HttpRequest)
+    validate_request(request)
 
     if request.method == "POST" and _verify_user_notification(request.session['username'], id):
         notification = Notifications.objects.get(id = id)
@@ -155,6 +177,8 @@ def delete_user_notification(request, id):
 
 @login_required
 def delete_all_unread_notifications(request):
+    validate_request(request)
+    
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
         notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
@@ -166,6 +190,8 @@ def delete_all_unread_notifications(request):
 
 @login_required
 def delete_all_read_notifications(request):
+    validate_request(request)
+
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
         notifications = Notifications.objects.filter(receiver = user).filter(status = 'R')
@@ -177,6 +203,8 @@ def delete_all_read_notifications(request):
 
 @login_required
 def mark_all_notifications_read(request):
+    validate_request(request)
+
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
         notifications = Notifications.objects.filter(receiver = user).filter(status = 'U')
@@ -191,7 +219,7 @@ def mark_all_notifications_read(request):
 
 @login_required
 def mark_notification_read(request, id):
-    assert isinstance(request, HttpRequest)
+    validate_request(request)
 
     if request.method == "POST" and _verify_user_notification(request.session['username'], id):
         notification = Notifications.objects.get(id = id)
@@ -202,24 +230,82 @@ def mark_notification_read(request, id):
     else:
         return redirect(reverse('unauthorized_access'))
 
-def resource_not_found(request):
+def bad_request(request):
     assert isinstance(request, HttpRequest)
 
-    return render(
-        request,
-        'app/other/404.html',
+    response = render_to_response(
+        'app/layouts/error.html',
         {
-            'title':'Resource not found'
+            'title':'Bad Request',
+            'status_code' : 400,
+            'message' : 'The request cannot be fulfilled due to conflicting data/validation or was leading to invalid state.',
         }
     )
+
+    response.status_code = 400
+
+    return response
+
+def not_found(request):
+    assert isinstance(request, HttpRequest)
+
+    response = render_to_response(
+        'app/layouts/error.html',
+        {
+            'title':'Not found',
+            'status_code' : 404,
+            'message' : 'The resource you accessed doesn\'t exist or may have been moved to a new location',
+        }
+    )
+
+    response.status_code = 404
+
+    return response
 
 def unauthorized_access(request):
     assert isinstance(request, HttpRequest)
 
-    return render(
-        request,
-        'app/other/403.html',
+    response = render_to_response(
+        'app/layouts/error.html',
         {
-            'title':'Resource not found'
+            'title':'Unauthorised Access',
+            'status_code' : 401,
+            'message' : 'You need to log in with proper credentials to access this resource.',
         }
     )
+
+    response.status_code = 401
+
+    return response
+
+def forbidden(request):
+    assert isinstance(request, HttpRequest)
+
+    response = render_to_response(
+        'app/layouts/error.html',
+        {
+            'title':'Forbidden',
+            'status_code' : 403,
+            'message' : 'You are not allowed to access this resource.',
+        }
+    )
+
+    response.status_code = 403
+
+    return response
+
+def internal_server_error(request):
+    assert isinstance(request, HttpRequest)
+
+    response = render_to_response(
+        'app/layouts/error.html',
+        {
+            'title':'Internal Server Error',
+            'status_code' : 500,
+            'message' : 'The server encountered a problem. The issue has been logged. Please try again later.',
+        }
+    )
+
+    response.status_code = 500
+
+    return response

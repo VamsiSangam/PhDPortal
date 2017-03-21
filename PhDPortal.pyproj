@@ -555,6 +555,7 @@
     <Content Include="app\templates\app\guide\view_student_info.html" />
     <Content Include="app\templates\app\layouts\director_sidebar.html" />
     <Content Include="app\templates\app\layouts\director_top_navbar.html" />
+    <Content Include="app\templates\app\layouts\error.html" />
     <Content Include="app\templates\app\layouts\guide_sidebar.html" />
     <Content Include="app\templates\app\layouts\guide_top_navbar.html" />
     <Content Include="app\templates\app\layouts\home.html" />
@@ -579,6 +580,7 @@
     <Content Include="app\templates\app\student\help_contacts.html" />
     <Content Include="app\templates\app\student\home.html" />
     <Content Include="app\templates\app\common\notifications.html" />
+    <Content Include="app\templates\app\student\phd_abstract.html" />
     <Content Include="app\templates\app\student\phd_status.html" />
     <Content Include="app\templates\app\student\procedure.html" />
     <Content Include="app\templates\app\student\upload_synopsis.html" />

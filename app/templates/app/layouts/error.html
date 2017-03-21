@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Unauthorized Access | PhD Portal | IIITA</title>
+    <title>{{ title }} | PhD Portal | IIITA</title>
     {% load staticfiles %}
     <!-- Bootstrap -->
     <link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -22,9 +22,9 @@
           <div class="col-middle">
             <br /><br />
             <div class="text-center text-center">
-              <h1 class="error-number">403</h1>
-              <h1>Access denied</h1>
-              <h4>Full authentication is required to access this resource.</h4>
+              <h1 class="error-number">{{ status_code }}</h1>
+              <h1>{{ title }}</h1>
+              <h4>{{ message }}</h4>
               <br />
               <a class="btn btn-primary btn-lg" id="back"><i class="fa fa-long-arrow-left"></i> &nbsp; Go back</a>
             </div>

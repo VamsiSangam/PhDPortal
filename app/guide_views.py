@@ -2,9 +2,7 @@ from app.views import *
 
 @login_required
 def guide_home(request):
-    assert isinstance(request, HttpRequest)
-
-    unread_notifications = get_unread_notifications(request.session['username'])
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -12,13 +10,13 @@ def guide_home(request):
         {
             'title':'Home Page',
             'descriptive_title' : 'Welcome ' + request.session['full_name'] + ' !',
-            'unread_notifications' : unread_notifications,
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_edit_profile(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -26,12 +24,13 @@ def guide_edit_profile(request):
         {
             'title':'Edit Profile',
             'descriptive_title' : 'Edit your profile',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_view_student_info(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -39,12 +38,13 @@ def guide_view_student_info(request):
         {
             'title':'Student Info',
             'descriptive_title' : 'View information about PhD students',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_unevaulated_synopsis(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -52,12 +52,13 @@ def guide_unevaulated_synopsis(request):
         {
             'title':'Unevaluated Synopsis',
             'descriptive_title' : 'View unevaluated synopsis sumitted by students',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_archived_synopsis(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -65,25 +66,26 @@ def guide_archived_synopsis(request):
         {
             'title':'Archived Synopsis',
             'descriptive_title' : 'View synopsis which were approved',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_unevaluated_thesis(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
         'app/guide/unevaluated_thesis.html',
         {
             'title':'Unevaluated Thesis',
-            'descriptive_title' : 'View unevaluated thesis sumitted by students',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_archived_thesis(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -91,12 +93,13 @@ def guide_archived_thesis(request):
         {
             'title':'Archived Thesis',
             'descriptive_title' : 'View thesis which were completely approved',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_phd_status(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -104,12 +107,13 @@ def guide_phd_status(request):
         {
             'title':'PhD Status',
             'descriptive_title' : 'View the status of ongoing PhDs',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_help_procedure(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -117,12 +121,13 @@ def guide_help_procedure(request):
         {
             'title':'Procedure',
             'descriptive_title' : 'PhD Evaluation Procedure',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )
 
 @login_required
 def guide_help_contacts(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -130,5 +135,6 @@ def guide_help_contacts(request):
         {
             'title':'Help Contacts',
             'descriptive_title' : 'Contacts for critical issues',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
         }
     )

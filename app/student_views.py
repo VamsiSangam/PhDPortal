@@ -1,10 +1,12 @@
 from app.views import *
 
+URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
+URL_STUDENT_VIEW_THESIS = 'student_view_thesis'
+URL_STUDENT_ADD_KEYWORDS = 'student_add_keywords'
+
 @login_required
 def student_home(request):
-    assert isinstance(request, HttpRequest)
-    
-    unread_notifications = get_unread_notifications(request.session['username'])
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     return render(
         request,
@@ -12,15 +14,17 @@ def student_home(request):
         {
             'title':'Home Page',
             'descriptive_title' : 'Welcome ' + request.session['first_name'] + ' !',
-            'unread_notifications' : unread_notifications,
+            'unread_notifications' : get_unread_notifications(request.session['username']),
         }
     )
 
 @login_required
 def student_add_abstract(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = User.objects.get(username = request.session['username'])
+    thesis = Thesis.objects.get(username = user)
+
     if request.method == "GET":
-        user = User.objects.get(username = request.session['username'])
-        thesis = Thesis.objects.get(username = user)
         abstract = thesis.abstract
 
         return render(request, 'app/student/phd_abstract.html', {
@@ -31,32 +35,20 @@ def student_add_abstract(request):
         })
     elif request.method == "POST":
         abstract = request.POST['abstract']
-        user = User.objects.get(username = request.session['username'])
-        thesis = Thesis.objects.get(username = user)
         thesis.abstract = abstract
         thesis.save()
 
-        return redirect(reverse('student_add_abstract'))
+        return redirect(reverse(URL_STUDENT_ADD_ABSTRACT))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_upload_synopsis(request):
-    assert isinstance(request, HttpRequest)
-    
-    if request.method == 'POST':
-        form = SynopsisForm(request.POST, request.FILES)
-        
-        if form.is_valid() and validate_pdf(request.FILES['synopsis']):
-            user = User.objects.get(username = request.session['username'])
-            thesis = Thesis.objects.get(username = user)
-            thesis.synopsis = request.FILES['synopsis']
-            thesis.save()
- 
-            return redirect(reverse('student_view_synopsis'))
-        else:
-            return redirect(reverse('unauthorized_access'))
-    else:
-        user = User.objects.get(username = request.session['username'])
-        thesis = Thesis.objects.get(username = user)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = User.objects.get(username = request.session['username'])
+    thesis = Thesis.objects.get(username = user)
+
+    if request.method == 'GET':
         synopsisExists = False
 
         if thesis.synopsis is not None:
@@ -72,36 +64,51 @@ def student_upload_synopsis(request):
                 'synopsisExists' : synopsisExists 
             }
         )
+    elif request.method == "POST":
+        form = SynopsisForm(request.POST, request.FILES)
+        
+        if form.is_valid() and validate_pdf(request.FILES['synopsis']):
+            thesis.synopsis = request.FILES['synopsis']
+            thesis.save()
+ 
+            return redirect(reverse('student_view_synopsis'))
+        else:
+            return redirect(reverse(URL_BAD_REQUEST))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_view_synopsis(request):
-    assert isinstance(request, HttpRequest)
-
-    user = User.objects.get(username = request.session['username'])
-    thesis = Thesis.objects.get(username = user)
-    synopsisPath = None
-
-    if thesis.synopsis is not None:
-        synopsisPath = thesis.synopsis
-
-    return render(
-        request,
-        'app/student/view_synopsis.html',
-        {
-            'title':'View Synopsis',
-            'descriptive_title' : 'View your submitted synopsis',
-            'unread_notifications' : get_unread_notifications(request.session['username']),
-            'synopsisPath' : synopsisPath
-        }
-    )
-
-@login_required
-def student_upload_thesis(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     if request.method == "GET":
         user = User.objects.get(username = request.session['username'])
         thesis = Thesis.objects.get(username = user)
+        synopsisPath = None
+
+        if thesis.synopsis is not None:
+            synopsisPath = thesis.synopsis
+
+        return render(
+            request,
+            'app/student/view_synopsis.html',
+            {
+                'title':'View Synopsis',
+                'descriptive_title' : 'View your submitted synopsis',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+                'synopsisPath' : synopsisPath
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def student_upload_thesis(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = User.objects.get(username = request.session['username'])
+    thesis = Thesis.objects.get(username = user)
+
+    if request.method == "GET":
         thesisExists = thesis.thesis is None
 
         return render(
@@ -117,57 +124,60 @@ def student_upload_thesis(request):
     elif request.method == "POST":
         form = ThesisForm(request.POST, request.FILES)
         
-        if form.is_valid() and validate_pdf(request.FILES['thesis']):
-            user = User.objects.get(username = request.session['username'])
-            thesis = Thesis.objects.get(username = user)
+        if form.is_valid() and validate_pdf(request.FILES['thesis']):    
             thesis.thesis = request.FILES['thesis']
             thesis.save()
  
-            return redirect(reverse('student_view_thesis'))
+            return redirect(reverse(URL_STUDENT_VIEW_THESIS))
         else:
-            return redirect(reverse('unauthorized_access'))
+            return redirect(reverse(URL_BAD_REQUEST))
     else:
-        return redirect(reverse(URL_UNAUTHORISED_ACCESS))
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_view_thesis(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    user = User.objects.get(username = request.session['username'])
-    thesis = Thesis.objects.get(username = user)
-    thesisPath = thesis.thesis
+    if request.method == "GET":
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        thesisPath = thesis.thesis
 
-    return render(
-        request,
-        'app/student/view_thesis.html',
-        {
-            'title':'View Thesis',
-            'descriptive_title' : 'View you submitted PhD thesis',
-            'unread_notifications' : get_unread_notifications(request.session['username']),
-            'thesisPath' : thesisPath
-        }
-    )
+        return render(
+            request,
+            'app/student/view_thesis.html',
+            {
+                'title':'View Thesis',
+                'descriptive_title' : 'View you submitted PhD thesis',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+                'thesisPath' : thesisPath
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_add_keywords(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    user = User.objects.get(username = request.session['username'])
-    
-    # assumes that there will only be 1 phd thesis per user
-    thesis = Thesis.objects.get(username = user)
-    thesis_keywords = ThesisKeywords.objects.filter(thesis_id = thesis)
+    if request.method == "GET":
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        thesis_keywords = ThesisKeywords.objects.filter(thesis_id = thesis)
 
-    return render(
-        request,
-        'app/student/add_keywords.html',
-        {
-            'title':'Add Keywords',
-            'descriptive_title' : 'Add keywords to your PhD thesis',
-            'thesis' : thesis,
-            'thesis_keywords' : thesis_keywords,
-        }
-    )
+        return render(
+            request,
+            'app/student/add_keywords.html',
+            {
+                'title':'Add Keywords',
+                'descriptive_title' : 'Add keywords to your PhD thesis',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+                'thesis' : thesis,
+                'thesis_keywords' : thesis_keywords,
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 def _validate_keyword(id, username):
     thesis_keyword = ThesisKeywords.objects.get(id = id)
@@ -180,14 +190,18 @@ def _validate_keyword(id, username):
 
 @login_required
 def student_delete_keyword(request, id):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
     if request.method == "POST":
         if _validate_keyword(id, request.session['username']):
             thesis_keyword = ThesisKeywords.objects.get(id = id)
             thesis_keyword.delete()
 
-            return redirect(reverse('student_add_keywords'))
-    
-    return redirect(reverse('unauthorized_access'))
+            return redirect(reverse(URL_STUDENT_ADD_KEYWORDS))
+        else:
+            return redirect(reverse(URL_FORBIDDEN))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 def _ieee_keywords_to_list(keywords):
     list = []
@@ -209,6 +223,8 @@ def _ieee_keywords_to_list(keywords):
 
 @login_required
 def get_ieee_keywords(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
     if request.method == "POST":
         parent_id = int(request.POST['parent_id'])
         keywords = None
@@ -239,9 +255,13 @@ def get_ieee_keywords(request):
             result.append(dict)
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def get_ieee_keywords_parent(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
     if (request.method == "POST"):
         keyword = IEEEKeywords.objects.get(id = request.POST['parent_id'])
         id = keyword.parent_id.id
@@ -250,11 +270,13 @@ def get_ieee_keywords_parent(request):
             id = -1
 
         return HttpResponse(id, content_type = 'text/plain')
-    
-    return redirect(reverse('unauthorized_access'))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_add_keyword_to_thesis(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
     if request.method == "POST":
         user = User.objects.get(username = request.session['username'])
         keyword = IEEEKeywords.objects.get(id = int(request.POST['id']))
@@ -273,45 +295,59 @@ def student_add_keyword_to_thesis(request):
                 thesis_keyword = ThesisKeywords(thesis_id = thesis, keyword_id = keyword)
                 thesis_keyword.save()
 
-                return redirect(reverse('student_add_keywords'))
-
-        return redirect(reverse('unauthorized_access'))
+                return redirect(reverse(URL_STUDENT_ADD_KEYWORDS))
+        else:
+            return redirect(reverse(URL_FORBIDDEN))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_phd_status(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    return render(
-        request,
-        'app/student/phd_status.html',
-        {
-            'title':'PhD Thesis Submission Status',
-            'descriptive_title' : 'PhD Thesis Submission Status',
-        }
-    )
+    if request.method == "GET":
+        return render(
+            request,
+            'app/student/phd_status.html',
+            {
+                'title':'PhD Thesis Submission Status',
+                'descriptive_title' : 'PhD Thesis Submission Status',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_help_procedure(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    return render(
-        request,
-        'app/student/procedure.html',
-        {
-            'title':'Procedure',
-            'descriptive_title' : 'Having doubts about the submission procedure?',
-        }
-    )
+    if request.method == "GET":
+        return render(
+            request,
+            'app/student/procedure.html',
+            {
+                'title':'Procedure',
+                'descriptive_title' : 'Having doubts about the submission procedure?',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def student_help_contacts(request):
-    assert isinstance(request, HttpRequest)
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    return render(
-        request,
-        'app/student/help_contacts.html',
-        {
-            'title':'Help Contacts',
-            'descriptive_title' : 'Contacts for critical issues',
-        }
-    )
+    if request.method == "GET":
+        return render(
+            request,
+            'app/student/help_contacts.html',
+            {
+                'title':'Help Contacts',
+                'descriptive_title' : 'Contacts for critical issues',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))

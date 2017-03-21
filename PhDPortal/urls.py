@@ -20,13 +20,13 @@ urlpatterns = [
     # common urls
     url(r'^$', app.views.login, name='login'),
     url(r'^logout/$', app.views.logout, name='logout'),
-    url(r'^notifications/$', app.views.user_notifications, name='user_notifications'),
-    url(r'^notifications/delete/(?P<id>\d+)$', app.views.delete_user_notification, name='delete_user_notification'),
-    url(r'^notifications/delete/read/$', app.views.delete_all_read_notifications, name='delete_all_read_notifications'),
-    url(r'^notifications/delete/unread/$', app.views.delete_all_unread_notifications, name='delete_all_unread_notifications'),
-    url(r'^notifications/markread/all/$', app.views.mark_all_notifications_read, name='mark_all_notifications_read'),
-    url(r'^notifications/markread/(?P<id>\d+)$', app.views.mark_notification_read, name='mark_notification_read'),
-    url(r'^edit_profile/$', app.views.user_edit_profile, name='user_edit_profile'),
+    url(r'^user/notifications/$', app.views.user_notifications, name='user_notifications'),
+    url(r'^user/notifications/delete/(?P<id>\d+)$', app.views.delete_user_notification, name='delete_user_notification'),
+    url(r'^user/notifications/delete/read/$', app.views.delete_all_read_notifications, name='delete_all_read_notifications'),
+    url(r'^user/notifications/delete/unread/$', app.views.delete_all_unread_notifications, name='delete_all_unread_notifications'),
+    url(r'^user/notifications/markread/all/$', app.views.mark_all_notifications_read, name='mark_all_notifications_read'),
+    url(r'^user/notifications/markread/(?P<id>\d+)$', app.views.mark_notification_read, name='mark_notification_read'),
+    url(r'^user/edit_profile/$', app.views.user_edit_profile, name='user_edit_profile'),
 
     # student urls
     url(r'^student/$', app.student_views.student_home, name='student_home'),
@@ -77,9 +77,12 @@ urlpatterns = [
     url(r'^referee/help/contacts/$', app.referee_views.referee_help_contacts, name='referee_help_contacts'),
 
     # other
-    url(r'^404/$', app.views.resource_not_found, name='resource_not_found'),
-    url(r'^403/$', app.views.unauthorized_access, name='unauthorized_access'),
-    url(r'[a-zA-Z0-9]*', app.views.resource_not_found, name='resource_not_found'),
+    url(r'^400/$', app.views.bad_request, name='bad_request'),
+    url(r'^401/$', app.views.unauthorized_access, name='unauthorized_access'),
+    url(r'^403/$', app.views.forbidden, name='forbidden'),
+    url(r'^404/$', app.views.not_found, name='not_found'),    
+    url(r'^500/$', app.views.internal_server_error, name='internal_server_error'),
+    url(r'[a-zA-Z0-9]*', app.views.not_found),
     ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
