@@ -49,6 +49,7 @@ class Thesis(models.Model):
     title = models.CharField(max_length = 150, null = False)
     abstract = models.TextField(max_length = 500, null = True)
     synopsis = models.FileField(upload_to = 'Synopsis', null = True)
+    thesis = models.FileField(upload_to = 'Thesis', null = True)
     status = models.ForeignKey(StatusTypes, on_delete = models.CASCADE)
 
     def __str__(self):
@@ -58,6 +59,11 @@ class SynopsisForm(ModelForm):
     class Meta:
         model = Thesis
         fields = ['synopsis']
+
+class ThesisForm(ModelForm):
+    class Meta:
+        model = Thesis
+        fields = ['thesis']
 
 class ThesisGuides(models.Model):
     class Meta:

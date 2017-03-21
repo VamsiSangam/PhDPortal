@@ -1,5 +1,5 @@
 """
-Definition of urls for DjangoWebProject2.
+Definition of urls for PhD portal.
 """
 
 from datetime import datetime
@@ -29,7 +29,8 @@ urlpatterns = [
     url(r'^edit_profile/$', app.views.user_edit_profile, name='user_edit_profile'),
 
     # student urls
-    url(r'^student/$', app.student_views.student_home, name='student_home'),  
+    url(r'^student/$', app.student_views.student_home, name='student_home'),
+    url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),  
     url(r'^student/synopsis/upload/$', app.student_views.student_upload_synopsis, name='student_upload_synopsis'),
     url(r'^student/synopsis/view/$', app.student_views.student_view_synopsis, name='student_view_synopsis'),
     url(r'^student/thesis/upload/$', app.student_views.student_upload_thesis, name='student_upload_thesis'),

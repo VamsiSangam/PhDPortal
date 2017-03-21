@@ -154,5 +154,5 @@ LOGGING = {
 }
 
 # File Upload paths
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
-MEDIA_URL = '/Media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'app/static/')
+MEDIA_URL = '/app/static/'

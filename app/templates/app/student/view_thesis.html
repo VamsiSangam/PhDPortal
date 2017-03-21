@@ -1,14 +1,45 @@
 ﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
 {% block styles %}
 <!-- Add any page specific styles here -->
 
 {% endblock %}
 {% block content %}
 <!-- Student's view submitted PhD thesis page -->
-
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Thesis Document</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        {% if thesisPath is None %}
+            <p>
+                You haven't submitted the PhD synopsis yet. You can submit it 
+                <a href="{% url 'student_upload_thesis' %}">here</a>.
+            </p>
+        {% else %}
+            <object data="{% static thesisPath %}" type="application/pdf" width="100%" height="800px">
+                <p>PhD Synopsis</p>
+            </object>
+            <br /><br />
+            <a class="btn btn-primary btn-lg pull-right" href="{% static thesisPath %}" download="download">
+                <i class="fa fa-download"></i> &nbsp; Download Thesis
+            </a>
+            <a class="btn btn-success btn-lg pull-right" onclick="printPdf('{% static thesisPath %}')">
+                <i class="fa fa-print"></i> &nbsp; Print Thesis
+            </a>
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
-
+<script>
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
 {% endblock %}

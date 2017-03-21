@@ -2,33 +2,110 @@
 {% load staticfiles %}
 {% block styles %}
 <!-- Add any page specific styles here -->
-<link href="{% static 'app/css/dropzone.min.css' %}" rel="stylesheet">
+<style>
+    input[type="file"] {
+        display: none;
+    }
+</style>
 {% endblock %}
 {% block content %}
 <br>
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-        <div class="x_title">
-        <h2>Please Click anywhere to upload your Thesis!</h2>
-                    
-        <div class="clearfix"></div>
-        </div>
-        <div class="x_content">
-            <div class="row">
-                          
-                <div class="col-md-12">
-                <form action="form_upload.html" class="dropzone dz-clickable"></form>
-                            
-                            
-                </div>
+    {% if thesisExists %}
+        <div class="col-xs-12">
+            <div class="alert alert-success alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                You have already submitted a thesis document for your PhD.
+                You can view it <a href="{% url 'student_view_thesis' %}">here</a>.
+            </div>
+        </div>    
+    {% endif %}
+    <div class="col-sm-6">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Upload</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content"><br />
+                <form class="form-horizontal" action="{% url 'student_upload_thesis' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <span style="line-height:45px;">Upload File (PDF only)</span>
+                        </div>
+                        <div class="col-sm-8">
+                            <label for="file-upload">
+                                <a for="file-upload" class="btn btn-primary btn-lg">
+                                    <i class="fa fa-upload"></i> &nbsp; Upload Thesis
+                                </a>
+                            </label>
+                            <input id="file-upload" name="thesis" type="file"/>
+                        </div>
+                    </div><br />
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <p>File Name</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <span id="file-selected">Your filename will appear here</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <p>File Size</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <span id="file-size">Your file size (in MB) will appear here</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success pull-right">Submit</button>
+                </form>
             </div>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Upload Instructions</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content"><br />
+                <p>Please read the following instructions carefully before uploading your synopsis.</p>
+                <ul>
+                    <li>The file must be strictly in PDF format.</li>
+                    <li>File size should not exceed 5 MB.</li>
+                    <li>If you have already uploaded a Thesis, then uploading a PDF file again will automatically
+                    replace it, provided you are still allowed to do it.</li>
+                    <li>Once your thesis is accepted by the guide you cannot upload a thesis document again to replace it.</li>
+                    <li>Your guide will automatically be notified of your submission.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
-<script src="{% static 'app/js/dropzone.min.js' %}"></script>
+<script type="text/javascript">
+    $('#file-upload').bind('change', function () {
+        var fileName = '';
+        var fileSize = this.files[0].size;  // bytes
+
+        fileName = $(this).val();
+        $('#file-selected').html(fileName);
+
+        fileSize = fileSize / 1024.0;       // KB
+
+        if (fileSize > 1024) {
+            fileSize = fileSize / 1024.0;   // MB
+            fileSize = fileSize.toFixed(2) + ' MB';
+        } else {
+            fileSize = fileSize.toFixed(2) + ' KB';
+        }
+
+        $('#file-size').html(fileSize);
+    });
+</script>
 {% endblock %}

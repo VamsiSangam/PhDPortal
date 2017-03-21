@@ -17,44 +17,81 @@ def student_home(request):
     )
 
 @login_required
+def student_add_abstract(request):
+    if request.method == "GET":
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        abstract = thesis.abstract
+
+        return render(request, 'app/student/phd_abstract.html', {
+            'title' : 'PhD Abstract',
+            'descriptive_title': 'Submit an Abstract for your PhD Thesis',
+            'unread_notifications' : get_unread_notifications(request.session['username']),
+            'abstract' : abstract
+        })
+    elif request.method == "POST":
+        abstract = request.POST['abstract']
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        thesis.abstract = abstract
+        thesis.save()
+
+        return redirect(reverse('student_add_abstract'))
+
+@login_required
 def student_upload_synopsis(request):
     assert isinstance(request, HttpRequest)
-    logger.info('student_upload_synopsis')
+    
     if request.method == 'POST':
-        logger.info('inside post')
         form = SynopsisForm(request.POST, request.FILES)
-        if form.is_valid():
-            logger.info('form is valid')
-
+        
+        if form.is_valid() and validate_pdf(request.FILES['synopsis']):
             user = User.objects.get(username = request.session['username'])
             thesis = Thesis.objects.get(username = user)
             thesis.synopsis = request.FILES['synopsis']
             thesis.save()
  
-            return HttpResponseRedirect(reverse('student_upload_synopsis'))
+            return redirect(reverse('student_view_synopsis'))
         else:
-            logger.info('form is invalid!')
+            return redirect(reverse('unauthorized_access'))
     else:
-        logger.info('get request to upload synosps')
-        form = SynopsisForm()
- 
-    data = {'form': form}
-    return render(
-        request,
-        'app/student/upload_synopsis.html',
-        data
-    )
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        synopsisExists = False
+
+        if thesis.synopsis is not None:
+            synopsisExists = True
+
+        return render(
+            request,
+            'app/student/upload_synopsis.html',
+            {   
+                'title' : 'Upload Synopsis',
+                'descriptive_title' : 'Upload a Synopsis of your PhD',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+                'synopsisExists' : synopsisExists 
+            }
+        )
 
 @login_required
 def student_view_synopsis(request):
     assert isinstance(request, HttpRequest)
-    
+
+    user = User.objects.get(username = request.session['username'])
+    thesis = Thesis.objects.get(username = user)
+    synopsisPath = None
+
+    if thesis.synopsis is not None:
+        synopsisPath = thesis.synopsis
+
     return render(
         request,
         'app/student/view_synopsis.html',
         {
             'title':'View Synopsis',
-            'descriptive_title' : 'View you submitted synopsis',
+            'descriptive_title' : 'View your submitted synopsis',
+            'unread_notifications' : get_unread_notifications(request.session['username']),
+            'synopsisPath' : synopsisPath
         }
     )
 
@@ -62,18 +99,43 @@ def student_view_synopsis(request):
 def student_upload_thesis(request):
     assert isinstance(request, HttpRequest)
 
-    return render(
-        request,
-        'app/student/upload_thesis.html',
-        {
-            'title':'Upload Thesis',
-            'descriptive_title' : 'Upload PhD Thesis',
-        }
-    )
+    if request.method == "GET":
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        thesisExists = thesis.thesis is None
+
+        return render(
+            request,
+            'app/student/upload_thesis.html',
+            {
+                'title':'Upload Thesis',
+                'descriptive_title' : 'Upload PhD Thesis',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+                'thesisExists' : thesisExists
+            }
+        )
+    elif request.method == "POST":
+        form = ThesisForm(request.POST, request.FILES)
+        
+        if form.is_valid() and validate_pdf(request.FILES['thesis']):
+            user = User.objects.get(username = request.session['username'])
+            thesis = Thesis.objects.get(username = user)
+            thesis.thesis = request.FILES['thesis']
+            thesis.save()
+ 
+            return redirect(reverse('student_view_thesis'))
+        else:
+            return redirect(reverse('unauthorized_access'))
+    else:
+        return redirect(reverse(URL_UNAUTHORISED_ACCESS))
 
 @login_required
 def student_view_thesis(request):
     assert isinstance(request, HttpRequest)
+
+    user = User.objects.get(username = request.session['username'])
+    thesis = Thesis.objects.get(username = user)
+    thesisPath = thesis.thesis
 
     return render(
         request,
@@ -81,6 +143,8 @@ def student_view_thesis(request):
         {
             'title':'View Thesis',
             'descriptive_title' : 'View you submitted PhD thesis',
+            'unread_notifications' : get_unread_notifications(request.session['username']),
+            'thesisPath' : thesisPath
         }
     )
 

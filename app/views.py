@@ -8,9 +8,21 @@ from django.template import RequestContext
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from app.models import *
-import logging
+import logging, json
 
 logger = logging.getLogger('django')
+CONTENT_TYPE_PDF = 'application/pdf'
+MAX_SIZE_PDF = 5 * 1024 * 1024   # in bytes (currently 5 MB)
+URL_UNAUTHORISED_ACCESS = 'unauthorized_access'
+URL_RESOURCE_NOT_FOUND = 'resource_not_found'
+
+def validate_pdf(file_dict):
+    if file_dict.name.endswith('.pdf'):
+        if file_dict.content_type == CONTENT_TYPE_PDF:
+            if file_dict.size <= MAX_SIZE_PDF:
+                return True
+
+    return False
 
 def get_unread_notifications(username):
     user = User.objects.get(username = username)

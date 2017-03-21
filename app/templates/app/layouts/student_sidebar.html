@@ -10,7 +10,12 @@
             <li><a href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
         </ul>
         </li>
-        <li><a><i class="fa fa-align-left"></i> PhD Synopsis <span class="fa fa-chevron-down"></span></a>
+    <li><a><i class="fa fa-paragraph"></i> PhD Abstract <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+            <li><a href="{% url 'student_add_abstract' %}"> Add an Abstract to PhD Thesis</a></li>
+        </ul>
+        </li>    
+    <li><a><i class="fa fa-align-left"></i> PhD Synopsis <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
             <li><a href="{% url 'student_upload_synopsis' %}"> Upload Synopsis</a></li>
             <li><a href="{% url 'student_view_synopsis' %}"> View Uploaded Synopsis</a></li>
