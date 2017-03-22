@@ -1,0 +1,14 @@
+o16le
+o8
+i16le
+i32be
+i32le
+o32be
+i8
+o16be
+i16be
+si32le
+unpack
+si16le
+o32le
+pack

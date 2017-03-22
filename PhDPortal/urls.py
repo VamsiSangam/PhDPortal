@@ -20,6 +20,8 @@ urlpatterns = [
     # common urls
     url(r'^$', app.views.login, name='login'),
     url(r'^logout/$', app.views.logout, name='logout'),
+    url(r'^user/profile/$', app.views.user_profile, name='user_profile'),
+    url(r'^user/profile/(?P<username>[\w\d]+)/$', app.views.view_user_profile, name='view_user_profile'),
     url(r'^user/notifications/$', app.views.user_notifications, name='user_notifications'),
     url(r'^user/notifications/delete/(?P<id>\d+)$', app.views.delete_user_notification, name='delete_user_notification'),
     url(r'^user/notifications/delete/read/$', app.views.delete_all_read_notifications, name='delete_all_read_notifications'),
@@ -27,6 +29,8 @@ urlpatterns = [
     url(r'^user/notifications/markread/all/$', app.views.mark_all_notifications_read, name='mark_all_notifications_read'),
     url(r'^user/notifications/markread/(?P<id>\d+)$', app.views.mark_notification_read, name='mark_notification_read'),
     url(r'^user/edit_profile/$', app.views.user_edit_profile, name='user_edit_profile'),
+    url(r'^user/info/$', app.views.user_info, name='user_info'),
+    url(r'^user/info/search/$', app.views.user_info_search, name='user_info_search'),
 
     # student urls
     url(r'^student/$', app.student_views.student_home, name='student_home'),
@@ -46,7 +50,7 @@ urlpatterns = [
 
     # guide urls
     url(r'^guide/$', app.guide_views.guide_home, name='guide_home'),   
-    url(r'^guide/students/$', app.guide_views.guide_view_student_info, name='guide_view_student_info'),
+    #url(r'^guide/students/$', app.guide_views.guide_view_student_info, name='guide_view_student_info'),
     url(r'^guide/synopsis/unevaluated/$', app.guide_views.guide_unevaulated_synopsis, name='guide_unevaulated_synopsis'),
     url(r'^guide/synopsis/archived/$', app.guide_views.guide_archived_synopsis, name='guide_archived_synopsis'),
     url(r'^guide/thesis/unevaluated/$', app.guide_views.guide_unevaluated_thesis, name='guide_unevaluated_thesis'),

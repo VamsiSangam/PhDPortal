@@ -1,0 +1,14 @@
+load
+array
+wedge
+sepia
+GimpGradientFile
+GimpPaletteFile
+make_gamma_lut
+ImageColor
+raw
+random
+PaletteFile
+negative
+ImagePalette
+make_linear_lut

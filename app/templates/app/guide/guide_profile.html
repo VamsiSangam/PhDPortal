@@ -1,0 +1,44 @@
+﻿<div class="x_panel">
+    <div class="x_title">
+        <h2>PhDs Mentoring</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Collapse">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </li>
+            <li>
+                <a class="close-link" data-toggle="tooltip" data-placement="top" title="Close">
+                    <i class="fa fa-close"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in user.all_thesis %}
+            <div class="panel">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title">{{ thesis.title }} ( {{ thesis.type }} )</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <br />
+            {% if request.session.username == user.username %}
+            <a href="{% url 'guide_unevaulated_synopsis' %}" class="btn btn-primary">View Unevaluted Synopsis</a>
+            <a href="{% url 'guide_unevaluated_thesis' %}" class="btn btn-primary">View Unevaluated PhD Thesis Submissions</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

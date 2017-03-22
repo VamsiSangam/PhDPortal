@@ -15,34 +15,6 @@ def guide_home(request):
     )
 
 @login_required
-def guide_edit_profile(request):
-    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
-
-    return render(
-        request,
-        'app/guide/edit_profile.html',
-        {
-            'title':'Edit Profile',
-            'descriptive_title' : 'Edit your profile',
-            'unread_notifications' : get_unread_notifications(request.session['username'])
-        }
-    )
-
-@login_required
-def guide_view_student_info(request):
-    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
-
-    return render(
-        request,
-        'app/guide/view_student_info.html',
-        {
-            'title':'Student Info',
-            'descriptive_title' : 'View information about PhD students',
-            'unread_notifications' : get_unread_notifications(request.session['username'])
-        }
-    )
-
-@login_required
 def guide_unevaulated_synopsis(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 

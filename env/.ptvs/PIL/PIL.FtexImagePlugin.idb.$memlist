@@ -1,0 +1,9 @@
+FORMAT_DXT1
+FORMAT_UNCOMPRESSED
+FtexImageFile
+struct
+BytesIO
+MAGIC
+_validate
+ImageFile
+Image

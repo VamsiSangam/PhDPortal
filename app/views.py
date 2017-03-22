@@ -8,7 +8,7 @@ from django.template import RequestContext
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from app.models import *
-import logging, json
+import logging, json, operator
 
 logger = logging.getLogger('django')
 CONTENT_TYPE_PDF = 'application/pdf'
@@ -19,7 +19,102 @@ URL_FORBIDDEN = 'forbidden'
 URL_NOT_FOUND = 'not_found'
 URL_INTERNAL_SERVER_ERROR = 'internal_server_error'
 URL_STUDENT_HOME = 'student_home'
+URL_USER_PROFILE = 'user_profile'
 
+def _get_all_user_info(user):
+    dict = {}
+    dict['username'] = user.username
+    dict['first_name'] = user.first_name
+    dict['last_name'] = user.last_name
+    dict['full_name'] = user.first_name + ' ' + user.last_name
+    dict['email_id'] = user.email_id
+    dict['address'] = user.address
+    dict['type'] = user.type
+
+    if user.type == 'S':
+        _get_all_student_info(user, dict)
+    elif user.type == 'G':
+        _get_all_guide_info(user, dict)
+
+    return dict
+
+def _get_all_student_info(user, dict):
+    thesis = Thesis.objects.get(username = user)
+    dict['title'] = thesis.title
+    dict['abstract'] = thesis.abstract
+    dict['guides'] = []
+    dict['keywords'] = []
+    thesisGuides = ThesisGuides.objects.filter(thesis_id = thesis)
+    thesisKeywords = ThesisKeywords.objects.filter(thesis_id = thesis)
+
+    for thesisGuide in thesisGuides:
+        guide_info = {}
+
+        if thesisGuide.type == 'G':
+            guide_info['type'] = 'Guide'
+        else:
+            guide_info['type'] = 'Co-guide'
+
+        thesisGuide = thesisGuide.guide_username
+        guide_info['username'] = thesisGuide.username
+        guide_info['full_name'] = thesisGuide.first_name + ' ' + thesisGuide.last_name
+        dict['guides'].append(guide_info)
+
+    for thesisKeyword in thesisKeywords:
+        dict['keywords'].append(thesisKeyword.keyword_id.keyword)
+
+    return dict
+
+def _get_all_guide_info(user, dict):
+    all_thesis = ThesisGuides.objects.filter(guide_username = user)
+    dict['all_thesis'] = []
+
+    for thesis in all_thesis:
+        thesis_info = {}
+
+        if thesis.type == 'G':
+            thesis_info['type'] = 'Guide'
+        else:
+            thesis_info['type'] = 'Co-guide'
+
+        thesis_info['title'] = thesis.thesis_id.title
+        student = thesis.thesis_id.username
+        thesis_info['student_username'] = student.username
+        thesis_info['student_full_name'] = student.first_name + ' ' + student.last_name
+        dict['all_thesis'].append(thesis_info)
+
+    return dict
+
+@login_required
+def user_profile(request):
+    if request.method == "GET":
+        user = User.objects.get(username = request.session['username'])
+        user = _get_all_user_info(user)
+
+        return render(request, 'app/common/user_profile.html', {
+            'title':'Home Page',
+            'descriptive_title' : 'Welcome ' + request.session['full_name'] + ' !',
+            'unread_notifications' : get_unread_notifications(request.session['username']),
+            'user' : user
+        })
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+def view_user_profile(request, username):
+    if request.method == "GET":
+        user = User.objects.get(username = username)
+
+        if user is None:
+            return redirect(reverse(URL_BAD_REQUEST))
+
+        user = _get_all_user_info(user)
+
+        return render(request, 'app/common/user_profile.html', {
+            'title':'Home Page',
+            'descriptive_title' : 'User ' + username + ' info',
+            'unread_notifications' : get_unread_notifications(request.session['username']),
+            'user' : user
+        })
 def send_notification(sender, receiver, message, link):
     notification = Notifications(sender = sender, receiver = receiver, message = message, link = link, status = 'U')
     notification.save()
@@ -85,16 +180,8 @@ def login(request):
                 if next is None or next == '':
                     user = User.objects.get(username = username)
                     _add_user_data_to_session(user, request)
-
-                    if (user.type == 'S'):                        
-                        next = reverse('student_home')
-                    elif (user.type == 'G'):
-                        next = reverse('guide_home')
-                    elif (user.type == 'D'):
-                        next = reverse('director_home')
-                    elif (user.type == 'R'):
-                        next = reverse('referee_home')
-
+                    
+                    next = reverse(URL_USER_PROFILE)
                 return redirect(next)
             else:
                 return redirect('403/')
@@ -234,6 +321,87 @@ def mark_notification_read(request, id):
         return redirect(reverse('user_notifications'))
     else:
         return redirect(reverse('unauthorized_access'))
+
+@login_required
+def user_info(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    return render(
+        request,
+        'app/common/user_info.html',
+        {
+            'title':'Student Info',
+            'descriptive_title' : 'View information about PhD students',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
+        }
+    )
+
+def _clean_user_info_results(data):
+    # data is sorted list of tuple
+    list = []
+
+    for item in data[: min(len(data), 15)]:
+        dict = {}
+        dict['first_name'] = item[0].first_name
+        dict['last_name'] = item[0].last_name
+        dict['email_id'] = item[0].email_id
+        dict['type'] = item[0].type
+        dict['address'] = item[0].address
+        list.append(dict)
+
+    return list
+
+@login_required
+def user_info_search(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        type = request.POST['type']
+
+        logger.info('first_name = ' + first_name + ', last_name = ' + last_name + ', email = ' + email + ', type = ' + type)
+
+        dict = {}
+        for user in User.objects.filter(type = type):
+            dict[user] = 3
+            logger.info('by user type ' + user.username)
+
+        if len(first_name.strip()) > 0:
+            logger.info('first_name length ok')
+            for user in User.objects.filter(first_name__icontains = first_name):
+                if user in dict:
+                    dict[user] = dict[user] + 1
+                    logger.info('by first name ' + user.username)
+                else:
+                    dict[user] = 1
+
+        if len(last_name.strip()) > 0:
+            logger.info('first_name length ok')
+            for user in User.objects.filter(last_name__icontains = last_name):
+                if user in dict:
+                    dict[user] = dict[user] + 1
+                    logger.info('by last name ' + user.username)
+                else:
+                    dict[user] = 1
+        
+        if len(email.strip()) > 0:
+            logger.info('email length ok')
+            for user in User.objects.filter(email_id__icontains = email):
+                if user in dict:
+                    dict[user] = dict[user] + 1
+                    logger.info('by email ' + user.username)
+                else:
+                    dict[user] = 1
+
+        sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
+        sorted_results.reverse()
+        result = _clean_user_info_results(sorted_results)
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 def bad_request(request):
     assert isinstance(request, HttpRequest)

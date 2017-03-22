@@ -1,0 +1,14 @@
+colors
+makeEmptySquare
+makeFilledSquare
+makeFilledCircle
+__doc__
+Line
+Circle
+Rect
+makeSmiley
+makeEmptyCircle
+SmileyFace
+makeFilledDiamond
+Polygon
+__version__

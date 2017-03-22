@@ -1,0 +1,109 @@
+﻿{% extends "app/layouts/home.html" %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<!-- Guide's view student info page -->
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Search students</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Collapse">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </li>
+            <li>
+                <a class="close-link" data-toggle="tooltip" data-placement="top" title="Close">
+                    <i class="fa fa-close"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="col-sm-6 col-xs-12 form-group has-feedback">
+            <input type="text" class="form-control has-feedback-left" id="first_name" placeholder="First Name" oninput="getInfo()">
+            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+        </div>
+        <div class="col-sm-6 col-xs-12 form-group has-feedback">
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name" oninput="getInfo()">
+            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+        <div class="col-sm-6 col-xs-12 form-group has-feedback">
+            <input type="text" class="form-control has-feedback-left" id="email" placeholder="Email" oninput="getInfo()">
+            <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-xs-12">
+                <select class="form-control" id="type" onchange="getInfo()">
+                    <option value="S" selected>Student</option>
+                    <option value="G">Guide</option>
+                    <option value="R">Referee</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="col-xs-12">
+            <h2>Results</h2>
+            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                Your search results will automatically appear here.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function getInfo() {
+        $.post('{{ request.path }}search/', {
+            'csrfmiddlewaretoken' :  '{{ csrf_token }}',
+            'first_name' : $('#first_name').val(),
+            'last_name' : $('#last_name').val(),
+            'email' : $('#email').val(),
+            'type' : $('#type').val()
+        }, getInfoCallback);
+    }
+</script>
+<script>
+    function getInfoCallback(data) {
+        $('#accordion').empty();
+
+        $(data).each(function (index) {
+            var type = "NA";
+
+            if (this.type === 'S') {
+                type = 'Student';
+            } else if (this.type === 'G') {
+                type = "Guide"
+            } else if (this.type === 'R') {
+                type = "Referee";
+            }
+
+            var html = getSearchResultHTML(this.first_name, this.last_name, this.email_id, type, this.address, index);
+            $('#accordion').append(html);
+        });
+    }
+
+    function getSearchResultHTML(first_name, last_name, email_id, type, address, id) {
+        html = '<div class="panel">' +
+                    '<a class="panel-heading" role="tab" id="heading' + id + '" data-toggle="collapse" data-parent="#accordion" ' +
+                            'href="#collapse' + id + '" aria-expanded="false"  aria-controls="collapse' + id + '">' +
+                        '<h4 class="panel-title">' + first_name + ' ' + last_name + '</h4>' +
+                    '</a>' +
+                '<div id="collapse' + id + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + id + '">' +
+                        '<div class="panel-body">' +
+                            '<p><b>Name</b> - ' + first_name + ' ' + last_name + '</p>' +
+                            '<p><b>Email  ID</b> - ' + email_id + '</p>' +
+                            '<p><b>User Type</b> - ' + type + '</p>' +
+                            '<p><b>Address</b> - ' + address + '</p>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+        return html;
+    }
+</script>
+{% endblock %}

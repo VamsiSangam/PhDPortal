@@ -1,0 +1,9 @@
+get_rl_tempfile
+os
+__all__
+tempfile
+__doc__
+get_rl_tempdir
+_rl_tempdir
+_rl_getuid
+__version__

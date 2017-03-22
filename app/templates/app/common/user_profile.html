@@ -1,0 +1,48 @@
+﻿{% extends "app/layouts/home.html" %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<!-- user homepage -->
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Profile</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Collapse">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </li>
+            <li>
+                <a class="close-link" data-toggle="tooltip" data-placement="top" title="Close">
+                    <i class="fa fa-close"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <p><b>Name</b> - {{ user.full_name }}</b></p>
+        <p><b>Email</b> - {{ user.email_id }}</b></p>
+        <p><b>Address</b> - {{ user.address }}</b></p>
+        <br />
+        {% if request.session.username == user.username %}
+        <a href="{% url 'user_edit_profile' %}" class="btn btn-primary">Edit profile</a>
+        {% endif %}
+    </div>
+</div>
+    {% if user.type == 'S' %}
+        {% include 'app/student/student_profile.html' %}
+    {% elif user.type == 'G' %}
+        {% include 'app/guide/guide_profile.html' %}
+    {% elif user.type == 'D' %}
+        <h2>Hello director</h2>
+    {% elif user.type == 'R' %}
+        <h2>Hello referee</h2>=
+    {% endif %}
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+
+{% endblock %}

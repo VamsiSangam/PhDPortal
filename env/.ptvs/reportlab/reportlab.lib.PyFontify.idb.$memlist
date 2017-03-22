@@ -1,0 +1,17 @@
+test
+__version__
+keyPat
+__doc__
+replace
+pat
+keywordsList
+fontify
+idRE
+matchRE
+matchPat
+commentPat
+tripleQuotePat
+idKeyPat
+nonKeyPat
+re
+quotePat
