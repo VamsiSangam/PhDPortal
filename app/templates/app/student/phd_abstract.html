@@ -13,7 +13,7 @@
             <li>PhD abstract is a short gist/summary of your PhD your are working on.</li>
             <li>Abstract must ideally be 200-300 words in length.</li>
             <li>You can submit an abstract again if your guide has requested for changes.</li>
-            <li>To edit your abstarct simply edit the field below and submit.</li>
+            <li>To edit your abstract simply edit the field below and submit.</li>
             <li>Once your guide approves your PhD abstract, you cannot edit it again.</li>
         </ul>
     </div>
@@ -25,10 +25,22 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
+            {% if not canSubmitAbstract %}
+            <p>
+                You cannot submit a PhD abstract yet. This is because the choosen Guides/Co-guides haven't yet given their
+                approval to be a mentor for your PhD.
+            </p>
+            {% elif isAbstractApproved %}
+            <p>
+                You have already submitted your PhD abstract and either your Guide/Co-guide has accepted it. You are not
+                allowed to modify your PhD abstract now. You can view your PhD abstact on your 
+                <a href="{% url 'user_profile' %}">profile page</a>.
+            </p>
+            {% else %}
             <form class="form-horizontal" method="post" action="">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-1 control-label">Abstract :</label>
+                    <label for="abstract" class="col-sm-1 control-label">Abstract :</label>
                         <div class="col-sm-11">
                             {% if abstract is None %}
                             <textarea class="form-control" name="abstract" rows="10"></textarea>
@@ -39,10 +51,11 @@
                 </div><br />
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success pull-right">Submit</button>
+                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     </div>
                 </div>
             </form>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -8,10 +8,16 @@
                       <li><a href="{% url 'user_profile' %}"> Home</a></li>
                       <li><a href="{% url 'user_notifications' %}"> View all Notifications</a></li>
                       <li><a href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
-                      <li><a href="{% url 'user_info' %}"> Search student / guide / referee</a></li>
+                      <li><a href="{% url 'search_user' %}"> Search student / guide / referee</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-align-left"></i> Evaluate PhD Synopsis <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Evaluate Abstracts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'guide_unevaluated_abstract' %}"> View Unevaluated PhD Abstracts</a></li>
+                      <li><a href="{% url 'guide_archived_synopsis' %}"> View Archived Synopsis</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-align-left"></i> Evaluate Synopsis <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{% url 'guide_unevaulated_synopsis' %}"> View Unevaluated Synopsis</a></li>
                       <li><a href="{% url 'guide_archived_synopsis' %}"> View Archived Synopsis</a></li>
@@ -38,20 +44,3 @@
 </div>
             </div>
             <!-- /sidebar menu -->
-
-<!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a href="{% url 'guide_home' %}" data-toggle="tooltip" data-placement="top" title="Profile">
-                <span class="fa fa-user" aria-hidden="true"></span>
-              </a>
-              <a href="{% url 'user_notifications' %}" data-toggle="tooltip" data-placement="top" title="Notifications">
-                <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
-              </a>
-              <a href="{% url 'guide_phd_status' %}" data-toggle="tooltip" data-placement="top" title="PhD Status">
-                <span class="fa fa-check-square-o" aria-hidden="true"></span>
-              </a>
-              <a href="{% url 'login' %}" data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="fa fa-sign-out" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->

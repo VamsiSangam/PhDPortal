@@ -115,6 +115,9 @@ def view_user_profile(request, username):
             'unread_notifications' : get_unread_notifications(request.session['username']),
             'user' : user
         })
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
 def send_notification(sender, receiver, message, link):
     notification = Notifications(sender = sender, receiver = receiver, message = message, link = link, status = 'U')
     notification.save()
@@ -323,18 +326,22 @@ def mark_notification_read(request, id):
         return redirect(reverse('unauthorized_access'))
 
 @login_required
-def user_info(request):
+def search_user(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    return render(
-        request,
-        'app/common/user_info.html',
-        {
-            'title':'Student Info',
-            'descriptive_title' : 'View information about PhD students',
-            'unread_notifications' : get_unread_notifications(request.session['username'])
-        }
-    )
+    
+    if request.method == "GET":
+        return render(
+            request,
+            'app/common/search_user.html',
+            {
+                'title':'Student Info',
+                'descriptive_title' : 'View information about PhD students',
+                'unread_notifications' : get_unread_notifications(request.session['username'])
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 def _clean_user_info_results(data):
     # data is sorted list of tuple
@@ -342,6 +349,7 @@ def _clean_user_info_results(data):
 
     for item in data[: min(len(data), 15)]:
         dict = {}
+        dict['username'] = item[0].username
         dict['first_name'] = item[0].first_name
         dict['last_name'] = item[0].last_name
         dict['email_id'] = item[0].email_id
@@ -352,7 +360,7 @@ def _clean_user_info_results(data):
     return list
 
 @login_required
-def user_info_search(request):
+def search_user_query(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     if request.method == "POST":
@@ -361,37 +369,28 @@ def user_info_search(request):
         email = request.POST['email']
         type = request.POST['type']
 
-        logger.info('first_name = ' + first_name + ', last_name = ' + last_name + ', email = ' + email + ', type = ' + type)
-
         dict = {}
         for user in User.objects.filter(type = type):
             dict[user] = 3
-            logger.info('by user type ' + user.username)
-
+            
         if len(first_name.strip()) > 0:
-            logger.info('first_name length ok')
             for user in User.objects.filter(first_name__icontains = first_name):
                 if user in dict:
                     dict[user] = dict[user] + 1
-                    logger.info('by first name ' + user.username)
                 else:
                     dict[user] = 1
 
         if len(last_name.strip()) > 0:
-            logger.info('first_name length ok')
             for user in User.objects.filter(last_name__icontains = last_name):
                 if user in dict:
                     dict[user] = dict[user] + 1
-                    logger.info('by last name ' + user.username)
                 else:
                     dict[user] = 1
         
         if len(email.strip()) > 0:
-            logger.info('email length ok')
             for user in User.objects.filter(email_id__icontains = email):
                 if user in dict:
                     dict[user] = dict[user] + 1
-                    logger.info('by email ' + user.username)
                 else:
                     dict[user] = 1
 

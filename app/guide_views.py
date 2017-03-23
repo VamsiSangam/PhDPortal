@@ -1,32 +1,68 @@
 from app.views import *
 
 @login_required
-def guide_home(request):
+def guide_unevaluated_abstract(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    user = User.objects.get(username = request.session['username'])
 
-    return render(
-        request,
-        'app/guide/home.html',
-        {
-            'title':'Home Page',
-            'descriptive_title' : 'Welcome ' + request.session['full_name'] + ' !',
-            'unread_notifications' : get_unread_notifications(request.session['username'])
-        }
-    )
+    if request.method == "GET":
+        # query for all the thesis under this guide which
+        # whose abstract was not evaluated by this guide
+        
+        all_thesis = []     # list of dict
+
+        # each element of all_thesis is a dict
+        # dict['title'] = phd title
+        # dict['student_full_name'] = student full name
+        # dict['abstract'] = phd abstract
+        # dict['student_username'] = student_username
+        # dict['id'] = thesis_id (int)
+
+        return render(
+            request,
+            'app/guide/unevaluated_abstract.html',
+            {
+                'title':'Unevaluated PhD Abstract',
+                'descriptive_title' : 'View unevaluated abstracts sumitted by PhD students',
+                'unread_notifications' : get_unread_notifications(request.session['username']),
+                'all_thesis' : all_thesis
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_evaluate_unevaluated_abstract(request):
+    if request.method == "POST":
+        # read post data
+        # request.POST['id'] = string - thesis id
+        # request.POST['isApproved'] = 'true' / 'false'
+        # request.POST['feedback'] = feedback string
+        # if true add row into ThesisGuideApprovals, with type = 'A'
+        # if false remove all approvals for this thesis abstract so far
+        # send notifications accordingly
+
+        return HttpResponse('0', content_type = 'text/plain')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def guide_unevaulated_synopsis(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-    return render(
-        request,
-        'app/guide/unevaluated_synopsis.html',
-        {
-            'title':'Unevaluated Synopsis',
-            'descriptive_title' : 'View unevaluated synopsis sumitted by students',
-            'unread_notifications' : get_unread_notifications(request.session['username'])
-        }
-    )
+    if request.method == "GET":
+        return render(
+            request,
+            'app/guide/unevaluated_synopsis.html',
+            {
+                'title':'Unevaluated Synopsis',
+                'descriptive_title' : 'View unevaluated synopsis sumitted by students',
+                'unread_notifications' : get_unread_notifications(request.session['username'])
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def guide_archived_synopsis(request):

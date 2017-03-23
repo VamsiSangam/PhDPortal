@@ -8,18 +8,18 @@
 <!-- Student's view submitted PhD thesis page -->
 <div class="x_panel">
     <div class="x_title">
-        <h2>Thesis Document</h2>
+        <h2>PhD Thesis Document</h2>
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
         {% if thesisPath is None %}
             <p>
-                You haven't submitted the PhD synopsis yet. You can submit it 
-                <a href="{% url 'student_upload_thesis' %}">here</a>.
+                You haven't submitted the PhD thesis document yet. You can submit it by clicking on the button below.
             </p>
+            <a class="btn btn-primary pull-right" href="{% url 'student_upload_thesis' %}">Upload Thesis</a>
         {% else %}
             <object data="{% static thesisPath %}" type="application/pdf" width="100%" height="800px">
-                <p>PhD Synopsis</p>
+                <p>PhD Thesis Document</p>
             </object>
             <br /><br />
             <a class="btn btn-primary btn-lg pull-right" href="{% static thesisPath %}" download="download">

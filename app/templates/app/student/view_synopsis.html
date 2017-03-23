@@ -14,9 +14,10 @@
     <div class="x_content">
         {% if synopsisPath is None %}
             <p>
-                You haven't submitted the PhD synopsis yet. You can submit it 
-                <a href="{% url 'student_upload_synopsis' %}">here</a>.
+                You haven't submitted the PhD synopsis yet. You can submit it by clicking on the button below.
             </p>
+            <br />
+            <a class="btn btn-primary pull-right" href="{% url 'student_upload_synopsis' %}">Upload Synopsis</a>
         {% else %}
             <object data="{% static synopsisPath %}" type="application/pdf" width="100%" height="800px">
                 <p>PhD Synopsis</p>

@@ -29,11 +29,10 @@ urlpatterns = [
     url(r'^user/notifications/markread/all/$', app.views.mark_all_notifications_read, name='mark_all_notifications_read'),
     url(r'^user/notifications/markread/(?P<id>\d+)$', app.views.mark_notification_read, name='mark_notification_read'),
     url(r'^user/edit_profile/$', app.views.user_edit_profile, name='user_edit_profile'),
-    url(r'^user/info/$', app.views.user_info, name='user_info'),
-    url(r'^user/info/search/$', app.views.user_info_search, name='user_info_search'),
+    url(r'^user/search/$', app.views.search_user, name='search_user'),
+    url(r'^user/search/query/$', app.views.search_user_query, name='search_user_query'),
 
     # student urls
-    url(r'^student/$', app.student_views.student_home, name='student_home'),
     url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),  
     url(r'^student/synopsis/upload/$', app.student_views.student_upload_synopsis, name='student_upload_synopsis'),
     url(r'^student/synopsis/view/$', app.student_views.student_view_synopsis, name='student_view_synopsis'),
@@ -49,8 +48,8 @@ urlpatterns = [
     url(r'^student/help/contacts/$', app.student_views.student_help_contacts, name='student_help_contacts'),
 
     # guide urls
-    url(r'^guide/$', app.guide_views.guide_home, name='guide_home'),   
-    #url(r'^guide/students/$', app.guide_views.guide_view_student_info, name='guide_view_student_info'),
+    url(r'^guide/abstract/unevaluated/$', app.guide_views.guide_unevaluated_abstract, name='guide_unevaluated_abstract'),
+    url(r'^guide/abstract/unevaluated/evaluate/$', app.guide_views.guide_unevaluated_abstract, name='guide_unevaluated_abstract'),
     url(r'^guide/synopsis/unevaluated/$', app.guide_views.guide_unevaulated_synopsis, name='guide_unevaulated_synopsis'),
     url(r'^guide/synopsis/archived/$', app.guide_views.guide_archived_synopsis, name='guide_archived_synopsis'),
     url(r'^guide/thesis/unevaluated/$', app.guide_views.guide_unevaluated_thesis, name='guide_unevaluated_thesis'),

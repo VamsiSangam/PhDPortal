@@ -3,20 +3,12 @@ from app.views import *
 URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
 URL_STUDENT_VIEW_THESIS = 'student_view_thesis'
 URL_STUDENT_ADD_KEYWORDS = 'student_add_keywords'
-
-@login_required
-def student_home(request):
-    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
-
-    return render(
-        request,
-        'app/student/home.html',
-        {
-            'title':'Home Page',
-            'descriptive_title' : 'Welcome ' + request.session['first_name'] + ' !',
-            'unread_notifications' : get_unread_notifications(request.session['username']),
-        }
-    )
+STATUS_ID_SUBMIT_ABSTRACT = 5
+STATUS_ID_ABSTRACT_APPROVED = 7
+STATUS_ID_SUBMIT_SYNOPSIS = 9
+STATUS_ID_SYNOPSIS_APPROVED = 11
+STATUS_ID_SUBMIT_THESIS = 13
+STATUS_ID_THESIS_APPROVED = 15
 
 def send_notification_to_guides(username, message):
     user = User.objects.get(username = username)
@@ -26,11 +18,21 @@ def send_notification_to_guides(username, message):
         receiver = User.objects.get(username = guide.guide_username.username)
         send_notification(user, receiver, message, '')
 
+def _update_student_status(thesis, check_status_id):
+    thesis_status_id = thesis.status.id
+
+    if thesis_status_id != check_status_id:
+        status_type = StatusTypes.objects.get(id = check_status_id)
+        thesis.status = status_type
+        thesis.save()
+
 @login_required
 def student_add_abstract(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     user = User.objects.get(username = request.session['username'])
     thesis = Thesis.objects.get(username = user)
+    canSubmitAbstract = thesis.status.id >= STATUS_ID_SUBMIT_ABSTRACT
+    isAbstractApproved = thesis.status.id >= STATUS_ID_ABSTRACT_APPROVED
 
     if request.method == "GET":
         abstract = thesis.abstract
@@ -39,9 +41,11 @@ def student_add_abstract(request):
             'title' : 'PhD Abstract',
             'descriptive_title': 'Submit an Abstract for your PhD Thesis',
             'unread_notifications' : get_unread_notifications(request.session['username']),
-            'abstract' : abstract
+            'abstract' : abstract,
+            'canSubmitAbstract' : canSubmitAbstract,
+            'isAbstractApproved' : isAbstractApproved
         })
-    elif request.method == "POST":
+    elif request.method == "POST" and canSubmitAbstract and (not isAbstractApproved):
         abstract = request.POST['abstract']
         thesis.abstract = abstract
         thesis.save()
@@ -49,8 +53,8 @@ def student_add_abstract(request):
         notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD abstract '
         notification_message += 'for the PhD titled "' + thesis.title + '"'
         send_notification_to_guides(request.session['username'], notification_message)
+        _update_student_status(thesis, STATUS_ID_ABSTRACT_APPROVED - 1)
         
-
         return redirect(reverse(URL_STUDENT_ADD_ABSTRACT))
     else:
         return redirect(reverse(URL_BAD_REQUEST))
@@ -60,13 +64,10 @@ def student_upload_synopsis(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     user = User.objects.get(username = request.session['username'])
     thesis = Thesis.objects.get(username = user)
+    canSubmitSynopsis = thesis.status.id >= STATUS_ID_SUBMIT_SYNOPSIS
+    isSynopsisApproved = thesis.status.id >= STATUS_ID_SYNOPSIS_APPROVED
 
     if request.method == 'GET':
-        synopsisExists = False
-
-        if thesis.synopsis is not None:
-            synopsisExists = True
-
         return render(
             request,
             'app/student/upload_synopsis.html',
@@ -74,10 +75,11 @@ def student_upload_synopsis(request):
                 'title' : 'Upload Synopsis',
                 'descriptive_title' : 'Upload a Synopsis of your PhD',
                 'unread_notifications' : get_unread_notifications(request.session['username']),
-                'synopsisExists' : synopsisExists 
+                'canSubmitSynopsis' : canSubmitSynopsis,
+                'isSynopsisApproved' : isSynopsisApproved
             }
         )
-    elif request.method == "POST":
+    elif request.method == "POST" and canSubmitSynopsis and (not isSynopsisApproved):
         form = SynopsisForm(request.POST, request.FILES)
         
         if form.is_valid() and validate_pdf(request.FILES['synopsis']):
@@ -87,7 +89,8 @@ def student_upload_synopsis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD synopsis '
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(request.session['username'], notification_message)
- 
+            _update_student_status(thesis, STATUS_ID_SYNOPSIS_APPROVED - 1)
+
             return redirect(reverse('student_view_synopsis'))
         else:
             return redirect(reverse(URL_BAD_REQUEST))
@@ -103,7 +106,7 @@ def student_view_synopsis(request):
         thesis = Thesis.objects.get(username = user)
         synopsisPath = None
 
-        if thesis.synopsis is not None:
+        if thesis.synopsis:
             synopsisPath = thesis.synopsis
 
         return render(
@@ -124,9 +127,11 @@ def student_upload_thesis(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     user = User.objects.get(username = request.session['username'])
     thesis = Thesis.objects.get(username = user)
+    canSubmitThesis = thesis.status.id >= STATUS_ID_SUBMIT_THESIS
+    isThesisApproved = thesis.status.id >= STATUS_ID_THESIS_APPROVED
 
     if request.method == "GET":
-        thesisExists = thesis.thesis is None
+        thesisExists = bool(thesis.thesis)
 
         return render(
             request,
@@ -135,10 +140,12 @@ def student_upload_thesis(request):
                 'title':'Upload Thesis',
                 'descriptive_title' : 'Upload PhD Thesis',
                 'unread_notifications' : get_unread_notifications(request.session['username']),
-                'thesisExists' : thesisExists
+                'thesisExists' : thesisExists,
+                'canSubmitThesis' : canSubmitThesis,
+                'isThesisApproved' : isThesisApproved
             }
         )
-    elif request.method == "POST":
+    elif request.method == "POST" and canSubmitThesis and (not isThesisApproved):
         form = ThesisForm(request.POST, request.FILES)
         
         if form.is_valid() and validate_pdf(request.FILES['thesis']):    
@@ -148,7 +155,8 @@ def student_upload_thesis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD thesis document '
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(request.session['username'], notification_message)
- 
+            _update_student_status(thesis, STATUS_ID_THESIS_APPROVED - 1)
+
             return redirect(reverse(URL_STUDENT_VIEW_THESIS))
         else:
             return redirect(reverse(URL_BAD_REQUEST))
@@ -162,7 +170,10 @@ def student_view_thesis(request):
     if request.method == "GET":
         user = User.objects.get(username = request.session['username'])
         thesis = Thesis.objects.get(username = user)
-        thesisPath = thesis.thesis
+        thesisPath = None
+
+        if thesis.thesis:
+            thesisPath = thesis.thesis
 
         return render(
             request,
@@ -328,6 +339,11 @@ def student_phd_status(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     if request.method == "GET":
+        user = User.objects.get(username = request.session['username'])
+        thesis = Thesis.objects.get(username = user)
+        phdStatus = thesis.status.id
+        phdStatuses = StatusTypes.objects.all()
+
         return render(
             request,
             'app/student/phd_status.html',
@@ -335,6 +351,8 @@ def student_phd_status(request):
                 'title':'PhD Thesis Submission Status',
                 'descriptive_title' : 'PhD Thesis Submission Status',
                 'unread_notifications' : get_unread_notifications(request.session['username']),
+                'phdStatus' : phdStatus,
+                'phdStatuses' : phdStatuses
             }
         )
     else:

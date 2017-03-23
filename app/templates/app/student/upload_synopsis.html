@@ -10,57 +10,61 @@
 {% block content %}
 <br>
 <div class="row">
-    {% if synopsisExists %}
-        <div class="col-xs-12">
-            <div class="alert alert-success alert-dismissible fade in" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                You have already submitted a synopsis for your PhD.
-                You can view it <a href="{% url 'student_view_synopsis' %}">here</a>.
-            </div>
-        </div>    
-    {% endif %}
     <div class="col-sm-6">
         <div class="x_panel">
             <div class="x_title">
                 <h2>Upload</h2>
                 <div class="clearfix"></div>
             </div>
-            <div class="x_content"><br />
-                <form class="form-horizontal" action="{% url 'student_upload_synopsis' %}" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <div class="col-sm-4">
-                            <span style="line-height:45px;">Upload File (PDF only)</span>
-                        </div>
-                        <div class="col-sm-8">
-                            <label for="file-upload">
-                                <a for="file-upload" class="btn btn-primary btn-lg">
-                                    <i class="fa fa-upload"></i> &nbsp; Upload Synopsis
-                                </a>
-                            </label>
-                            <input id="file-upload" name="synopsis" type="file"/>
-                        </div>
-                    </div><br />
-                    <div class="form-group">
-                        <div class="col-sm-4">
-                            <p>File Name</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <span id="file-selected">Your filename will appear here</span>
-                        </div>
+            <div class="x_content">
+            {% if not canSubmitSynopsis %}
+            <p>
+                You cannot submit a PhD synopsis yet. This is because your PhD abstract hasn't yet been approved by your 
+                Guide/Co-guide.
+            </p>
+            {% elif isSynopsisApproved %}
+            <p>
+                You have already submitted your PhD synopsis, and it has been approved by your Guide/Co-guide. You cannot alter
+                your PhD synopsis now. You can view your approved synopsis by clicking on the button below.
+            </p>
+            <br />
+            <a class="btn btn-primary pull-right" href="{% url 'student_view_synopsis' %}">View Synopsis</a>
+            {% else %}
+            <br />
+            <form class="form-horizontal" action="{% url 'student_upload_synopsis' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <span style="line-height:45px;">Upload File (PDF only)</span>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4">
-                            <p>File Size</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <span id="file-size">Your file size (in MB) will appear here</span>
-                        </div>
+                    <div class="col-sm-8">
+                        <label for="file-upload">
+                            <a for="file-upload" class="btn btn-primary btn-lg">
+                                <i class="fa fa-upload"></i> &nbsp; Upload Synopsis
+                            </a>
+                        </label>
+                        <input id="file-upload" name="synopsis" type="file"/>
                     </div>
-                    <button type="submit" class="btn btn-success pull-right">Submit</button>
-                </form>
+                </div><br />
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <p>File Name</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <span id="file-selected">Your filename will appear here</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <p>File Size</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <span id="file-size">Your file size (in MB) will appear here</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success pull-right">Submit</button>
+            </form>
+            {% endif %}
             </div>
         </div>
     </div>

@@ -36,7 +36,7 @@ class StatusTypes(models.Model):
 
     id = models.PositiveIntegerField(primary_key = True)
     status_message = models.CharField(max_length = 50, null = False)
-
+    
     def __str__(self):
         return self.status_message
 
@@ -81,6 +81,24 @@ class ThesisGuides(models.Model):
 
     def __str__(self):
         return self.guide_username.first_name + ' ' + self.guide_username.last_name
+
+class ThesisGuideApprovals(models.Model):
+    class Meta:
+        verbose_name = 'Thesis Guide Approval'
+        verbose_name_plural = 'Thesis Guide Approvals'
+
+    GUIDE_TYPES = (
+        ('A', 'Abstract'),
+        ('S', 'Synopsis'),
+        ('T', 'Thesis'),
+    )
+
+    thesis = models.ForeignKey(Thesis, on_delete = models.CASCADE)
+    guide = models.ForeignKey(User, on_delete = models.CASCADE)
+    type = models.CharField(max_length = 1, choices = GUIDE_TYPES)
+
+    def __str__(self):
+        return self.thesis.title
 
 class IEEEKeywords(models.Model):
     class Meta:
