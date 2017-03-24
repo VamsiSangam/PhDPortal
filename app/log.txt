@@ -1,5 +1,80 @@
-2017-03-24 19:52:57 - INFO - basehttp:log_message:131 - "POST /guide/abstract/unevaluated/evaluate/ HTTP/1.1" 200 1
-2017-03-24 19:53:00 - INFO - basehttp:log_message:131 - "GET /guide/abstract/unevaluated/ HTTP/1.1" 200 22205
-2017-03-24 19:58:39 - INFO - basehttp:log_message:131 - "GET /guide/synopsis/unevaluated/ HTTP/1.1" 200 17876
-2017-03-24 19:58:41 - INFO - basehttp:log_message:131 - "GET /guide/thesis/unevaluated/ HTTP/1.1" 200 17867
-2017-03-24 19:58:45 - INFO - basehttp:log_message:131 - "GET /guide/panel/submit/ HTTP/1.1" 200 21571
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 21970
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/css/custom.min.css HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/js/bootstrap.min.js HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/js/jquery.min.js HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/css/nprogress.css HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/js/fastclick.js HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/js/nprogress.js HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/js/custom.min.js HTTP/1.1" 304 0
+2017-03-24 23:10:41 - INFO - basehttp:log_message:131 - "GET /static/app/images/img.jpg HTTP/1.1" 304 0
+2017-03-24 23:10:42 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:10:59 - INFO - basehttp:log_message:131 - "GET /static/app/images/user.png HTTP/1.1" 304 0
+2017-03-24 23:10:59 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=n&_type=query&q=n HTTP/1.1" 200 189
+2017-03-24 23:10:59 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=na&_type=query&q=na HTTP/1.1" 200 97
+2017-03-24 23:10:59 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=nar&_type=query&q=nar HTTP/1.1" 200 97
+2017-03-24 23:11:00 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=naru&_type=query&q=naru HTTP/1.1" 200 97
+2017-03-24 23:11:01 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=k&_type=query&q=k HTTP/1.1" 200 194
+2017-03-24 23:11:01 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=ku&_type=query&q=ku HTTP/1.1" 200 97
+2017-03-24 23:11:06 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/indian/?term=b&_type=query&q=b HTTP/1.1" 200 90
+2017-03-24 23:11:06 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/indian/?term=ba&_type=query&q=ba HTTP/1.1" 200 90
+2017-03-24 23:11:06 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/indian/?term=bas&_type=query&q=bas HTTP/1.1" 200 90
+2017-03-24 23:11:08 - INFO - guide_views:guide_add_referee_panel_members:278 - 2
+2017-03-24 23:11:08 - INFO - guide_views:guide_add_referee_panel_members:280 - 1
+2017-03-24 23:11:08 - INFO - guide_views:guide_add_referee_panel_members:283 - 2
+2017-03-24 23:11:08 - INFO - guide_views:guide_add_referee_panel_members:283 - 3
+2017-03-24 23:11:08 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 56
+2017-03-24 23:11:42 - INFO - guide_views:guide_add_referee_panel_members:278 - id = 2
+2017-03-24 23:11:42 - INFO - guide_views:guide_add_referee_panel_members:280 - 1
+2017-03-24 23:11:42 - INFO - guide_views:guide_add_referee_panel_members:283 - 2
+2017-03-24 23:11:42 - INFO - guide_views:guide_add_referee_panel_members:283 - 3
+2017-03-24 23:11:42 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 56
+2017-03-24 23:17:55 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 21997
+2017-03-24 23:17:56 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:17:59 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=k&_type=query&q=k HTTP/1.1" 200 194
+2017-03-24 23:17:59 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=kr&_type=query&q=kr HTTP/1.1" 200 2
+2017-03-24 23:18:00 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=k&_type=query&q=k HTTP/1.1" 200 194
+2017-03-24 23:18:01 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=ku&_type=query&q=ku HTTP/1.1" 200 97
+2017-03-24 23:18:01 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/foreign/?term=kur&_type=query&q=kur HTTP/1.1" 200 97
+2017-03-24 23:18:04 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/indian/?term=b&_type=query&q=b HTTP/1.1" 200 90
+2017-03-24 23:18:04 - INFO - basehttp:log_message:131 - "GET /guide/panel/referees/indian/?term=ba&_type=query&q=ba HTTP/1.1" 200 90
+2017-03-24 23:18:07 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 13
+2017-03-24 23:18:11 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 13
+2017-03-24 23:18:43 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 21997
+2017-03-24 23:18:44 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:18:47 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 13
+2017-03-24 23:20:24 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:22:10 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 22254
+2017-03-24 23:22:11 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:22:14 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:23:32 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 22444
+2017-03-24 23:23:33 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:23:36 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:24:31 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 22469
+2017-03-24 23:24:33 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:24:35 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:24:48 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 22469
+2017-03-24 23:24:49 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:24:52 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:25:20 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 22463
+2017-03-24 23:25:21 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:25:23 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:26:34 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 22471
+2017-03-24 23:26:35 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:26:38 - INFO - basehttp:log_message:131 - "POST /guide/panel/submit/ HTTP/1.1" 200 64
+2017-03-24 23:36:55 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 20344
+2017-03-24 23:36:57 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:00 - INFO - basehttp:log_message:131 - "GET /guide/abstract/unevaluated/ HTTP/1.1" 200 22198
+2017-03-24 23:43:01 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:03 - INFO - basehttp:log_message:131 - "GET /guide/synopsis/unevaluated/ HTTP/1.1" 200 17939
+2017-03-24 23:43:04 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:12 - INFO - basehttp:log_message:131 - "GET /guide/thesis/unevaluated/ HTTP/1.1" 200 17930
+2017-03-24 23:43:13 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:14 - INFO - basehttp:log_message:131 - "GET /guide/synopsis/unevaluated/ HTTP/1.1" 200 17939
+2017-03-24 23:43:15 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:28 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 20344
+2017-03-24 23:43:29 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:33 - INFO - basehttp:log_message:131 - "GET /guide/status/ HTTP/1.1" 200 18930
+2017-03-24 23:43:34 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795
+2017-03-24 23:43:58 - INFO - basehttp:log_message:131 - "GET /guide/panel/ HTTP/1.1" 200 20344
+2017-03-24 23:44:00 - WARNING - basehttp:log_message:131 - "GET /static/app/css/bootstrap.min.css.map HTTP/1.1" 404 1795

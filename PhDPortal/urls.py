@@ -54,7 +54,11 @@ urlpatterns = [
     url(r'^guide/synopsis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_synopsis),
     url(r'^guide/thesis/unevaluated/$', app.guide_views.guide_unevaluated_thesis, name='guide_unevaluated_thesis'),
     url(r'^guide/thesis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_thesis),
-    url(r'^guide/panel/submit/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
+    url(r'^guide/panel/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
+    url(r'^guide/panel/submit/$', app.guide_views.guide_add_referee_panel_members, name='guide_add_referee_panel_members'),
+    url(r'^guide/panel/referees/indian/$', app.guide_views.guide_get_indian_referee_details, name='guide_get_indian_referee_details'),
+    url(r'^guide/panel/referees/foreign/$', app.guide_views.guide_get_foreign_referee_details, name='guide_get_foreign_referee_details'),
+
     url(r'^guide/status/$', app.guide_views.guide_phd_status, name='guide_phd_status'),
     url(r'^guide/help/procedure/$', app.guide_views.guide_help_procedure, name='guide_help_procedure'),
     url(r'^guide/help/contacts/$', app.guide_views.guide_help_contacts, name='guide_help_contacts'),

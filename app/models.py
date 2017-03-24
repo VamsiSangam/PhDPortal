@@ -141,6 +141,7 @@ class PanelMembers(models.Model):
         verbose_name_plural = 'Panel Members'
 
     STATUS_TYPES = (
+        ('P', 'Pending member'),
         ('U', 'Not yet decided'),
         ('Y', 'Approved'),
         ('N', 'Declined'),
