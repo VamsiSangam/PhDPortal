@@ -1,13 +1,83 @@
 ﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
 {% block styles %}
 <!-- Add any page specific styles here -->
 
 {% endblock %}
 {% block content %}
-
-
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Unevaluated PhD Thesis</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title">{{ thesis.title }}</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                        <p><b>Abstract</b> - {{ thesis.abstract }}</p>
+                        <p>
+                            <b>Synopsis</b> -
+                            <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
+                                <p>PhD Synopsis</p>
+                            </object>
+                            <br /><br />
+                            <a class="btn btn-primary pull-right" href="{% static thesis.thesis %}" download="download">
+                                <i class="fa fa-download"></i> &nbsp; Download Thesis
+                            </a>
+                            <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.thesis %}')">
+                                <i class="fa fa-print"></i> &nbsp; Print Thesis
+                            </a>
+                        </p>
+                        <br />
+                        <hr />
+                        <p>
+                            Please give feedback regarding the PhD thesis. If you want to approve the PhD thesis, you can leave it 
+                            blank or give some advice on upcoming evaluations. If you want to reject the PhD thesis, please mention
+                            the changes to be made.
+                        </p>
+                        <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" rows="5"></textarea>
+                        <br />
+                        <button type="button" class="btn btn-success"
+                                onclick="evaluate({{ thesis.id }}, true, '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-check"></i> &nbsp; Approve Synopsis</button>
+                        <button type="button" class="btn btn-danger pull-right" 
+                                onclick="evaluate({{ thesis.id }}, false, '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-close"></i> &nbsp; Reject Synopsis</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
+<script>
+    function evaluateThesis(id, isApproved, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'isApproved': isApproved,
+            'feedback': $('#thesis-feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        });
+    }
 
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
 {% endblock %}

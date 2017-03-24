@@ -544,13 +544,12 @@
     <Content Include="app\templates\app\director\procedure.html" />
     <Content Include="app\templates\app\director\submit_for_evaluation.html" />
     <Content Include="app\templates\app\director\view_student_info.html" />
-    <Content Include="app\templates\app\guide\archived_synopsis.html" />
-    <Content Include="app\templates\app\guide\archived_thesis.html" />
     <Content Include="app\templates\app\guide\edit_profile.html" />
     <Content Include="app\templates\app\guide\guide_profile.html" />
     <Content Include="app\templates\app\guide\help_contacts.html" />
     <Content Include="app\templates\app\guide\phd_status.html" />
     <Content Include="app\templates\app\guide\procedure.html" />
+    <Content Include="app\templates\app\guide\submit_evaluation_panel.html" />
     <Content Include="app\templates\app\guide\unevaluated_abstract.html" />
     <Content Include="app\templates\app\guide\unevaluated_synopsis.html" />
     <Content Include="app\templates\app\guide\unevaluated_thesis.html" />

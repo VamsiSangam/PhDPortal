@@ -36,5 +36,11 @@
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
-
+<script>
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
 {% endblock %}

@@ -11,22 +11,16 @@
                       <li><a href="{% url 'search_user' %}"> Search student / guide / referee</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Evaluate Abstracts <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-file-text"></i> Evaluate PhDs <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{% url 'guide_unevaluated_abstract' %}"> View Unevaluated PhD Abstracts</a></li>
-                      <li><a href="{% url 'guide_archived_synopsis' %}"> View Archived Synopsis</a></li>
+                        <li><a href="{% url 'guide_unevaulated_synopsis' %}"> View Unevaluated PhD Synopsis</a></li>
+                        <li><a href="{% url 'guide_unevaluated_thesis' %}"> View Unevaluted full PhD Thesis Documents</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-align-left"></i> Evaluate Synopsis <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-users"></i> PhD Evaluation Panel <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{% url 'guide_unevaulated_synopsis' %}"> View Unevaluated Synopsis</a></li>
-                      <li><a href="{% url 'guide_archived_synopsis' %}"> View Archived Synopsis</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-file-text"></i> Evaluate PhD Thesis <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{% url 'guide_unevaluated_thesis' %}"> View Unevalutaed Thesis</a></li>
-                      <li><a href="{% url 'guide_archived_thesis' %}"> View Archived Thesis</a></li>
+                      <li><a href="{% url 'guide_submit_evaluation_panel' %}"> Submit PhD Evaluation Panel</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-check-square-o"></i> Ongoing PhDs Status <span class="fa fa-chevron-down"></span></a>

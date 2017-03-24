@@ -39,6 +39,10 @@ class NotificationsAdmin(admin.ModelAdmin):
     search_fields = ('receiver', 'sender', 'message',)
     list_filter = ('status',)
 
+class RefereesAdmin(admin.ModelAdmin):
+    list_display = ('user', 'type')
+    list_filter = ('type',)
+
 admin.site.register(User, UserAdmin)
 admin.site.register(StatusTypes, StatusTypesAdmin)
 admin.site.register(Thesis, ThesisAdmin)
@@ -47,3 +51,4 @@ admin.site.register(IEEEKeywords, IEEEKeywordsAdmin)
 admin.site.register(ThesisKeywords, ThesisKeywordsAdmin)
 admin.site.register(PanelMembers, PanelMembersAdmin)
 admin.site.register(Notifications, NotificationsAdmin)
+admin.site.register(Referees, RefereesAdmin)

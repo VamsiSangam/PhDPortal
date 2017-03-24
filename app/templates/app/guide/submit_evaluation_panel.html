@@ -1,0 +1,92 @@
+﻿{% extends "app/layouts/home.html" %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Submit PhD Evaluation Panel to Director for accepted PhDs</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel">
+                <a class="panel-heading collapsed" role="tab" id="heading1" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                    <h4 class="panel-title">Shipment Clustering</h4>
+                </a>
+                <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                    <div class="panel-body">
+                        <p><b>Title</b> - Shipment Clustering</p>
+                        <p><b>Student</b> - Vamsi Sangam</p>
+                        <p><b>Abstract</b> - ojaasasjdasndaslnd</p>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="panel-1" class="col-sm-1 control-label">Select Panel</label>
+                                <div class="col-sm-11">
+                                    <select class="form-control" id="panel-1" multiple>
+                                        <option value="chong">Chong Ching</option>
+                                        <option value="naruto">Naruto Uzumaki</option>
+                                        <option value="kurosaki">Kurosaki Ichigo</option>
+                                        <option value="byakuya">Kuchiki Byakuya</option>
+                                        <option value="zaraki">Zaraki Kenpaichi</option>
+                                        <option value="yamamoto">Yamamoto Genrusai</option>
+                                        <option value="ranji">Abarai Renji</option>
+                                        <option value="soifon">Soifon</option>
+                                        <option value="urahara">Urahara Kisuke</option>
+                                        <option value="yor">Yoruichi</option>
+                                        <option value="rukia">Kuchiki Rukia</option>
+                                        <option value="hitsugaya">Hitsugaya</option>
+                                        <option value="shinsui">Shinsui Kyoraku</option>
+                                        <option value="ukitake">Ukitake</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <a class="panel-heading collapsed" role="tab" id="heading2" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <h4 class="panel-title">Collapsible Group Items #2</h4>
+                </a>
+                <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                    <div class="panel-body">
+                        <p><strong>Collapsible Item 3 data</strong></p>
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+    function formatState(state) {
+        if (!state.id) { return state.text; }
+        var $state = $(
+          '<span class="clearfix">' +
+            '<img class="img-responsive img-rounded pull-right" style="height:65px;" src="http://localhost:8000/static/app/images/user.png"/>' +
+            '<h5>' + state.text + '</h5>' +
+            '<p>Gotei 13</p>' +
+          '</span>'
+        );
+        return $state;
+    };
+
+    $(document).ready(function () {
+        $("#panel-1").select2({
+            // placeholder: "Select Panel Member",
+            // minimumInputLength: 1,
+            maximumSelectionSize: 10,
+            templateResult: formatState,
+            width: '100%',
+        });
+    });
+</script>
+{% endblock %}

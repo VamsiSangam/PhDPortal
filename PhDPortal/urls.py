@@ -49,11 +49,12 @@ urlpatterns = [
 
     # guide urls
     url(r'^guide/abstract/unevaluated/$', app.guide_views.guide_unevaluated_abstract, name='guide_unevaluated_abstract'),
-    url(r'^guide/abstract/unevaluated/evaluate/$', app.guide_views.guide_unevaluated_abstract, name='guide_unevaluated_abstract'),
+    url(r'^guide/abstract/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_abstract),
     url(r'^guide/synopsis/unevaluated/$', app.guide_views.guide_unevaulated_synopsis, name='guide_unevaulated_synopsis'),
-    url(r'^guide/synopsis/archived/$', app.guide_views.guide_archived_synopsis, name='guide_archived_synopsis'),
+    url(r'^guide/synopsis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_synopsis),
     url(r'^guide/thesis/unevaluated/$', app.guide_views.guide_unevaluated_thesis, name='guide_unevaluated_thesis'),
-    url(r'^guide/thesis/archived/$', app.guide_views.guide_archived_thesis, name='guide_archived_thesis'),
+    url(r'^guide/thesis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_thesis),
+    url(r'^guide/panel/submit/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
     url(r'^guide/status/$', app.guide_views.guide_phd_status, name='guide_phd_status'),
     url(r'^guide/help/procedure/$', app.guide_views.guide_help_procedure, name='guide_help_procedure'),
     url(r'^guide/help/contacts/$', app.guide_views.guide_help_contacts, name='guide_help_contacts'),

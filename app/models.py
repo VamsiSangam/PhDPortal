@@ -29,6 +29,19 @@ class User(models.Model):
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
+class Referees(models.Model):
+    class Meta:
+        verbose_name = 'Referee'
+        verbose_name_plural = 'Referees'
+
+    REFEREE_TYPES = (
+        ('I', 'Indian'),
+        ('F', 'Foreign'),
+    )
+
+    user = models.ForeignKey(User, null = False)
+    type = models.CharField(max_length = 1, choices = REFEREE_TYPES)
+
 class StatusTypes(models.Model):
     class Meta:
         verbose_name = 'Status Type'

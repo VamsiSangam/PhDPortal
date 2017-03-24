@@ -35,13 +35,13 @@
                             blank or give some advice on upcoming evaluations. If you want to reject the PhD abstract, please mention
                             the changes to be made.
                         </p>
-                        <textarea class="form-control" id="thesis-feedback-{{ thsis.id }}" rows="5"></textarea>
+                        <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" rows="5"></textarea>
                         <br />
                         <button type="button" class="btn btn-success"
-                                onclick="evaluate({{ thesis.id }}, true, '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                onclick="evaluateAbstract({{ thesis.id }}, 'True', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
                                 <i class="fa fa-check"></i> &nbsp; Approve Abstract</button>
                         <button type="button" class="btn btn-danger pull-right" 
-                                onclick="evaluate({{ thesis.id }}, false, '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                onclick="evaluateAbstract({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
                                 <i class="fa fa-close"></i> &nbsp; Reject Abstract</button>
                     </div>
                 </div>
@@ -55,12 +55,14 @@
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
 <script>
-    function evaluate(id, isApproved, csrf_token, url) {
+    function evaluateAbstract(id, isApproved, url, csrf_token) {
         $.post(url, {
             'id': id,
             'isApproved': isApproved,
             'feedback' : $('#thesis-feedback-' + id).val(),
             'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            $('#thesis-' + id).fadeOut();
         });
     }
 </script>
