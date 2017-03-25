@@ -71,7 +71,7 @@
         var option = $(
           '<span class="clearfix">' +
             '<img class="img-responsive img-rounded pull-right" style="height:65px;" src="http://localhost:8000/static/app/images/user.png"/>' +
-            '<h5>' + user.full_name + '</h5>' +
+            '<h5>' + user.text + '</h5>' +
             '<p>' + user.email_id + '</p>' +
           '</span>'
         );
@@ -79,7 +79,7 @@
     };
 
     function formatRefereeSelection(referee) {
-        return referee.full_name;
+        return referee.text;
     }
 
     $(document).ready(function () {

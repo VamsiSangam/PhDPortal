@@ -260,9 +260,8 @@ def _get_referee_details(str, type):
     result = []
     for referee in referees:
         dict = {}
-        dict['full_name'] = referee.user.first_name + ' ' + referee.user.last_name
+        dict['text'] = referee.user.first_name + ' ' + referee.user.last_name
         dict['email_id'] = referee.user.email_id
-        dict['username'] = referee.user.username
         dict['id'] = referee.id
         result.append(dict)
 
@@ -297,7 +296,7 @@ def guide_submit_evaluation_panel(request):
     if request.method == "GET":
         # query for all the thesis under this guide 
         # whose panel members are not yet added
-        
+        user = User.objects.get(username = request.session['username'])
         all_thesis = []     # list of dict
 
         # each element of all_thesis is a dict
@@ -307,6 +306,21 @@ def guide_submit_evaluation_panel(request):
         # dict['student_username'] = student_username
         # dict['id'] = thesis_id (int)
 
+        # dict['keywords'] = list object, where every item of list has details of keyword
+        # keyword['title'] = keyword string, the keyword field corresponding to this keyword in IEEEKeywords table
+
+        for thesisGuides_object in ThesisGuides.objects.filter(guide_username = user):
+            thesis_object = thesisGuides_object.thesis_id
+            #check the status i.e., Here the submitted thesis must be approved b all guide/co-guide
+            if thesis_object.status.id >= STATUS_ID_THESIS_APPROVED and thesis_object.status.id < STATUS_ID_PANEL_SENT:
+                #this 'if can be avoided,if status is used properly 
+                if not PanelMembers.objects.filter(thesis_id = thesis_object):
+                    dict = {}
+                    dict['title'] = thesis_object.title
+                    dict['student_full_name'] = thesis_object.username.first_name+" "+thesis_object.username.last_name
+                    dict['student_username'] = thesis_object.username
+                    dict['id'] = thesis_object.id
+                    all_thesis.append(dict)
         return render(
             request,
             'app/guide/submit_evaluation_panel.html',
@@ -332,10 +346,113 @@ def guide_add_referee_panel_members(request):
         id = int(request.POST['id'])   # thesis id
 
         # add referees for corresponding thesis and send notifications accordingly
+        thesis = Thesis.objects.get(id = id)
+        
+        #adding indian
+        for indian in indian_referees:
+            referee = Referees.objects.get(id = int(indian))
+            panel_member = PanelMembers(thesis_id = thesis, referee_username = referee.user, priority = 0, status = 'U')
+            panel_member.save()
+        #adding foreign
+        for foreign in foreign_referees:
+            referee = Referees.objects.get(id = int(foreign))
+            panel_member = PanelMembers(thesis_id = thesis, referee_username = referee.user, priority = 0, status = 'U')
+            panel_member.save()
+
+
+        #send notification to student
+        send_notification(User.objects.get(username = request.session['username']), thesis.username, "Congratulations! Your thesis had been sent for Evaluation.Stay tuned for results", '')
+        #send notification to director
+        send_notification(User.objects.get(username = request.session['username']), User.objects.filter(type = 'D')[0], "Panel had been sent for evaluation of "+thesis.username.username+" ", '')
+        #upgrade status
 
         dict = {'status' : 'OK', 'message' : 'Panel Members added successfully!'}
 
         return HttpResponse(json.dumps(dict), content_type = 'text/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_pending_evaluation_panels(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "GET":
+        all_thesis = []     # list of dict
+
+        # each element of all_thesis is a dict
+        # dict['title'] = phd title
+        # dict['student_full_name'] = student full name
+        # dict['abstract'] = phd abstract
+        # dict['student_username'] = student_username
+        # dict['id'] = thesis_id (int)
+
+        # dict['keywords'] = list object, where every item of list has details of keyword
+        # keyword['title'] = keyword string, the keyword field corresponding to this keyword in IEEEKeywords table
+        
+        # dict['foreign_referees'] = list object, where every item of list has details of FOREIGN referee
+        # referee['id'] = id (int), the id of this referee in Referees Table
+        # referee['full_name'] = referee full name
+
+        # dict['indian_referees'] = list object, where every item of list has details of INDIAN referee
+        # referee['id'] = id (int), the id of this referee in Referees Table
+        # referee['full_name'] = referee full name
+
+        return render(request, 'app/guide/pending_evaluation_panels.html', {
+            'title':'Pending Evaluation Panels',
+            'descriptive_title' : 'Evaluation panels submitted by other guides waiting for your approval',
+            'unread_notifications' : get_unread_notifications(request.session['username'])
+        })
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_approve_panel_members(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        # add this guide's approval to all the existing
+        # referee panel members to this thesis
+        # notify co-guides for this thesis accordingly
+
+        id = int(request.POST['id'])  # thesis id
+
+        result = {'status' : 'OK', 'message' : 'You have approved this panel successfully!'}
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_reject_panel_members(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        # remove all the panel members for this thesis
+        # notify co-guides for this thesis accordingly
+
+        id = int(request.POST['id'])  # thesis id
+
+        result = {'status' : 'OK', 'message' : 'You have rejected this evaluation panel!'}
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_edit_panel_members(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        # remove approvals of co-guides on all the previous panel members for this thesis
+        # notify co-guides for this thesis accordingly
+
+        indian_referees = request.POST.getlist('indian_referees[]')
+        foreign_referees = request.POST.getlist('foreign_referees[]')
+        id = int(request.POST['id'])   # thesis id
+
+        result = {'status' : 'OK', 'message' : 'You have changed this panel successfully!'}
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
