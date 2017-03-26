@@ -28,7 +28,7 @@
         <p><b>Address</b> - {{ user.address }}</b></p>
         <br />
         {% if request.session.username == user.username %}
-        <a href="{% url 'user_edit_profile' %}" class="btn btn-primary">Edit profile</a>
+        <a href="{% url 'user_edit_profile' %}" class="btn btn-primary pull-right">Edit profile</a>
         {% endif %}
     </div>
 </div>
@@ -39,7 +39,7 @@
     {% elif user.type == 'D' %}
         <h2>Hello director</h2>
     {% elif user.type == 'R' %}
-        <h2>Hello referee</h2>=
+        {% include 'app/referee/referee_profile.html' %}
     {% endif %}
 {% endblock %}
 {% block scripts %}

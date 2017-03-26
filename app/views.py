@@ -20,6 +20,8 @@ URL_NOT_FOUND = 'not_found'
 URL_INTERNAL_SERVER_ERROR = 'internal_server_error'
 URL_STUDENT_HOME = 'student_home'
 URL_USER_PROFILE = 'user_profile'
+INDIAN_REFEREES = 3 #These are constant according to iiita
+FOREIGN_REFEREES = 2
 
 def _get_all_user_info(user):
     dict = {}

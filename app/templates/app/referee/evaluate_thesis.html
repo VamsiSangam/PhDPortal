@@ -1,0 +1,195 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<!-- Guide homepage -->
+<div class="x_panel" id="thesis-2">
+    <div class="x_title">
+        <h2>GPS Clustering</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li><a class="collapse-link"><i class="fa fa-chevron-up text-primary"></i></a></li>
+            <li><a class="close-link"><i class="fa fa-close text-danger"></i></a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="thesis-tabs-2" class="nav nav-tabs bar_tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#phd-details-2" id="details-tab-2" role="tab" data-toggle="tab" aria-expanded="true">PhD Thesis Details</a>
+                </li>
+                <li role="presentation">
+                    <a href="#phd-synopsis-2" id="synopsis-tab-2" role="tab" data-toggle="tab" aria-expanded="true">PhD Synopsis</a>
+                </li>
+                <li role="presentation">
+                    <a href="#phd-thesis-2" id="thesis-tab-2" role="tab" data-toggle="tab" aria-expanded="true">PhD Thesis Details</a>
+                </li>
+                <li role="presentation">
+                    <a href="#phd-report-2" role="tab" id="report-tab-2" data-toggle="tab" aria-expanded="false">Final Report</a>
+                </li>
+            </ul>
+            <div id="thesis-tabs-content-2" class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="phd-details-2" aria-labelledby="details-tab-2">
+                    <p><b>Title</b> - GPS Clustering</p>
+                    <p><b>Student</b> - <a href="/user/profile/rit2013063/">Vamsi Sangam</a></p>
+                    <p>
+                        <b>Thesis Keywords</b> - 
+                        <ul>
+                            <li>Global positioning system</li>
+                            <li>Data Mining</li>
+                        </ul>
+                    </p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="phd-synopsis-2" aria-labelledby="synopsis-tab-2">
+                    <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
+                        <p>PhD Synopsis</p>
+                    </object>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="phd-thesis-2" aria-labelledby="thesis-tab-2">
+                    <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
+                        <p>PhD Synopsis</p>
+                    </object>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="phd-report-2" aria-labelledby="report-tab-2">
+                    <form class="form-horizontal">
+                        <h4>General PhD Student Details</h4>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Student Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="Vamsi Sangam" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Roll Number</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="RIT2013063" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Department</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="Information Technology" disabled>
+                            </div>
+                        </div>
+                        <br />
+                        <h4>General Features of Thesis</h4>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Organisation and Get up</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="thesis-organisation-and-get-up" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">
+                                Whether quality of work is comparable to other universities of repute?
+                            </label>
+                            <div class="col-sm-7">
+                                <label class="radio-inline">
+                                    <input type="radio" name="quality-check" value="yes" checked> Yes
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="quality-check" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">
+                                Whether thesis has embodied any new ideas with original thoughts?
+                            </label>
+                            <div class="col-sm-7">
+                                <label class="radio-inline">
+                                    <input type="radio" name="original-check" value="yes" checked> Yes
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="original-check" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+                        <br />
+                        <h4>Comments</h4>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">
+                                Corrections in punctation, grammar, spelling or language
+                            </label>
+                            <div class="col-sm-7">
+                                <label class="radio-inline">
+                                    <input type="radio" name="grammar-check" value="none" checked> None
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="grammar-check" value="minor"> Minor
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="grammar-check" value="require-changes"> Require Changes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Technical Content of the Thesis</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="thesis-technical-content" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Highlights and strong/weak points of the Thesis</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="thesis-technical-content" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <br />
+                        <h4>Suggestions</h4>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-md-offset-2">
+                                <label class="radio">
+                                    <input type="radio" name="suggestions-check" value="1" checked>
+                                    Minor queries or suggestions or modifications to which the student replies
+                                    in writing and which is communicated to the oral board together with my report.
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="suggestions-check" value="2">
+                                    Suggestions and modifications to which the student's written reposnse is sent to
+                                    me. I will give my reply to the same in two weeks of its receipt. This is neccessary
+                                    before the thesis is considered by the oral board.
+                                </label>
+                            </div>
+                        </div>
+                        <br />
+                        <h4>Specific Recommendations</h4>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-md-offset-2">
+                                <label class="radio">
+                                    <input type="radio" name="specific-recommendations" value="1" checked>
+                                    Thesis is acceptable in the present form for the award of PhD degeree.
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="specific-recommendations" value="2">
+                                    The thesis is acceptable and the corrections, modifications, and improvement suggested
+                                    by me would be incorporated in the thesis to the satisfaction of the oral board.
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="specific-recommendations" value="3">
+                                    The thesis needs techincal improvement/modifications, which must be carried out to my
+                                    satisfaction before I recomment this thesis for acceptance.
+                                </label>
+                            </div>
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-primary pull-right">Submit Feedback</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    $(document).ready(function () {
+        //$('.collapse-link').click();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,106 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<div class="alert alert-info alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    Approve only those PhDs for which you want to be a referee. Shortlist those PhDs based on reviewing
+    the synopsis submitted.
+</div>
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>PhD Synopsis List</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title">{{ thesis.title }}</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                        <p>
+                            <b>Synopsis</b> - <br /><br />
+                            <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
+                                <p>PhD Synopsis</p>
+                            </object>
+                            <br /><br />
+                            <a class="btn btn-primary pull-right" href="{% static thesis.synopsis %}" download="download">
+                                <i class="fa fa-download"></i> &nbsp; Download Synopsis
+                            </a>
+                            <a class="btn btn-info pull-right" onclick="printPdf('{% static thesis.synopsis %}')">
+                                <i class="fa fa-copy"></i> &nbsp; Request Hardcopy
+                            </a>
+                            <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.synopsis %}')">
+                                <i class="fa fa-print"></i> &nbsp; Print Synopsis
+                            </a>
+                        </p>
+                        <br />
+                        <hr />
+                        <p>
+                            <b>Note</b> - By approving the PhD synopsis, you agree to be a referee for that PhD and will evaluate the
+                            final PhD thesis document submitted by the Institute's head. Please provide feedback as to why you approved
+                            or rejected to evaluate the PhD.
+                        </p>
+                        <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" rows="5"></textarea>
+                        <br />
+                        <button type="button" class="btn btn-success"
+                                onclick="evaluateSynopsis({{ thesis.id }}, 'True', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-check"></i> &nbsp; Approve Synopsis</button>
+                        <button type="button" class="btn btn-danger pull-right" 
+                                onclick="evaluateSynopsis({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-close"></i> &nbsp; Reject Synopsis</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function evaluateSynopsis(id, isApproved, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'isApproved': isApproved,
+            'feedback' : $('#thesis-feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#thesis-' + id).fadeOut();
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+            }
+        });
+    }
+
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
+{% endblock %}

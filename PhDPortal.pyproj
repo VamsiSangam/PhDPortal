@@ -567,11 +567,10 @@
     <Content Include="app\templates\app\other\login.html" />
     <Content Include="app\templates\app\referee\edit_profile.html" />
     <Content Include="app\templates\app\referee\help_contacts.html" />
-    <Content Include="app\templates\app\referee\notifications.html" />
     <Content Include="app\templates\app\referee\procedure.html" />
-    <Content Include="app\templates\app\referee\submit_final_feedback.html" />
-    <Content Include="app\templates\app\referee\synopsis_list.html" />
-    <Content Include="app\templates\app\referee\thesis_list.html" />
+    <Content Include="app\templates\app\referee\referee_profile.html" />
+    <Content Include="app\templates\app\referee\evaluate_thesis.html" />
+    <Content Include="app\templates\app\referee\evaluate_synopsis.html" />
     <Content Include="app\templates\app\student\add_keywords.html" />
     <Content Include="app\templates\app\student\edit_profile.html" />
     <Content Include="app\templates\app\student\help_contacts.html" />

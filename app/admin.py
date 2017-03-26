@@ -30,9 +30,9 @@ class ThesisKeywordsAdmin(admin.ModelAdmin):
     search_fields = ('thesis_id', 'keyword_id',)
 
 class PanelMembersAdmin(admin.ModelAdmin):
-    list_display = ('thesis_id', 'referee_username', 'priority', 'status',)
+    list_display = ('thesis_id', 'referee_username', 'status',)
     search_fields = ('thesis_id', 'referee_username',)
-    list_filter = ('status', 'priority',)
+    list_filter = ('status',)
 
 class NotificationsAdmin(admin.ModelAdmin):
     list_display = ('receiver', 'sender', 'message', 'status')

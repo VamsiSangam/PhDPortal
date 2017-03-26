@@ -145,10 +145,16 @@ LOGGING = {
             'filename': 'app/log.txt',
             'formatter': 'verbose'
         },
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
+            'handlers': ['file', 'console'],
         },
     }
 }

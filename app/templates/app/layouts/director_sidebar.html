@@ -8,11 +8,12 @@
                       <li><a href="{% url 'user_profile' %}"> Home</a></li>
                       <li><a href="{% url 'user_notifications' %}"> View all Notifications</a></li>
                       <li><a href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
-                      <li><a href="{% url 'user_info' %}"> Search student / guide / referee</a></li>
+                      <li><a href="{% url 'search_user' %}"> Search student / guide / referee</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-align-left"></i> Thesis Evaluation <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
+                          <li><a href="{% url 'director_view_student_info' %}"> PhD Status of students</a></li>
                           <li><a href="{% url 'director_submit_for_evaluation' %}"> List of Thesis to Send for Evaluation</a></li>
                       </ul>
                   </li>

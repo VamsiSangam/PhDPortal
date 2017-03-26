@@ -1,0 +1,15 @@
+﻿<div class="x_panel">
+    <div class="x_title">
+        <h2>Advanced Details</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <p><b>Referee Type</b> - Indian</p>
+        <p><b>IFSC Code</b> - ISB2013974505</p>
+        <p><b>Bank</b> - Swiss Bank</p>
+        <br />
+        {% if request.session.username == user.username %}
+        <a class="btn btn-primary pull-right" href="#">Edit Advanced Details</a>
+        {% endif %}
+    </div>
+</div>

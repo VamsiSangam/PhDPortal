@@ -142,9 +142,26 @@ class PanelMembers(models.Model):
 
     STATUS_TYPES = (
         ('P', 'Pending member'),
-        ('U', 'Not yet decided'),
-        ('Y', 'Approved'),
-        ('N', 'Declined'),
+        ('N', 'Not yet decided'),
+        ('A', 'Approved'),
+        ('D', 'Declined'), 
+    )
+
+    thesis_id = models.ForeignKey(Thesis, on_delete = models.CASCADE)
+    referee_username = models.ForeignKey(User, on_delete = models.CASCADE)
+    status = models.CharField(max_length = 1, choices = STATUS_TYPES)
+
+    def __str__(self):
+        return self.referee_username.first_name
+
+class FinalPanel(models.Model):
+    class Meta:
+        verbose_name = 'Final Panel'
+        verbose_name_plural = 'Final Panel'
+
+    STATUS_TYPES = (
+        ('A', 'Accepeted'),
+        ('P', 'Pending'),
     )
 
     thesis_id = models.ForeignKey(Thesis, on_delete = models.CASCADE)
@@ -153,7 +170,14 @@ class PanelMembers(models.Model):
     status = models.CharField(max_length = 1, choices = STATUS_TYPES)
 
     def __str__(self):
-        return self.refereee_username.first_name
+        return self.referee_username.first_name
+
+class NoEntryPanel(models.Model):
+    thesis_id = models.ForeignKey(Thesis, on_delete = models.CASCADE)
+    referee_username = models.ForeignKey(User, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.referee_username.first_name
 
 class Notifications(models.Model):
     class Meta:

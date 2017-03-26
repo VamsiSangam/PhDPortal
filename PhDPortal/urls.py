@@ -82,10 +82,10 @@ urlpatterns = [
     url(r'^director/help/contacts/$', app.director_views.director_help_contacts, name='director_help_contacts'),
 
     #Referee urls
-    url(r'^referee/$', app.referee_views.referee_home, name='referee_home'),   
-    url(r'^referee/requestedlist/$', app.referee_views.referee_requestedlist, name='referee_requestedlist'),
-    url(r'^referee/evaluate/thesis/$', app.referee_views.referee_evaluation, name='referee_evaluation'),
-    url(r'^referee/evaluate/feedback/$', app.referee_views.referee_evaluation_report, name='referee_evaluation_report'),
+    url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
+    url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),
+    url(r'^referee/thesis/$', app.referee_views.referee_evaluate_thesis, name='referee_evaluate_thesis'),
+    url(r'^referee/thesis/evaluate/$', app.referee_views.referee_thesis_approval),
     url(r'^referee/help/procedure/$', app.referee_views.referee_help_procedure, name='referee_help_procedure'),
     url(r'^referee/help/contacts/$', app.referee_views.referee_help_contacts, name='referee_help_contacts'),
 

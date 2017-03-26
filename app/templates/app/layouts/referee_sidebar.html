@@ -10,16 +10,11 @@
                       <li><a href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-align-left"></i> Evaluation List <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-file-text-o"></i> Evaluate PhD Thesis <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                          <li><a href="{% url 'referee_requestedlist' %}">View Synopsis of requested</a></li>
+                          <li><a href="{% url 'referee_evaluate_synopsis' %}">View Submitted PhD Synopsis List</a></li>
+                          <li><a href="{% url 'referee_evaluate_thesis' %}">Evaluate final PhD Thesis Document</a></li>
                        </ul>
-                  </li>
-                  <li><a><i class="fa fa-align-left"></i> Thesis to Evaluate <span class="fa fa-chevron-down"></span></a>
-                      <ul class="nav child_menu">
-                        <li><a href="{% url 'referee_evaluation' %}"> View Thesis of accepted</a></li>
-                        <li><a href="{% url 'referee_evaluation_report' %}"> Submit feedback</a></li>
-                        </ul> 
                   </li>
                   <li><a><i class="fa fa-question"></i> Help <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
