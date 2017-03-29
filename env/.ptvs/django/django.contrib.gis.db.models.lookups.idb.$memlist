@@ -1,7 +1,7 @@
 DistanceLTELookup
 TouchesLookup
 BBContainsLookup
-BuiltinLookup
+Lookup
 unicode_literals
 ContainsLookup
 BBOverlapsLookup
@@ -24,18 +24,14 @@ CoveredByLookup
 LOOKUP_SEP
 Col
 re
-IsValidLookup
-RasterBandTransform
 RightLookup
 Expression
-Lookup
 DistanceGTLookup
 DistanceLTLookup
 IntersectsLookup
 DistanceLookupBase
 StrictlyBelowLookup
 StrictlyAboveLookup
-Transform
 ContainsProperlyLookup
 OverlapsAboveLookup
 DistanceGTELookup

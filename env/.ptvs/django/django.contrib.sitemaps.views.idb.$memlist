@@ -1,13 +1,13 @@
 datetime
 PageNotAnInteger
 index
-sitemap
+x_robots_tag
 EmptyPage
 http_date
-Http404
+urlresolvers
 timegm
+sitemap
 TemplateResponse
 wraps
-x_robots_tag
-reverse
+Http404
 get_current_site

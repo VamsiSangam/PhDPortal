@@ -1,9 +1,10 @@
-LocaleMiddleware
+LocaleRegexURLResolver
+cached_property
 patch_vary_headers
 get_script_prefix
-is_language_prefix_patterns_used
 HttpResponseRedirect
+get_resolver
+LocaleMiddleware
 is_valid_path
 translation
-MiddlewareMixin
 settings

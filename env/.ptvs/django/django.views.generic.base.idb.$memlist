@@ -1,6 +1,6 @@
 ImproperlyConfigured
 unicode_literals
-update_wrapper
+classonlymethod
 reverse
 TemplateResponse
 TemplateView
@@ -8,7 +8,7 @@ logger
 six
 View
 logging
-classonlymethod
+update_wrapper
 TemplateResponseMixin
 http
 NoReverseMatch

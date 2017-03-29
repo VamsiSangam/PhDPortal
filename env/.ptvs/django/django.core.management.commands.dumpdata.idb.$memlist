@@ -1,10 +1,8 @@
 BaseCommand
 CommandError
-warnings
+router
 DEFAULT_DB_ALIAS
 serializers
 apps
-ProxyModelWarning
 OrderedDict
-router
 Command

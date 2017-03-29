@@ -42,10 +42,10 @@
                 <div class="form-group">
                     <label for="abstract" class="col-sm-1 control-label">Abstract :</label>
                         <div class="col-sm-11">
-                            {% if abstract is None %}
-                            <textarea class="form-control" name="abstract" rows="10"></textarea>
-                            {% else %}
+                            {% if abstract %}
                             <textarea class="form-control" name="abstract" rows="10">{{ abstract }}</textarea>
+                            {% else %}
+                            <textarea class="form-control" name="abstract" rows="10"></textarea>
                             {% endif %}
                         </div>
                 </div><br />

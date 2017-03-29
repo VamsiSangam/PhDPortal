@@ -1,7 +1,6 @@
 RedirectFallbackMiddleware
 http
 Redirect
-MiddlewareMixin
 settings
 apps
 unicode_literals

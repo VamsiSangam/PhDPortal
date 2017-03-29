@@ -3,7 +3,6 @@ hashlib
 BCryptSHA256PasswordHasher
 CryptPasswordHasher
 identify_hasher
-UnsaltedSHA1PasswordHasher
 unicode_literals
 is_password_usable
 force_text
@@ -12,7 +11,7 @@ MD5PasswordHasher
 importlib
 UnsaltedMD5PasswordHasher
 UNUSABLE_PASSWORD_PREFIX
-Argon2PasswordHasher
+SHA1PasswordHasher
 receiver
 ImproperlyConfigured
 import_string
@@ -23,14 +22,13 @@ check_password
 UNUSABLE_PASSWORD_SUFFIX_LENGTH
 reset_hashers
 OrderedDict
-warnings
+UnsaltedSHA1PasswordHasher
 lru_cache
 mask_hash
 BCryptPasswordHasher
 make_password
 get_hashers_by_algorithm
 BasePasswordHasher
-SHA1PasswordHasher
 PBKDF2PasswordHasher
 get_hasher
 pbkdf2

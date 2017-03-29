@@ -7,7 +7,6 @@ ignore_warnings
 skipIfDBFeature
 client
 LiveServerTestCase
-tag
 modify_settings
 testcases
 __all__
@@ -19,5 +18,4 @@ skipUnlessDBFeature
 override_system_checks
 TestCase
 override_settings
-selenium
 RequestFactory

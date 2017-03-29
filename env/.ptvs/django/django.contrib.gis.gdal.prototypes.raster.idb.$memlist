@@ -1,4 +1,3 @@
-get_band_statistics
 set_ds_projection_ref
 flush_ds
 get_ds_projection_ref
@@ -16,9 +15,7 @@ c_int
 c_char_p
 get_ds_geotransform
 get_driver_description
-delete_band_nodata_value
 get_ds_raster_band
-compute_band_statistics
 get_band_ysize
 int_output
 void_output
@@ -28,6 +25,7 @@ get_ds_xsize
 get_driver_count
 set_ds_geotransform
 std_call
+get_band_minimum
 get_band_ds
 get_band_description
 get_ds_description
@@ -44,5 +42,6 @@ copy_ds
 set_band_nodata_value
 get_ds_ysize
 get_band_datatype
+get_band_maximum
 partial
 POINTER

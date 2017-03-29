@@ -1,9 +1,6 @@
 patch_vary_headers
-cookie_date
-UpdateError
+settings
 import_module
-MiddlewareMixin
-SuspiciousOperation
+cookie_date
 time
 SessionMiddleware
-settings

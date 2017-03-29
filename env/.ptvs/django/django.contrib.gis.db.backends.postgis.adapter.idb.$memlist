@@ -1,6 +1,4 @@
 ISQLQuote
 Binary
 unicode_literals
-to_pgraster
 PostGISAdapter
-Geometry

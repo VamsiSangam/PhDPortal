@@ -75,7 +75,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #Director urls
-    url(r'^director/$', app.director_views.director_home, name='director_home'), 
     url(r'^director/students/$', app.director_views.director_view_student_info, name='director_view_student_info'),
     url(r'^director/evaluate/$', app.director_views.director_submit_for_evaluation, name='director_submit_for_evaluation'),
     url(r'^director/help/procedure/$', app.director_views.director_help_procedure, name='director_help_procedure'),

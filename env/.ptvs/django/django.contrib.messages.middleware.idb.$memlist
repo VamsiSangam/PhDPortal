@@ -1,4 +1,3 @@
-MiddlewareMixin
-default_storage
 settings
 MessageMiddleware
+default_storage

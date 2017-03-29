@@ -1,6 +1,7 @@
+global_settings
+unicode_literals
+register
 Warning
+Tags
 check_duplicate_template_settings
 settings
-unicode_literals
-Tags
-register

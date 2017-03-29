@@ -1,8 +1,7 @@
-check_models_permissions
+post_migrate
 _
-AppConfig
 check_user_model
 checks
 AuthConfig
 create_permissions
-post_migrate
+AppConfig

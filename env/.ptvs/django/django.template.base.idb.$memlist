@@ -17,6 +17,7 @@ FILTER_SEPARATOR
 BLOCK_TAG_START
 constant_string
 Template
+resolve_variable
 SINGLE_BRACE_START
 escape
 BLOCK_TAG_END
@@ -29,6 +30,7 @@ force_str
 localize
 DeprecationInstanceCheck
 six
+RemovedInDjango110Warning
 TextNode
 kwarg_re
 EscapeData

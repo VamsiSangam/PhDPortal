@@ -10,9 +10,15 @@
         <div class="x_content">
             <div class="" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Unread</a>
+                <li role="presentation" class="active">
+                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">
+                        Unread &nbsp; <span class="badge">{{ unread_notifications|length }}</span>
+                    </a>
                 </li>
-                <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Read</a>
+                <li role="presentation" class="">
+                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">
+                        Read &nbsp; <span class="badge">{{ read_notifications|length }}</span>
+                    </a>
                 </li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
@@ -43,7 +49,7 @@
                                 <i class="fa fa-eye"></i>
                             </button>
                             <blockquote>
-                                {% if notification.link is not None %}
+                                {% if notification.link %}
                                     <a href="{{ notification.link }}"><p>{{ notification.message }}</p></a>
                                 {% else %}
                                     <p>{{ notification.message }}</p>
@@ -70,7 +76,7 @@
                                 <i class="fa fa-close"></i>
                             </a>
                             <blockquote>
-                                {% if notification.link is not None %}
+                                {% if notification.link %}
                                     <a href="{{ notification.link }}"><p>{{ notification.message }}</p></a>
                                 {% else %}
                                     <p>{{ notification.message }}</p>

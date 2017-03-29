@@ -13,7 +13,6 @@ urljoin
 validate_host
 force_str
 copy
-limited_parse_qsl
 six
 urlencode
 host_validation_re
@@ -22,12 +21,12 @@ signing
 iri_to_uri
 HttpRequest
 escape_uri_path
+parse_qsl
 sys
 is_same_domain
 MultiPartParserError
 QueryDict
 RAISE_ERROR
-RequestDataTooBig
 ImproperlyConfigured
 _original_allowed_hosts
 force_bytes

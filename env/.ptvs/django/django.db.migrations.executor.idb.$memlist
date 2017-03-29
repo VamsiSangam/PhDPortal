@@ -1,9 +1,8 @@
 MigrationExecutor
+migrations
 ProjectState
-unicode_literals
-MigrationLoader
 global_apps
 InvalidMigrationPlan
-migrations
+unicode_literals
 MigrationRecorder
-router
+MigrationLoader

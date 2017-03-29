@@ -1,5 +1,6 @@
 cached_property
 six
+DatabaseError
 aggregates
 Distance
 sys

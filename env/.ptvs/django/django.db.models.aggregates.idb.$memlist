@@ -1,15 +1,14 @@
 Max
-IntegerField
+Func
 Sum
 Avg
 FieldError
 Min
 StdDev
 __all__
-Func
+IntegerField
 Variance
 Star
 Aggregate
 Count
-DecimalField
 FloatField

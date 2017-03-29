@@ -1,10 +1,9 @@
-cached_property
 PageNotAnInteger
 six
-Paginator
+EmptyPage
 ceil
 Page
 collections
 QuerySetPaginator
-EmptyPage
+Paginator
 InvalidPage

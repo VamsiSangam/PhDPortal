@@ -17,10 +17,10 @@ RemovedInDjango20Warning
 admin_actions
 ORDER_VAR
 paginator_number
-formats
+register
 result_headers
+escapejs
 add_preserved_filters
-_coerce_field_name
 get_template
 SEARCH_VAR
 datetime
@@ -37,5 +37,5 @@ Library
 items_for_result
 display_for_field
 result_hidden_fields
-register
+formats
 mark_safe

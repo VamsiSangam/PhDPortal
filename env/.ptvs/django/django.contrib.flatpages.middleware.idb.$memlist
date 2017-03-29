@@ -1,5 +1,4 @@
-MiddlewareMixin
-settings
 FlatpageFallbackMiddleware
+settings
 Http404
 flatpage

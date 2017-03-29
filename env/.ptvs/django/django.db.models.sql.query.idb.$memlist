@@ -38,13 +38,13 @@ Iterator
 add_to_dict
 MultiJoin
 connections
-RemovedInDjango20Warning
 FieldError
 SINGLE
 Counter
 get_order_dir
 INNER
 get_field_names_from_opts
+RemovedInDjango110Warning
 product
 Empty
 LOOKUP_SEP

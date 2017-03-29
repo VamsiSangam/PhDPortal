@@ -5,8 +5,7 @@ unicode_literals
 get_exception_reporter_filter
 SafeExceptionReporterFilter
 default_urlconf
-force_text
-types
+_
 HttpResponseNotFound
 pprint
 MultiValueDict
@@ -24,7 +23,7 @@ get_safe_settings
 lru_cache
 smart_text
 sys
-_
+types
 CallableSettingWrapper
 ExceptionReporter
 technical_500_response

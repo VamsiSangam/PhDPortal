@@ -1,10 +1,9 @@
 sys
-OFTInteger64
+OFTTime
 models
 OGRGeometry
 OFTDate
 transaction
-LayerMapping
 InvalidInteger
 OFTReal
 OFTDateTime
@@ -12,9 +11,9 @@ GeometryField
 FieldDoesNotExist
 OFTString
 Decimal
-LayerMapError
+LayerMapping
 connections
-OFTTime
+LayerMapError
 GDALException
 OFTInteger
 InvalidString

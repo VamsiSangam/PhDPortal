@@ -1,11 +1,9 @@
-datetime
+logger
 _related_non_m2m_objects
-timezone
+six
 logging
 atomic
-hashlib
-truncate_name
-six
-BaseDatabaseSchemaEditor
 force_bytes
-logger
+truncate_name
+BaseDatabaseSchemaEditor
+hashlib

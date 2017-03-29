@@ -3,6 +3,5 @@ aggregates
 MySQLOperations
 BaseSpatialOperations
 DatabaseOperations
-GeometryField
 SpatialOperator
 WKTAdapter

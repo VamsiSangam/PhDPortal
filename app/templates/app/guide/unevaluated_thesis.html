@@ -49,10 +49,10 @@
                         <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" rows="5"></textarea>
                         <br />
                         <button type="button" class="btn btn-success"
-                                onclick="evaluate({{ thesis.id }}, 'True', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                onclick="evaluateThesis({{ thesis.id }}, 'True', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
                                 <i class="fa fa-check"></i> &nbsp; Approve Thesis</button>
                         <button type="button" class="btn btn-danger pull-right" 
-                                onclick="evaluate({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                onclick="evaluateThesis({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
                                 <i class="fa fa-close"></i> &nbsp; Reject Thesis</button>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ ImproperlyConfigured
 apps
 update_wrapper
 reverse
+Engine
 TemplateResponse
 system_check_errors
 ModelAdmin
@@ -14,11 +15,10 @@ settings
 AdminSite
 actions
 never_cache
-JavaScriptCatalog
 _
 PermissionDenied
-Http404
 capfirst
+Http404
 NoReverseMatch
 csrf_protect
 HttpResponseRedirect

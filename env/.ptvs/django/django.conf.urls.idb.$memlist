@@ -1,10 +1,11 @@
 i18n
 LocaleRegexURLResolver
+patterns
 handler500
 RegexURLResolver
 handler403
 six
-ImproperlyConfigured
+include
 static
 __all__
 RemovedInDjango20Warning
@@ -13,5 +14,6 @@ handler404
 RegexURLPattern
 warnings
 import_module
+RemovedInDjango110Warning
 url
-include
+ImproperlyConfigured

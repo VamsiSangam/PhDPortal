@@ -1,11 +1,10 @@
 urljoin
 get_media_prefix
 PrefixNode
-apps
+do_static
 iri_to_uri
 register
 static
-do_static
 StaticNode
 template
 get_static_prefix

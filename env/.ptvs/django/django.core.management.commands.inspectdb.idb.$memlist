@@ -1,7 +1,6 @@
 BaseCommand
 CommandError
 unicode_literals
-force_text
 keyword
 DEFAULT_DB_ALIAS
 connections

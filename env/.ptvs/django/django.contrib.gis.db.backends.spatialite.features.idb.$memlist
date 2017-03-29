@@ -1,4 +1,5 @@
 SQLiteDatabaseFeatures
 BaseSpatialFeatures
+geos_version_info
 DatabaseFeatures
 cached_property

@@ -10,8 +10,9 @@ django
 re
 find_command
 CommandError
+six
 Command
-normalize_eols
+BuildFile
 STATUS_OK
 check_programs
 settings
@@ -27,6 +28,6 @@ upath
 os
 cached_property
 write_pot_file
-BuildFile
 TranslatableFile
+gettext_popen_wrapper
 NO_LOCALE_DIR

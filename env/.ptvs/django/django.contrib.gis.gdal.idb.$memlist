@@ -2,7 +2,7 @@ gdal_full_version
 field
 geomtype
 Driver
-OGRIndexError
+geometries
 GDAL_VERSION
 Envelope
 HAS_GDAL
@@ -17,7 +17,7 @@ SpatialReference
 __all__
 GDALException
 base
-geometries
+OGRIndexError
 datasource
 check_err
 SRSException

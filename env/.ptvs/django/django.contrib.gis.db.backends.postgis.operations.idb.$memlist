@@ -5,10 +5,9 @@ PostGISOperator
 Distance
 from_pgraster
 re
-BILATERAL
 cached_property
-GDALRaster
-six
+to_pgraster
+ProgrammingError
 get_pgraster_srid
 settings
 PostGISGeometryColumns
@@ -18,5 +17,3 @@ SpatialOperator
 Geometry
 DatabaseOperations
 BaseSpatialOperations
-to_pgraster
-ProgrammingError

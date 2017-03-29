@@ -1,15 +1,15 @@
 recorder
 CreateModel
-AlterModelTable
+Migration
 optimizer
-RenameModel
+autodetector
 utils
 special
 RunPython
 models
 AlterField
-RenameField
 executor
+RenameField
 exceptions
 state
 AlterModelOptions
@@ -19,9 +19,9 @@ RemoveField
 base
 SeparateDatabaseAndState
 DeleteModel
-Migration
+AlterModelTable
 AlterOrderWithRespectTo
-autodetector
+RenameModel
 AlterIndexTogether
 graph
 operations
@@ -33,5 +33,4 @@ AlterModelManagers
 questioner
 AlterUniqueTogether
 fields
-serializer
 topological_sort

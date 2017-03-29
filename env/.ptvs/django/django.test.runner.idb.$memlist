@@ -14,7 +14,6 @@ reorder_suite
 RemoteTestRunner
 pickle
 default_test_processes
-filter_tests_by_tags
 setup_databases
 multiprocessing
 _worker_id

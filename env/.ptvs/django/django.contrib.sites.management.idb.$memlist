@@ -1,7 +1,7 @@
 connections
 create_default_site
-global_apps
+router
 DEFAULT_DB_ALIAS
 no_style
-router
+apps
 settings

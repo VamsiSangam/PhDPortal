@@ -8,16 +8,14 @@ unicode_literals
 message_from_string
 force_text
 BytesIO
-utf8_charset_qp
 make_msgid
 random
 sanitize_address
-RFC5322_EMAIL_LINE_LENGTH_LIMIT
 six
 Encoders
 mimetypes
+EmailMultiAlternatives
 EmailMessage
-split_addr
 Charset
 Header
 MIMEText
@@ -26,6 +24,7 @@ formatdate
 parseaddr
 utf8_charset
 SafeMIMEText
+formataddr
 SafeMIMEMultipart
 MIMEMixin
 getaddresses
@@ -35,5 +34,4 @@ ADDRESS_HEADERS
 Message
 MIMEMultipart
 settings
-EmailMultiAlternatives
 SafeMIMEMessage

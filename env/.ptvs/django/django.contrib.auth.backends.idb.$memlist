@@ -1,7 +1,5 @@
-AllowAllUsersModelBackend
-Permission
-unicode_literals
-AllowAllUsersRemoteUserBackend
-ModelBackend
-get_user_model
 RemoteUserBackend
+unicode_literals
+ModelBackend
+Permission
+get_user_model

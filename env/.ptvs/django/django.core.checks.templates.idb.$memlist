@@ -1,11 +1,7 @@
-copy
-six
 E001
 unicode_literals
 register
-check_string_if_invalid_is_string
-E002
-Tags
 check_setting_app_dirs_loaders
+Tags
 Error
 settings

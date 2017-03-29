@@ -3,7 +3,6 @@ DateTimeAwareJSONEncoder
 unicode_literals
 DeserializationError
 Deserializer
-Promise
 six
 PythonSerializer
 datetime

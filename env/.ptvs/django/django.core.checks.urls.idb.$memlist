@@ -1,14 +1,10 @@
-six
-get_warning_for_invalid_pattern
-check_url_config
+check_resolver
 unicode_literals
 register
 Warning
 describe_pattern
 check_pattern_name
 check_pattern_startswith_slash
-check_resolver
+check_url_config
 Tags
 check_include_trailing_dollar
-Error
-settings

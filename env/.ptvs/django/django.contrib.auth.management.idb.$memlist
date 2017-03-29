@@ -1,6 +1,9 @@
+apps
 exceptions
+_check_permission_clashing
 get_system_username
-router
+get_permission_codename
+CommandError
 _get_builtin_permissions
 six
 DEFAULT_DB_ALIAS
@@ -8,8 +11,7 @@ _get_all_permissions
 unicodedata
 unicode_literals
 DEFAULT_LOCALE_ENCODING
-global_apps
-get_permission_codename
+router
 create_permissions
 getpass
 get_default_username

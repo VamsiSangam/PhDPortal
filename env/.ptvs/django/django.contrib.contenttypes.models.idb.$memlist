@@ -2,7 +2,12 @@ python_2_unicode_compatible
 models
 ContentType
 unicode_literals
-_
+force_text
+warnings
+RemovedInDjango110Warning
+OperationalError
 apps
 ContentTypeManager
-force_text
+_
+IntegrityError
+ProgrammingError

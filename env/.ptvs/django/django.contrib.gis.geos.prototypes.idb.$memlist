@@ -6,13 +6,13 @@ geos_get_srid
 prepared
 cs_getdims
 geos_issimple
+geos_simplify
+topology
 geos_union
-create_empty_polygon
-geos_isring
 geos_intersects
 geos_pointonsurface
-geos_covers
 Topology
+geos_interpolate
 GEOSFuncFactory
 cs_getsize
 get_cs
@@ -37,7 +37,6 @@ get_extring
 POINTER
 geos_equalsexact
 create_cs
-geos_unary_union
 DblFromGeom
 geos_difference
 c_int
@@ -49,13 +48,11 @@ get_intring
 geos_contains
 geos_typeid
 geom_clone
-geos_simplify
 get_geomn
-topology
 cs_getordinate
+geos_isring
 create_polygon
 geos_intersection
-geos_interpolate
 from_hex
 create_point
 cs_getz
@@ -71,7 +68,6 @@ geos_within
 geos_project_normalized
 destroy_geom
 geos_project
-geos_isclosed
 geos_symdifference
 geos_boundary
 check_dbl

@@ -2,11 +2,9 @@ AuthenticationMiddleware
 RemoteUserMiddleware
 get_user
 PersistentRemoteUserMiddleware
-settings
 load_backend
 auth
 SessionAuthenticationMiddleware
 SimpleLazyObject
 RemoteUserBackend
-MiddlewareMixin
 ImproperlyConfigured

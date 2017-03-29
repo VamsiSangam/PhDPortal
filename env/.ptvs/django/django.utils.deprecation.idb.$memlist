@@ -1,10 +1,7 @@
-CallableFalse
-CallableBool
 absolute_import
 inspect
-MiddlewareMixin
 warnings
-CallableTrue
+RemovedInDjango110Warning
 DeprecationInstanceCheck
 RenameMethodsBase
 RemovedInNextVersionWarning

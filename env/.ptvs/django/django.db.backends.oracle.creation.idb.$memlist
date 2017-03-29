@@ -2,8 +2,8 @@ TEST_DATABASE_PREFIX
 cached_property
 BaseDatabaseCreation
 time
+PASSWORD
 DatabaseCreation
-get_random_string
 input
 DatabaseError
 sys

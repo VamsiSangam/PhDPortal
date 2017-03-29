@@ -6,7 +6,6 @@ check_for_language
 pgettext_lazy
 ugettext_lazy
 __all__
-trim_whitespace_re
 ungettext
 LANGUAGE_SESSION_KEY
 ugettext
@@ -29,7 +28,7 @@ string_concat
 get_language_from_path
 force_text
 _string_concat
-_lazy_number_unpickle
+trim_whitespace_re
 npgettext_lazy
 activate
 lazy_number

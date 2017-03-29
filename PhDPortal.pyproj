@@ -602,6 +602,7 @@
   <ItemGroup>
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
+    <Folder Include="app\tests\" />
     <Folder Include="app\scripts\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
@@ -641,6 +642,8 @@
     <Folder Include="app\templates\app\other\" />
     <Folder Include="app\templates\app\referee\" />
     <Folder Include="app\templates\app\student\" />
+    <Folder Include="app\tests\functional\" />
+    <Folder Include="app\tests\unit\" />
     <Folder Include="Media\" />
     <Folder Include="Media\Synopsis\" />
     <Folder Include="PhDPortal\" />
@@ -648,6 +651,9 @@
   <ItemGroup>
     <Compile Include="app\admin.py" />
     <Compile Include="app\apps.py" />
+    <Compile Include="app\choices.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\director_views.py">
       <SubType>Code</SubType>
     </Compile>
@@ -666,7 +672,15 @@
     <Compile Include="app\student_views.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app\tests.py" />
+    <Compile Include="app\tests\testing_utilities.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\tests\unit\test_requests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\scripts\data.py">

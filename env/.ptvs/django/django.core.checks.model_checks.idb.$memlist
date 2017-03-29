@@ -1,11 +1,9 @@
-apps
-unicode_literals
+Tags
+types
 inspect
 register
-check_lazy_references
-chain
+check_model_signals
 check_all_models
-types
-Tags
+apps
+unicode_literals
 Error
-_check_lazy_references

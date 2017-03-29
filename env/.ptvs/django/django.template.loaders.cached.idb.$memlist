@@ -1,12 +1,10 @@
 Loader
 Template
-TemplateDoesNotExist
-force_text
-hashlib
-warnings
+force_bytes
+RemovedInDjango20Warning
 BaseLoader
 func_supports_parameter
 Origin
-copy_exception
-force_bytes
-RemovedInDjango20Warning
+TemplateDoesNotExist
+hashlib
+warnings

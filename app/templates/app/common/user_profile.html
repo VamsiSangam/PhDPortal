@@ -24,7 +24,7 @@
     </div>
     <div class="x_content">
         <p><b>Name</b> - {{ user.full_name }}</b></p>
-        <p><b>Email</b> - {{ user.email_id }}</b></p>
+        <p><b>Email</b> - {{ user.email }}</b></p>
         <p><b>Address</b> - {{ user.address }}</b></p>
         <br />
         {% if request.session.username == user.username %}

@@ -5,7 +5,6 @@ MIGRATIONS_MODULE_NAME
 unicode_literals
 import_module
 AmbiguityError
-InconsistentMigrationHistory
 BadMigrationError
 MigrationLoader
 apps

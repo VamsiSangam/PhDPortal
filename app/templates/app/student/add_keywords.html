@@ -26,22 +26,22 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                {% if thesis is None %}
+                {% if not thesis %}
                     <p>Please submit a thesis first!</p>
                 {% elif thesis_keywords|length == 0 %}
                     <p>You don't have any keywords added to your thesis {{ thesis.title }}</p>
                 {% else %}
                     <div class="list-group">
-                        {% for keyword in thesis_keywords %}
+                        {% for thesis_keyword in thesis_keywords %}
                             <a class="list-group-item">
-                                <form style="display:none" method="post" action="{{ request.path }}delete/{{ keyword.id }}" id="delete-keyword-{{ keyword.id }}">
+                                <form style="display:none" method="post" action="{{ request.path }}delete/{{ thesis_keyword.id }}" id="delete-keyword-{{ thesis_keyword.id }}">
                                     {% csrf_token %}
                                 </form>
                                 <button class="btn btn-danger pull-right list-item-button" data-toggle="tooltip" data-placement="left"
-                                        title="Delete" onclick="$('#delete-keyword-{{ keyword.id }}').submit()">
+                                        title="Delete" onclick="$('#delete-keyword-{{ thesis_keyword.id }}').submit()">
                                     <i class="fa fa-close"></i>
                                 </button>
-                                {{ keyword.keyword_id.keyword }}
+                                {{ thesis_keyword.keyword.keyword }}
                             </a>
                         {% endfor %}
                     </div>
@@ -60,7 +60,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                {% if thesis is None %}
+                {% if not thesis %}
                     <p>Please submit a thesis first!</p>
                 {% else %}
                     <div class="list-group" id="keywords-list-group">
@@ -87,7 +87,7 @@
     function loadKeywords(id) {
         $.post('{{ request.path }}get/', {
             csrfmiddlewaretoken : '{{ csrf_token }}',
-            parent_id : id
+            parent : id
         }, loadKeywordsCallback);
     }
 

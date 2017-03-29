@@ -4,7 +4,9 @@ parse_cookie
 unicode_literals
 force_str
 Morsel
+_cookie_encodes_correctly
 _cookie_allows_colon_in_names
 SimpleCookie
-sys
 cookie_pickles_properly
+sys
+_tc

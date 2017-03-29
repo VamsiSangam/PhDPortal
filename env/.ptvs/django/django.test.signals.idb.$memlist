@@ -1,6 +1,5 @@
 connections
 time
-apps
 ConnectionRouter
 update_connections_time_zone
 router
@@ -21,9 +20,8 @@ auth_password_validators_changed
 warnings
 template_rendered
 root_urlconf_changed
-static_storage_changed
 threading
-user_model_swapped
+static_storage_changed
 empty
 receiver
 update_installed_apps

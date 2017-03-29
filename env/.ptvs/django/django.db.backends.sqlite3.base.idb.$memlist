@@ -5,7 +5,6 @@ unicode_literals
 utils
 datetime
 _sqlite_regexp
-_sqlite_time_diff
 DatabaseError
 force_text
 _sqlite_date_trunc
@@ -22,7 +21,6 @@ _sqlite_datetime_parse
 DatabaseClient
 re
 parse_time
-_sqlite_timestamp_diff
 SafeBytes
 DatabaseIntrospection
 pytz
