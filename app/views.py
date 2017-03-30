@@ -73,7 +73,7 @@ def _get_user_type_object(user):
 
 def _get_all_user_info(user):
     """
-    Retrieves all user data for a given username string
+    Retrieves all user data for a given user
 
     Args:
         user: User model object
@@ -577,13 +577,8 @@ def _clean_user_info_results(data):
 
     list = []
 
-    for item in data[: min(len(data), 15)]:
-        dict = {}
-        dict['username'] = item[0].username
-        dict['first_name'] = item[0].first_name
-        dict['last_name'] = item[0].last_name
-        dict['email_id'] = item[0].email_id
-        dict['type'] = item[0].type
+    for user in data[: min(len(data), 15)]:
+        dict = _get_all_user_info(user[0])
         list.append(dict)
 
     return list

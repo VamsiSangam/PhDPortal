@@ -1548,3 +1548,215 @@ Traceback (most recent call last):
   File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
     return Database.Cursor.execute(self, query, params)
 django.db.utils.OperationalError: database is locked
+2017-03-30 22:10:02 - INFO - views:login:349 - User anshul successfully authenticated
+2017-03-30 22:10:28 - INFO - views:logout:370 - User anshul successfully logged out
+2017-03-30 22:10:33 - INFO - views:login:349 - User pavan successfully authenticated
+2017-03-30 22:11:01 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 636, in search_user_query
+    result = _clean_user_info_results(sorted_results)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 585, in _clean_user_info_results
+    dict['email_id'] = item[0].email_id
+AttributeError: 'User' object has no attribute 'email_id'
+2017-03-30 22:12:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 636, in search_user_query
+    result = _clean_user_info_results(sorted_results)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 586, in _clean_user_info_results
+    dict['type'] = item[0].type
+AttributeError: 'User' object has no attribute 'type'
+2017-03-30 22:13:05 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 636, in search_user_query
+    result = _clean_user_info_results(sorted_results)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 582, in _clean_user_info_results
+    dict['username'] = item.username
+AttributeError: 'tuple' object has no attribute 'username'
+2017-03-30 22:14:55 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 631, in search_user_query
+    result = _clean_user_info_results(sorted_results)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 581, in _clean_user_info_results
+    dict = _get_all_user_info(user)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 86, in _get_all_user_info
+    dict['username'] = user.get_username()
+AttributeError: 'tuple' object has no attribute 'get_username'
+2017-03-30 23:00:12 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 321, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 295, in _get_referee_details
+    users = User.objects.filter(Q(user__first_name__icontains = str) | Q(user__last_name__icontains = str))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1149, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1035, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1330, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: communicationaddress, date_joined, email, faculty, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, receiver, referee, section, sender, student, user_permissions, username, userprofile
+2017-03-30 23:00:19 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 321, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 295, in _get_referee_details
+    users = User.objects.filter(Q(user__first_name__icontains = str) | Q(user__last_name__icontains = str))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1149, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1035, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1330, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: communicationaddress, date_joined, email, faculty, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, receiver, referee, section, sender, student, user_permissions, username, userprofile
+2017-03-30 23:02:57 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 321, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 295, in _get_referee_details
+    users = User.objects.filter(Q(user__first_name__icontains = str) | Q(user__last_name__icontains = str))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1149, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1035, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1330, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: communicationaddress, date_joined, email, faculty, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, receiver, referee, section, sender, student, user_permissions, username, userprofile
+2017-03-30 23:04:20 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 322, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 295, in _get_referee_details
+    users = User.objects.filter(Q(user__first_name__icontains = str) | Q(user__last_name__icontains = str))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1149, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1035, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1330, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: communicationaddress, date_joined, email, faculty, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, receiver, referee, section, sender, student, user_permissions, username, userprofile
+2017-03-30 23:05:13 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 324, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 295, in _get_referee_details
+    users = User.objects.filter(Q(user__first_name__icontains = str) | Q(user__last_name__icontains = str))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1149, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1035, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1330, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: communicationaddress, date_joined, email, faculty, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, receiver, referee, section, sender, student, user_permissions, username, userprofile

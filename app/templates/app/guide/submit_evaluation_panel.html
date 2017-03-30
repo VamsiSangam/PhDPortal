@@ -28,7 +28,39 @@
                         <p><b>Title</b> - {{ thesis.title }}</p>
                         <p><b>Student</b> - <a href="{% url 'user_profile' %}{{ thesis.student_username }}">{{ thesis.student_full_name }}</a></p>
                         <p><b>Abstract</b> - {{ thesis.abstract }}</p>
-                        <br />
+                        <p><b>Referee members already selected</b> -</p>
+                        <div class="col-sm-6">
+                            <ul>
+                                {% for referee in thesis.other_selected_indian_referees %}
+                                <li>
+                                    <a href="{% url 'user_profile' %}{{ referee.username }}/">
+                                        {{ referee.full_name }}
+                                    </a> - added by 
+                                    <a href="{% url 'user_profile' %}{{ referee.added_by_guide_username }}">
+                                        {{ referee.added_by_guide_full_name }}
+                                    </a> 
+                                    ( {{ referee.added_by_guide_type }} )
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <br />
+                        </div>
+                        <div class="col-sm-6">
+                            <ul>
+                                {% for referee in thesis.other_selected_foreign_referees %}
+                                <li>
+                                    <a href="{% url 'user_profile' %}{{ referee.username }}/">
+                                        {{ referee.full_name }}
+                                    </a> - added by 
+                                    <a href="{% url 'user_profile' %}{{ referee.added_by_guide_username }}">
+                                        {{ referee.added_by_guide_full_name }}
+                                    </a> 
+                                    ( {{ referee.added_by_guide_type }} )
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <br />
+                        </div>
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label for="foreign-referees-{{ thesis.id }}" class="col-sm-2 control-label">
@@ -36,6 +68,9 @@
                                 </label>
                                 <div class="col-sm-10">
                                     <select class="form-control select2-foreign" id="foreign-referees-{{ thesis.id }}" multiple>
+                                        {% for referee in thesis.foreign_referees %}
+                                        <option value="{{ referee.id }}" selected>{{ referee.full_name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -45,19 +80,123 @@
                                 </label>
                                 <div class="col-sm-10">
                                     <select class="form-control select2-indian" id="indian-referees-{{ thesis.id }}" multiple>
+                                        {% for referee in thesis.indian_referees %}
+                                        <option value="{{ referee.id }}" selected>{{ referee.full_name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
                         </form>
                         <br />
                         <button class="btn btn-primary pull-right" 
+                                onclick="saveChanges({{ thesis.id }}, '{% url 'guide_add_referee_panel_members' %}', '{{ csrf_token }}')">
+                                Save changes to Referee Panel
+                        </button>
+                        <button class="btn btn-success pull-left" 
                                 onclick="submitPanel({{ thesis.id }}, '{% url 'guide_add_referee_panel_members' %}', '{{ csrf_token }}')">
-                                Submit Referee Panel
+                                Submit Referee Panel to Director
                         </button>
                     </div>
                 </div>
             </div>
             {% endfor %}
+
+            <!-- dummy option only for reference -->
+            <div class="panel" id="thesis-2">
+                <a class="panel-heading collapsed" role="tab" id="heading2" data-toggle="collapse" data-parent="#accordion" 
+                   href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <h4 class="panel-title">GPS Clustering (Dummy)</h4>
+                </a>
+                <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                    <div class="panel-body">
+                        <p><b>Title</b> - GPS Clustering</p>
+                        <p><b>Student</b> - <a href="/user/profile/rit2013063/">Vamsi Sangam</a></p>
+                        <p><b>Abstract</b> - ojjdsnldsnlsdncdsn</p>
+                        <p><b>Referee members already selected</b> -</p>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>
+                                    <a href="">Ash Ketchup</a> - added by <a href="">Ranjana Vyas</a> (Co-guide)
+                                </li>
+                                <li>
+                                    <a href="">Angelina Jolie</a> - added by <a href="">Ranjana Vyas</a> (Co-guide)
+                                </li>
+                            </ul>
+                            <br />
+                        </div>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>
+                                    <a href="">Roy Bajpal</a> - added by <a href="">Ranjana Vyas</a> (Co-guide)
+                                </li>
+                                <li>
+                                    <a href="">Janit Anjaria</a> - added by <a href="">Ranjana Vyas</a> (Co-guide)
+                                </li>
+                            </ul>
+                            <br />
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="foreign-referees-2" class="col-sm-2 control-label">
+                                    Select Foreign Referees
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control select2-foreign" id="foreign-referees-2" multiple>
+                                        <option value="2" selected>Naruto Uzumaki</option>
+                                        <option value="3" selected>Kurosaki Ichigo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="indian-referees-2" class="col-sm-2 control-label">
+                                    Select Indian Referees
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control select2-indian" id="indian-referees-2" multiple>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="panel-feedback-2" class="col-sm-2 control-label">
+                                    Feedback
+                                </label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id="panel-feedback-2" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <br />
+                        <!-- enhancement : enable this button only if there's a change in the panel -->
+                        <button class="btn btn-primary pull-right" 
+                                onclick="saveChanges({{ thesis.id }}, '{% url 'guide_save_panel_members' %}', '{{ csrf_token }}')">
+                                Save changes to Referee Panel
+                        </button>
+                        {% if thesis.guide_type == 'G' %}
+                        <button class="btn btn-success pull-left" 
+                                onclick="sendPanel({{ thesis.id }}, '{% url 'guide_send_panel_to_director' %}', '{{ csrf_token }}')">
+                                Send Referee Panel to Director
+                        </button>
+                        <script>
+                            function sendPanel(id, url, csrf_token) {
+                                $.post(url, {
+                                    'id': id,
+                                    'indian_referees': $('#indian-referees-' + id).val(),
+                                    'foreign_referees': $('#foreign-referees-' + id).val(),
+                                    'csrfmiddlewaretoken': csrf_token
+                                }, function (data) {
+                                    if (data.status === "OK") {
+                                        $('#success-message #message').html(data.message);
+                                        $('#success-message').show();
+                                        $('#success-message').delay(3000).fadeOut();
+                                        $('#thesis-' + id).fadeOut();
+                                    }
+                                });
+                            }
+                        </script>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -72,7 +211,7 @@
           '<span class="clearfix">' +
             '<img class="img-responsive img-rounded pull-right" style="height:65px;" src="http://localhost:8000/static/app/images/user.png"/>' +
             '<h5>' + user.text + '</h5>' +
-            '<p>' + user.email_id + '</p>' +
+            '<p>' + user.email + '</p>' +
           '</span>'
         );
         return option;
@@ -115,18 +254,17 @@
         $(".select2-indian").select2(select2Parameters);
     });
 
-    function submitPanel(id, url, csrf_token) {
+    function saveChanges(id, url, csrf_token) {
         $.post(url, {
-            'id' : id,
+            'id': id,
             'indian_referees': $('#indian-referees-' + id).val(),
             'foreign_referees': $('#foreign-referees-' + id).val(),
-            'csrfmiddlewaretoken' : csrf_token
-        }, function(data) {
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
             if (data.status === "OK") {
                 $('#success-message #message').html(data.message);
                 $('#success-message').show();
                 $('#success-message').delay(3000).fadeOut();
-                $('#thesis-' + id).fadeOut();
             }
         });
     }

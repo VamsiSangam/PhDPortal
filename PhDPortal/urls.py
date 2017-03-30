@@ -55,15 +55,10 @@ urlpatterns = [
     url(r'^guide/thesis/unevaluated/$', app.guide_views.guide_unevaluated_thesis, name='guide_unevaluated_thesis'),
     url(r'^guide/thesis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_thesis),
     url(r'^guide/panel/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
-    url(r'^guide/panel/submit/$', app.guide_views.guide_add_referee_panel_members, name='guide_add_referee_panel_members'),
+    url(r'^guide/panel/submit/$', app.guide_views.guide_send_panel_to_director, name='guide_send_panel_to_director'),
+    url(r'^guide/panel/save/$', app.guide_views.guide_save_panel_members, name='guide_save_panel_members'),
     url(r'^guide/panel/referees/indian/$', app.guide_views.guide_get_indian_referee_details, name='guide_get_indian_referee_details'),
     url(r'^guide/panel/referees/foreign/$', app.guide_views.guide_get_foreign_referee_details, name='guide_get_foreign_referee_details'),
-    url(r'^guide/panel/pending/$', app.guide_views.guide_pending_evaluation_panels, name='guide_pending_evaluation_panels'),
-
-    url(r'^guide/panel/pending/approve/$', app.guide_views.guide_approve_panel_members, name='guide_approve_panel_members'),
-    url(r'^guide/panel/pending/reject/$', app.guide_views.guide_reject_panel_members, name='guide_reject_panel_members'),
-    url(r'^guide/panel/pending/edit/$', app.guide_views.guide_edit_panel_members, name='guide_edit_panel_members'),
-
     url(r'^guide/status/$', app.guide_views.guide_phd_status, name='guide_phd_status'),
     url(r'^guide/help/procedure/$', app.guide_views.guide_help_procedure, name='guide_help_procedure'),
     url(r'^guide/help/contacts/$', app.guide_views.guide_help_contacts, name='guide_help_contacts'),
