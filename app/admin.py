@@ -36,7 +36,7 @@ class AdmissionBatchAdmin(admin.ModelAdmin):
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'current_batch',)
     search_fields = ('first_name', 'last_name', 'middle_name', 'current_roll_no')
-    list_filter = ('category', 'admission_category', 'current_batch')
+    list_filter = ('category',)
 
 class FacultyAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'designation',)
@@ -71,7 +71,7 @@ class ThesisAdmin(admin.ModelAdmin):
     list_filter = ('status',)
     
 class ThesisGuideAdmin(admin.ModelAdmin):
-    list_display = ('guide', 'thesis',)
+    list_display = ('guide', 'thesis', 'type')
     search_fields = ('guide', 'thesis',)
 
 class IEEEKeywordAdmin(admin.ModelAdmin):
@@ -91,10 +91,6 @@ class NotificationAdmin(admin.ModelAdmin):
     list_display = ('receiver', 'sender', 'message', 'status')
     search_fields = ('receiver', 'sender', 'message',)
     list_filter = ('status',)
-
-class RefereeAdmin(admin.ModelAdmin):
-    list_display = ('user', 'type')
-    list_filter = ('type',)
 
 # Registering classes to Django admin
 admin.site.register(Section, SectionAdmin)
@@ -117,3 +113,29 @@ admin.site.register(IEEEKeyword, IEEEKeywordAdmin)
 admin.site.register(ThesisKeyword, ThesisKeywordAdmin)
 admin.site.register(PanelMember, PanelMemberAdmin)
 admin.site.register(Notification, NotificationAdmin)
+
+
+## Define an inline admin descriptor for Employee model
+## which acts a bit like a singleton
+#class StudentInline(admin.StackedInline):
+#    model = Student
+#    can_delete = False
+#    verbose_name_plural = 'students'
+
+#class FacultyInline(admin.StackedInline):
+#    model = Faculty
+#    can_delete = False
+#    verbose_name_plural = 'faculties'
+
+#class RefereeInline(admin.StackedInline):
+#    model = Referee
+#    can_delete = False
+#    verbose_name_plural = 'referees'
+
+## Define a new User admin
+#class UserAdmin(BaseUserAdmin):
+#    inlines = (StudentInline, FacultyInline, RefereeInline)
+
+## Re-register UserAdmin
+#admin.site.unregister(User)
+#admin.site.register(User, UserAdmin)

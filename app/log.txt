@@ -1490,3 +1490,61 @@ Traceback (most recent call last):
   File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 234, in guide_evaluate_unevaluated_thesis
     thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'T')
 NameError: name 'guide' is not defined
+2017-03-30 17:34:51 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return login(request, **defaults)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\views.py", line 49, in inner
+    return func(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\views.py", line 76, in login
+    auth_login(request, form.get_user())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\__init__.py", line 108, in login
+    request.session.flush()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\sessions\backends\base.py", line 293, in flush
+    self.delete()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\sessions\backends\db.py", line 98, in delete
+    self.model.objects.get(session_key=session_key).delete()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\base.py", line 862, in delete
+    return collector.delete()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\deletion.py", line 310, in delete
+    count = query.delete_batch(pk_list, self.using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\subqueries.py", line 46, in delete_batch
+    num_deleted += self.do_query(self.get_meta().db_table, self.where, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\subqueries.py", line 28, in do_query
+    cursor = self.get_compiler(using).execute_sql(CURSOR)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: database is locked

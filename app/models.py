@@ -101,13 +101,7 @@ class Student(models.Model):
     created_on = models.DateTimeField(editable=False, blank=True, null=True)
     activated_on = models.DateTimeField(blank=True, null=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
-    user = models.OneToOneField(
-            User,
-            on_delete=models.SET_NULL,
-            null=True,
-            blank=True,
-            editable=False
-    )
+    user = models.OneToOneField(User, null = True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
@@ -118,7 +112,7 @@ class Faculty(models.Model):
     last_name = models.CharField(max_length = 65, blank = True, null = True)
     date_of_birth = models.DateField()
     gender = models.CharField(max_length = 1, choices = GENDER_CHOICES, default = 'M', verbose_name = 'Your Gender')
-    designation = models.CharField(max_length = 8, choices = DESIG_CHOICES, default = 'Prof', verbose_name = 'Your Designation')
+    designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, default = 'Prof', verbose_name = 'Your Designation')
     email = models.EmailField(max_length = 50)
     ldap_id = models.CharField(max_length = 65)
     phone_regex = RegexValidator(regex = r'^\+91-\d{10}$', \
@@ -134,13 +128,7 @@ class Faculty(models.Model):
     activated_on = models.DateTimeField(blank = True, null = True, editable = False)
 
     last_updated = models.DateTimeField(auto_now=True, editable=False)
-    user = models.OneToOneField(
-            User,
-            on_delete=models.SET_NULL,
-            null=True,
-            blank=True,
-            editable=False
-    )
+    user = models.OneToOneField(User, null = True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
@@ -180,16 +168,10 @@ class Referee(models.Model):
         verbose_name = 'Referee'
         verbose_name_plural = 'Referees'
 
-    user = models.OneToOneField(
-            User,
-            on_delete = models.SET_NULL,
-            null = True,
-            blank = True,
-            editable = False
-    )
+    user = models.OneToOneField(User, null = True)
     type = models.CharField(max_length = 1, choices = REFEREE_TYPES)
     university = models.CharField(max_length = 100)
-    designation = models.CharField(max_length = 100)
+    designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, default = 'Prof', verbose_name = 'Your Designation')
     website = models.CharField(max_length = 150)    # use URL validator in django forms / model
 
 class Approver(models.Model):
@@ -225,9 +207,9 @@ class Thesis(models.Model):
 
     student = models.ForeignKey(Student, on_delete = models.CASCADE)
     title = models.CharField(max_length = 150, null = False)
-    abstract = models.TextField(max_length = 500, null = True)
-    synopsis = models.FileField(upload_to = 'Synopsis', null = True)
-    thesis = models.FileField(upload_to = 'Thesis', null = True)
+    abstract = models.TextField(max_length = 500, null = True, blank = True)
+    synopsis = models.FileField(upload_to = 'Synopsis', null = True, blank = True)
+    thesis = models.FileField(upload_to = 'Thesis', null = True, blank = True)
     status = models.ForeignKey(StatusType, on_delete = models.CASCADE)
 
     def __str__(self):
