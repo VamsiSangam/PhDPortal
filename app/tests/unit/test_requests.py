@@ -1,7 +1,7 @@
 from app.tests.testing_utilities import *
 
 class RequestTests(TestCase):
-    fixtures = ['test-data.json',]
+    fixtures = ['data.json',]
 
     def setUp(self):
         self.client = Client()
@@ -30,7 +30,7 @@ class RequestTests(TestCase):
         self.assertEqual(response.status_code, status_code)
 
     def test_student_views(self):
-        login(self.client, username = 'rit2013063', password = 'HelloWorld')
+        login(self.client, username = 'anshul', password = 'HelloWorld')
 
         self.check_url('/student/abstract/', GET)
         self.check_url('/student/synopsis/upload/', GET)

@@ -49,20 +49,29 @@ def referee_synopsis_approval(request):
         feedback = request.POST['feedback']
 
         thesis = Thesis.objects.get(id = id)
-        panelMember = PanelMember.objects.filter(thesis = thesis).filter(referee = referee)[0]
+        panelMember = PanelMember.objects.get(thesis = thesis, referee = referee)
+
+        dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
+        
+        #noentry = NoEntryPanel(thesis_id = thesis, referee_username = referee)
+        #noentry.save()
 
         if isApproved:
             panelMember.status = 'A'
+            panelMember.save()
         else:
             panelMember.status = 'R'
-
-        panelMember.save()
-
-        dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
-
-        # notify guides & co-guides
+            panelMember.save()
+            if referee.type == 'I':
+                invite_indian_referee(thesis)
+            else:
+                invite_foreign_referee(thesis)
+        
+        
+        ############################################################################
+        # notify guides & co-guides ---notify only admin and director
         for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
-            guide = thesisGuide.guide
+            guide = thesisGuide.guide.user
             message = 'Referee ' + referee.user.first_name + ' ' + referee.user.last_name + ' '
 
             if isApproved:
@@ -73,7 +82,8 @@ def referee_synopsis_approval(request):
             if len(feedback.strip()) > 0:
                 message += ' Referee has given the following feedback - ' + feedback
 
-            send_notification(user, guide.user, message, '')
+            send_notification(referee, guide, message, '')
+        #################################################################################
 
         return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
