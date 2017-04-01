@@ -11931,6 +11931,90 @@
     }
 },
 {
+    "model": "app.notification",
+    "pk": 1,
+    "fields": {
+        "sender": 4,
+        "receiver": 35,
+        "message": "Student Anshul Pandey has submitted their PhD abstract for the PhD titled \"Quality checking using image processing\"",
+        "link": "",
+        "status": "U",
+        "date": "2017-03-31T21:04:23.736Z"
+    }
+},
+{
+    "model": "app.notification",
+    "pk": 2,
+    "fields": {
+        "sender": 4,
+        "receiver": 38,
+        "message": "Student Anshul Pandey has submitted their PhD abstract for the PhD titled \"Quality checking using image processing\"",
+        "link": "",
+        "status": "U",
+        "date": "2017-03-31T21:04:23.792Z"
+    }
+},
+{
+    "model": "app.notification",
+    "pk": 3,
+    "fields": {
+        "sender": 38,
+        "receiver": 4,
+        "message": "unread notification 1",
+        "link": "#",
+        "status": "U",
+        "date": "2017-04-01T10:05:03.737Z"
+    }
+},
+{
+    "model": "app.notification",
+    "pk": 4,
+    "fields": {
+        "sender": 35,
+        "receiver": 4,
+        "message": "unread notification 2",
+        "link": "#",
+        "status": "U",
+        "date": "2017-04-01T10:05:27.547Z"
+    }
+},
+{
+    "model": "app.notification",
+    "pk": 5,
+    "fields": {
+        "sender": 38,
+        "receiver": 4,
+        "message": "read notification 1",
+        "link": "#",
+        "status": "R",
+        "date": "2017-04-01T10:05:47.328Z"
+    }
+},
+{
+    "model": "app.notification",
+    "pk": 6,
+    "fields": {
+        "sender": 38,
+        "receiver": 4,
+        "message": "read notification 2",
+        "link": "#",
+        "status": "R",
+        "date": "2017-04-01T10:06:07.016Z"
+    }
+},
+{
+    "model": "app.notification",
+    "pk": 7,
+    "fields": {
+        "sender": 35,
+        "receiver": 4,
+        "message": "read notification 3",
+        "link": "#",
+        "status": "R",
+        "date": "2017-04-01T10:06:26.073Z"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {

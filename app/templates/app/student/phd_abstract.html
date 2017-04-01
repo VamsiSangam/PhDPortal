@@ -30,6 +30,11 @@
                 You cannot submit a PhD abstract yet. This is because the choosen Guides/Co-guides haven't yet given their
                 approval to be a mentor for your PhD.
             </p>
+            {% elif abstractWaitingApproval %}
+            <p>
+                You have already submitted your PhD abstract and it is under evaluation by your guide/Co-guide.
+                
+            </p>
             {% elif isAbstractApproved %}
             <p>
                 You have already submitted your PhD abstract and either your Guide/Co-guide has accepted it. You are not

@@ -1,0 +1,16 @@
+DesiredCapabilities
+Options
+ExtensionConnection
+FirefoxRemoteConnection
+Service
+socket
+basestring
+FirefoxWebElement
+sys
+contextmanager
+http_client
+WebDriver
+shutil
+RemoteWebDriver
+FirefoxBinary
+FirefoxProfile

@@ -12,12 +12,12 @@
                 <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                 <li role="presentation" class="active">
                     <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">
-                        Unread &nbsp; <span class="badge">{{ unread_notifications|length }}</span>
+                        Unread &nbsp; <span id="unread-notifications-count" class="badge">{{ unread_notifications|length }}</span>
                     </a>
                 </li>
                 <li role="presentation" class="">
                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">
-                        Read &nbsp; <span class="badge">{{ read_notifications|length }}</span>
+                        Read &nbsp; <span id="read-notifications-count" class="badge">{{ read_notifications|length }}</span>
                     </a>
                 </li>
                 </ul>
@@ -50,11 +50,14 @@
                             </button>
                             <blockquote>
                                 {% if notification.link %}
-                                    <a href="{{ notification.link }}"><p>{{ notification.message }}</p></a>
+                                    <a href="{{ notification.link }}"><p class="notification-message">{{ notification.message }}</p></a>
                                 {% else %}
-                                    <p>{{ notification.message }}</p>
+                                    <p id="notification-message">{{ notification.message }}</p>
                                 {% endif %}
-                                <small>From <font color="blue">{{ notification.sender }}</font>, {{ notification.date }}</small>
+                                <small>
+                                    From <font class="notification-sender" color="blue">{{ notification.sender }}</font>, 
+                                    <span class="notification-date">{{ notification.date|date:"F d S, o, h:i:s a" }}</span>
+                                </small>
                             </blockquote>
                         {% endfor %}
                     {% endif %}
@@ -77,11 +80,14 @@
                             </a>
                             <blockquote>
                                 {% if notification.link %}
-                                    <a href="{{ notification.link }}"><p>{{ notification.message }}</p></a>
+                                    <a href="{{ notification.link }}"><p class="notification-message">{{ notification.message }}</p></a>
                                 {% else %}
-                                    <p>{{ notification.message }}</p>
+                                    <p class="notification-message">{{ notification.message }}</p>
                                 {% endif %}
-                                <small>From <font color="blue">{{ notification.sender }}</font>, {{ notification.date }}</small>
+                                <small>
+                                    From <font class="notification-sender" color="blue">{{ notification.sender }}</font>,
+                                    <span class="notification-date">{{ notification.date|date:"F d S, o, h:i:s a" }}</span>
+                                </small>
                             </blockquote>
                         {% endfor %}
                     {% endif %}

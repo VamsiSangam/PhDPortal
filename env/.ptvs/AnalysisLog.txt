@@ -13505,3 +13505,250 @@ System.FormatException: Input string was not in a correct format.
 2017-03-29T00:44:15: [WARNING] Library was set explicitly - skipping path detection
 2017-03-29T00:44:15: IncludeModulesFromModulePath = win32com
 2017-03-29T00:44:16: Deleting 0 files
+
+2017-03-31T19:20:12: Start analysis
+2017-03-31T19:20:12: [WARNING] Library was set explicitly - skipping path detection
+2017-03-31T19:20:12: IncludeModulesFromModulePath = win32com
+2017-03-31T19:20:13: Deleting 0 files
+2017-03-31T19:20:13: astropy.CallDepth = 0
+2017-03-31T19:20:13: matplotlib.CallDepth = 3
+2017-03-31T19:20:13: pandas.CallDepth = 0
+2017-03-31T19:20:13: sympy.CallDepth = 0
+2017-03-31T19:20:13: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium" with 78 files
+2017-03-31T19:20:13: Parsing "selenium" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.common.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\common\exceptions.py")
+2017-03-31T19:20:13: Parsing "selenium.common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\common\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.android.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\android\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.android" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\android\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.blackberry.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\blackberry\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.blackberry" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\blackberry\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.chrome.options" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\chrome\options.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.chrome.remote_connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\chrome\remote_connection.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.chrome.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\chrome\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.chrome.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\chrome\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.chrome" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\chrome\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.action_chains" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\action_chains.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.alert" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\alert.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.by" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\by.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.desired_capabilities" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\desired_capabilities.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.keys" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\keys.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.proxy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\proxy.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.touch_actions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\touch_actions.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\utils.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.action_builder" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\action_builder.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.input_device" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\input_device.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.interaction" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\interaction.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.key_actions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\key_actions.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.key_input" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\key_input.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.mouse_button" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\mouse_button.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.pointer_actions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\pointer_actions.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions.pointer_input" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\pointer_input.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.actions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\actions\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.html5.application_cache" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\html5\application_cache.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.common.html5" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\common\html5\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.edge.options" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\edge\options.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.edge.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\edge\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.edge.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\edge\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.edge" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\edge\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.extension_connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\extension_connection.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.firefox_binary" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\firefox_binary.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.firefox_profile" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\firefox_profile.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.options" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\options.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.remote_connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\remote_connection.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox.webelement" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\webelement.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.firefox" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\firefox\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.ie.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\ie\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.ie.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\ie\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.ie" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\ie\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.opera.options" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\opera\options.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.opera.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\opera\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.opera" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\opera\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.phantomjs.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\phantomjs\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.phantomjs.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\phantomjs\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.phantomjs" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\phantomjs\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.command" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\command.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.errorhandler" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\errorhandler.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.file_detector" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\file_detector.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.mobile" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\mobile.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.remote_connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\remote_connection.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.switch_to" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\switch_to.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\utils.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote.webelement" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\webelement.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.remote" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\remote\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.safari.service" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\safari\service.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.safari.webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\safari\webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.safari" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\safari\__init__.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.abstract_event_listener" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\abstract_event_listener.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.color" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\color.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.events" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\events.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.event_firing_webdriver" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\event_firing_webdriver.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.expected_conditions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\expected_conditions.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.select" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\select.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.ui" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\ui.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support.wait" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\wait.py")
+2017-03-31T19:20:13: Parsing "selenium.webdriver.support" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium\webdriver\support\__init__.py")
+2017-03-31T19:20:13: Parsing complete
+2017-03-31T19:20:13: Analyzing "selenium"
+2017-03-31T19:20:13: Analyzing "selenium.common.exceptions"
+2017-03-31T19:20:13: Analyzing "selenium.common"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.android.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.android"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.blackberry.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.blackberry"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.chrome.options"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.chrome.remote_connection"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.chrome.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.chrome.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.chrome"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.action_chains"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.alert"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.by"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.desired_capabilities"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.keys"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.proxy"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.touch_actions"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.utils"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.action_builder"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.input_device"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.interaction"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.key_actions"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.key_input"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.mouse_button"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.pointer_actions"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions.pointer_input"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.actions"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.html5.application_cache"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.common.html5"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.edge.options"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.edge.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.edge.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.edge"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.extension_connection"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.firefox_binary"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.firefox_profile"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.options"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.remote_connection"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox.webelement"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.firefox"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.ie.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.ie.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.ie"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.opera.options"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.opera.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.opera"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.phantomjs.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.phantomjs.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.phantomjs"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.command"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.errorhandler"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.file_detector"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.mobile"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.remote_connection"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.switch_to"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.utils"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote.webelement"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.remote"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.safari.service"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.safari.webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.safari"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.abstract_event_listener"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.color"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.events"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.event_firing_webdriver"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.expected_conditions"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.select"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.ui"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support.wait"
+2017-03-31T19:20:13: Analyzing "selenium.webdriver.support"
+2017-03-31T19:20:13: Starting analysis of 78 modules
+2017-03-31T19:20:15: Analysis complete
+2017-03-31T19:20:15: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium"
+2017-03-31T19:20:16: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\selenium"
+2017-03-31T19:20:16: Deleting 0 files
+
+2017-04-01T18:42:51: Start analysis
+2017-04-01T18:42:51: [WARNING] Library was set explicitly - skipping path detection
+2017-04-01T18:42:51: IncludeModulesFromModulePath = win32com
+2017-04-01T18:42:51: Deleting 0 files
+2017-04-01T18:42:51: astropy.CallDepth = 0
+2017-04-01T18:42:51: matplotlib.CallDepth = 3
+2017-04-01T18:42:51: pandas.CallDepth = 0
+2017-04-01T18:42:51: sympy.CallDepth = 0
+2017-04-01T18:42:51: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil" with 13 files
+2017-04-01T18:42:52: Parsing "dateutil.easter" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\easter.py")
+2017-04-01T18:42:52: Parsing "dateutil.parser" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\parser.py")
+2017-04-01T18:42:52: Parsing "dateutil.relativedelta" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\relativedelta.py")
+2017-04-01T18:42:52: Parsing "dateutil.rrule" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\rrule.py")
+2017-04-01T18:42:52: Parsing "dateutil.tzwin" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\tzwin.py")
+2017-04-01T18:42:52: Parsing "dateutil._common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\_common.py")
+2017-04-01T18:42:52: Parsing "dateutil" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\__init__.py")
+2017-04-01T18:42:52: Parsing "dateutil.tz.tz" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\tz\tz.py")
+2017-04-01T18:42:52: Parsing "dateutil.tz.win" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\tz\win.py")
+2017-04-01T18:42:52: Parsing "dateutil.tz._common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\tz\_common.py")
+2017-04-01T18:42:52: Parsing "dateutil.tz" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\tz\__init__.py")
+2017-04-01T18:42:52: Parsing "dateutil.zoneinfo.rebuild" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\zoneinfo\rebuild.py")
+2017-04-01T18:42:52: Parsing "dateutil.zoneinfo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil\zoneinfo\__init__.py")
+2017-04-01T18:42:52: Parsing complete
+2017-04-01T18:42:52: Analyzing "dateutil.easter"
+2017-04-01T18:42:52: Analyzing "dateutil.parser"
+2017-04-01T18:42:52: Analyzing "dateutil.relativedelta"
+2017-04-01T18:42:52: Analyzing "dateutil.rrule"
+2017-04-01T18:42:52: Analyzing "dateutil.tzwin"
+2017-04-01T18:42:52: Analyzing "dateutil._common"
+2017-04-01T18:42:52: Analyzing "dateutil"
+2017-04-01T18:42:52: Analyzing "dateutil.tz.tz"
+2017-04-01T18:42:52: Analyzing "dateutil.tz.win"
+2017-04-01T18:42:52: Analyzing "dateutil.tz._common"
+2017-04-01T18:42:52: Analyzing "dateutil.tz"
+2017-04-01T18:42:52: Analyzing "dateutil.zoneinfo.rebuild"
+2017-04-01T18:42:52: Analyzing "dateutil.zoneinfo"
+2017-04-01T18:42:52: Starting analysis of 13 modules
+2017-04-01T18:42:57: Analysis complete
+2017-04-01T18:42:57: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil"
+2017-04-01T18:42:57: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\dateutil"
+2017-04-01T18:42:58: Deleting 0 files
+
+2017-04-01T18:43:17: Start analysis
+2017-04-01T18:43:17: [WARNING] Library was set explicitly - skipping path detection
+2017-04-01T18:43:17: IncludeModulesFromModulePath = win32com
+2017-04-01T18:43:18: Deleting 0 files
+
+2017-04-01T19:13:46: Start analysis
+2017-04-01T19:13:46: [WARNING] Library was set explicitly - skipping path detection
+2017-04-01T19:13:46: IncludeModulesFromModulePath = win32com
+2017-04-01T19:13:47: Deleting 0 files
+2017-04-01T19:13:47: astropy.CallDepth = 0
+2017-04-01T19:13:47: matplotlib.CallDepth = 3
+2017-04-01T19:13:47: pandas.CallDepth = 0
+2017-04-01T19:13:47: sympy.CallDepth = 0
+2017-04-01T19:13:47: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz" with 6 files
+2017-04-01T19:13:47: Parsing "pytz.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz\exceptions.py")
+2017-04-01T19:13:47: Parsing "pytz.lazy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz\lazy.py")
+2017-04-01T19:13:47: Parsing "pytz.reference" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz\reference.py")
+2017-04-01T19:13:47: Parsing "pytz.tzfile" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz\tzfile.py")
+2017-04-01T19:13:47: Parsing "pytz.tzinfo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz\tzinfo.py")
+2017-04-01T19:13:47: Parsing "pytz" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz\__init__.py")
+2017-04-01T19:13:47: Parsing complete
+2017-04-01T19:13:47: Analyzing "pytz.exceptions"
+2017-04-01T19:13:47: Analyzing "pytz.lazy"
+2017-04-01T19:13:47: Analyzing "pytz.reference"
+2017-04-01T19:13:47: Analyzing "pytz.tzfile"
+2017-04-01T19:13:47: Analyzing "pytz.tzinfo"
+2017-04-01T19:13:47: Analyzing "pytz"
+2017-04-01T19:13:47: Starting analysis of 6 modules
+2017-04-01T19:13:49: Analysis complete
+2017-04-01T19:13:49: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz"
+2017-04-01T19:13:49: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz"
+2017-04-01T19:13:51: Deleting 0 files

@@ -10,7 +10,7 @@
     <!-- Bootstrap -->
     <link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'app/css/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{% static 'app/css/nprogress.css' %}" rel="stylesheet">
     <!-- Custom Theme Style -->
@@ -158,5 +158,11 @@
     <!-- Custom Theme Scripts -->
     <script src="{% static 'app/js/custom.min.js' %}"></script>
     {% block scripts %}{% endblock %}
+    <input type="hidden" name="page-load-status" value="loading" />
+    <script>
+        $(document).ready(function () {
+            $('input[name="page-load-status"]').val('done');
+        });
+    </script>
   </body>
 </html>

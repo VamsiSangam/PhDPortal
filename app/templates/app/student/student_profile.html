@@ -16,8 +16,8 @@
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
-        <p><b>Title</b> - {{ user.title }}</p>
-        <p><b>Thesis Abstract</b> -
+        <p id="thesis-title"><b>Title</b> - {{ user.title }}</p>
+        <p id="thesis-abstract"><b>Thesis Abstract</b> -
         {% if user.abstract|length == 0 %}
             Abstract not submitted yet.
         {% else %}
@@ -26,17 +26,17 @@
         </p>
         <p>
             <b>Guides -</b>
-            <ul>
+            <ul id="student-guides">
                 {% for guide in user.guides %}
                 <li>
-                    <b>{{ guide.full_name }}</b>
-                    ( {{ guide.type }} )
-                    ( <a href="{% url 'user_profile' %}{{ guide.username }}/">View Profile</a> )
+                    <b class="thesis-guide-name">{{ guide.full_name }}</b>
+                    ( <span class="thesis-guide-type">{{ guide.type }}</span> )
+                    ( <a class="thesis-guide-profile-link" href="{% url 'user_profile' %}{{ guide.username }}/">View Profile</a> )
                 </li>
                 {% endfor %}
             </ul>
         </p>
-        <p>
+        <p id="thesis-keywords">
             <b>Thesis Keywords -</b>
             {% if user.keywords|length == 0 %}
                 No keywords added yet
@@ -52,11 +52,11 @@
         </p>
         <br />
         {% if request.session.username == user.username %}
-        <a href="{% url 'student_add_abstract' %}" class="btn btn-primary">Add / Edit Phd Abstract</a>
-        <a href="{% url 'student_upload_synopsis' %}" class="btn btn-primary">Add / Edit Phd Synopsis</a>
-        <a href="{% url 'student_add_keywords' %}" class="btn btn-primary">Add / Edit Phd Thesis Document</a>
-        <a href="{% url 'student_upload_thesis' %}" class="btn btn-primary">Add / Remove Keywords to PhD Thesis</a>
-        <a href="{% url 'student_phd_status' %}" class="btn btn-primary">View PhD Status</a>
+        <a id="button-add-abstract" href="{% url 'student_add_abstract' %}" class="btn btn-primary">Add / Edit Phd Abstract</a>
+        <a id="button-upload-synopsis" href="{% url 'student_upload_synopsis' %}" class="btn btn-primary">Upload Phd Synopsis</a>
+        <a id="button-upload-thesis" href="{% url 'student_upload_thesis' %}" class="btn btn-primary">Upload Phd Thesis Document</a>
+        <a id="button-add-keywords" href="{% url 'student_add_keywords' %}" class="btn btn-primary">Add / Remove Keywords to PhD Thesis</a>
+        <a id="button-view-phd-status" href="{% url 'student_phd_status' %}" class="btn btn-primary">View PhD Status</a>
         {% endif %}
     </div>
 </div>

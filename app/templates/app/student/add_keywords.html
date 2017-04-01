@@ -26,8 +26,10 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                {% if not thesis %}
-                    <p>Please submit a thesis first!</p>
+                {% if thesis.status.id > 16 %}
+                    <p>Your Thesis is already been approved, you cannot add new keywords!</p>
+                {% elif thesis.status.id < 9 %}
+                    <p>Your Abstract need to be Approved to add keywords to your Thesis!</p>
                 {% elif thesis_keywords|length == 0 %}
                     <p>You don't have any keywords added to your thesis {{ thesis.title }}</p>
                 {% else %}
@@ -60,8 +62,10 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                {% if not thesis %}
-                    <p>Please submit a thesis first!</p>
+                {% if thesis.status.id > 16 %}
+                    <p>Your Thesis is already been approved, you cannot add new keywords!</p>
+                {% elif thesis.status.id < 9 %}
+                    <p>Your Abstract need to be Approved to add keywords to your Thesis!</p>
                 {% else %}
                     <div class="list-group" id="keywords-list-group">
 

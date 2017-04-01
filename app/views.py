@@ -209,6 +209,7 @@ def user_profile(request):
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
+@login_required
 def view_user_profile(request, username):
     """
     View method. Checks input 'username' and displays the 
@@ -367,10 +368,13 @@ def logout(request):
     Logout a user currently logged in by auth.login()
     """
 
-    logger.info('User %s successfully logged out' % request.session['username'])
-    auth.logout(request)
+    if request.method == "GET":
+        logger.info('User %s successfully logged out' % request.session['username'])
+        auth.logout(request)
 
-    return redirect('/')
+        return redirect('/')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def user_edit_profile(request):
@@ -385,7 +389,7 @@ def user_edit_profile(request):
         user_details = _get_user_type_object(user)
 
         return render(request, 'app/common/edit_profile.html', {
-                'title':'Notifications',
+                'title':'Edit Profile',
                 'layout_data' : get_layout_data(request),
                 'user_details' : user_details
             })
@@ -550,6 +554,7 @@ def search_user(request):
     """
 
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    if request.session['type'] == 'S' or request.session['type'] == 'R': return redirect(reverse(URL_FORBIDDEN))
 
     if request.method == "GET":
         return render(
@@ -593,6 +598,7 @@ def search_user_query(request):
     """
 
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    if request.session['type'] == 'S' or request.session['type'] == 'R': return redirect(reverse(URL_FORBIDDEN))
 
     if request.method == "POST":
         first_name = request.POST['first_name']
@@ -620,7 +626,7 @@ def search_user_query(request):
                     dict[user] = 1
         
         if len(email.strip()) > 0:
-            for user in User.objects.filter(email_id__icontains = email):
+            for user in User.objects.filter(email__icontains = email):
                 if user in dict:
                     dict[user] = dict[user] + 1
                 else:

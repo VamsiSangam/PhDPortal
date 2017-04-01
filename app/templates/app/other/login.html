@@ -55,5 +55,13 @@
         </div>
       </div>
     </div>
+    <!-- jQuery -->
+    <script src="{% static 'app/js/jquery.min.js' %}"></script>
+    <input type="hidden" name="page-load-status" value="loading" />
+    <script>
+        $(document).ready(function () {
+            $('input[name="page-load-status"]').val('done');
+        });
+    </script>
   </body>
 </html>

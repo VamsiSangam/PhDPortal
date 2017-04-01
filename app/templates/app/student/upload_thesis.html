@@ -23,6 +23,14 @@
                 You cannot submit a PhD thesis yet. This is because your PhD synopsis hasn't yet been approved by your 
                 Guide/Co-guide.
             </p>
+            {% elif thesisWaitingApproval %}
+            <p>
+                You have already submitted your full PhD thesis document and it is under evaluation by your Guide/Co-guide.
+                You cannot alter your PhD thesis document now. You can view your submitted thesis document by clicking on the
+                button below.
+            </p>
+            <br />
+            <a class="btn btn-primary pull-right" href="{% url 'student_view_thesis' %}">View Thesis</a>
             {% elif isThesisApproved %}
             <p>
                 You have already submitted your full PhD thesis document and it was evaluted and approved by your Guide/Co-guide.

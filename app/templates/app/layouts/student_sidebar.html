@@ -3,34 +3,34 @@
               <div class="menu_section active">
 
 <ul class="nav side-menu">
-        <li><a><i class="fa fa-home"></i> General <span class="fa fa-chevron-down"></span></a>
+        <li><a id="child-menu-general"><i class="fa fa-home"></i> General <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-            <li><a href="{% url 'user_profile' %}"> Home</a></li>
-            <li><a href="{% url 'user_notifications' %}"> View all Notifications</a></li>
-            <li><a href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
+            <li><a id="url-user-profile" href="{% url 'user_profile' %}"> Home</a></li>
+            <li><a id="url-user-notifications" href="{% url 'user_notifications' %}"> View all Notifications</a></li>
+            <li><a id="url-user-edit-profile" href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
         </ul>
         </li>
-    <li><a><i class="fa fa-paragraph"></i> PhD Abstract <span class="fa fa-chevron-down"></span></a>
-        <ul class="nav child_menu">
-            <li><a href="{% url 'student_add_abstract' %}"> Add an Abstract to PhD Thesis</a></li>
+    <li><a id="child-menu-abstract"><i class="fa fa-paragraph"></i> PhD Abstract <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu" id="child-menu-abstract-list">
+            <li><a id="url-phd-abstract" href="{% url 'student_add_abstract' %}"> Add an Abstract to PhD Thesis</a></li>
         </ul>
         </li>    
-    <li><a><i class="fa fa-align-left"></i> PhD Synopsis <span class="fa fa-chevron-down"></span></a>
+    <li><a id="child-menu-synopsis"><i class="fa fa-align-left"></i> PhD Synopsis <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-            <li><a href="{% url 'student_upload_synopsis' %}"> Upload Synopsis</a></li>
-            <li><a href="{% url 'student_view_synopsis' %}"> View Uploaded Synopsis</a></li>
+            <li><a id="url-upload-synopsis" href="{% url 'student_upload_synopsis' %}"> Upload Synopsis</a></li>
+            <li><a id="url-view-synopsis" href="{% url 'student_view_synopsis' %}"> View Uploaded Synopsis</a></li>
         </ul>
         </li>
-        <li><a><i class="fa fa-file-text"></i> PhD Thesis <span class="fa fa-chevron-down"></span></a>
+        <li><a id="child-menu-thesis"><i class="fa fa-file-text"></i> PhD Thesis <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-            <li><a href="{% url 'student_upload_thesis' %}"> Upload Thesis</a></li>
-            <li><a href="{% url 'student_view_thesis' %}"> View Uploaded Thesis</a></li>
-            <li><a href="{% url 'student_add_keywords' %}"> Add Keywords to Thesis</a></li>
+            <li><a id="url-upload-thesis" href="{% url 'student_upload_thesis' %}"> Upload Thesis</a></li>
+            <li><a id="url-view-thesis" href="{% url 'student_view_thesis' %}"> View Uploaded Thesis</a></li>
+            <li><a id="url-add-keywords" href="{% url 'student_add_keywords' %}"> Add Keywords to Thesis</a></li>
         </ul>
         </li>
-        <li><a><i class="fa fa-check-square-o"></i> Status <span class="fa fa-chevron-down"></span></a>
+        <li><a id="child-menu-status"><i class="fa fa-check-square-o"></i> Status <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-            <li><a href="{% url 'student_phd_status' %}"> View PhD Status</a></li>
+            <li><a id="url-view-phd-status" href="{% url 'student_phd_status' %}"> View PhD Status</a></li>
         </ul>
         </li>
         <li><a><i class="fa fa-question"></i> Help <span class="fa fa-chevron-down"></span></a>

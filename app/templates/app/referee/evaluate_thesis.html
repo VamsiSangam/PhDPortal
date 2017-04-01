@@ -6,9 +6,10 @@
 {% endblock %}
 {% block content %}
 <!-- Guide homepage -->
-<div class="x_panel" id="thesis-2">
+{% for thesis in all_thesis %}
+<div class="x_panel" id="thesis-{{ thesis.id }}">
     <div class="x_title">
-        <h2>GPS Clustering</h2>
+        <h2>{{ thesis.title }}</h2>
         <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up text-primary"></i></a></li>
             <li><a class="close-link"><i class="fa fa-close text-danger"></i></a></li>
@@ -17,55 +18,82 @@
     </div>
     <div class="x_content">
         <div class="" role="tabpanel" data-example-id="togglable-tabs">
-            <ul id="thesis-tabs-2" class="nav nav-tabs bar_tabs" role="tablist">
+            <ul id="thesis-tabs-{{ thesis.id }}" class="nav nav-tabs bar_tabs" role="tablist">
                 <li role="presentation" class="active">
-                    <a href="#phd-details-2" id="details-tab-2" role="tab" data-toggle="tab" aria-expanded="true">PhD Thesis Details</a>
+                    <a href="#phd-details-{{ thesis.id }}" id="details-tab-{{ thesis.id }}" role="tab" data-toggle="tab" aria-expanded="true">PhD Thesis Details</a>
                 </li>
                 <li role="presentation">
-                    <a href="#phd-synopsis-2" id="synopsis-tab-2" role="tab" data-toggle="tab" aria-expanded="true">PhD Synopsis</a>
+                    <a href="#phd-synopsis-{{ thesis.id }}" id="synopsis-tab-{{ thesis.id }}" role="tab" data-toggle="tab" aria-expanded="true">PhD Synopsis</a>
                 </li>
                 <li role="presentation">
-                    <a href="#phd-thesis-2" id="thesis-tab-2" role="tab" data-toggle="tab" aria-expanded="true">PhD Thesis Details</a>
+                    <a href="#phd-thesis-{{ thesis.id }}" id="thesis-tab-{{ thesis.id }}" role="tab" data-toggle="tab" aria-expanded="true">PhD Thesis</a>
                 </li>
                 <li role="presentation">
-                    <a href="#phd-report-2" role="tab" id="report-tab-2" data-toggle="tab" aria-expanded="false">Final Report</a>
+                    <a href="#phd-report-{{ thesis.id }}" role="tab" id="report-tab-{{ thesis.id }}" data-toggle="tab" aria-expanded="false">Final Report</a>
                 </li>
             </ul>
-            <div id="thesis-tabs-content-2" class="tab-content">
-                <div role="tabpanel" class="tab-pane fade active in" id="phd-details-2" aria-labelledby="details-tab-2">
-                    <p><b>Title</b> - GPS Clustering</p>
-                    <p><b>Student</b> - <a href="/user/profile/rit2013063/">Vamsi Sangam</a></p>
+            <div id="thesis-tabs-content-{{ thesis.id }}" class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="phd-details-{{ thesis.id }}" aria-labelledby="details-tab-{{ thesis.id }}">
+                    <p><b>Title</b> - {{ thesis.title }}</p>
+                    <p><b>Student</b> - <a href="{% url 'user_profile' %}{{ thesis.username }}/">{{ thesis.student_full_name }}</a></p>
                     <p>
                         <b>Thesis Keywords</b> - 
                         <ul>
-                            <li>Global positioning system</li>
-                            <li>Data Mining</li>
+                            {% for keyword in thesis.keywords %}
+                            <li>{{ keyword }}</li>
+                            {% endfor %}
                         </ul>
                     </p>
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="phd-synopsis-2" aria-labelledby="synopsis-tab-2">
-                    <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
-                        <p>PhD Synopsis</p>
-                    </object>
+                <div role="tabpanel" class="tab-pane fade" id="phd-synopsis-{{ thesis.id }}" aria-labelledby="synopsis-tab-{{ thesis.id }}">
+                    <p>
+                        <a class="btn btn-primary pull-right" href="{% static thesis.synopsis %}" download="download">
+                            <i class="fa fa-download"></i> &nbsp; Download Synopsis
+                        </a>
+                        <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.synopsis %}')">
+                            <i class="fa fa-print"></i> &nbsp; Print Synopsis
+                        </a>
+                        
+                        <b>Synopsis</b> - <br /><br />
+                        <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
+                            <p>PhD Synopsis</p>
+                        </object>
+                        <br /><br />
+                    </p>
+                    <br />
+                    <hr />
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="phd-thesis-2" aria-labelledby="thesis-tab-2">
-                    <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
-                        <p>PhD Synopsis</p>
-                    </object>
+                <div role="tabpanel" class="tab-pane fade" id="phd-thesis-{{ thesis.id }}" aria-labelledby="thesis-tab-{{ thesis.id }}">
+                    <p>
+                        <a class="btn btn-primary pull-right" href="{% static thesis.thesis %}" download="download">
+                            <i class="fa fa-download"></i> &nbsp; Download Thesis
+                        </a>
+                        <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.thesis %}')">
+                            <i class="fa fa-print"></i> &nbsp; Print Thesis
+                        </a>
+                        
+                        <b>Thesis</b> - <br /><br />
+                        <object data="{% static thesis.thesis %}" type="application/pdf" width="100%" height="800px">
+                            <p>PhD Thesis</p>
+                        </object>
+                        <br /><br />
+                    </p>
+                    <br />
+                    <hr />
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="phd-report-2" aria-labelledby="report-tab-2">
+                <div role="tabpanel" class="tab-pane fade" id="phd-report-{{ thesis.id }}" aria-labelledby="report-tab-{{ thesis.id }}">
                     <form class="form-horizontal">
                         <h4>General PhD Student Details</h4>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Student Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="Vamsi Sangam" disabled>
+                                <input type="text" class="form-control" value={{ thesis.student_full_name }} disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Roll Number</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="RIT2013063" disabled>
+                                <input type="text" class="form-control" value="{{thesis.student_username}}" disabled>
                             </div>
                         </div>
                         <div class="form-group">
@@ -183,6 +211,7 @@
         </div>
     </div>
 </div>
+{% endfor %}
 
 {% endblock %}
 {% block scripts %}

@@ -211,6 +211,8 @@ class Thesis(models.Model):
     synopsis = models.FileField(upload_to = 'Synopsis', null = True, blank = True)
     thesis = models.FileField(upload_to = 'Thesis', null = True, blank = True)
     status = models.ForeignKey(StatusType, on_delete = models.CASCADE)
+    indian_referees_required = models.PositiveIntegerField(default = 2)
+    foreign_referees_required = models.PositiveIntegerField(default = 1)
 
     def __str__(self):
         return self.title

@@ -44,6 +44,46 @@
     <Content Include="app\static\app\css\daterangepicker.scss" />
     <Content Include="app\static\app\css\dropzone.min.css" />
     <Content Include="app\static\app\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="app\static\app\css\font-awesome\.bower.json" />
+    <Content Include="app\static\app\css\font-awesome\.npmignore" />
+    <Content Include="app\static\app\css\font-awesome\bower.json" />
+    <Content Include="app\static\app\css\font-awesome\css\font-awesome.css" />
+    <Content Include="app\static\app\css\font-awesome\css\font-awesome.css.map" />
+    <Content Include="app\static\app\css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="app\static\app\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="app\static\app\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\static\app\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="app\static\app\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="app\static\app\css\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="app\static\app\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="app\static\app\css\font-awesome\less\animated.less" />
+    <Content Include="app\static\app\css\font-awesome\less\bordered-pulled.less" />
+    <Content Include="app\static\app\css\font-awesome\less\core.less" />
+    <Content Include="app\static\app\css\font-awesome\less\fixed-width.less" />
+    <Content Include="app\static\app\css\font-awesome\less\font-awesome.less" />
+    <Content Include="app\static\app\css\font-awesome\less\icons.less" />
+    <Content Include="app\static\app\css\font-awesome\less\larger.less" />
+    <Content Include="app\static\app\css\font-awesome\less\list.less" />
+    <Content Include="app\static\app\css\font-awesome\less\mixins.less" />
+    <Content Include="app\static\app\css\font-awesome\less\path.less" />
+    <Content Include="app\static\app\css\font-awesome\less\rotated-flipped.less" />
+    <Content Include="app\static\app\css\font-awesome\less\screen-reader.less" />
+    <Content Include="app\static\app\css\font-awesome\less\stacked.less" />
+    <Content Include="app\static\app\css\font-awesome\less\variables.less" />
+    <Content Include="app\static\app\css\font-awesome\scss\font-awesome.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_animated.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_core.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_icons.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_larger.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_list.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_mixins.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_path.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_stacked.scss" />
+    <Content Include="app\static\app\css\font-awesome\scss\_variables.scss" />
     <Content Include="app\static\app\css\jquery.mCustomScrollbar.min.css" />
     <Content Include="app\static\app\css\jquery.tagsinput.min.css" />
     <Content Include="app\static\app\css\jqvmap.min.css" />
@@ -547,7 +587,6 @@
     <Content Include="app\templates\app\guide\edit_profile.html" />
     <Content Include="app\templates\app\guide\guide_profile.html" />
     <Content Include="app\templates\app\guide\help_contacts.html" />
-    <Content Include="app\templates\app\guide\pending_evaluation_panels.html" />
     <Content Include="app\templates\app\guide\phd_status.html" />
     <Content Include="app\templates\app\guide\procedure.html" />
     <Content Include="app\templates\app\guide\submit_evaluation_panel.html" />
@@ -602,6 +641,11 @@
   <ItemGroup>
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
+    <Folder Include="app\static\app\css\font-awesome\" />
+    <Folder Include="app\static\app\css\font-awesome\css\" />
+    <Folder Include="app\static\app\css\font-awesome\fonts\" />
+    <Folder Include="app\static\app\css\font-awesome\less\" />
+    <Folder Include="app\static\app\css\font-awesome\scss\" />
     <Folder Include="app\tests\" />
     <Folder Include="app\scripts\" />
     <Folder Include="app\static\" />
@@ -644,6 +688,7 @@
     <Folder Include="app\templates\app\student\" />
     <Folder Include="app\tests\functional\" />
     <Folder Include="app\tests\unit\" />
+    <Folder Include="app\tests\unit\classes\" />
     <Folder Include="Media\" />
     <Folder Include="Media\Synopsis\" />
     <Folder Include="PhDPortal\" />
@@ -675,9 +720,20 @@
     <Compile Include="app\tests\testing_utilities.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\tests\unit\classes\user.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\tests\unit\classes\__init__.py" />
+    <Compile Include="app\tests\unit\test_application.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\tests\unit\test_requests.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\tests\unit\classes\student.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\tests\unit\__init__.py" />
     <Compile Include="app\tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>

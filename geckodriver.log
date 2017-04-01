@@ -1,0 +1,967 @@
+1490969423687	geckodriver	INFO	Listening on 127.0.0.1:2734
+1490969425724	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.2gIYaZh6B7vQ
+1490969425737	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490969425758	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2743
+1490969426850	Marionette	INFO	Listening on port 2743
+1490969490654	addons.productaddons	WARN	File download failed: 0x80004004
+1490969490661	addons.productaddons	WARN	File download failed: 0x80040111
+1490969796095	geckodriver	INFO	Listening on 127.0.0.1:3078
+1490969798131	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.sYq9CSIDXb8a
+1490969798233	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490969798250	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3085
+1490969799020	Marionette	INFO	Listening on port 3085
+1490969864754	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490969882950	geckodriver	INFO	Listening on 127.0.0.1:3164
+1490969884983	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fURwse2Lr0GK
+1490969884985	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490969885004	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3174
+1490969885702	Marionette	INFO	Listening on port 3174
+1490969949916	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490970278507	geckodriver	INFO	Listening on 127.0.0.1:3421
+1490970280529	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.2cZlrCQhyEfL
+1490970280531	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490970280549	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3427
+1490970281412	Marionette	INFO	Listening on port 3427
+1490970348447	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490973215934	geckodriver	INFO	Listening on 127.0.0.1:4256
+1490973217969	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.PhTpLkAHtBoi
+1490973217972	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490973217991	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4264
+1490973219157	Marionette	INFO	Listening on port 4264
+1490973267135	geckodriver	INFO	Listening on 127.0.0.1:4311
+1490973269176	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.PCn3h6jk9ljG
+1490973269179	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490973269204	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4318
+1490973270149	Marionette	INFO	Listening on port 4318
+1490973334561	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490973406407	geckodriver	INFO	Listening on 127.0.0.1:4456
+1490973408439	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.8ABJpCQKfxza
+1490973408442	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490973408460	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4462
+1490973409267	Marionette	INFO	Listening on port 4462
+1490975870077	geckodriver	INFO	Listening on 127.0.0.1:5343
+1490975872103	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.uSUwHpPNeT3t
+1490975872106	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490975872126	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5351
+1490975872915	Marionette	INFO	Listening on port 5351
+1490975929443	geckodriver	INFO	Listening on 127.0.0.1:5412
+1490975931474	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.kZc5qOsCAwEo
+1490975931477	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490975931494	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5418
+1490975932231	Marionette	INFO	Listening on port 5418
+1490976111903	geckodriver	INFO	Listening on 127.0.0.1:5515
+1490976113945	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ZPxeX15LbzE1
+1490976113948	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490976113966	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5521
+1490976114650	Marionette	INFO	Listening on port 5521
+1490976201215	geckodriver	INFO	Listening on 127.0.0.1:5593
+1490976203247	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.YWaVqRm9yuxv
+1490976203249	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490976203268	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5599
+1490976204271	Marionette	INFO	Listening on port 5599
+1490976268413	addons.productaddons	WARN	File download failed: 0x805a1ff3
+ozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Zfa2rukGyKUO
+1490976259209	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490976259228	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5646
+1490976260111	Marionette	INFO	Listening on port 5646
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+console.error: 
+  Protocol error (unknownError): Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+console.error: 
+  Protocol error (unknownError): Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+1490976324139	addons.productaddons	WARN	File download failed: 0x805a1ff3
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1490976908972	geckodriver	INFO	Listening on 127.0.0.1:6009
+1490976911014	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.e68rGmpxt7WA
+1490976911016	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490976911036	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6015
+1490976911758	Marionette	INFO	Listening on port 6015
+1490976976157	addons.productaddons	WARN	File download failed: 0x805a1ff3
+ozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.TcbJIK135Hcg
+1490976949876	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490976949896	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6083
+1490976950733	Marionette	INFO	Listening on port 6083
+1490977014880	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490977037592	geckodriver	INFO	Listening on 127.0.0.1:6167
+1490977039623	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.sutOvRc9Bo6g
+1490977039627	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490977039646	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6175
+1490977040368	Marionette	INFO	Listening on port 6175
+1490978953033	geckodriver	INFO	Listening on 127.0.0.1:6729
+1490978955067	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.hHLFTWzatjAO
+1490978955070	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490978955090	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6736
+1490978955821	Marionette	INFO	Listening on port 6736
+1490979019995	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490979064648	geckodriver	INFO	Listening on 127.0.0.1:6846
+1490979066679	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.t1blakoufL8X
+1490979066682	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490979066699	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6852
+1490979067406	Marionette	INFO	Listening on port 6852
+1490979094076	geckodriver	INFO	Listening on 127.0.0.1:6911
+1490979096107	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.YY9frseGYi9Q
+1490979096110	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490979096128	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6918
+1490979096920	Marionette	INFO	Listening on port 6918
+1490979161221	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490979541653	geckodriver	INFO	Listening on 127.0.0.1:1641
+1490979543689	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.tWyEWdX8WLA1
+1490979543693	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490979543714	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1647
+1490979544567	Marionette	INFO	Listening on port 1647
+1490979579743	geckodriver	INFO	Listening on 127.0.0.1:1711
+1490979581780	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.vIcM1O0thh2z
+1490979581783	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490979581805	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1719
+1490979582596	Marionette	INFO	Listening on port 1719
+1490979648636	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490979677032	addons.productaddons	WARN	File download failed: 0x804b0014
+1490981699991	geckodriver	INFO	Listening on 127.0.0.1:2340
+1490981702031	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.stU3JgXW7mAt
+1490981702034	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490981702051	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2348
+1490981702743	Marionette	INFO	Listening on port 2348
+1490981754449	geckodriver	INFO	Listening on 127.0.0.1:2430
+1490981756487	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.AIdKUYAOyeff
+1490981756490	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490981756507	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2436
+1490981757253	Marionette	INFO	Listening on port 2436
+1490981821291	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490981851481	geckodriver	INFO	Listening on 127.0.0.1:2523
+1490981853522	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.5PeF0hlQwhW3
+1490981853525	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490981853546	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2529
+1490981854389	Marionette	INFO	Listening on port 2529
+1490981918068	addons.productaddons	WARN	File download failed: 0x805a1ff3
+ozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.oonS6rvKrjA6
+1490981904701	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490981904726	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2607
+1490981905459	Marionette	INFO	Listening on port 2607
+1490982159042	geckodriver	INFO	Listening on 127.0.0.1:2900
+1490982161075	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.oxKIF8YP97nt
+1490982161077	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982161095	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2906
+1490982161807	Marionette	INFO	Listening on port 2906
+1490982202628	geckodriver	INFO	Listening on 127.0.0.1:2975
+1490982204660	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.51LM5uPnIvOU
+1490982204761	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982204786	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2981
+1490982205568	Marionette	INFO	Listening on port 2981
+1490982239646	geckodriver	INFO	Listening on 127.0.0.1:3055
+1490982241695	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fAuExtgxfHuN
+1490982241711	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982241728	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3063
+1490982242504	Marionette	INFO	Listening on port 3063
+1490982306822	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490982328666	geckodriver	INFO	Listening on 127.0.0.1:3159
+1490982330706	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ptHLQP3tdxOE
+1490982330806	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982330833	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3167
+1490982331739	Marionette	INFO	Listening on port 3167
+1490982395656	addons.productaddons	WARN	File download failed: 0x805a1ff3
+ozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Fg49wXElFfBp
+1490982364278	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982364296	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3250
+1490982364984	Marionette	INFO	Listening on port 3250
+1490982414222	geckodriver	INFO	Listening on 127.0.0.1:3344
+1490982416256	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.iUydIAt8f2ah
+1490982416260	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982416278	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3351
+1490982416932	Marionette	INFO	Listening on port 3351
+1490982480989	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490982484222	addons.productaddons	WARN	File download failed: 0x80004004
+1490982709314	geckodriver	INFO	Listening on 127.0.0.1:3554
+1490982711338	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.qfKbcfZtXz4M
+1490982711342	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982711360	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3560
+1490982712315	Marionette	INFO	Listening on port 3560
+1490982862375	geckodriver	INFO	Listening on 127.0.0.1:3679
+1490982864418	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fFLcziJ2Iq3j
+1490982864420	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982864438	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3685
+1490982865212	Marionette	INFO	Listening on port 3685
+1490982889004	geckodriver	INFO	Listening on 127.0.0.1:3760
+1490982891044	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.wfzTmmhwGsti
+1490982891047	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490982891068	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3768
+1490982891937	Marionette	INFO	Listening on port 3768
+1490989189387	geckodriver	INFO	Listening on 127.0.0.1:4751
+1490989191427	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.alAdt2UXRoqD
+1490989191430	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490989191448	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4759
+1490989192230	Marionette	INFO	Listening on port 4759
+1490989256541	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490989256547	addons.productaddons	WARN	File download failed: 0x80040111
+1490989545964	geckodriver	INFO	Listening on 127.0.0.1:4987
+1490989547996	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.MpODhXgxV0Li
+1490989548047	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490989548073	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4993
+1490989549175	Marionette	INFO	Listening on port 4993
+1490989580985	geckodriver	INFO	Listening on 127.0.0.1:5032
+1490989583023	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.5bC4fco9eqix
+1490989583025	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490989583043	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5039
+1490989583744	Marionette	INFO	Listening on port 5039
+1490989647976	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1490989974822	geckodriver	INFO	Listening on 127.0.0.1:5320
+1490989976854	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.YWvzsFyzEWLj
+1490989976857	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490989976875	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5326
+1490989977739	Marionette	INFO	Listening on port 5326
+1490990622074	geckodriver	INFO	Listening on 127.0.0.1:5564
+1490990624097	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.IOzfRaPBx57E
+1490990624100	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490990624119	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5570
+1490990624894	Marionette	INFO	Listening on port 5570
+1490990671044	geckodriver	INFO	Listening on 127.0.0.1:5655
+1490990673076	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.K0H2VtLlqze5
+1490990673079	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490990673099	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5661
+1490990673790	Marionette	INFO	Listening on port 5661
+1490991959741	geckodriver	INFO	Listening on 127.0.0.1:6122
+1490991961771	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Ypbu54M5tmWC
+1490991961773	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490991961793	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6130
+1490991962516	Marionette	INFO	Listening on port 6130
+1490992089821	geckodriver	INFO	Listening on 127.0.0.1:6243
+1490992091853	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.keyMSJCLnX0F
+1490992091856	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490992091874	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6250
+1490992092561	Marionette	INFO	Listening on port 6250
+1490992168960	geckodriver	INFO	Listening on 127.0.0.1:6335
+1490992170991	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.o6QozltzzKeF
+1490992170993	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490992171013	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6341
+1490992171713	Marionette	INFO	Listening on port 6341
+1490993125946	geckodriver	INFO	Listening on 127.0.0.1:6783
+1490993127978	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.GvID74wrAaLS
+1490993127982	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490993128000	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6790
+1490993129015	Marionette	INFO	Listening on port 6790
+1490993206291	geckodriver	INFO	Listening on 127.0.0.1:6891
+1490993208320	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Ac2G5DG8nEcl
+1490993208323	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490993208346	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6899
+1490993209214	Marionette	INFO	Listening on port 6899
+1490993277038	geckodriver	INFO	Listening on 127.0.0.1:7008
+1490993279070	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ppexHPoIXys5
+1490993279099	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490993279117	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7016
+1490993279850	Marionette	INFO	Listening on port 7016
+1490993341802	geckodriver	INFO	Listening on 127.0.0.1:7141
+1490993343846	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.mxotCSENxpp3
+1490993343850	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490993343872	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7147
+1490993344657	Marionette	INFO	Listening on port 7147
+1490996754898	geckodriver	INFO	Listening on 127.0.0.1:8262
+1490996756943	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.GgkhkMDkzL63
+1490996756946	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490996756963	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8268
+1490996757650	Marionette	INFO	Listening on port 8268
+1490997250333	geckodriver	INFO	Listening on 127.0.0.1:8528
+1490997252375	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.AmU8M3zaAInC
+1490997252378	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490997252395	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8534
+1490997253109	Marionette	INFO	Listening on port 8534
+1490998696434	geckodriver	INFO	Listening on 127.0.0.1:9013
+1490998698473	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.OqlW8TeY78pC
+1490998698477	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490998698503	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9021
+1490998699593	Marionette	INFO	Listening on port 9021
+1490998735093	geckodriver	INFO	Listening on 127.0.0.1:9132
+1490998737130	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.kmKN3djMgj9v
+1490998737162	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490998737186	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9138
+1490998738162	Marionette	INFO	Listening on port 9138
+1490998788167	geckodriver	INFO	Listening on 127.0.0.1:9256
+1490998790206	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.s2oT7k1YAhhC
+1490998790219	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490998790245	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9263
+1490998791129	Marionette	INFO	Listening on port 9263
+1490999175959	geckodriver	INFO	Listening on 127.0.0.1:9549
+1490999177994	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Hqzp0aPMmub1
+1490999177996	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490999178015	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9557
+1490999178766	Marionette	INFO	Listening on port 9557
+1490999221853	geckodriver	INFO	Listening on 127.0.0.1:9665
+1490999223869	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.JxohGjqmzL10
+1490999223873	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490999223891	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9671
+1490999224591	Marionette	INFO	Listening on port 9671
+1490999628832	geckodriver	INFO	Listening on 127.0.0.1:9918
+1490999630859	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ZAepfODqMnuT
+1490999630861	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490999630880	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9925
+1490999631552	Marionette	INFO	Listening on port 9925
+1491042741468	geckodriver	INFO	Listening on 127.0.0.1:13102
+1491042743479	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.p4iqRcKdK2f2
+1491042743479	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491042743494	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13109
+1491042744216	Marionette	INFO	Listening on port 13109
+1491042892111	geckodriver	INFO	Listening on 127.0.0.1:13287
+1491042894148	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.aPewlBKrhFZz
+1491042894152	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491042894173	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13295
+1491042894993	Marionette	INFO	Listening on port 13295
+1491042916253	geckodriver	INFO	Listening on 127.0.0.1:13314
+1491042918290	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Jva9ecNqmnEA
+1491042918293	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491042918314	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13326
+1491042919251	Marionette	INFO	Listening on port 13326
+JavaScript error: chrome://browser/content/preferences/in-content/advanced.js, line 352: TypeError: prefStrBundle.getFormattedString is not a function
+1491043067632	geckodriver	INFO	Listening on 127.0.0.1:13401
+1491043069686	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.9BTNjqdU3aDl
+1491043069724	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491043069744	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13407
+1491043069965	addons.manager	DEBUG	Application has been upgraded
+1491043070030	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
+1491043070032	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1491043070035	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1491043070037	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1491043070037	addons.manager	DEBUG	Starting provider: XPIProvider
+1491043070037	addons.xpi	DEBUG	startup
+1491043070038	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1491043070039	addons.xpi	INFO	Mapping e10srollout@mozilla.org to C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1491043070039	addons.xpi	INFO	Mapping firefox@getpocket.com to C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1491043070039	addons.xpi	INFO	Mapping loop@mozilla.org to C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1491043070040	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1491043070040	addons.xpi	DEBUG	checkForChanges
+1491043070041	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
+1491043070041	addons.xpi	DEBUG	New add-on e10srollout@mozilla.org in app-system-defaults
+1491043070042	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1491043070042	addons.xpi	DEBUG	New add-on firefox@getpocket.com in app-system-defaults
+1491043070042	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1491043070043	addons.xpi	DEBUG	New add-on loop@mozilla.org in app-system-defaults
+1491043070043	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1491043070044	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1491043070044	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1491043070044	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"e10srollout@mozilla.org":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","st":1461281498000},"firefox@getpocket.com":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","st":1461281498000},"loop@mozilla.org":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","st":1461281498000}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1461281498000}}}
+1491043070051	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.9BTNjqdU3aDl\extensions.json
+1491043070052	addons.xpi-utils	DEBUG	New add-on e10srollout@mozilla.org installed in app-system-defaults
+*** Blocklist::_loadBlocklistFromFile: blocklist is disabled
+1491043070060	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070061	addons.xpi-utils	DEBUG	New add-on firefox@getpocket.com installed in app-system-defaults
+1491043070064	DeferredSave.extensions.json	DEBUG	Starting timer
+1491043070065	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070065	addons.xpi-utils	DEBUG	New add-on loop@mozilla.org installed in app-system-defaults
+1491043070071	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070072	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1491043070075	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070076	addons.xpi-utils	INFO	Hiding the updated system add-ons.
+1491043070082	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1491043070092	addons.xpi	DEBUG	Calling bootstrap method install on e10srollout@mozilla.org version 1.0
+1491043070092	addons.xpi-utils	DEBUG	Make addon app-system-defaults:e10srollout@mozilla.org visible
+1491043070092	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070093	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1491043070096	addons.xpi	DEBUG	Calling bootstrap method install on firefox@getpocket.com version 1.0
+1491043070096	addons.xpi-utils	DEBUG	Make addon app-system-defaults:firefox@getpocket.com visible
+1491043070096	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070097	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1491043070100	addons.xpi	DEBUG	Calling bootstrap method install on loop@mozilla.org version 1.2.6
+1491043070100	addons.xpi-utils	DEBUG	Make addon app-system-defaults:loop@mozilla.org visible
+1491043070101	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070101	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1491043070101	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070101	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"02F0rA1tKJbq","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4778,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0","maxVersion":"46.0"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1491043070101	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1491043070102	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"DF-2mly0Nd0h","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":893211,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0","maxVersion":"46.0"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1491043070102	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1491043070102	addons.xpi	DEBUG	Updating XPIState for {"id":"loop@mozilla.org","syncGUID":"S9-3IsQubwMi","location":"app-system-defaults","version":"1.2.6","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Firefox Hello","description":"Web sharing for Firefox","creator":"Mozilla","homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4185303,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0a1","maxVersion":"46.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1491043070103	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1491043070103	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"58n-gnhIJPt3","location":"app-global","version":"46.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"skinnable":true,"size":22006,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0","maxVersion":"46.0"}],"targetPlatforms":[],"seen":true}
+1491043070103	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1491043070104	DeferredSave.extensions.json	DEBUG	Save changes
+1491043070104	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1491043070104	addons.xpi-utils	DEBUG	Updating add-on states
+1491043070105	addons.xpi-utils	DEBUG	Writing add-ons list
+1491043070107	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1491043070107	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1491043070108	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1491043070108	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1491043070109	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1491043070109	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1491043070126	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1491043070126	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1491043070126	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1491043070126	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1491043070127	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1491043070127	addons.manager	DEBUG	Starting provider: GMPProvider
+1491043070132	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1491043070132	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1491043070132	addons.manager	DEBUG	Starting provider: PluginProvider
+1491043070132	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1491043070132	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1491043070133	addons.manager	DEBUG	Completed startup sequence
+1491043070468	Marionette	INFO	Listening on port 13407
+1491043071424	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1491043071424	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1491043071424	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1491043071446	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
+1491043071446	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
+1491043071446	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
+1491043071448	DeferredSave.extensions.json	DEBUG	Starting write
+1491043071712	DeferredSave.extensions.json	DEBUG	Write succeeded
+1491043071712	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 17
+1491043097003	addons.xpi	DEBUG	Calling bootstrap method shutdown on e10srollout@mozilla.org version 1.0
+1491043097004	addons.xpi	DEBUG	Calling bootstrap method shutdown on firefox@getpocket.com version 1.0
+1491043097004	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.2.6
+1491043097338	addons.manager	DEBUG	shutdown
+1491043097339	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+149104309733JavaScript error: chrome://browser/content/preferences/in-content/advanced.js, line 352: TypeError: prefStrBundle.getFormattedString is not a function
+hemeManager
+1491043097340	addons.manager	DEBUG	Calling shutdown blocker for GMPProvider
+1491043097341	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1491043097342	addons.manager	DEBUG	Calling shutdown blocker for <unnamed-provider>
+1491043097343	addons.manager	DEBUG	Calling shutdown blocker for PreviousExperimentProvider
+1491043097345	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1491043097348	addons.manager	DEBUG	Async provider shutdown done
+JavaScript error: chrome://browser/content/preferences/in-content/advanced.js, line 352: TypeError: prefStrBundle.getFormattedString is not a function
+1491043150315	geckodriver	INFO	Listening on 127.0.0.1:13452
+1491043152352	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.6bESI3R4Ku9E
+1491043152368	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491043152383	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13458
+1491043152585	addons.manager	DEBUG	Application has been upgraded
+1491043152761	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
+1491043152763	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1491043152766	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1491043152767	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1491043152767	addons.manager	DEBUG	Starting provider: XPIProvider
+1491043152768	addons.xpi	DEBUG	startup
+1491043152768	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1491043152769	addons.xpi	INFO	Mapping e10srollout@mozilla.org to C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1491043152769	addons.xpi	INFO	Mapping firefox@getpocket.com to C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1491043152770	addons.xpi	INFO	Mapping loop@mozilla.org to C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1491043152770	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1491043152771	addons.xpi	DEBUG	checkForChanges
+1491043152771	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
+1491043152772	addons.xpi	DEBUG	New add-on e10srollout@mozilla.org in app-system-defaults
+1491043152772	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1491043152773	addons.xpi	DEBUG	New add-on firefox@getpocket.com in app-system-defaults
+1491043152773	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1491043152773	addons.xpi	DEBUG	New add-on loop@mozilla.org in app-system-defaults
+1491043152773	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1491043152774	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1491043152774	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1491043152774	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-system-defaults":{"e10srollout@mozilla.org":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","st":1461281498000},"firefox@getpocket.com":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","st":1461281498000},"loop@mozilla.org":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","st":1461281498000}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","st":1461281498000}}}
+1491043152781	addons.xpi-utils	DEBUG	Opening XPI database C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.6bESI3R4Ku9E\extensions.json
+1491043152782	addons.xpi-utils	DEBUG	New add-on e10srollout@mozilla.org installed in app-system-defaults
+*** Blocklist::_loadBlocklistFromFile: blocklist is disabled
+1491043152789	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152789	addons.xpi-utils	DEBUG	New add-on firefox@getpocket.com installed in app-system-defaults
+1491043152792	DeferredSave.extensions.json	DEBUG	Starting timer
+1491043152793	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152793	addons.xpi-utils	DEBUG	New add-on loop@mozilla.org installed in app-system-defaults
+1491043152798	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152799	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1491043152802	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152802	addons.xpi-utils	INFO	Hiding the updated system add-ons.
+1491043152809	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1491043152818	addons.xpi	DEBUG	Calling bootstrap method install on e10srollout@mozilla.org version 1.0
+1491043152818	addons.xpi-utils	DEBUG	Make addon app-system-defaults:e10srollout@mozilla.org visible
+1491043152818	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152819	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1491043152822	addons.xpi	DEBUG	Calling bootstrap method install on firefox@getpocket.com version 1.0
+1491043152822	addons.xpi-utils	DEBUG	Make addon app-system-defaults:firefox@getpocket.com visible
+1491043152823	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152823	addons.xpi	DEBUG	Loading bootstrap scope from C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1491043152827	addons.xpi	DEBUG	Calling bootstrap method install on loop@mozilla.org version 1.2.6
+1491043152827	addons.xpi-utils	DEBUG	Make addon app-system-defaults:loop@mozilla.org visible
+1491043152827	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152827	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1491043152828	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152828	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"KDcqYwnl9K2f","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\e10srollout@mozilla.org.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4778,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0","maxVersion":"46.0"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1491043152828	addons.xpi	DEBUG	getModTime: Recursive scan of e10srollout@mozilla.org
+1491043152829	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"bkEp2bkox42C","location":"app-system-defaults","version":"1.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\firefox@getpocket.com.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":893211,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0","maxVersion":"46.0"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1491043152829	addons.xpi	DEBUG	getModTime: Recursive scan of firefox@getpocket.com
+1491043152829	addons.xpi	DEBUG	Updating XPIState for {"id":"loop@mozilla.org","syncGUID":"mRvRS5xBAY2r","location":"app-system-defaults","version":"1.2.6","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Firefox Hello","description":"Web sharing for Firefox","creator":"Mozilla","homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4185303,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0a1","maxVersion":"46.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
+1491043152829	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1491043152830	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"081-lWnNLkhP","location":"app-global","version":"46.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1461281498000,"updateDate":1461281498000,"applyBackgroundUpdates":1,"skinnable":true,"size":22006,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0","maxVersion":"46.0"}],"targetPlatforms":[],"seen":true}
+1491043152830	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1491043152831	DeferredSave.extensions.json	DEBUG	Save changes
+1491043152831	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1491043152831	addons.xpi-utils	DEBUG	Updating add-on states
+1491043152831	addons.xpi-utils	DEBUG	Writing add-ons list
+1491043152833	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1491043152834	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1491043152834	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1491043152835	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1491043152835	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1491043152836	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1491043152852	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1491043152852	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1491043152852	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1491043152852	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1491043152852	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1491043152853	addons.manager	DEBUG	Starting provider: GMPProvider
+1491043152857	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1491043152857	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1491043152857	addons.manager	DEBUG	Starting provider: PluginProvider
+1491043152857	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1491043152858	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1491043152858	addons.manager	DEBUG	Completed startup sequence
+1491043153345	Marionette	INFO	Listening on port 13458
+1491043154297	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1491043154297	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1491043154297	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1491043154316	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
+1491043154316	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
+1491043154316	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
+1491043154317	DeferredSave.extensions.json	DEBUG	Starting write
+1491043154511	DeferredSave.extensions.json	DEBUG	Write succeeded
+1491043154511	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 17
+1491043166132	addons.xpi	DEBUG	Calling bootstrap method shutdown on e10srollout@mozilla.org version 1.0
+1491043166132	addons.xpi	DEBUG	Calling bootstrap method shutdown on firefox@getpocket.com version 1.0
+1491043166133	addons.xpi	DEBUG	Calling bootstrap method shutdown on loop@mozilla.org version 1.2.6
+1491043166286	addons.manager	DEBUG	shutdown
+1491043166287	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1491043166287	addons.xpi	DEBUG	shutdown
+1491043166287	addons.xpi-utils	DEBUG	shutdown
+1491043166288	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1491043166288	addons.manager	DEBUG	Calling shutdown blocker for GMPProvider
+1491043166290	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1491043166290	addons.manager	DEBUG	Calling shutdown blocker for <unnamed-provider>
+1491043166291	addons.manager	DEBUG	Calling shutdown blocker for PreviousExperimentProvider
+1491043166293	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1491043166296	addons.manager	DEBUG	Async provider shutdown done
+1491043199566	geckodriver	INFO	Listening on 127.0.0.1:13515
+1491043201632	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.WcA1fTmZH1NL
+1491043201632	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491043201648	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13521
+1491043202642	Marionette	INFO	Listening on port 13521
+1491043899094	geckodriver	INFO	Listening on 127.0.0.1:13730
+1491043901109	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.7DVmEn3zY1qS
+1491043901109	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491043901141	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13736
+1491043901827	Marionette	INFO	Listening on port 13736
+1491044057290	geckodriver	INFO	Listening on 127.0.0.1:13814
+1491044059348	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.l3J2f93LDhGX
+1491044059363	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491044059379	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13820
+1491044060127	Marionette	INFO	Listening on port 13820
+1491044126834	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491044154775	geckodriver	INFO	Listening on 127.0.0.1:13892
+1491044156791	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.tBfurp45eZnk
+1491044156791	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491044156822	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13898
+1491044157620	Marionette	INFO	Listening on port 13898
+1491044224387	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491044292869	geckodriver	INFO	Listening on 127.0.0.1:14007
+1491044294916	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.McPgmH4iCIaz
+1491044294916	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491044294931	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14013
+1491044295799	Marionette	INFO	Listening on port 14013
+1491044362002	addons.productaddons	WARN	File download failed: 0x805a1ff3
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+console.error: 
+  Protocol error (unknownError): Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+console.error: 
+  Protocol error (unknownError): Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+1491044680457	geckodriver	INFO	Listening on 127.0.0.1:14150
+1491044682504	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.wE9mrfd8S7fm
+1491044682504	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491044682519	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14158
+1491044683412	Marionette	INFO	Listening on port 14158
+1491044750058	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491044829515	geckodriver	INFO	Listening on 127.0.0.1:14255
+1491044831547	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.YRz4jQu4v4AD
+1491044831549	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491044831569	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14261
+1491044832491	Marionette	INFO	Listening on port 14261
+1491045091586	geckodriver	INFO	Listening on 127.0.0.1:14390
+1491045093623	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.qQKaG1A3jXfi
+1491045093627	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491045093648	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14396
+1491045094461	Marionette	INFO	Listening on port 14396
+1491045328592	geckodriver	INFO	Listening on 127.0.0.1:14488
+1491045330632	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.XZJhlFvrxEhZ
+1491045330635	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491045330654	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14494
+1491045331523	Marionette	INFO	Listening on port 14494
+1491045398561	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491045487969	geckodriver	INFO	Listening on 127.0.0.1:14598
+1491045489985	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.CeRoJsbwaNpB
+1491045489985	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491045490000	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14604
+1491045490981	Marionette	INFO	Listening on port 14604
+1491045557535	addons.productaddons	WARN	File download failed: 0x805a1ff3
+JavaScript warning: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/vendor/react-redux.js, line 409: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/demangle.js, line 0: Successfully compiled asm.js code (total compilation time 46ms; unable to cache asm.js in synchronous scripts; try loading asm.js via <script async> or createElement('script'))
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Failed to fetch http://localhost:8000/static/app/css/bootstrap.min.css.map. Code 2152398850.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Message: Error: Failed to fetch https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css. Code 2153390067.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Message: TypeError: can't access dead object
+  Stack:
+    StyleSheetActor<.ownerNode@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:441:5
+StyleSheetActor<.getCSSRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:528:9
+StyleSheetActor<._getMediaRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:863:12
+StyleSheetActor<.getMediaRules<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:848:12
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+StyleSheetActor<.ownerNode@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:441:5
+StyleSheetActor<.getCSSRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:528:9
+StyleSheetActor<._getMediaRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:863:12
+StyleSheetActor<.getMediaRules<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:848:12
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+console.error: 
+  Message: TypeError: can't access dead object
+  Stack:
+    StyleSheetActor<.href@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:448:5
+StyleSheetActor<._getText@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:653:9
+StyleSheetActor<.getText<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:626:12
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+StyleSheetActor<.href@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:448:5
+StyleSheetActor<._getText@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:653:9
+StyleSheetActor<.getText<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:626:12
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+console.error: 
+  Message: TypeError: can't access dead object
+  Stack:
+    StyleSheetActor<.ownerNode@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:441:5
+StyleSheetActor<.getCSSRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:528:9
+StyleSheetActor<._getMediaRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:863:12
+StyleSheetActor<.getMediaRules<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:848:12
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+StyleSheetActor<.ownerNode@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:441:5
+StyleSheetActor<.getCSSRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:528:9
+StyleSheetActor<._getMediaRules@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:863:12
+StyleSheetActor<.getMediaRules<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:848:12
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+console.error: 
+  Message: TypeError: can't access dead object
+  Stack:
+    WalkerActor<.documentElement<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:1632:1
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+WalkerActor<.documentElement<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:1632:1
+actorProto/</handler@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1013:19
+DSC_onPacket@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1643:15
+LocalDebuggerTransport.prototype.send/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:569:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+console.error: 
+  Protocol error (unknownError): TypeError: can't access dead object
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+console.error: 
+  Message: Error: Failed to fetch https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css. Code 2153390067.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+StyleSheetActor<._fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:759:27
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+console.error: 
+  Protocol error (unknownError): Error: Source map at http://localhost:8000/static/app/css/bootstrap.min.css.map not found or invalid
+1491045655940	geckodriver	INFO	Listening on 127.0.0.1:14716
+1491045657987	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.pDgXpLSCMMYU
+1491045658018	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491045658033	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14722
+1491045658860	Marionette	INFO	Listening on port 14722
+1491045738214	geckodriver	INFO	Listening on 127.0.0.1:14797
+1491045740261	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.bjkVZRaa6PfH
+1491045740261	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491045740277	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14803
+1491045741131	Marionette	INFO	Listening on port 14803
+1491045846615	geckodriver	INFO	Listening on 127.0.0.1:14965
+1491045848641	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.277xT86cQYlt
+1491045848641	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491045848672	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14995
+1491045849439	Marionette	INFO	Listening on port 14995
+1491046038441	geckodriver	INFO	Listening on 127.0.0.1:1154
+1491046040488	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1DEBiMOhYAch
+1491046040488	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046040504	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1160
+1491046041460	Marionette	INFO	Listening on port 1160
+1491046143331	geckodriver	INFO	Listening on 127.0.0.1:1285
+1491046145378	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.0jUMREsONWCQ
+1491046145378	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046145409	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1291
+1491046146274	Marionette	INFO	Listening on port 1291
+1491046269426	geckodriver	INFO	Listening on 127.0.0.1:1467
+1491046271488	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.QnS3TDZzGE9p
+1491046271488	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046271504	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1475
+1491046272327	Marionette	INFO	Listening on port 1475
+1491046375088	geckodriver	INFO	Listening on 127.0.0.1:1661
+1491046377125	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Q1MePMdE91B0
+1491046377125	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046377156	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1667
+1491046377917	Marionette	INFO	Listening on port 1667
+1491046594630	geckodriver	INFO	Listening on 127.0.0.1:1818
+1491046596742	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.8ehaiVpMqHeK
+1491046596752	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046596802	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1825
+1491046598749	Marionette	INFO	Listening on port 1825
+1491046687513	geckodriver	INFO	Listening on 127.0.0.1:1965
+1491046689529	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.thJnKnk5pWQq
+1491046689544	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046689560	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1971
+1491046690355	Marionette	INFO	Listening on port 1971
+1491046758756	geckodriver	INFO	Listening on 127.0.0.1:2110
+1491046760785	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.6ulvxmKM35x8
+1491046760789	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046760808	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2116
+1491046761593	Marionette	INFO	Listening on port 2116
+1491046886024	geckodriver	INFO	Listening on 127.0.0.1:2276
+1491046888057	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.3nUgrWeVWe12
+1491046888060	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491046888080	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2282
+1491046888899	Marionette	INFO	Listening on port 2282
+1491047177570	geckodriver	INFO	Listening on 127.0.0.1:2481
+1491047179593	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.YJZTqlw1PNrn
+1491047179596	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491047179612	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2487
+1491047180316	Marionette	INFO	Listening on port 2487
+1491047618502	geckodriver	INFO	Listening on 127.0.0.1:2752
+1491047620547	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.32qtSB1vSzva
+1491047620551	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491047620571	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2759
+1491047621435	Marionette	INFO	Listening on port 2759
+1491047894737	geckodriver	INFO	Listening on 127.0.0.1:3007
+1491047896769	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.vMsEdlhxprwX
+1491047896772	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491047896789	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3016
+1491047897577	Marionette	INFO	Listening on port 3016
+1491047962521	geckodriver	INFO	Listening on 127.0.0.1:3164
+1491047964560	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.oNdtTPTm2lQe
+1491047964563	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491047964583	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3170
+1491047965442	Marionette	INFO	Listening on port 3170
+1491048014397	geckodriver	INFO	Listening on 127.0.0.1:3325
+1491048016436	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.X9pkOxEcITUs
+1491048016439	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491048016455	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3331
+1491048017148	Marionette	INFO	Listening on port 3331
+1491048261316	geckodriver	INFO	Listening on 127.0.0.1:3599
+1491048263362	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.dGXXghVo0yBI
+1491048263365	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491048263387	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3605
+1491048264207	Marionette	INFO	Listening on port 3605
+1491048503864	geckodriver	INFO	Listening on 127.0.0.1:3905
+1491048505895	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.qbCzsFNI6e0B
+1491048505898	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491048505914	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3911
+1491048506588	Marionette	INFO	Listening on port 3911
+1491049219797	geckodriver	INFO	Listening on 127.0.0.1:4205
+1491049221825	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Q1wTiuJiSBP7
+1491049221828	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491049221846	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4211
+1491049222665	Marionette	INFO	Listening on port 4211
+1491049296452	geckodriver	INFO	Listening on 127.0.0.1:4439
+1491049298487	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1ivOVDFcDjO2
+1491049298490	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491049298509	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4445
+1491049299156	Marionette	INFO	Listening on port 4445
+1491051255315	geckodriver	INFO	Listening on 127.0.0.1:5116
+1491051257349	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.DEAA7BJrHQ7l
+1491051257352	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491051257369	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5124
+1491051258243	Marionette	INFO	Listening on port 5124
+1491051361103	geckodriver	INFO	Listening on 127.0.0.1:5378
+1491051363134	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.YjM50O2U5ueU
+1491051363137	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491051363154	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5384
+1491051363835	Marionette	INFO	Listening on port 5384
+1491051432730	geckodriver	INFO	Listening on 127.0.0.1:5636
+1491051434767	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.nnMhUe1h0YLd
+1491051434866	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491051434887	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5642
+1491051435674	Marionette	INFO	Listening on port 5642
+1491051476618	geckodriver	INFO	Listening on 127.0.0.1:5779
+1491051478663	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.GexXr4BKp1HP
+1491051478666	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491051478686	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5785
+1491051479693	Marionette	INFO	Listening on port 5785
+1491051548409	geckodriver	INFO	Listening on 127.0.0.1:5918
+1491051550446	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.gWxWxVggJSoy
+1491051550450	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491051550470	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5924
+1491051551384	Marionette	INFO	Listening on port 5924
+1491052427630	geckodriver	INFO	Listening on 127.0.0.1:6305
+1491052429667	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.qq9kxn7uMUbG
+1491052429671	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491052429690	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6314
+1491052430599	Marionette	INFO	Listening on port 6314
+1491052481554	geckodriver	INFO	Listening on 127.0.0.1:6468
+1491052483591	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.lIaQ3iG3uVKV
+1491052483594	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491052483613	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6474
+1491052484408	Marionette	INFO	Listening on port 6474
+1491054087704	geckodriver	INFO	Listening on 127.0.0.1:7397
+1491054089737	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.BdhFTpn4s1Hw
+1491054089740	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491054089756	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7405
+1491054090510	Marionette	INFO	Listening on port 7405
+1491054126216	geckodriver	INFO	Listening on 127.0.0.1:7538
+1491054128275	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.f1OG54KbkAaI
+1491054128278	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491054128298	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7544
+1491054129045	Marionette	INFO	Listening on port 7544
+1491054253283	geckodriver	INFO	Listening on 127.0.0.1:7716
+1491054255319	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.dJTYTjax4TYn
+1491054255336	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491054255356	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7722
+1491054256141	Marionette	INFO	Listening on port 7722
+1491054341938	geckodriver	INFO	Listening on 127.0.0.1:7871
+1491054343958	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.vYP0NwWJXXny
+1491054343960	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491054343977	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7877
+1491054344846	Marionette	INFO	Listening on port 7877
+1491054424119	geckodriver	INFO	Listening on 127.0.0.1:8026
+1491054426157	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.bEoY0LGFiKsO
+1491054426160	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491054426180	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8032
+1491054427014	Marionette	INFO	Listening on port 8032
+1491054931559	geckodriver	INFO	Listening on 127.0.0.1:8251
+1491054933591	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.F61LLFMoa1S9
+1491054933594	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491054933612	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8257
+1491054934498	Marionette	INFO	Listening on port 8257
+1491055052685	geckodriver	INFO	Listening on 127.0.0.1:8412
+1491055054720	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.j0DxuLrJ6XQA
+1491055054724	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491055054747	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8419
+1491055055539	Marionette	INFO	Listening on port 8419
+1491055192904	geckodriver	INFO	Listening on 127.0.0.1:8570
+1491055194926	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.0aduy7SvzxJq
+1491055194929	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491055194947	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8576
+1491055195823	Marionette	INFO	Listening on port 8576
+1491055801530	geckodriver	INFO	Listening on 127.0.0.1:8858
+1491055817781	geckodriver	INFO	Listening on 127.0.0.1:8867
+1491055819808	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.38zGm28baLlE
+1491055819812	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491055819828	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8873
+1491055820556	Marionette	INFO	Listening on port 8873
+1491055906429	geckodriver	INFO	Listening on 127.0.0.1:9030
+1491055908460	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.0irc1AxAZEf2
+1491055908463	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491055908479	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9036
+1491055909258	Marionette	INFO	Listening on port 9036
+1491059303327	geckodriver	INFO	Listening on 127.0.0.1:9956
+1491059305361	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.yNoKkEoZj5S8
+1491059305365	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491059305386	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9964
+1491059306230	Marionette	INFO	Listening on port 9964
+1491059376194	geckodriver	INFO	Listening on 127.0.0.1:10090
+1491059378227	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.uqBtsyXQz7mx
+1491059378230	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491059378248	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10096
+1491059379133	Marionette	INFO	Listening on port 10096

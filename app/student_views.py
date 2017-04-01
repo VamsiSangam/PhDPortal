@@ -4,13 +4,13 @@ URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
 URL_STUDENT_VIEW_THESIS = 'student_view_thesis'
 URL_STUDENT_ADD_KEYWORDS = 'student_add_keywords'
 STATUS_ID_SUBMIT_ABSTRACT = 5
-STATUS_ID_ABSTRACT_APPROVED = 7
+STATUS_ID_ABSTRACT_APPROVED = 8
 STATUS_ID_SUBMIT_SYNOPSIS = 9
-STATUS_ID_SYNOPSIS_APPROVED = 11
+STATUS_ID_SYNOPSIS_APPROVED = 12
 STATUS_ID_SUBMIT_THESIS = 13
-STATUS_ID_THESIS_APPROVED = 15
-STATUS_ID_PANEL_SENT = 17
-STATUS_ID_PANEL_APPROVED = 19
+STATUS_ID_THESIS_APPROVED = 16
+STATUS_ID_PANEL_SENT = 18
+STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
 STATUS_ID_THESIS_UNDER_EVALUATION = 21
 
 def send_notification_to_guides(user, message):
@@ -60,6 +60,7 @@ def student_add_abstract(request):
     student = Student.objects.get(user = user)
     thesis = Thesis.objects.get(student = student)
     canSubmitAbstract = thesis.status.id >= STATUS_ID_SUBMIT_ABSTRACT
+    abstractWaitingApproval = thesis.status.id > STATUS_ID_SUBMIT_ABSTRACT and thesis.status.id < STATUS_ID_ABSTRACT_APPROVED
     isAbstractApproved = thesis.status.id >= STATUS_ID_ABSTRACT_APPROVED
 
     if request.method == "GET":
@@ -70,7 +71,8 @@ def student_add_abstract(request):
             'layout_data' : get_layout_data(request),
             'abstract' : abstract,
             'canSubmitAbstract' : canSubmitAbstract,
-            'isAbstractApproved' : isAbstractApproved
+            'isAbstractApproved' : isAbstractApproved,
+            'abstractWaitingApproval' : abstractWaitingApproval
         })
     elif request.method == "POST" and canSubmitAbstract and (not isAbstractApproved):
         abstract = request.POST['abstract']
@@ -97,7 +99,11 @@ def student_upload_synopsis(request):
     user = auth.get_user(request)
     student = Student.objects.get(user = user)
     thesis = Thesis.objects.get(student = student)
-    canSubmitSynopsis = thesis.status.id >= STATUS_ID_SUBMIT_SYNOPSIS
+    """
+    subtracting 1 to balance with the status of approved by guide(8)
+    """
+    canSubmitSynopsis = thesis.status.id >= (STATUS_ID_SUBMIT_SYNOPSIS)
+    synopsisWaitingApproval = thesis.status.id > STATUS_ID_SUBMIT_SYNOPSIS and thesis.status.id < STATUS_ID_SYNOPSIS_APPROVED
     isSynopsisApproved = thesis.status.id >= STATUS_ID_SYNOPSIS_APPROVED
 
     if request.method == 'GET':
@@ -108,7 +114,8 @@ def student_upload_synopsis(request):
                 'title' : 'Upload Synopsis',
                 'layout_data' : get_layout_data(request),
                 'canSubmitSynopsis' : canSubmitSynopsis,
-                'isSynopsisApproved' : isSynopsisApproved
+                'isSynopsisApproved' : isSynopsisApproved,
+                'synopsisWaitingApproval' : synopsisWaitingApproval
             }
         )
     elif request.method == "POST" and canSubmitSynopsis and (not isSynopsisApproved):
@@ -171,6 +178,7 @@ def student_upload_thesis(request):
     thesis = Thesis.objects.get(student = student)
     canSubmitThesis = thesis.status.id >= STATUS_ID_SUBMIT_THESIS
     isThesisApproved = thesis.status.id >= STATUS_ID_THESIS_APPROVED
+    thesisWaitingApproval = thesis.status.id > STATUS_ID_SUBMIT_THESIS and thesis.status.id < STATUS_ID_THESIS_APPROVED
 
     if request.method == "GET":
         thesisExists = bool(thesis.thesis)
@@ -183,7 +191,8 @@ def student_upload_thesis(request):
                 'layout_data' : get_layout_data(request),
                 'thesisExists' : thesisExists,
                 'canSubmitThesis' : canSubmitThesis,
-                'isThesisApproved' : isThesisApproved
+                'isThesisApproved' : isThesisApproved,
+                'thesisWaitingApproval' : thesisWaitingApproval
             }
         )
     elif request.method == "POST" and canSubmitThesis and (not isThesisApproved):

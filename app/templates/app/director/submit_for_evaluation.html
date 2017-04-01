@@ -101,6 +101,8 @@
                         <input type="hidden" name="thesis_id" value="{{ thesis.id }}"/>
                         <input type="hidden" name="required_indian" value="{{ thesis.required_indian }}"/>
                         <input type="hidden" name="required_foreign" value="{{ thesis.required_foreign }}"/>
+                        <input type="hidden" name="total_indian" value="{{ thesis.indian_referees|length }}"/>
+                        <input type="hidden" name="total_foreign" value="{{ thesis.foreign_referees|length }}"/>
                         <div class="row">
                             <div class="col-sm-6">
                                 <h4>Select order of Priority for <b>Indian</b> Referees</h4>

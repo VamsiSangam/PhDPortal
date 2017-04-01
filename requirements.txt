@@ -1,2 +1,5 @@
 django==1.9
 reportlab
+selenium
+python-dateutil
+pytz

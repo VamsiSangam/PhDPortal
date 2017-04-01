@@ -23,12 +23,12 @@
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
-        <p><b>Name</b> - {{ user.full_name }}</b></p>
-        <p><b>Email</b> - {{ user.email }}</b></p>
+        <p id="user-name"><b>Name</b> - {{ user.full_name }}</b></p>
+        <p id="user-email"><b>Email</b> - {{ user.email }}</b></p>
         <p><b>Address</b> - {{ user.address }}</b></p>
         <br />
         {% if request.session.username == user.username %}
-        <a href="{% url 'user_edit_profile' %}" class="btn btn-primary pull-right">Edit profile</a>
+        <a  id="user-edit-profile" href="{% url 'user_edit_profile' %}" class="btn btn-primary pull-right">Edit profile</a>
         {% endif %}
     </div>
 </div>
