@@ -1,0 +1,11 @@
+test_AMQShell
+Mock
+patch
+absolute_import
+dump_message
+AMQPAdmin
+amqp
+WhateverIO
+AMQShell
+AppCase
+main

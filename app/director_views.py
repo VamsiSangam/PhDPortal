@@ -108,9 +108,9 @@ def director_submit_for_evaluation(request):
                 
                 for finalpanel in PanelMember.objects.filter(thesis = thesis):
                     referee = finalpanel.referee
-                    if referee.type == 'I' and (finalpanel.status == 'A' or finalpanel.status == 'I'):
+                    if referee.type == 'I' and (finalpanel.status == 'A' or finalpanel.status == 'S'):
                         this_thesis['required_indian'] -= 1
-                    if referee.type == 'F' and (finalpanel.status == 'A' or finalpanel.status == 'I'):
+                    if referee.type == 'F' and (finalpanel.status == 'A' or finalpanel.status == 'S'):
                         this_thesis['required_foreign'] -= 1
                 all_list.append(this_thesis)
              

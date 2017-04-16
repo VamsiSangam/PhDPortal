@@ -13752,3 +13752,890 @@ System.FormatException: Input string was not in a correct format.
 2017-04-01T19:13:49: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz"
 2017-04-01T19:13:49: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\pytz"
 2017-04-01T19:13:51: Deleting 0 files
+
+2017-04-03T19:05:48: Start analysis
+2017-04-03T19:05:48: [WARNING] Library was set explicitly - skipping path detection
+2017-04-03T19:05:48: IncludeModulesFromModulePath = win32com
+2017-04-03T19:05:49: Deleting 0 files
+2017-04-03T19:05:49: astropy.CallDepth = 0
+2017-04-03T19:05:49: matplotlib.CallDepth = 3
+2017-04-03T19:05:49: pandas.CallDepth = 0
+2017-04-03T19:05:49: sympy.CallDepth = 0
+2017-04-03T19:05:49: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal" with 6 files
+2017-04-03T19:05:49: Parsing "tzlocal.darwin" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal\darwin.py")
+2017-04-03T19:05:49: Parsing "tzlocal.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal\tests.py")
+2017-04-03T19:05:49: Parsing "tzlocal.unix" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal\unix.py")
+2017-04-03T19:05:49: Parsing "tzlocal.win32" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal\win32.py")
+2017-04-03T19:05:49: Parsing "tzlocal.windows_tz" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal\windows_tz.py")
+2017-04-03T19:05:49: Parsing "tzlocal" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal\__init__.py")
+2017-04-03T19:05:49: Parsing complete
+2017-04-03T19:05:49: Analyzing "tzlocal.darwin"
+2017-04-03T19:05:49: Analyzing "tzlocal.tests"
+2017-04-03T19:05:49: Analyzing "tzlocal.unix"
+2017-04-03T19:05:49: Analyzing "tzlocal.win32"
+2017-04-03T19:05:49: Analyzing "tzlocal.windows_tz"
+2017-04-03T19:05:49: Analyzing "tzlocal"
+2017-04-03T19:05:49: Starting analysis of 6 modules
+2017-04-03T19:05:51: Analysis complete
+2017-04-03T19:05:51: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal"
+2017-04-03T19:05:51: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal"
+2017-04-03T19:05:52: Deleting 0 files
+
+2017-04-16T20:02:56: Start analysis
+2017-04-16T20:02:56: [WARNING] Library was set explicitly - skipping path detection
+2017-04-16T20:02:56: IncludeModulesFromModulePath = win32com
+2017-04-16T20:02:58: Deleting 0 files
+2017-04-16T20:02:58: astropy.CallDepth = 0
+2017-04-16T20:02:58: matplotlib.CallDepth = 3
+2017-04-16T20:02:58: pandas.CallDepth = 0
+2017-04-16T20:02:58: sympy.CallDepth = 0
+2017-04-16T20:02:58: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp" with 15 files
+2017-04-16T20:02:58: Parsing "amqp.abstract_channel" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\abstract_channel.py")
+2017-04-16T20:02:58: Parsing "amqp.basic_message" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\basic_message.py")
+2017-04-16T20:02:58: Parsing "amqp.channel" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\channel.py")
+2017-04-16T20:02:58: Parsing "amqp.connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\connection.py")
+2017-04-16T20:02:58: Parsing "amqp.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\exceptions.py")
+2017-04-16T20:02:58: Parsing "amqp.five" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\five.py")
+2017-04-16T20:02:59: Parsing "amqp.method_framing" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\method_framing.py")
+2017-04-16T20:02:59: Parsing "amqp.protocol" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\protocol.py")
+2017-04-16T20:02:59: Parsing "amqp.serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\serialization.py")
+2017-04-16T20:02:59: Parsing "amqp.transport" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\transport.py")
+2017-04-16T20:02:59: Parsing "amqp.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\utils.py")
+2017-04-16T20:02:59: Parsing "amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\__init__.py")
+2017-04-16T20:02:59: Parsing "amqp.tests.case" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\tests\case.py")
+2017-04-16T20:02:59: Parsing "amqp.tests.test_channel" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\tests\test_channel.py")
+2017-04-16T20:02:59: Parsing "amqp.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp\tests\__init__.py")
+2017-04-16T20:02:59: Parsing complete
+2017-04-16T20:02:59: Analyzing "amqp.abstract_channel"
+2017-04-16T20:02:59: Analyzing "amqp.basic_message"
+2017-04-16T20:02:59: Analyzing "amqp.channel"
+2017-04-16T20:02:59: Analyzing "amqp.connection"
+2017-04-16T20:02:59: Analyzing "amqp.exceptions"
+2017-04-16T20:02:59: Analyzing "amqp.five"
+2017-04-16T20:02:59: Analyzing "amqp.method_framing"
+2017-04-16T20:02:59: Analyzing "amqp.protocol"
+2017-04-16T20:02:59: Analyzing "amqp.serialization"
+2017-04-16T20:02:59: Analyzing "amqp.transport"
+2017-04-16T20:02:59: Analyzing "amqp.utils"
+2017-04-16T20:02:59: Analyzing "amqp"
+2017-04-16T20:02:59: Analyzing "amqp.tests.case"
+2017-04-16T20:02:59: Analyzing "amqp.tests.test_channel"
+2017-04-16T20:02:59: Analyzing "amqp.tests"
+2017-04-16T20:02:59: Starting analysis of 15 modules
+2017-04-16T20:03:01: Analysis complete
+2017-04-16T20:03:01: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp"
+2017-04-16T20:03:01: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\amqp"
+2017-04-16T20:03:01: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\anyjson" with 1 files
+2017-04-16T20:03:01: Parsing "anyjson" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\anyjson\__init__.py")
+2017-04-16T20:03:01: Parsing complete
+2017-04-16T20:03:01: Analyzing "anyjson"
+2017-04-16T20:03:01: Starting analysis of 1 modules
+2017-04-16T20:03:03: Analysis complete
+2017-04-16T20:03:03: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\anyjson"
+2017-04-16T20:03:03: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\anyjson"
+2017-04-16T20:03:03: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard" with 29 files
+2017-04-16T20:03:03: Parsing "billiard.common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\common.py")
+2017-04-16T20:03:03: Parsing "billiard.compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\compat.py")
+2017-04-16T20:03:03: Parsing "billiard.connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\connection.py")
+2017-04-16T20:03:03: Parsing "billiard.einfo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\einfo.py")
+2017-04-16T20:03:03: Parsing "billiard.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\exceptions.py")
+2017-04-16T20:03:03: Parsing "billiard.five" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\five.py")
+2017-04-16T20:03:03: Parsing "billiard.forking" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\forking.py")
+2017-04-16T20:03:03: Parsing "billiard.heap" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\heap.py")
+2017-04-16T20:03:03: Parsing "billiard.managers" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\managers.py")
+2017-04-16T20:03:03: Parsing "billiard.pool" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\pool.py")
+2017-04-16T20:03:03: Parsing "billiard.process" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\process.py")
+2017-04-16T20:03:03: Parsing "billiard.queues" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\queues.py")
+2017-04-16T20:03:03: Parsing "billiard.reduction" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\reduction.py")
+2017-04-16T20:03:03: Parsing "billiard.sharedctypes" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\sharedctypes.py")
+2017-04-16T20:03:03: Parsing "billiard.synchronize" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\synchronize.py")
+2017-04-16T20:03:03: Parsing "billiard.util" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\util.py")
+2017-04-16T20:03:03: Parsing "billiard._ext" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\_ext.py")
+2017-04-16T20:03:03: Parsing "billiard._win" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\_win.py")
+2017-04-16T20:03:03: Parsing "billiard" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\__init__.py")
+2017-04-16T20:03:03: Parsing "billiard.dummy.connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\dummy\connection.py")
+2017-04-16T20:03:03: Parsing "billiard.dummy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\dummy\__init__.py")
+2017-04-16T20:03:03: Parsing "billiard.py3.connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\py3\connection.py")
+2017-04-16T20:03:03: Parsing "billiard.py3.reduction" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\py3\reduction.py")
+2017-04-16T20:03:03: Parsing "billiard.py3" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\py3\__init__.py")
+2017-04-16T20:03:03: Parsing "billiard.tests.compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\tests\compat.py")
+2017-04-16T20:03:03: Parsing "billiard.tests.test_common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\tests\test_common.py")
+2017-04-16T20:03:03: Parsing "billiard.tests.test_package" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\tests\test_package.py")
+2017-04-16T20:03:03: Parsing "billiard.tests.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\tests\utils.py")
+2017-04-16T20:03:03: Parsing "billiard.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard\tests\__init__.py")
+2017-04-16T20:03:03: Parsing complete
+2017-04-16T20:03:03: Analyzing "billiard.common"
+2017-04-16T20:03:03: Analyzing "billiard.compat"
+2017-04-16T20:03:03: Analyzing "billiard.connection"
+2017-04-16T20:03:03: Analyzing "billiard.einfo"
+2017-04-16T20:03:03: Analyzing "billiard.exceptions"
+2017-04-16T20:03:03: Analyzing "billiard.five"
+2017-04-16T20:03:03: Analyzing "billiard.forking"
+2017-04-16T20:03:03: Analyzing "billiard.heap"
+2017-04-16T20:03:03: Analyzing "billiard.managers"
+2017-04-16T20:03:03: Analyzing "billiard.pool"
+2017-04-16T20:03:03: Analyzing "billiard.process"
+2017-04-16T20:03:03: Analyzing "billiard.queues"
+2017-04-16T20:03:03: Analyzing "billiard.reduction"
+2017-04-16T20:03:03: Analyzing "billiard.sharedctypes"
+2017-04-16T20:03:03: Analyzing "billiard.synchronize"
+2017-04-16T20:03:03: Analyzing "billiard.util"
+2017-04-16T20:03:03: Analyzing "billiard._ext"
+2017-04-16T20:03:03: Analyzing "billiard._win"
+2017-04-16T20:03:03: Analyzing "billiard"
+2017-04-16T20:03:03: Analyzing "billiard.dummy.connection"
+2017-04-16T20:03:03: Analyzing "billiard.dummy"
+2017-04-16T20:03:03: Analyzing "billiard.py3.connection"
+2017-04-16T20:03:03: Analyzing "billiard.py3.reduction"
+2017-04-16T20:03:03: Analyzing "billiard.py3"
+2017-04-16T20:03:03: Analyzing "billiard.tests.compat"
+2017-04-16T20:03:03: Analyzing "billiard.tests.test_common"
+2017-04-16T20:03:03: Analyzing "billiard.tests.test_package"
+2017-04-16T20:03:03: Analyzing "billiard.tests.utils"
+2017-04-16T20:03:03: Analyzing "billiard.tests"
+2017-04-16T20:03:03: Starting analysis of 29 modules
+2017-04-16T20:03:06: Analysis complete
+2017-04-16T20:03:06: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard"
+2017-04-16T20:03:06: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\billiard"
+2017-04-16T20:03:06: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery" with 241 files
+2017-04-16T20:03:07: Parsing "celery.beat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\beat.py")
+2017-04-16T20:03:07: Parsing "celery.bootsteps" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bootsteps.py")
+2017-04-16T20:03:07: Parsing "celery.canvas" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\canvas.py")
+2017-04-16T20:03:07: Parsing "celery.datastructures" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\datastructures.py")
+2017-04-16T20:03:07: Parsing "celery.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\exceptions.py")
+2017-04-16T20:03:07: Parsing "celery.five" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\five.py")
+2017-04-16T20:03:07: Parsing "celery.local" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\local.py")
+2017-04-16T20:03:07: Parsing "celery.platforms" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\platforms.py")
+2017-04-16T20:03:07: Parsing "celery.result" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\result.py")
+2017-04-16T20:03:07: Parsing "celery.schedules" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\schedules.py")
+2017-04-16T20:03:07: Parsing "celery.signals" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\signals.py")
+2017-04-16T20:03:07: Parsing "celery.states" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\states.py")
+2017-04-16T20:03:07: Parsing "celery._state" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\_state.py")
+2017-04-16T20:03:07: Parsing "celery" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.__main__" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\__main__.py")
+2017-04-16T20:03:07: Parsing "celery.app.amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\amqp.py")
+2017-04-16T20:03:07: Parsing "celery.app.annotations" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\annotations.py")
+2017-04-16T20:03:07: Parsing "celery.app.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\base.py")
+2017-04-16T20:03:07: Parsing "celery.app.builtins" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\builtins.py")
+2017-04-16T20:03:07: Parsing "celery.app.control" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\control.py")
+2017-04-16T20:03:07: Parsing "celery.app.defaults" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\defaults.py")
+2017-04-16T20:03:07: Parsing "celery.app.log" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\log.py")
+2017-04-16T20:03:07: Parsing "celery.app.registry" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\registry.py")
+2017-04-16T20:03:07: Parsing "celery.app.routes" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\routes.py")
+2017-04-16T20:03:07: Parsing "celery.app.task" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\task.py")
+2017-04-16T20:03:07: Parsing "celery.app.trace" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\trace.py")
+2017-04-16T20:03:07: Parsing "celery.app.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\utils.py")
+2017-04-16T20:03:07: Parsing "celery.app" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\app\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.apps.beat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\apps\beat.py")
+2017-04-16T20:03:07: Parsing "celery.apps.worker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\apps\worker.py")
+2017-04-16T20:03:07: Parsing "celery.apps" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\apps\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.backends.amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\amqp.py")
+2017-04-16T20:03:07: Parsing "celery.backends.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\base.py")
+2017-04-16T20:03:07: Parsing "celery.backends.cache" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\cache.py")
+2017-04-16T20:03:07: Parsing "celery.backends.cassandra" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\cassandra.py")
+2017-04-16T20:03:07: Parsing "celery.backends.couchbase" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\couchbase.py")
+2017-04-16T20:03:07: Parsing "celery.backends.mongodb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\mongodb.py")
+2017-04-16T20:03:07: Parsing "celery.backends.redis" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\redis.py")
+2017-04-16T20:03:07: Parsing "celery.backends.rpc" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\rpc.py")
+2017-04-16T20:03:07: Parsing "celery.backends" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.backends.database.models" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\database\models.py")
+2017-04-16T20:03:07: Parsing "celery.backends.database.session" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\database\session.py")
+2017-04-16T20:03:07: Parsing "celery.backends.database" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\backends\database\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.bin.amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\amqp.py")
+2017-04-16T20:03:07: Parsing "celery.bin.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\base.py")
+2017-04-16T20:03:07: Parsing "celery.bin.beat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\beat.py")
+2017-04-16T20:03:07: Parsing "celery.bin.celery" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\celery.py")
+2017-04-16T20:03:07: Parsing "celery.bin.celeryd_detach" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\celeryd_detach.py")
+2017-04-16T20:03:07: Parsing "celery.bin.events" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\events.py")
+2017-04-16T20:03:07: Parsing "celery.bin.graph" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\graph.py")
+2017-04-16T20:03:07: Parsing "celery.bin.multi" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\multi.py")
+2017-04-16T20:03:07: Parsing "celery.bin.worker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\worker.py")
+2017-04-16T20:03:07: Parsing "celery.bin" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\bin\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.asynpool" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\asynpool.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\base.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.eventlet" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\eventlet.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.gevent" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\gevent.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.prefork" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\prefork.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.solo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\solo.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency.threads" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\threads.py")
+2017-04-16T20:03:07: Parsing "celery.concurrency" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\concurrency\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.contrib.abortable" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\abortable.py")
+2017-04-16T20:03:07: Parsing "celery.contrib.batches" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\batches.py")
+2017-04-16T20:03:07: Parsing "celery.contrib.methods" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\methods.py")
+2017-04-16T20:03:07: Parsing "celery.contrib.migrate" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\migrate.py")
+2017-04-16T20:03:07: Parsing "celery.contrib.rdb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\rdb.py")
+2017-04-16T20:03:07: Parsing "celery.contrib.sphinx" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\sphinx.py")
+2017-04-16T20:03:07: Parsing "celery.contrib" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\contrib\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.events.cursesmon" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\events\cursesmon.py")
+2017-04-16T20:03:07: Parsing "celery.events.dumper" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\events\dumper.py")
+2017-04-16T20:03:07: Parsing "celery.events.snapshot" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\events\snapshot.py")
+2017-04-16T20:03:07: Parsing "celery.events.state" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\events\state.py")
+2017-04-16T20:03:07: Parsing "celery.events" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\events\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.fixups.django" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\fixups\django.py")
+2017-04-16T20:03:07: Parsing "celery.fixups" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\fixups\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.loaders.app" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\loaders\app.py")
+2017-04-16T20:03:07: Parsing "celery.loaders.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\loaders\base.py")
+2017-04-16T20:03:07: Parsing "celery.loaders.default" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\loaders\default.py")
+2017-04-16T20:03:07: Parsing "celery.loaders" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\loaders\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.security.certificate" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\security\certificate.py")
+2017-04-16T20:03:07: Parsing "celery.security.key" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\security\key.py")
+2017-04-16T20:03:07: Parsing "celery.security.serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\security\serialization.py")
+2017-04-16T20:03:07: Parsing "celery.security.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\security\utils.py")
+2017-04-16T20:03:07: Parsing "celery.security" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\security\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.task.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\task\base.py")
+2017-04-16T20:03:07: Parsing "celery.task.http" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\task\http.py")
+2017-04-16T20:03:07: Parsing "celery.task.sets" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\task\sets.py")
+2017-04-16T20:03:07: Parsing "celery.task.trace" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\task\trace.py")
+2017-04-16T20:03:07: Parsing "celery.task" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\task\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.case" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\case.py")
+2017-04-16T20:03:07: Parsing "celery.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_amqp.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_annotations" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_annotations.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_app" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_app.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_beat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_beat.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_builtins" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_builtins.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_celery" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_celery.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_control" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_control.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_defaults" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_defaults.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_exceptions.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_loaders" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_loaders.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_log" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_log.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_registry" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_registry.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_routes" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_routes.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_schedules" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_schedules.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app.test_utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\test_utils.py")
+2017-04-16T20:03:07: Parsing "celery.tests.app" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\app\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_amqp.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_backends" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_backends.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_base.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_cache" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_cache.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_cassandra" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_cassandra.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_couchbase" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_couchbase.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_database" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_database.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_mongodb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_mongodb.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_redis" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_redis.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends.test_rpc" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\test_rpc.py")
+2017-04-16T20:03:07: Parsing "celery.tests.backends" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\backends\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_amqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_amqp.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_base.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_beat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_beat.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_celery" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_celery.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_celeryd_detach" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_celeryd_detach.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_celeryevdump" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_celeryevdump.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_events" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_events.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_multi" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_multi.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.test_worker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\test_worker.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.proj.app" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\proj\app.py")
+2017-04-16T20:03:07: Parsing "celery.tests.bin.proj" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\bin\proj\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules.test_compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\test_compat.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules.test_compat_utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\test_compat_utils.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules.test_decorators" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\test_decorators.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules.test_http" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\test_http.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules.test_messaging" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\test_messaging.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules.test_sets" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\test_sets.py")
+2017-04-16T20:03:07: Parsing "celery.tests.compat_modules" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\compat_modules\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_concurrency" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_concurrency.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_eventlet" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_eventlet.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_gevent" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_gevent.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_pool" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_pool.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_prefork" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_prefork.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_solo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_solo.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency.test_threads" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\test_threads.py")
+2017-04-16T20:03:07: Parsing "celery.tests.concurrency" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\concurrency\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.contrib.test_abortable" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\contrib\test_abortable.py")
+2017-04-16T20:03:07: Parsing "celery.tests.contrib.test_methods" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\contrib\test_methods.py")
+2017-04-16T20:03:07: Parsing "celery.tests.contrib.test_migrate" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\contrib\test_migrate.py")
+2017-04-16T20:03:07: Parsing "celery.tests.contrib.test_rdb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\contrib\test_rdb.py")
+2017-04-16T20:03:07: Parsing "celery.tests.contrib" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\contrib\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.events.test_cursesmon" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\events\test_cursesmon.py")
+2017-04-16T20:03:07: Parsing "celery.tests.events.test_events" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\events\test_events.py")
+2017-04-16T20:03:07: Parsing "celery.tests.events.test_snapshot" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\events\test_snapshot.py")
+2017-04-16T20:03:07: Parsing "celery.tests.events.test_state" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\events\test_state.py")
+2017-04-16T20:03:07: Parsing "celery.tests.events" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\events\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.fixups.test_django" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\fixups\test_django.py")
+2017-04-16T20:03:07: Parsing "celery.tests.fixups" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\fixups\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.functional.case" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\functional\case.py")
+2017-04-16T20:03:07: Parsing "celery.tests.functional.tasks" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\functional\tasks.py")
+2017-04-16T20:03:07: Parsing "celery.tests.functional" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\functional\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.security.case" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\security\case.py")
+2017-04-16T20:03:07: Parsing "celery.tests.security.test_certificate" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\security\test_certificate.py")
+2017-04-16T20:03:07: Parsing "celery.tests.security.test_key" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\security\test_key.py")
+2017-04-16T20:03:07: Parsing "celery.tests.security.test_security" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\security\test_security.py")
+2017-04-16T20:03:07: Parsing "celery.tests.security.test_serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\security\test_serialization.py")
+2017-04-16T20:03:07: Parsing "celery.tests.security" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\security\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.slow" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\slow\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_canvas" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_canvas.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_chord" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_chord.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_context" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_context.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_result" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_result.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_states" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_states.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_tasks" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_tasks.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks.test_trace" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\test_trace.py")
+2017-04-16T20:03:07: Parsing "celery.tests.tasks" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\tasks\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_datastructures" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_datastructures.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_dispatcher" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_dispatcher.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_encoding" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_encoding.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_functional" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_functional.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_imports" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_imports.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_local" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_local.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_mail" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_mail.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_pickle" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_pickle.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_platforms" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_platforms.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_saferef" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_saferef.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_serialization.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_sysinfo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_sysinfo.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_term" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_term.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_text" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_text.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_threads" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_threads.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_timer2" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_timer2.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_timeutils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_timeutils.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils.test_utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\test_utils.py")
+2017-04-16T20:03:07: Parsing "celery.tests.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\utils\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_autoreload" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_autoreload.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_autoscale" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_autoscale.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_bootsteps" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_bootsteps.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_components" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_components.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_consumer" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_consumer.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_control" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_control.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_heartbeat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_heartbeat.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_hub" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_hub.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_loops" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_loops.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_request" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_request.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_revoke" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_revoke.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_state" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_state.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_strategy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_strategy.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker.test_worker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\test_worker.py")
+2017-04-16T20:03:07: Parsing "celery.tests.worker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\tests\worker\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.utils.compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\compat.py")
+2017-04-16T20:03:07: Parsing "celery.utils.debug" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\debug.py")
+2017-04-16T20:03:07: Parsing "celery.utils.encoding" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\encoding.py")
+2017-04-16T20:03:07: Parsing "celery.utils.functional" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\functional.py")
+2017-04-16T20:03:07: Parsing "celery.utils.imports" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\imports.py")
+2017-04-16T20:03:07: Parsing "celery.utils.iso8601" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\iso8601.py")
+2017-04-16T20:03:07: Parsing "celery.utils.log" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\log.py")
+2017-04-16T20:03:07: Parsing "celery.utils.mail" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\mail.py")
+2017-04-16T20:03:07: Parsing "celery.utils.objects" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\objects.py")
+2017-04-16T20:03:07: Parsing "celery.utils.serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\serialization.py")
+2017-04-16T20:03:07: Parsing "celery.utils.sysinfo" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\sysinfo.py")
+2017-04-16T20:03:07: Parsing "celery.utils.term" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\term.py")
+2017-04-16T20:03:07: Parsing "celery.utils.text" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\text.py")
+2017-04-16T20:03:07: Parsing "celery.utils.threads" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\threads.py")
+2017-04-16T20:03:07: Parsing "celery.utils.timer2" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\timer2.py")
+2017-04-16T20:03:07: Parsing "celery.utils.timeutils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\timeutils.py")
+2017-04-16T20:03:07: Parsing "celery.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.utils.dispatch.saferef" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\dispatch\saferef.py")
+2017-04-16T20:03:07: Parsing "celery.utils.dispatch.signal" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\dispatch\signal.py")
+2017-04-16T20:03:07: Parsing "celery.utils.dispatch" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\utils\dispatch\__init__.py")
+2017-04-16T20:03:07: Parsing "celery.worker.autoreload" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\autoreload.py")
+2017-04-16T20:03:07: Parsing "celery.worker.autoscale" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\autoscale.py")
+2017-04-16T20:03:07: Parsing "celery.worker.components" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\components.py")
+2017-04-16T20:03:07: Parsing "celery.worker.consumer" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\consumer.py")
+2017-04-16T20:03:07: Parsing "celery.worker.control" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\control.py")
+2017-04-16T20:03:07: Parsing "celery.worker.heartbeat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\heartbeat.py")
+2017-04-16T20:03:07: Parsing "celery.worker.job" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\job.py")
+2017-04-16T20:03:07: Parsing "celery.worker.loops" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\loops.py")
+2017-04-16T20:03:07: Parsing "celery.worker.pidbox" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\pidbox.py")
+2017-04-16T20:03:07: Parsing "celery.worker.state" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\state.py")
+2017-04-16T20:03:07: Parsing "celery.worker.strategy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\strategy.py")
+2017-04-16T20:03:07: Parsing "celery.worker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery\worker\__init__.py")
+2017-04-16T20:03:07: Parsing complete
+2017-04-16T20:03:07: Analyzing "celery.beat"
+2017-04-16T20:03:07: Analyzing "celery.bootsteps"
+2017-04-16T20:03:07: Analyzing "celery.canvas"
+2017-04-16T20:03:07: Analyzing "celery.datastructures"
+2017-04-16T20:03:07: Analyzing "celery.exceptions"
+2017-04-16T20:03:07: Analyzing "celery.five"
+2017-04-16T20:03:07: Analyzing "celery.local"
+2017-04-16T20:03:07: Analyzing "celery.platforms"
+2017-04-16T20:03:07: Analyzing "celery.result"
+2017-04-16T20:03:07: Analyzing "celery.schedules"
+2017-04-16T20:03:07: Analyzing "celery.signals"
+2017-04-16T20:03:07: Analyzing "celery.states"
+2017-04-16T20:03:07: Analyzing "celery._state"
+2017-04-16T20:03:07: Analyzing "celery"
+2017-04-16T20:03:07: Analyzing "celery.__main__"
+2017-04-16T20:03:07: Analyzing "celery.app.amqp"
+2017-04-16T20:03:07: Analyzing "celery.app.annotations"
+2017-04-16T20:03:07: Analyzing "celery.app.base"
+2017-04-16T20:03:07: Analyzing "celery.app.builtins"
+2017-04-16T20:03:07: Analyzing "celery.app.control"
+2017-04-16T20:03:07: Analyzing "celery.app.defaults"
+2017-04-16T20:03:07: Analyzing "celery.app.log"
+2017-04-16T20:03:07: Analyzing "celery.app.registry"
+2017-04-16T20:03:07: Analyzing "celery.app.routes"
+2017-04-16T20:03:07: Analyzing "celery.app.task"
+2017-04-16T20:03:07: Analyzing "celery.app.trace"
+2017-04-16T20:03:07: Analyzing "celery.app.utils"
+2017-04-16T20:03:07: Analyzing "celery.app"
+2017-04-16T20:03:07: Analyzing "celery.apps.beat"
+2017-04-16T20:03:07: Analyzing "celery.apps.worker"
+2017-04-16T20:03:07: Analyzing "celery.apps"
+2017-04-16T20:03:07: Analyzing "celery.backends.amqp"
+2017-04-16T20:03:07: Analyzing "celery.backends.base"
+2017-04-16T20:03:07: Analyzing "celery.backends.cache"
+2017-04-16T20:03:07: Analyzing "celery.backends.cassandra"
+2017-04-16T20:03:07: Analyzing "celery.backends.couchbase"
+2017-04-16T20:03:07: Analyzing "celery.backends.mongodb"
+2017-04-16T20:03:07: Analyzing "celery.backends.redis"
+2017-04-16T20:03:07: Analyzing "celery.backends.rpc"
+2017-04-16T20:03:07: Analyzing "celery.backends"
+2017-04-16T20:03:07: Analyzing "celery.backends.database.models"
+2017-04-16T20:03:07: Analyzing "celery.backends.database.session"
+2017-04-16T20:03:07: Analyzing "celery.backends.database"
+2017-04-16T20:03:07: Analyzing "celery.bin.amqp"
+2017-04-16T20:03:07: Analyzing "celery.bin.base"
+2017-04-16T20:03:07: Analyzing "celery.bin.beat"
+2017-04-16T20:03:07: Analyzing "celery.bin.celery"
+2017-04-16T20:03:07: Analyzing "celery.bin.celeryd_detach"
+2017-04-16T20:03:07: Analyzing "celery.bin.events"
+2017-04-16T20:03:07: Analyzing "celery.bin.graph"
+2017-04-16T20:03:07: Analyzing "celery.bin.multi"
+2017-04-16T20:03:07: Analyzing "celery.bin.worker"
+2017-04-16T20:03:07: Analyzing "celery.bin"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.asynpool"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.base"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.eventlet"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.gevent"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.prefork"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.solo"
+2017-04-16T20:03:07: Analyzing "celery.concurrency.threads"
+2017-04-16T20:03:07: Analyzing "celery.concurrency"
+2017-04-16T20:03:07: Analyzing "celery.contrib.abortable"
+2017-04-16T20:03:07: Analyzing "celery.contrib.batches"
+2017-04-16T20:03:07: Analyzing "celery.contrib.methods"
+2017-04-16T20:03:07: Analyzing "celery.contrib.migrate"
+2017-04-16T20:03:07: Analyzing "celery.contrib.rdb"
+2017-04-16T20:03:07: Analyzing "celery.contrib.sphinx"
+2017-04-16T20:03:07: Analyzing "celery.contrib"
+2017-04-16T20:03:07: Analyzing "celery.events.cursesmon"
+2017-04-16T20:03:07: Analyzing "celery.events.dumper"
+2017-04-16T20:03:07: Analyzing "celery.events.snapshot"
+2017-04-16T20:03:07: Analyzing "celery.events.state"
+2017-04-16T20:03:07: Analyzing "celery.events"
+2017-04-16T20:03:07: Analyzing "celery.fixups.django"
+2017-04-16T20:03:07: Analyzing "celery.fixups"
+2017-04-16T20:03:07: Analyzing "celery.loaders.app"
+2017-04-16T20:03:07: Analyzing "celery.loaders.base"
+2017-04-16T20:03:07: Analyzing "celery.loaders.default"
+2017-04-16T20:03:07: Analyzing "celery.loaders"
+2017-04-16T20:03:07: Analyzing "celery.security.certificate"
+2017-04-16T20:03:07: Analyzing "celery.security.key"
+2017-04-16T20:03:07: Analyzing "celery.security.serialization"
+2017-04-16T20:03:07: Analyzing "celery.security.utils"
+2017-04-16T20:03:07: Analyzing "celery.security"
+2017-04-16T20:03:07: Analyzing "celery.task.base"
+2017-04-16T20:03:07: Analyzing "celery.task.http"
+2017-04-16T20:03:07: Analyzing "celery.task.sets"
+2017-04-16T20:03:07: Analyzing "celery.task.trace"
+2017-04-16T20:03:07: Analyzing "celery.task"
+2017-04-16T20:03:07: Analyzing "celery.tests.case"
+2017-04-16T20:03:07: Analyzing "celery.tests"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_amqp"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_annotations"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_app"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_beat"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_builtins"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_celery"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_control"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_defaults"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_exceptions"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_loaders"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_log"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_registry"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_routes"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_schedules"
+2017-04-16T20:03:07: Analyzing "celery.tests.app.test_utils"
+2017-04-16T20:03:07: Analyzing "celery.tests.app"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_amqp"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_backends"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_base"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_cache"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_cassandra"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_couchbase"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_database"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_mongodb"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_redis"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends.test_rpc"
+2017-04-16T20:03:07: Analyzing "celery.tests.backends"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_amqp"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_base"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_beat"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_celery"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_celeryd_detach"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_celeryevdump"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_events"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_multi"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.test_worker"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.proj.app"
+2017-04-16T20:03:07: Analyzing "celery.tests.bin.proj"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules.test_compat"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules.test_compat_utils"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules.test_decorators"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules.test_http"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules.test_messaging"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules.test_sets"
+2017-04-16T20:03:07: Analyzing "celery.tests.compat_modules"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_concurrency"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_eventlet"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_gevent"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_pool"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_prefork"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_solo"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency.test_threads"
+2017-04-16T20:03:07: Analyzing "celery.tests.concurrency"
+2017-04-16T20:03:07: Analyzing "celery.tests.contrib.test_abortable"
+2017-04-16T20:03:07: Analyzing "celery.tests.contrib.test_methods"
+2017-04-16T20:03:07: Analyzing "celery.tests.contrib.test_migrate"
+2017-04-16T20:03:07: Analyzing "celery.tests.contrib.test_rdb"
+2017-04-16T20:03:07: Analyzing "celery.tests.contrib"
+2017-04-16T20:03:07: Analyzing "celery.tests.events.test_cursesmon"
+2017-04-16T20:03:07: Analyzing "celery.tests.events.test_events"
+2017-04-16T20:03:07: Analyzing "celery.tests.events.test_snapshot"
+2017-04-16T20:03:07: Analyzing "celery.tests.events.test_state"
+2017-04-16T20:03:07: Analyzing "celery.tests.events"
+2017-04-16T20:03:07: Analyzing "celery.tests.fixups.test_django"
+2017-04-16T20:03:07: Analyzing "celery.tests.fixups"
+2017-04-16T20:03:07: Analyzing "celery.tests.functional.case"
+2017-04-16T20:03:07: Analyzing "celery.tests.functional.tasks"
+2017-04-16T20:03:07: Analyzing "celery.tests.functional"
+2017-04-16T20:03:07: Analyzing "celery.tests.security.case"
+2017-04-16T20:03:07: Analyzing "celery.tests.security.test_certificate"
+2017-04-16T20:03:07: Analyzing "celery.tests.security.test_key"
+2017-04-16T20:03:07: Analyzing "celery.tests.security.test_security"
+2017-04-16T20:03:07: Analyzing "celery.tests.security.test_serialization"
+2017-04-16T20:03:07: Analyzing "celery.tests.security"
+2017-04-16T20:03:07: Analyzing "celery.tests.slow"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_canvas"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_chord"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_context"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_result"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_states"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_tasks"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks.test_trace"
+2017-04-16T20:03:07: Analyzing "celery.tests.tasks"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_datastructures"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_dispatcher"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_encoding"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_functional"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_imports"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_local"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_mail"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_pickle"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_platforms"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_saferef"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_serialization"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_sysinfo"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_term"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_text"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_threads"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_timer2"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_timeutils"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils.test_utils"
+2017-04-16T20:03:07: Analyzing "celery.tests.utils"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_autoreload"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_autoscale"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_bootsteps"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_components"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_consumer"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_control"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_heartbeat"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_hub"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_loops"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_request"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_revoke"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_state"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_strategy"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker.test_worker"
+2017-04-16T20:03:07: Analyzing "celery.tests.worker"
+2017-04-16T20:03:07: Analyzing "celery.utils.compat"
+2017-04-16T20:03:07: Analyzing "celery.utils.debug"
+2017-04-16T20:03:07: Analyzing "celery.utils.encoding"
+2017-04-16T20:03:07: Analyzing "celery.utils.functional"
+2017-04-16T20:03:07: Analyzing "celery.utils.imports"
+2017-04-16T20:03:07: Analyzing "celery.utils.iso8601"
+2017-04-16T20:03:07: Analyzing "celery.utils.log"
+2017-04-16T20:03:07: Analyzing "celery.utils.mail"
+2017-04-16T20:03:07: Analyzing "celery.utils.objects"
+2017-04-16T20:03:07: Analyzing "celery.utils.serialization"
+2017-04-16T20:03:07: Analyzing "celery.utils.sysinfo"
+2017-04-16T20:03:07: Analyzing "celery.utils.term"
+2017-04-16T20:03:07: Analyzing "celery.utils.text"
+2017-04-16T20:03:07: Analyzing "celery.utils.threads"
+2017-04-16T20:03:07: Analyzing "celery.utils.timer2"
+2017-04-16T20:03:07: Analyzing "celery.utils.timeutils"
+2017-04-16T20:03:07: Analyzing "celery.utils"
+2017-04-16T20:03:07: Analyzing "celery.utils.dispatch.saferef"
+2017-04-16T20:03:07: Analyzing "celery.utils.dispatch.signal"
+2017-04-16T20:03:07: Analyzing "celery.utils.dispatch"
+2017-04-16T20:03:07: Analyzing "celery.worker.autoreload"
+2017-04-16T20:03:07: Analyzing "celery.worker.autoscale"
+2017-04-16T20:03:07: Analyzing "celery.worker.components"
+2017-04-16T20:03:07: Analyzing "celery.worker.consumer"
+2017-04-16T20:03:07: Analyzing "celery.worker.control"
+2017-04-16T20:03:07: Analyzing "celery.worker.heartbeat"
+2017-04-16T20:03:07: Analyzing "celery.worker.job"
+2017-04-16T20:03:07: Analyzing "celery.worker.loops"
+2017-04-16T20:03:07: Analyzing "celery.worker.pidbox"
+2017-04-16T20:03:07: Analyzing "celery.worker.state"
+2017-04-16T20:03:07: Analyzing "celery.worker.strategy"
+2017-04-16T20:03:07: Analyzing "celery.worker"
+2017-04-16T20:03:07: Starting analysis of 241 modules
+2017-04-16T20:03:15: Analysis complete
+2017-04-16T20:03:15: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery"
+2017-04-16T20:03:16: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\celery"
+2017-04-16T20:03:16: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\funtests" with 2 files
+2017-04-16T20:03:16: Parsing "funtests.setup" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\funtests\setup.py")
+2017-04-16T20:03:16: Parsing "funtests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\funtests\__init__.py")
+2017-04-16T20:03:16: Parsing complete
+2017-04-16T20:03:16: Analyzing "funtests.setup"
+2017-04-16T20:03:16: Analyzing "funtests"
+2017-04-16T20:03:16: Starting analysis of 2 modules
+2017-04-16T20:03:18: Analysis complete
+2017-04-16T20:03:18: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\funtests"
+2017-04-16T20:03:18: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\funtests"
+2017-04-16T20:03:18: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu" with 107 files
+2017-04-16T20:03:18: Parsing "kombu.abstract" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\abstract.py")
+2017-04-16T20:03:18: Parsing "kombu.clocks" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\clocks.py")
+2017-04-16T20:03:18: Parsing "kombu.common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\common.py")
+2017-04-16T20:03:18: Parsing "kombu.compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\compat.py")
+2017-04-16T20:03:18: Parsing "kombu.compression" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\compression.py")
+2017-04-16T20:03:18: Parsing "kombu.connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\connection.py")
+2017-04-16T20:03:18: Parsing "kombu.entity" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\entity.py")
+2017-04-16T20:03:18: Parsing "kombu.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\exceptions.py")
+2017-04-16T20:03:18: Parsing "kombu.five" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\five.py")
+2017-04-16T20:03:18: Parsing "kombu.log" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\log.py")
+2017-04-16T20:03:18: Parsing "kombu.message" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\message.py")
+2017-04-16T20:03:18: Parsing "kombu.messaging" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\messaging.py")
+2017-04-16T20:03:18: Parsing "kombu.mixins" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\mixins.py")
+2017-04-16T20:03:18: Parsing "kombu.pidbox" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\pidbox.py")
+2017-04-16T20:03:18: Parsing "kombu.pools" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\pools.py")
+2017-04-16T20:03:18: Parsing "kombu.serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\serialization.py")
+2017-04-16T20:03:18: Parsing "kombu.simple" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\simple.py")
+2017-04-16T20:03:18: Parsing "kombu.syn" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\syn.py")
+2017-04-16T20:03:18: Parsing "kombu" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.async.debug" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\async\debug.py")
+2017-04-16T20:03:18: Parsing "kombu.async.hub" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\async\hub.py")
+2017-04-16T20:03:18: Parsing "kombu.async.semaphore" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\async\semaphore.py")
+2017-04-16T20:03:18: Parsing "kombu.async.timer" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\async\timer.py")
+2017-04-16T20:03:18: Parsing "kombu.async" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\async\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.case" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\case.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.mocks" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\mocks.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_clocks" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_clocks.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_common" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_common.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_compat.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_compression" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_compression.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_connection.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_entities" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_entities.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_log" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_log.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_messaging" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_messaging.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_mixins" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_mixins.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_pidbox" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_pidbox.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_pools" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_pools.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_serialization" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_serialization.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_simple" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_simple.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.test_syn" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\test_syn.py")
+2017-04-16T20:03:18: Parsing "kombu.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.async.test_hub" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\async\test_hub.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.async.test_semaphore" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\async\test_semaphore.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.async" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\async\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_amqplib" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_amqplib.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_base.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_filesystem" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_filesystem.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_librabbitmq" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_librabbitmq.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_memory" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_memory.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_mongodb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_mongodb.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_pyamqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_pyamqp.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_qpid" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_qpid.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_redis" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_redis.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_sqlalchemy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_sqlalchemy.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_SQS" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_SQS.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.test_transport" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\test_transport.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.virtual.test_base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\virtual\test_base.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.virtual.test_exchange" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\virtual\test_exchange.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.virtual.test_scheduling" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\virtual\test_scheduling.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.transport.virtual" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\transport\virtual\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.utils.test_amq_manager" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\utils\test_amq_manager.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.utils.test_debug" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\utils\test_debug.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.utils.test_encoding" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\utils\test_encoding.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.utils.test_functional" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\utils\test_functional.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.utils.test_utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\utils\test_utils.py")
+2017-04-16T20:03:18: Parsing "kombu.tests.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\tests\utils\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.amqplib" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\amqplib.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.base" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\base.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.beanstalk" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\beanstalk.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.couchdb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\couchdb.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.filesystem" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\filesystem.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.librabbitmq" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\librabbitmq.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.memory" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\memory.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.mongodb" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\mongodb.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.pyamqp" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\pyamqp.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.pyro" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\pyro.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.qpid" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\qpid.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.redis" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\redis.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.SLMQ" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\SLMQ.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.SQS" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\SQS.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.zmq" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\zmq.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.zookeeper" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\zookeeper.py")
+2017-04-16T20:03:18: Parsing "kombu.transport" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.managers" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\managers.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.models" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\models.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.management" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\management\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.management.commands.clean_kombu_messages" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\management\commands\clean_kombu_messages.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.management.commands" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\management\commands\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.migrations" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\migrations\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.django.south_migrations" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\django\south_migrations\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.sqlalchemy.models" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\sqlalchemy\models.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.sqlalchemy" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\sqlalchemy\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.virtual.exchange" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\virtual\exchange.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.virtual.scheduling" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\virtual\scheduling.py")
+2017-04-16T20:03:18: Parsing "kombu.transport.virtual" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\transport\virtual\__init__.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.amq_manager" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\amq_manager.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\compat.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.debug" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\debug.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.encoding" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\encoding.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.eventio" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\eventio.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.functional" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\functional.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.limits" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\limits.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.text" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\text.py")
+2017-04-16T20:03:18: Parsing "kombu.utils.url" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\url.py")
+2017-04-16T20:03:18: Parsing "kombu.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu\utils\__init__.py")
+2017-04-16T20:03:18: Parsing complete
+2017-04-16T20:03:18: Analyzing "kombu.abstract"
+2017-04-16T20:03:18: Analyzing "kombu.clocks"
+2017-04-16T20:03:18: Analyzing "kombu.common"
+2017-04-16T20:03:18: Analyzing "kombu.compat"
+2017-04-16T20:03:18: Analyzing "kombu.compression"
+2017-04-16T20:03:18: Analyzing "kombu.connection"
+2017-04-16T20:03:18: Analyzing "kombu.entity"
+2017-04-16T20:03:18: Analyzing "kombu.exceptions"
+2017-04-16T20:03:18: Analyzing "kombu.five"
+2017-04-16T20:03:18: Analyzing "kombu.log"
+2017-04-16T20:03:18: Analyzing "kombu.message"
+2017-04-16T20:03:18: Analyzing "kombu.messaging"
+2017-04-16T20:03:18: Analyzing "kombu.mixins"
+2017-04-16T20:03:18: Analyzing "kombu.pidbox"
+2017-04-16T20:03:18: Analyzing "kombu.pools"
+2017-04-16T20:03:18: Analyzing "kombu.serialization"
+2017-04-16T20:03:18: Analyzing "kombu.simple"
+2017-04-16T20:03:18: Analyzing "kombu.syn"
+2017-04-16T20:03:18: Analyzing "kombu"
+2017-04-16T20:03:18: Analyzing "kombu.async.debug"
+2017-04-16T20:03:18: Analyzing "kombu.async.hub"
+2017-04-16T20:03:18: Analyzing "kombu.async.semaphore"
+2017-04-16T20:03:18: Analyzing "kombu.async.timer"
+2017-04-16T20:03:18: Analyzing "kombu.async"
+2017-04-16T20:03:18: Analyzing "kombu.tests.case"
+2017-04-16T20:03:18: Analyzing "kombu.tests.mocks"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_clocks"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_common"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_compat"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_compression"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_connection"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_entities"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_log"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_messaging"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_mixins"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_pidbox"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_pools"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_serialization"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_simple"
+2017-04-16T20:03:18: Analyzing "kombu.tests.test_syn"
+2017-04-16T20:03:18: Analyzing "kombu.tests"
+2017-04-16T20:03:18: Analyzing "kombu.tests.async.test_hub"
+2017-04-16T20:03:18: Analyzing "kombu.tests.async.test_semaphore"
+2017-04-16T20:03:18: Analyzing "kombu.tests.async"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_amqplib"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_base"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_filesystem"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_librabbitmq"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_memory"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_mongodb"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_pyamqp"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_qpid"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_redis"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_sqlalchemy"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_SQS"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.test_transport"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.virtual.test_base"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.virtual.test_exchange"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.virtual.test_scheduling"
+2017-04-16T20:03:18: Analyzing "kombu.tests.transport.virtual"
+2017-04-16T20:03:18: Analyzing "kombu.tests.utils.test_amq_manager"
+2017-04-16T20:03:18: Analyzing "kombu.tests.utils.test_debug"
+2017-04-16T20:03:18: Analyzing "kombu.tests.utils.test_encoding"
+2017-04-16T20:03:18: Analyzing "kombu.tests.utils.test_functional"
+2017-04-16T20:03:18: Analyzing "kombu.tests.utils.test_utils"
+2017-04-16T20:03:18: Analyzing "kombu.tests.utils"
+2017-04-16T20:03:18: Analyzing "kombu.transport.amqplib"
+2017-04-16T20:03:18: Analyzing "kombu.transport.base"
+2017-04-16T20:03:18: Analyzing "kombu.transport.beanstalk"
+2017-04-16T20:03:18: Analyzing "kombu.transport.couchdb"
+2017-04-16T20:03:18: Analyzing "kombu.transport.filesystem"
+2017-04-16T20:03:18: Analyzing "kombu.transport.librabbitmq"
+2017-04-16T20:03:18: Analyzing "kombu.transport.memory"
+2017-04-16T20:03:18: Analyzing "kombu.transport.mongodb"
+2017-04-16T20:03:18: Analyzing "kombu.transport.pyamqp"
+2017-04-16T20:03:18: Analyzing "kombu.transport.pyro"
+2017-04-16T20:03:18: Analyzing "kombu.transport.qpid"
+2017-04-16T20:03:18: Analyzing "kombu.transport.redis"
+2017-04-16T20:03:18: Analyzing "kombu.transport.SLMQ"
+2017-04-16T20:03:18: Analyzing "kombu.transport.SQS"
+2017-04-16T20:03:18: Analyzing "kombu.transport.zmq"
+2017-04-16T20:03:18: Analyzing "kombu.transport.zookeeper"
+2017-04-16T20:03:18: Analyzing "kombu.transport"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.managers"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.models"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.management"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.management.commands.clean_kombu_messages"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.management.commands"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.migrations"
+2017-04-16T20:03:18: Analyzing "kombu.transport.django.south_migrations"
+2017-04-16T20:03:18: Analyzing "kombu.transport.sqlalchemy.models"
+2017-04-16T20:03:18: Analyzing "kombu.transport.sqlalchemy"
+2017-04-16T20:03:18: Analyzing "kombu.transport.virtual.exchange"
+2017-04-16T20:03:18: Analyzing "kombu.transport.virtual.scheduling"
+2017-04-16T20:03:18: Analyzing "kombu.transport.virtual"
+2017-04-16T20:03:18: Analyzing "kombu.utils.amq_manager"
+2017-04-16T20:03:18: Analyzing "kombu.utils.compat"
+2017-04-16T20:03:18: Analyzing "kombu.utils.debug"
+2017-04-16T20:03:18: Analyzing "kombu.utils.encoding"
+2017-04-16T20:03:18: Analyzing "kombu.utils.eventio"
+2017-04-16T20:03:18: Analyzing "kombu.utils.functional"
+2017-04-16T20:03:18: Analyzing "kombu.utils.limits"
+2017-04-16T20:03:18: Analyzing "kombu.utils.text"
+2017-04-16T20:03:18: Analyzing "kombu.utils.url"
+2017-04-16T20:03:18: Analyzing "kombu.utils"
+2017-04-16T20:03:18: Starting analysis of 107 modules
+2017-04-16T20:03:23: Analysis complete
+2017-04-16T20:03:23: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu"
+2017-04-16T20:03:24: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\kombu"
+2017-04-16T20:03:24: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis" with 8 files
+2017-04-16T20:03:24: Parsing "redis.client" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\client.py")
+2017-04-16T20:03:24: Parsing "redis.connection" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\connection.py")
+2017-04-16T20:03:24: Parsing "redis.exceptions" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\exceptions.py")
+2017-04-16T20:03:24: Parsing "redis.lock" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\lock.py")
+2017-04-16T20:03:24: Parsing "redis.sentinel" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\sentinel.py")
+2017-04-16T20:03:24: Parsing "redis.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\utils.py")
+2017-04-16T20:03:24: Parsing "redis._compat" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\_compat.py")
+2017-04-16T20:03:24: Parsing "redis" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis\__init__.py")
+2017-04-16T20:03:24: Parsing complete
+2017-04-16T20:03:24: Analyzing "redis.client"
+2017-04-16T20:03:24: Analyzing "redis.connection"
+2017-04-16T20:03:24: Analyzing "redis.exceptions"
+2017-04-16T20:03:24: Analyzing "redis.lock"
+2017-04-16T20:03:24: Analyzing "redis.sentinel"
+2017-04-16T20:03:24: Analyzing "redis.utils"
+2017-04-16T20:03:24: Analyzing "redis._compat"
+2017-04-16T20:03:24: Analyzing "redis"
+2017-04-16T20:03:24: Starting analysis of 8 modules
+2017-04-16T20:03:27: Analysis complete
+2017-04-16T20:03:27: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis"
+2017-04-16T20:03:27: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis"
+2017-04-16T20:03:28: Deleting 1 files
+2017-04-16T20:03:28: Deleting "E:\Education\GitHub Projects\PhDPortal\env\.ptvs\kombu\celery.utils.idb"

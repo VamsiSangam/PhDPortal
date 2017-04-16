@@ -1,0 +1,4 @@
+absolute_import
+namedtuple
+queue_declare_ok_t
+basic_return_t

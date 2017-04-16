@@ -3,29 +3,29 @@
               <div class="menu_section active">
 
 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> General <span class="fa fa-chevron-down"></span></a>
+                  <li><a id="child-menu-general"><i class="fa fa-home"></i> General <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{% url 'user_profile' %}"> Home</a></li>
-                      <li><a href="{% url 'user_notifications' %}"> View all Notifications</a></li>
-                      <li><a href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
-                      <li><a href="{% url 'search_user' %}"> Search student / guide / referee</a></li>
+                      <li><a id="url-user-profile" href="{% url 'user_profile' %}"> Home</a></li>
+                      <li><a id="url-user-notifications" href="{% url 'user_notifications' %}"> View all Notifications</a></li>
+                      <li><a id="url-user-edit-profile" href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
+                      <li><a id="url-search-user" href="{% url 'search_user' %}"> Search student / guide / referee</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-file-text"></i> Evaluate PhDs <span class="fa fa-chevron-down"></span></a>
+                  <li><a id="child-menu-evaluation"><i class="fa fa-file-text"></i> Evaluate PhDs <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{% url 'guide_unevaluated_abstract' %}"> View Unevaluated PhD Abstracts</a></li>
-                        <li><a href="{% url 'guide_unevaulated_synopsis' %}"> View Unevaluated PhD Synopsis</a></li>
-                        <li><a href="{% url 'guide_unevaluated_thesis' %}"> View Unevaluted full PhD Thesis Documents</a></li>
+                      <li><a id="url-evaluate-abstract" href="{% url 'guide_unevaluated_abstract' %}"> View Unevaluated PhD Abstracts</a></li>
+                        <li><a id="url-evaluate-synopsis" href="{% url 'guide_unevaulated_synopsis' %}"> View Unevaluated PhD Synopsis</a></li>
+                        <li><a id="url-evaluate-thesis" href="{% url 'guide_unevaluated_thesis' %}"> View Unevaluted full PhD Thesis Documents</a></li>
                     </ul>
                   </li>
-                <li><a><i class="fa fa-users"></i> PhD Evaluation Panel <span class="fa fa-chevron-down"></span></a>
+                <li><a id="child-menu-evaluation-panel"><i class="fa fa-users"></i> PhD Evaluation Panel <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{% url 'guide_submit_evaluation_panel' %}"> Submit PhD Evaluation Panel</a></li>
+                      <li><a id="url-submit-evaluation-panel" href="{% url 'guide_submit_evaluation_panel' %}"> Submit PhD Evaluation Panel</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-check-square-o"></i> Ongoing PhDs Status <span class="fa fa-chevron-down"></span></a>
+                  <li><a id="child-menu-status"><i class="fa fa-check-square-o"></i> Ongoing PhDs Status <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{% url 'guide_phd_status' %}"> View PhDs Status</a></li>
+                      <li><a id="url-phd-status" href="{% url 'guide_phd_status' %}"> View PhDs Status</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-question"></i> Help <span class="fa fa-chevron-down"></span></a>
@@ -38,3 +38,20 @@
 </div>
             </div>
             <!-- /sidebar menu -->
+
+<!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a href="{% url 'user_profile' %}" data-toggle="tooltip" data-placement="top" title="Profile">
+                <span class="fa fa-user" aria-hidden="true"></span>
+              </a>
+              <a href="{% url 'user_notifications' %}" data-toggle="tooltip" data-placement="top" title="Notifications">
+                <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+              </a>
+              <a href="{% url 'guide_phd_status' %}" data-toggle="tooltip" data-placement="top" title="PhD Status">
+                <span class="fa fa-check-square-o" aria-hidden="true"></span>
+              </a>
+              <a id="footer-button-logout" href="{% url 'logout' %}" data-toggle="tooltip" data-placement="top" title="Logout">
+                <span class="fa fa-sign-out" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->

@@ -1,0 +1,5 @@
+absolute_import
+signal
+saferef
+__all__
+Signal

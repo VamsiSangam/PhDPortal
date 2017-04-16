@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 from app.models import *
 from app.forms import *
 import logging, json, operator
+from datetime import datetime
+from tzlocal import get_localzone
 
 logger = logging.getLogger('django')
 CONTENT_TYPE_PDF = 'application/pdf'
@@ -423,6 +425,8 @@ def user_notifications(request):
         notifications = Notification.objects.filter(receiver = user).order_by('-date')
         read_notifications = notifications.filter(status = 'R')
         unread_notifications = notifications.filter(status = 'U')
+        date = datetime.now(get_localzone())
+        zone = date.tzinfo.zone
 
         return render(
             request,
@@ -432,6 +436,7 @@ def user_notifications(request):
                 'layout_data' : get_layout_data(request),
                 'read_notifications': read_notifications,
                 'unread_notifications': unread_notifications,
+                'zone' : zone,    
             }
         )
     else:

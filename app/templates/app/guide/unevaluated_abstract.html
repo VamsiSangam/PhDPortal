@@ -24,11 +24,11 @@
                 <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
                    aria-labelledby="heading{{ forloop.counter }}">
                     <div class="panel-body">
-                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Title</b> - <span class="title">{{ thesis.title }}</span></p>
                         <p><b>Student</b> - 
                             <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
                         </p>
-                        <p><b>Abstract</b> - {{ thesis.abstract }}</p>
+                        <p><b>Abstract</b> - <span class="abstract">{{ thesis.abstract }}</span></p>
                         <br />
                         <p>
                             Please give feedback regarding the PhD abstract. If you want to approve the PhD abstract, you can leave it 

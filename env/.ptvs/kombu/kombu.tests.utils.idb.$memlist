@@ -1,0 +1,5 @@
+test_amq_manager
+test_debug
+test_utils
+test_functional
+test_encoding

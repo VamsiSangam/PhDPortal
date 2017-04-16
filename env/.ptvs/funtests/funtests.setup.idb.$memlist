@@ -1,0 +1,4 @@
+setup
+install
+use_setuptools
+no_install

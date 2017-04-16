@@ -91,14 +91,14 @@ def guide_evaluate_unevaluated_abstract(request):
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'A')
                 thesisGuideApprovals.save()
                 # notify other guides about Approval
-                notification_message = request.session['full_name'] + " had accepted the abstract submitted by '" + thesis.student.first_name
+                notification_message = request.session['full_name'] + " had accepted the abstract submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
             else:
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'A')
                 thesisGuideApprovals.save()
                 
                 # notify other guides about Approval
-                notification_message = request.session['full_name'] + " had accepted the abstract submitted by '" + thesis.student.first_name
+                notification_message = request.session['full_name'] + " had accepted the abstract submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
 
                 accepted = True
@@ -112,7 +112,7 @@ def guide_evaluate_unevaluated_abstract(request):
                     ThesisGuideApproval.objects.filter(thesis = thesis).delete()
                     _update_student_status(thesis, STATUS_ID_ABSTRACT_APPROVED + 1) ##total approval
                      # notify student about approval
-                    notification_message = request.session['full_name'] + " had accepted the abstract submitted "
+                    notification_message = request.session['full_name'] + " had accepted the abstract submitted."
                     send_notification(user, thesis.student.user, notification_message, '')
                
         else:
@@ -129,8 +129,8 @@ def guide_evaluate_unevaluated_abstract(request):
             notification_message = request.session['full_name'] + " had rejected the abstract submitted by '" + thesis.student.first_name
             send_notification_to_other_guides(user, notification_message, thesis)
             # notify student about rejection
-            notification_message = request.session['full_name'] + " had rejected the abstract submitted "
-            notification_message += "\nFeedback: " + feedback
+            notification_message = request.session['full_name'] + " had rejected the abstract submitted."
+            notification_message += " Feedback - " + feedback
             send_notification(user, thesis.student.user, notification_message, '')
            
 

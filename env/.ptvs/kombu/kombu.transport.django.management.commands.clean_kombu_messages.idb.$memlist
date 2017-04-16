@@ -1,0 +1,4 @@
+absolute_import
+Command
+pluralize
+BaseCommand

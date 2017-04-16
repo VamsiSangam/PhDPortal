@@ -1,0 +1,9 @@
+absolute_import
+connection
+setblocking
+_multiprocessing
+Pipe
+is_pypy
+Connection
+sys
+send_offset

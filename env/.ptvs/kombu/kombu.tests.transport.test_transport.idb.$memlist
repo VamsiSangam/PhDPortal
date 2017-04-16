@@ -1,0 +1,8 @@
+test_transport_ghettoq
+transport
+patch
+absolute_import
+test_transport
+Mock
+Case
+test_supports_librabbitmq

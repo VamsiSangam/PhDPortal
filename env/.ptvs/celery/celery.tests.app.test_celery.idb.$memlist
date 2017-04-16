@@ -1,0 +1,4 @@
+absolute_import
+AppCase
+celery
+test_celery_package

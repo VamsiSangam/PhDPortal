@@ -1,0 +1,10 @@
+test_cassandra
+test_backends
+test_couchbase
+test_database
+test_mongodb
+test_cache
+test_redis
+test_base
+test_rpc
+test_amqp

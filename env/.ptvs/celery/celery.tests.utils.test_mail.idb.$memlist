@@ -1,0 +1,10 @@
+Message
+test_Mailer
+test_Message
+patch
+absolute_import
+Mailer
+Mock
+Case
+msg
+SSLError

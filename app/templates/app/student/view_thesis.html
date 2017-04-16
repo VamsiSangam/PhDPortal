@@ -18,7 +18,7 @@
             </p>
             <a class="btn btn-primary pull-right" href="{% url 'student_upload_thesis' %}">Upload Thesis</a>
         {% else %}
-            <object data="{% static thesisPath %}" type="application/pdf" width="100%" height="800px">
+            <object id="thesis" data="{% static thesisPath %}" type="application/pdf" width="100%" height="800px">
                 <p>PhD Thesis Document</p>
             </object>
             <br /><br />

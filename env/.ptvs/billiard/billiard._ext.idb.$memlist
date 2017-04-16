@@ -1,0 +1,9 @@
+Connection
+absolute_import
+supports_exec
+win32
+PipeConnection
+_billiard
+ensure_SemLock
+sys
+ensure_multiprocessing

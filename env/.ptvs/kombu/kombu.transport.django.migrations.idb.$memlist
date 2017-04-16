@@ -1,0 +1,4 @@
+absolute_import
+ImproperlyConfigured
+SOUTH_ERROR_MESSAGE
+migrations

@@ -1,5 +1,6 @@
 ﻿{% extends "app/layouts/home.html" %}
 {% load staticfiles %}
+{% load tz %}
 {% block styles %}
 <!-- Add any page specific styles here -->
 
@@ -52,11 +53,11 @@
                                 {% if notification.link %}
                                     <a href="{{ notification.link }}"><p class="notification-message">{{ notification.message }}</p></a>
                                 {% else %}
-                                    <p id="notification-message">{{ notification.message }}</p>
+                                    <p class="notification-message">{{ notification.message }}</p>
                                 {% endif %}
                                 <small>
                                     From <font class="notification-sender" color="blue">{{ notification.sender }}</font>, 
-                                    <span class="notification-date">{{ notification.date|date:"F d S, o, h:i:s a" }}</span>
+                                    <span class="notification-date">{{ notification.date|timezone:zone }}</span>
                                 </small>
                             </blockquote>
                         {% endfor %}
@@ -86,7 +87,7 @@
                                 {% endif %}
                                 <small>
                                     From <font class="notification-sender" color="blue">{{ notification.sender }}</font>,
-                                    <span class="notification-date">{{ notification.date|date:"F d S, o, h:i:s a" }}</span>
+                                    <span class="notification-date">{{ notification.date|timezone:zone }}</span>
                                 </small>
                             </blockquote>
                         {% endfor %}

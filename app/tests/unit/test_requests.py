@@ -1,4 +1,5 @@
 from app.tests.testing_utilities import *
+from django.test import TestCase
 
 class RequestTests(TestCase):
     fixtures = ['data.json',]

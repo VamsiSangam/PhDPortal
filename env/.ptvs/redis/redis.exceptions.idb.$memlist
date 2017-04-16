@@ -1,0 +1,16 @@
+ExecAbortError
+ConnectionError
+unicode
+ReadOnlyError
+BusyLoadingError
+RedisError
+NoScriptError
+TimeoutError
+InvalidResponse
+LockError
+WatchError
+ResponseError
+__unicode__
+PubSubError
+AuthenticationError
+DataError

@@ -1,0 +1,17 @@
+Sentinel
+xrange
+ConnectionPool
+ConnectionError
+SlaveNotFoundError
+os
+ReadOnlyError
+random
+MasterNotFoundError
+Connection
+iteritems
+weakref
+ResponseError
+nativestr
+StrictRedis
+SentinelManagedConnection
+SentinelConnectionPool

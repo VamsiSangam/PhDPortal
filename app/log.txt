@@ -1,0 +1,319 @@
+2017-04-01 23:47:00 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-01 23:49:05 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-01 23:51:24 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-02 00:09:56 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-02 03:24:47 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-02 17:02:48 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-02 17:03:09 - INFO - views:logout:372 - User anshul successfully logged out
+2017-04-02 17:03:25 - INFO - views:login:350 - User divyesh successfully authenticated
+2017-04-03 00:09:31 - INFO - views:logout:372 - User divyesh successfully logged out
+2017-04-03 00:09:39 - INFO - views:login:350 - User ranjana successfully authenticated
+2017-04-03 01:05:00 - INFO - views:logout:372 - User ranjana successfully logged out
+2017-04-03 01:05:05 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-03 01:06:06 - INFO - views:logout:372 - User anshul successfully logged out
+2017-04-03 01:06:11 - INFO - views:login:350 - User ranjana successfully authenticated
+2017-04-03 18:00:46 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-03 18:01:49 - INFO - views:logout:372 - User anshul successfully logged out
+2017-04-03 18:01:56 - INFO - views:login:350 - User ranjana successfully authenticated
+2017-04-03 18:02:11 - INFO - guide_views:guide_evaluate_unevaluated_abstract:86 - SHANU
+2017-04-03 18:02:14 - INFO - views:logout:372 - User ranjana successfully logged out
+2017-04-03 18:02:23 - INFO - views:login:350 - User anshul successfully authenticated
+2017-04-03 18:10:38 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 879, in _resolve_lookup
+    current = current[bit]
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\context.py", line 77, in __getitem__
+    raise KeyError(key)
+KeyError: 'TIME_ZONE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'TIME_ZONE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 894, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'TIME_ZONE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 434, in user_notifications
+    'unread_notifications': unread_notifications,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 1039, in render
+    output = self.filter_expression.resolve(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 726, in resolve
+    arg_vals.append(arg.resolve(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 846, in resolve
+    value = self._resolve_lookup(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [TIME_ZONE] in "[{'True': True, 'False': False, 'None': None}, {}, {}, {'title': 'Notifications', 'layout_data': {'unread_notifications_count': 6, 'unread_notifications': [<Notification:  notification>, <Notification:  notification>, <Notification:  notification>]}, 'read_notifications': [<Notification:  notification>, <Notification:  notification>, <Notification:  notification>], 'unread_notifications': [<Notification:  notification>, <Notification:  notification>, <Notification:  notification>, <Notification:  notification>, <Notification:  notification>, <Notification:  notification>]}]"
+2017-04-03 18:14:36 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 434, in user_notifications
+    'unread_notifications': unread_notifications,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\templatetags\tz.py", line 113, in render
+    with timezone.override(self.tz.resolve(context)):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\timezone.py", line 269, in __enter__
+    activate(self.timezone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\timezone.py", line 234, in activate
+    _active.value = pytz.timezone(timezone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\pytz\__init__.py", line 181, in timezone
+    raise UnknownTimeZoneError(zone)
+pytz.exceptions.UnknownTimeZoneError: ''
+2017-04-03 18:22:44 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 434, in user_notifications
+    'unread_notifications': unread_notifications,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\templatetags\tz.py", line 113, in render
+    with timezone.override(self.tz.resolve(context)):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\timezone.py", line 269, in __enter__
+    activate(self.timezone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\timezone.py", line 234, in activate
+    _active.value = pytz.timezone(timezone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\pytz\__init__.py", line 181, in timezone
+    raise UnknownTimeZoneError(zone)
+pytz.exceptions.UnknownTimeZoneError: ''
+2017-04-03 18:23:03 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 434, in user_notifications
+    'unread_notifications': unread_notifications,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\templatetags\tz.py", line 113, in render
+    with timezone.override(self.tz.resolve(context)):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\timezone.py", line 269, in __enter__
+    activate(self.timezone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\timezone.py", line 234, in activate
+    _active.value = pytz.timezone(timezone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\pytz\__init__.py", line 181, in timezone
+    raise UnknownTimeZoneError(zone)
+pytz.exceptions.UnknownTimeZoneError: ''
+2017-04-03 18:26:03 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 436, in user_notifications
+    'TZ' : timezone.get_current_timezone(),
+NameError: name 'timezone' is not defined
+2017-04-03 18:26:33 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 436, in user_notifications
+    'TZ' : timezone.get_current_timezone(),
+NameError: name 'timezone' is not defined
+2017-04-03 18:33:10 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 428, in user_notifications
+    activate(settings.TIME_ZONE)
+NameError: name 'settings' is not defined
+2017-04-03 19:15:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/notifications/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 428, in user_notifications
+    date = datetime.now(get_localzone())
+NameError: name 'datetime' is not defined
+2017-04-03 20:31:20 - INFO - views:login:352 - User ash successfully authenticated
+2017-04-03 20:32:48 - INFO - views:login:352 - User angelina successfully authenticated
+2017-04-03 20:33:38 - INFO - views:login:352 - User anshul successfully authenticated
+2017-04-03 20:34:00 - INFO - views:login:352 - User ash successfully authenticated

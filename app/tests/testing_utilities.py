@@ -1,4 +1,4 @@
-from django.test import TestCase, Client
+from django.test import Client
 from django.contrib import auth
 from app.views import logger
 
@@ -12,7 +12,7 @@ STATUS_CODE_NOT_FOUND = 404
 STATUS_CODE_UNAUTHORISED = 401
 STATUS_CODE_FORBIDDEN = 403
 STATUS_CODE_INTERNAL_SERVER_ERROR = 500
-LOGIN_URL = "http://localhost:8000/"
+LOGIN_URL = "http://localhost:8081/"    # This is the default URL at which LiveServerTestCase works
 
 def login(client, username, password):
     client.post('/', {'username' : username, 'password' : password})

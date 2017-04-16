@@ -16,13 +16,15 @@
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
-        <p id="thesis-title"><b>Title</b> - {{ user.title }}</p>
-        <p id="thesis-abstract"><b>Thesis Abstract</b> -
+        <p><b>Title</b> - <span id="thesis-title">{{ user.title }}</span></p>
+        <p><b>Thesis Abstract</b> -
+        <span id="thesis-abstract">
         {% if user.abstract|length == 0 %}
             Abstract not submitted yet.
         {% else %}
             {{ user.abstract }}
         {% endif %}
+        </span>
         </p>
         <p>
             <b>Guides -</b>

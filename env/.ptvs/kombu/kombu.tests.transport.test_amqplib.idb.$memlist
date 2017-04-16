@@ -1,0 +1,14 @@
+amqplibCase
+SkipTest
+MockConnection
+Case
+absolute_import
+test_Channel
+test_Transport
+mask_modules
+amqplib
+Mock
+Connection
+Channel
+sys
+test_amqplib

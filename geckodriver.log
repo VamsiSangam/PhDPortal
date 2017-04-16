@@ -965,3 +965,527 @@ console.error:
 1491059378230	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
 1491059378248	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10096
 1491059379133	Marionette	INFO	Listening on port 10096
+1491070737452	geckodriver	INFO	Listening on 127.0.0.1:12929
+1491070739480	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.lkm17dDW3gVs
+1491070739483	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491070739500	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12937
+1491070740323	Marionette	INFO	Listening on port 12937
+1491070876186	geckodriver	INFO	Listening on 127.0.0.1:13084
+1491070878216	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fQIRM8btrPt6
+1491070878220	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491070878236	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13090
+1491070878951	Marionette	INFO	Listening on port 13090
+1491070945696	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491071987814	geckodriver	INFO	Listening on 127.0.0.1:13398
+1491071989846	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.dZB81cZxcPGk
+1491071989849	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491071989878	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13404
+1491071990666	Marionette	INFO	Listening on port 13404
+1491072190307	geckodriver	INFO	Listening on 127.0.0.1:13564
+1491072192335	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.yyvC3FqQ1r2X
+1491072192338	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491072192355	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13573
+1491072193496	Marionette	INFO	Listening on port 13573
+1491072260342	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491076128107	geckodriver	INFO	Listening on 127.0.0.1:14759
+1491076130128	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.amZnuQ9HNpaG
+1491076130130	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491076130150	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14767
+1491076130881	Marionette	INFO	Listening on port 14767
+1491076184863	geckodriver	INFO	Listening on 127.0.0.1:14798
+1491076186895	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.lcWw1XKAgKv3
+1491076186898	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491076186916	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14804
+1491076187620	Marionette	INFO	Listening on port 14804
+1491076218397	geckodriver	INFO	Listening on 127.0.0.1:14827
+1491076220444	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.PYwNL7jk93ls
+1491076220447	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491076220469	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14833
+1491076221374	Marionette	INFO	Listening on port 14833
+1491076287483	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491077902298	geckodriver	INFO	Listening on 127.0.0.1:1726
+1491077904337	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.MuasaSggkoRi
+1491077904340	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491077904363	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1734
+1491077905176	Marionette	INFO	Listening on port 1734
+1491077929808	geckodriver	INFO	Listening on 127.0.0.1:1761
+1491077931831	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.6PnWqWleFltx
+1491077931834	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491077931855	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1767
+1491077932644	Marionette	INFO	Listening on port 1767
+1491077975077	geckodriver	INFO	Listening on 127.0.0.1:1796
+1491077977109	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.2hftPvndPl7g
+1491077977112	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491077977133	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1802
+1491077978063	Marionette	INFO	Listening on port 1802
+1491078044510	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491078479989	geckodriver	INFO	Listening on 127.0.0.1:1972
+1491078482017	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.4GZdKQJBCapy
+1491078482020	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491078482038	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1978
+1491078482735	Marionette	INFO	Listening on port 1978
+1491078533951	geckodriver	INFO	Listening on 127.0.0.1:2007
+1491078535985	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.SiNJWOUvlIc7
+1491078535988	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491078536005	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2013
+1491078536776	Marionette	INFO	Listening on port 2013
+1491078839001	geckodriver	INFO	Listening on 127.0.0.1:2122
+1491078841044	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.K1DUec4cd1S1
+1491078841047	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491078841069	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2128
+1491078841869	Marionette	INFO	Listening on port 2128
+1491079057217	geckodriver	INFO	Listening on 127.0.0.1:2235
+1491079059244	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.UvlN0kSG4Ten
+1491079059246	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491079059263	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2241
+1491079059924	Marionette	INFO	Listening on port 2241
+JavaScript error: http://localhost:8081/, line 62: ReferenceError: $ is not defined
+1491079126145	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491079189408	geckodriver	INFO	Listening on 127.0.0.1:2323
+1491079191441	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.MqPZF5iiRosx
+1491079191444	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491079191466	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2329
+1491079192255	Marionette	INFO	Listening on port 2329
+JavaScript error: http://localhost:8081/, line 62: ReferenceError: $ is not defined
+1491079254306	geckodriver	INFO	Listening on 127.0.0.1:2418
+1491079256329	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.i19tHdqd1nYy
+1491079256332	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491079256349	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2424
+1491079257164	Marionette	INFO	Listening on port 2424
+JavaScript error: http://localhost:8081/, line 62: ReferenceError: $ is not defined
+1491079323579	addons.productaddons	WARN	File download failed: 0x805a1ff3
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1491079442206	geckodriver	INFO	Listening on 127.0.0.1:2523
+1491079444237	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.BqZdcFc6wwQi
+1491079444240	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491079444262	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2531
+1491079445133	Marionette	INFO	Listening on port 2531
+1491079505997	geckodriver	INFO	Listening on 127.0.0.1:2599
+1491079508028	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.koobNdGueldm
+1491079508032	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491079508055	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2605
+1491079508889	Marionette	INFO	Listening on port 2605
+1491079575377	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491080072932	geckodriver	INFO	Listening on 127.0.0.1:2911
+1491080074957	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1IM9wqo44Rf6
+1491080074960	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491080074978	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2917
+1491080075784	Marionette	INFO	Listening on port 2917
+1491080560681	geckodriver	INFO	Listening on 127.0.0.1:3064
+1491080562710	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.WNqabAnGJPiw
+1491080562713	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491080562731	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3070
+1491080563747	Marionette	INFO	Listening on port 3070
+1491080628129	geckodriver	INFO	Listening on 127.0.0.1:3144
+1491080630160	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Wu3Grf2TTt5d
+1491080630169	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491080630188	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3150
+1491080630930	Marionette	INFO	Listening on port 3150
+1491080732980	geckodriver	INFO	Listening on 127.0.0.1:3302
+1491080735004	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.NmAif0MlWpep
+1491080735007	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491080735025	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3309
+1491080735743	Marionette	INFO	Listening on port 3309
+1491080801767	addons.productaddons	WARN	File download failed: 0x805a1ff3
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Protocol error (unknownError): Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1491081383213	geckodriver	INFO	Listening on 127.0.0.1:3543
+1491081385236	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.8iQ19GVKONV8
+1491081385239	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491081385260	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3550
+1491081385970	Marionette	INFO	Listening on port 3550
+1491081452387	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491081549497	geckodriver	INFO	Listening on 127.0.0.1:3728
+1491081551526	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.6m4iGe8zbnc2
+1491081551528	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491081551547	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3734
+1491081552251	Marionette	INFO	Listening on port 3734
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Protocol error (unknownError): Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+1491081618469	addons.productaddons	WARN	File download failed: 0x805a1ff3
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1491081683926	geckodriver	INFO	Listening on 127.0.0.1:3923
+1491081685943	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.EaEpavwYeKjm
+1491081685946	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491081685970	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3929
+1491081686743	Marionette	INFO	Listening on port 3929
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Protocol error (unknownError): Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+1491081753194	addons.productaddons	WARN	File download failed: 0x805a1ff3
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1491081848542	geckodriver	INFO	Listening on 127.0.0.1:4127
+1491081850566	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.jRJK1zGHAtsx
+1491081850569	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491081850587	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4133
+1491081851332	Marionette	INFO	Listening on port 4133
+1491081896159	geckodriver	INFO	Listening on 127.0.0.1:4286
+1491081898187	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Gxcz0EJJcFYC
+1491081898190	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491081898208	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4292
+1491081898886	Marionette	INFO	Listening on port 4292
+1491081964819	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491082156448	geckodriver	INFO	Listening on 127.0.0.1:4504
+1491082158479	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.FuJO7GYaMM0V
+1491082158481	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491082158505	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4510
+1491082159177	Marionette	INFO	Listening on port 4510
+1491086593955	geckodriver	INFO	Listening on 127.0.0.1:5324
+1491086595979	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.eGG1zDEkufQ5
+1491086595983	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491086596007	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5331
+1491086596882	Marionette	INFO	Listening on port 5331
+1491086663215	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491086801369	geckodriver	INFO	Listening on 127.0.0.1:5911
+1491086803400	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.pxN0SBiVf62M
+1491086803404	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491086803430	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5938
+1491086804328	Marionette	INFO	Listening on port 5938
+1491086893992	geckodriver	INFO	Listening on 127.0.0.1:6529
+1491086896035	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.spcSu7gHled9
+1491086896038	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491086896063	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6536
+1491086897017	Marionette	INFO	Listening on port 6536
+1491086941143	geckodriver	INFO	Listening on 127.0.0.1:6934
+1491086943182	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.MPGdcK4vWwPg
+1491086943185	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491086943208	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6963
+1491086944065	Marionette	INFO	Listening on port 6963
+1491087555903	geckodriver	INFO	Listening on 127.0.0.1:10123
+1491087557925	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.5xmNP7LlCp2j
+1491087557928	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491087557953	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10137
+1491087558843	Marionette	INFO	Listening on port 10137
+1491087627477	geckodriver	INFO	Listening on 127.0.0.1:10759
+1491087629505	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.CqDrqWGnvX4q
+1491087629508	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491087629537	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10786
+1491087630398	Marionette	INFO	Listening on port 10786
+1491087710087	geckodriver	INFO	Listening on 127.0.0.1:11338
+1491087712128	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.VcBA1tcvJllq
+1491087712131	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491087712157	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11354
+1491087713034	Marionette	INFO	Listening on port 11354
+1491133363931	geckodriver	INFO	Listening on 127.0.0.1:3675
+1491133365963	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.P1UcUHlZhzaJ
+1491133365963	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491133365994	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3682
+1491133366686	Marionette	INFO	Listening on port 3682
+1491133419225	geckodriver	INFO	Listening on 127.0.0.1:3898
+1491133421225	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.cWXbzOMwgcaR
+1491133421225	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491133421256	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3906
+1491133422034	Marionette	INFO	Listening on port 3906
+1491134813730	geckodriver	INFO	Listening on 127.0.0.1:4395
+1491134815745	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ogv9TksaqJr5
+1491134815745	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491134815761	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4401
+1491134816474	Marionette	INFO	Listening on port 4401
+1491134964788	geckodriver	INFO	Listening on 127.0.0.1:4756
+1491134966804	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fcKgXGUkREFx
+1491134966804	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491134966819	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4764
+1491134967460	Marionette	INFO	Listening on port 4764
+1491135215727	geckodriver	INFO	Listening on 127.0.0.1:5115
+1491135217742	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.XdjeF8W9uo4o
+1491135217742	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491135217758	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5122
+1491135218501	Marionette	INFO	Listening on port 5122
+1491135316653	geckodriver	INFO	Listening on 127.0.0.1:5441
+1491135318669	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.J6mwWPEa8t9O
+1491135318669	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491135318684	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5447
+1491135319441	Marionette	INFO	Listening on port 5447
+1491135385868	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491135456870	geckodriver	INFO	Listening on 127.0.0.1:5562
+1491135458886	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Jqk1IMdJEEIW
+1491135458886	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491135458902	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5568
+1491135459622	Marionette	INFO	Listening on port 5568
+1491135526589	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491135542581	geckodriver	INFO	Listening on 127.0.0.1:5684
+1491135544596	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.X7SGlRDvxE8n
+1491135544596	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491135544612	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5690
+1491135545428	Marionette	INFO	Listening on port 5690
+1491135612352	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491135844388	geckodriver	INFO	Listening on 127.0.0.1:6104
+1491135846422	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.xRsWXcaHPdXF
+1491135846422	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491135846453	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6110
+1491135847203	Marionette	INFO	Listening on port 6110
+1491135913171	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491136584335	geckodriver	INFO	Listening on 127.0.0.1:6573
+1491136586366	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.0j1NCLOeYCeH
+1491136586366	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491136586382	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6583
+1491136587201	Marionette	INFO	Listening on port 6583
+1491136650426	geckodriver	INFO	Listening on 127.0.0.1:6690
+1491136652466	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.H3K7aL9bjSuh
+1491136652466	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491136652482	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6696
+1491136653310	Marionette	INFO	Listening on port 6696
+1491136720435	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491138274728	geckodriver	INFO	Listening on 127.0.0.1:7347
+1491138276775	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.oqMH2q4OfPfC
+1491138276775	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491138276791	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7355
+1491138277607	Marionette	INFO	Listening on port 7355
+1491138340048	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491139076950	geckodriver	INFO	Listening on 127.0.0.1:7861
+1491139078997	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Hrv7WO2GUhLi
+1491139078997	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491139079012	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7869
+1491139079934	Marionette	INFO	Listening on port 7869
+1491139145890	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491139161226	geckodriver	INFO	Listening on 127.0.0.1:8326
+1491139163254	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.UHGrLfrYdcxG
+1491139163254	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491139163286	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8332
+1491139164000	Marionette	INFO	Listening on port 8332
+1491139231693	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491139232268	addons.productaddons	WARN	File download failed: 0x80004004
+1491139352322	geckodriver	INFO	Listening on 127.0.0.1:8816
+1491139354322	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.TvXhFFUYSZp2
+1491139354322	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491139354337	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8822
+1491139355146	Marionette	INFO	Listening on port 8822
+1491161038210	geckodriver	INFO	Listening on 127.0.0.1:4021
+1491161040230	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.wqtlWjErZHnd
+1491161040230	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491161040261	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4027
+1491161041153	Marionette	INFO	Listening on port 4027
+1491161103456	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491161185431	geckodriver	INFO	Listening on 127.0.0.1:4149
+1491161187471	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Y03QFr0o65JS
+1491161187471	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491161187486	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4159
+1491161188324	Marionette	INFO	Listening on port 4159
+1491161250638	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491161270738	geckodriver	INFO	Listening on 127.0.0.1:4514
+1491161272779	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.qc6bf9zAl6W1
+1491161272779	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491161272811	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4521
+1491161273677	Marionette	INFO	Listening on port 4521
+1491161335443	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491161423373	geckodriver	INFO	Listening on 127.0.0.1:4944
+1491161425388	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.CtBTqsgdr3hz
+1491161425388	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491161425419	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4952
+1491161426209	Marionette	INFO	Listening on port 4952
+1491161584237	geckodriver	INFO	Listening on 127.0.0.1:5491
+1491161586268	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.JedPLZfyJVDt
+1491161586268	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491161586300	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5499
+1491161587134	Marionette	INFO	Listening on port 5499
+1491161650084	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163139381	geckodriver	INFO	Listening on 127.0.0.1:7114
+1491163141460	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.6ZBCUyh4bT6u
+1491163141553	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163141631	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7120
+1491163143670	Marionette	INFO	Listening on port 7120
+1491163207044	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163327922	geckodriver	INFO	Listening on 127.0.0.1:7682
+1491163329953	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fYcm00kBodZC
+1491163329953	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163329969	geckodriver::marionette	INFO	Connecting to Marionette on localhost:7691
+1491163330747	Marionette	INFO	Listening on port 7691
+1491163393461	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163436657	geckodriver	INFO	Listening on 127.0.0.1:8153
+1491163438673	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.njsJNSmrWrEc
+1491163438673	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163438688	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8161
+1491163439667	Marionette	INFO	Listening on port 8161
+1491163501919	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163524614	geckodriver	INFO	Listening on 127.0.0.1:8557
+1491163526630	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ZOJSkYKenrB7
+1491163526630	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163526645	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8563
+1491163527642	Marionette	INFO	Listening on port 8563
+1491163590343	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163612668	geckodriver	INFO	Listening on 127.0.0.1:8969
+1491163614700	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.mQmhyZOQY241
+1491163614700	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163614715	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8977
+1491163615486	Marionette	INFO	Listening on port 8977
+1491163677940	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163699806	geckodriver	INFO	Listening on 127.0.0.1:9400
+1491163701822	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.LpD6g1xxlL7T
+1491163701838	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163701853	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9408
+1491163702769	Marionette	INFO	Listening on port 9408
+1491163765120	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163788518	geckodriver	INFO	Listening on 127.0.0.1:9816
+1491163790565	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.OiPr5fFOtbhh
+1491163790565	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163790581	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9824
+1491163791435	Marionette	INFO	Listening on port 9824
+1491163853577	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491163925627	geckodriver	INFO	Listening on 127.0.0.1:10263
+1491163927642	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.08LXf24Ucbdn
+1491163927689	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491163927705	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10269
+1491163928475	Marionette	INFO	Listening on port 10269
+1491163990698	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491164732030	geckodriver	INFO	Listening on 127.0.0.1:11168
+1491164734046	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1o7DVlGIXNEV
+1491164734046	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491164734061	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11176
+1491164734790	Marionette	INFO	Listening on port 11176
+1491164797168	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491165155078	geckodriver	INFO	Listening on 127.0.0.1:11911
+1491165157124	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.mi5lCzPXq3v9
+1491165157124	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491165157140	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11917
+1491165157986	Marionette	INFO	Listening on port 11917
+1491165219983	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491165335648	geckodriver	INFO	Listening on 127.0.0.1:12479
+1491165337671	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1GU16FHeD3B6
+1491165337674	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491165337690	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12485
+1491165338715	Marionette	INFO	Listening on port 12485
+1491165400791	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491165594565	geckodriver	INFO	Listening on 127.0.0.1:12912
+1491165596596	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.yykNlIgy1Sv0
+1491165596596	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491165596612	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12920
+1491165597322	Marionette	INFO	Listening on port 12920
+1491165659474	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491165678000	geckodriver	INFO	Listening on 127.0.0.1:13212
+1491165680032	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.NpoykAVDFu8t
+1491165680079	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491165680110	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13218
+1491165681024	Marionette	INFO	Listening on port 13218
+1491165743163	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491217169277	geckodriver	INFO	Listening on 127.0.0.1:10933
+1491217171296	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Yf6vSmZZhvpF
+1491217171298	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491217171314	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10942
+1491217172053	Marionette	INFO	Listening on port 10942
+1491217234429	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Protocol error (unknownError): Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398861.
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+ profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.eg97yKvI6u2D
+1491217899871	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491217899887	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11624
+1491217900538	Marionette	INFO	Listening on port 11624
+1491217962724	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491219002379	geckodriver	INFO	Listening on 127.0.0.1:12473
+1491219004406	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.9utGzpjwwEYs
+1491219004409	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491219004425	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12479
+1491219005190	Marionette	INFO	Listening on port 12479
+1491219067608	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491219673344	geckodriver	INFO	Listening on 127.0.0.1:13243
+1491219675370	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.9YDF6948SZvF
+1491219675390	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491219675407	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13249
+1491219676341	Marionette	INFO	Listening on port 13249
+1491219738602	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1491227273242	geckodriver	INFO	Listening on 127.0.0.1:2898
+1491227275320	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Dm4MetJT45zl
+1491227275336	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491227275351	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2906
+1491227276987	Marionette	INFO	Listening on port 2906
+1491227342745	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491227402241	geckodriver	INFO	Listening on 127.0.0.1:3384
+1491227404297	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.wjsdPYj4GzF2
+1491227404297	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491227404312	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3392
+1491227405180	Marionette	INFO	Listening on port 3392
+1491227469713	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491228231479	geckodriver	INFO	Listening on 127.0.0.1:4286
+1491228233523	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Q3J1K5NwmrgZ
+1491228233539	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228233554	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4292
+1491228234276	Marionette	INFO	Listening on port 4292
+1491228304825	geckodriver	INFO	Listening on 127.0.0.1:4394
+1491228306865	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.VAE35ZmwFjWI
+1491228306865	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228306881	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4403
+1491228307672	Marionette	INFO	Listening on port 4403
+1491228356276	geckodriver	INFO	Listening on 127.0.0.1:4526
+1491228358323	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.F8yMadfmEB9N
+1491228358323	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228358338	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4532
+1491228359100	Marionette	INFO	Listening on port 4532
+1491228423790	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491228722927	geckodriver	INFO	Listening on 127.0.0.1:4682
+1491228724943	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.usS5E0ecfp12
+1491228724943	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228724958	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4688
+1491228725792	Marionette	INFO	Listening on port 4688
+1491228790440	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491228856078	geckodriver	INFO	Listening on 127.0.0.1:4827
+1491228858109	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.SNnppaZk3gVp
+1491228858109	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228858140	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4835
+1491228859212	Marionette	INFO	Listening on port 4835
+1491228930319	geckodriver	INFO	Listening on 127.0.0.1:4951
+1491228932357	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.WhmmXAbPExmI
+1491228932388	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228932419	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4957
+1491228933175	Marionette	INFO	Listening on port 4957
+1491228989805	geckodriver	INFO	Listening on 127.0.0.1:5045
+1491228991847	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.PUwJofJwZLPa
+1491228991847	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491228991862	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5051
+1491228992768	Marionette	INFO	Listening on port 5051
+1491229042418	geckodriver	INFO	Listening on 127.0.0.1:5177
+1491229044480	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.60dKZuR2hHQc
+1491229044480	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491229044496	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5183
+1491229045233	Marionette	INFO	Listening on port 5183
+1491229109616	addons.productaddons	WARN	File download failed: 0x805a1ff3
+1491229558016	geckodriver	INFO	Listening on 127.0.0.1:5384
+1491229560083	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Er3wTMuJmfOj
+1491229560083	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491229560104	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5390
+1491229560952	Marionette	INFO	Listening on port 5390
+1491229766289	geckodriver	INFO	Listening on 127.0.0.1:5716
+1491229768336	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.in2NXefOcuAc
+1491229768336	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491229768351	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5722
+1491229769183	Marionette	INFO	Listening on port 5722

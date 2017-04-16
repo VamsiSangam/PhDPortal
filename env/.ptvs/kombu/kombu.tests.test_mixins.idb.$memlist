@@ -1,0 +1,12 @@
+test_ConsumerMixin_interface
+test_ConsumerMixin
+patch
+socket
+absolute_import
+unicode_literals
+Message
+Cons
+Mock
+Case
+ConsumerMixin
+ContextMock

@@ -720,6 +720,9 @@
     <Compile Include="app\tests\testing_utilities.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\tests\unit\classes\guide.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\tests\unit\classes\user.py">
       <SubType>Code</SubType>
     </Compile>

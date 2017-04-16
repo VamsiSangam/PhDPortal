@@ -1,0 +1,6 @@
+test_decorators
+test_compat
+test_http
+test_compat_utils
+test_messaging
+test_sets

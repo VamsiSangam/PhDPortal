@@ -1,0 +1,14 @@
+sentinel
+SkipTest
+backends
+patch
+absolute_import
+test_CouchBaseBackend
+module
+couchbase
+MagicMock
+Mock
+CouchBaseBackend
+AppCase
+COUCHBASE_BUCKET
+ImproperlyConfigured

@@ -33,7 +33,7 @@
                 {% elif thesis_keywords|length == 0 %}
                     <p>You don't have any keywords added to your thesis {{ thesis.title }}</p>
                 {% else %}
-                    <div class="list-group">
+                    <div class="list-group" id="selected-keywords">
                         {% for thesis_keyword in thesis_keywords %}
                             <a class="list-group-item">
                                 <form style="display:none" method="post" action="{{ request.path }}delete/{{ thesis_keyword.id }}" id="delete-keyword-{{ thesis_keyword.id }}">

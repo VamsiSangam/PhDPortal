@@ -1,0 +1,16 @@
+_COMPAT_CLASSMETHODS
+class_property
+get_task_logger
+Exchange
+periodic_task
+BaseTask
+__all__
+absolute_import
+maybe_schedule
+TaskType
+Task
+PeriodicTask
+Context
+task
+current_app
+reclassmethod

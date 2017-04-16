@@ -1,0 +1,15 @@
+test_defaults
+test_beat
+test_registry
+test_log
+test_celery
+test_annotations
+test_routes
+test_schedules
+test_exceptions
+test_app
+test_utils
+test_control
+test_builtins
+test_loaders
+test_amqp
