@@ -125,8 +125,10 @@ class GuideTests(UserTests):
             approve: bool, True for approval, False for rejection
             feedback: string, optional feedback string
         """
-
-        self.assertEqual(self._check_if_element_exists('#thesis-' + str(id)), True)
+        var = '#thesis-' + str(id)
+        print(var)
+        print(id)
+        self.assertEqual(self._check_if_element_exists(var), True)
         
         thesis = self.driver.find_element_by_id('thesis-' + str(id))
         button_class = 'btn-success' if approve else 'btn-danger'

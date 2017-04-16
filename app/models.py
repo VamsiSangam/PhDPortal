@@ -174,6 +174,13 @@ class Referee(models.Model):
     designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, default = 'Prof', verbose_name = 'Your Designation')
     website = models.CharField(max_length = 150)    # use URL validator in django forms / model
 
+class Admin(models.Model):
+    class Meta:
+        verbose_name = 'Admin'
+        verbose_name_plural = 'Admins'
+
+    user = models.OneToOneField(User, null = True)
+    
 class Approver(models.Model):
     faculty = models.OneToOneField(
             Faculty,
@@ -273,10 +280,15 @@ class PanelMember(models.Model):
     status = models.CharField(max_length = 1, choices = PANEL_MEMBER_STATUS_TYPES)
     priority = models.PositiveIntegerField(default = 0)
     added_by = models.ForeignKey(Faculty, on_delete = models.CASCADE)
-    created_time = models.DateTimeField(auto_now = True)
-
+    created_time = models.DateTimeField(auto_now_add = True)
+    updated_time = models.DateTimeField(auto_now = True)
+    feedback_with_referee_details = models.FileField(null = True, blank = True, upload_to = 'Feedback_With_Details')
+    feedback_without_referee_details = models.FileField(null = True, blank = True, upload_to = 'Feedback_Without_Details')
+    feedback_at = models.CharField(max_length = 1, default = 'A', choices = FEEDBACK_AT_TYPES)
     def __str__(self):
         return self.referee.user.first_name
+    #def __str__(self):
+    #    return self.feedback_with_referee_details.name
 
 class Notification(models.Model):
     class Meta:

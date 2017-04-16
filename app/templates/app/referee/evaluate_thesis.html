@@ -6,6 +6,12 @@
 {% endblock %}
 {% block content %}
 <!-- Guide homepage -->
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+</div>
 {% for thesis in all_thesis %}
 <div class="x_panel" id="thesis-{{ thesis.id }}">
     <div class="x_title">
@@ -82,7 +88,8 @@
                     <hr />
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="phd-report-{{ thesis.id }}" aria-labelledby="report-tab-{{ thesis.id }}">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="post" action="">
+                        {% csrf_token %}
                         <h4>General PhD Student Details</h4>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Student Name</label>
@@ -107,7 +114,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Organisation and Get up</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="thesis-organisation-and-get-up" rows="4"></textarea>
+                                <textarea class="form-control" id ="thesis-organisation-and-get-up-{{ thesis.id }}" name="thesis-organisation-and-get-up-{{ thesis.id }}" rows="4" ></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -116,10 +123,10 @@
                             </label>
                             <div class="col-sm-7">
                                 <label class="radio-inline">
-                                    <input type="radio" name="quality-check" value="yes" checked> Yes
+                                    <input type="radio"  name="quality-check-{{ thesis.id }}" value="yes" checked> Yes
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="quality-check" value="no"> No
+                                    <input type="radio"  name="quality-check-{{ thesis.id }}" value="no"> No
                                 </label>
                             </div>
                         </div>
@@ -129,10 +136,10 @@
                             </label>
                             <div class="col-sm-7">
                                 <label class="radio-inline">
-                                    <input type="radio" name="original-check" value="yes" checked> Yes
+                                    <input type="radio"  name="orginal-check-{{ thesis.id }}" value="yes" checked> Yes
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="original-check" value="no"> No
+                                    <input type="radio"  name="orginal-check-{{ thesis.id }}" value="no"> No
                                 </label>
                             </div>
                         </div>
@@ -144,26 +151,26 @@
                             </label>
                             <div class="col-sm-7">
                                 <label class="radio-inline">
-                                    <input type="radio" name="grammar-check" value="none" checked> None
+                                    <input type="radio" name="grammar-check-{{ thesis.id }}" value="none" checked> None
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="grammar-check" value="minor"> Minor
+                                    <input type="radio" name="grammar-check-{{ thesis.id }}" value="minor"> Minor
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="grammar-check" value="require-changes"> Require Changes
+                                    <input type="radio" name="grammar-check-{{ thesis.id }}" value="require-changes"> Require Changes
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Technical Content of the Thesis</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="thesis-technical-content" rows="5"></textarea>
+                                <textarea class="form-control" id ="thesis-technical-content-{{ thesis.id }}"name="thesis-technical-content" rows="5" ></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Highlights and strong/weak points of the Thesis</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="thesis-technical-content" rows="5"></textarea>
+                                <textarea class="form-control" id ="thesis-highlights-points-{{ thesis.id }}" name="thesis-technical-content" rows="5" ></textarea>
                             </div>
                         </div>
                         <br />
@@ -171,12 +178,12 @@
                         <div class="form-group">
                             <div class="col-sm-10 col-md-offset-2">
                                 <label class="radio">
-                                    <input type="radio" name="suggestions-check" value="1" checked>
+                                    <input type="radio" name="suggestions-check-{{ thesis.id }}" value="1" checked>
                                     Minor queries or suggestions or modifications to which the student replies
                                     in writing and which is communicated to the oral board together with my report.
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="suggestions-check" value="2">
+                                    <input type="radio" name="suggestions-check-{{ thesis.id }}" value="2">
                                     Suggestions and modifications to which the student's written reposnse is sent to
                                     me. I will give my reply to the same in two weeks of its receipt. This is neccessary
                                     before the thesis is considered by the oral board.
@@ -188,23 +195,27 @@
                         <div class="form-group">
                             <div class="col-sm-10 col-md-offset-2">
                                 <label class="radio">
-                                    <input type="radio" name="specific-recommendations" value="1" checked>
+                                    <input type="radio" name="specific-recommendations-{{ thesis.id }}" value="1" checked>
                                     Thesis is acceptable in the present form for the award of PhD degeree.
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="specific-recommendations" value="2">
+                                    <input type="radio" name="specific-recommendations-{{ thesis.id }}" value="2">
                                     The thesis is acceptable and the corrections, modifications, and improvement suggested
                                     by me would be incorporated in the thesis to the satisfaction of the oral board.
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="specific-recommendations" value="3">
+                                    <input type="radio" name="specific-recommendations-{{ thesis.id }}" value="3">
                                     The thesis needs techincal improvement/modifications, which must be carried out to my
                                     satisfaction before I recomment this thesis for acceptance.
                                 </label>
                             </div>
                         </div>
+                        <h4>FeedBack</h4>
+                        <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" rows="5" ></textarea>
+
                         <br />
-                        <button type="submit" class="btn btn-primary pull-right">Submit Feedback</button>
+                        <button type="button" class="btn btn-primary pull-right"
+                        onclick="evaluateThesis({{ thesis.id }},'{{ request.path }}evaluate/', '{{ csrf_token }}')">Submit Feedback</button>
                      </form>
                 </div>
             </div>
@@ -216,6 +227,38 @@
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
+<script>
+    function evaluateThesis(id, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'Department': 'Information Technology',
+            'thesis-organisation-get-up': $('#thesis-organisation-and-get-up-' + id).val(),
+            'quality-check': $('input[name="quality-check-' + id + '"]:checked').val(),
+            'orginal-check': $('input[name="orginal-check-' + id + '"]:checked').val(),
+            'grammer-check': $('input[name="grammar-check-' + id + '"]:checked').val(),
+            'thesis-technical-content': $('#thesis-technical-content-' + id).val(),
+            'thesis-highlights-points': $('#thesis-highlights-points-' + id).val(),
+            'suggestions-check': $('input[name="suggestions-check-' + id + '"]:checked').val(),
+            'specific-recommendations': $('input[name="specific-recommendations-' + id + '"]:checked').val(),
+            'feedback' : $('#thesis-feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#thesis-' + id).fadeOut();
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+
+            }
+        });
+    }
+
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
 <script>
     $(document).ready(function () {
         //$('.collapse-link').click();

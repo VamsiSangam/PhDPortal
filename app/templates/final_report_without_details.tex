@@ -1,0 +1,221 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Professional Formal Letter
+% LaTeX Template
+% Version 1.0 (28/12/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Brian Moses (http://www.ms.uky.edu/~math/Resources/Templates/LaTeX/)
+% with extensive modifications by Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper]{letter} % Specify the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{gfsdidot} % Use the GFS Didot font: http://www.tug.dk/FontCatalogue/gfsdidot/
+\usepackage[T1]{fontenc} % Required for accented characters
+
+% Create a new command for the horizontal rule in the document which allows thickness specification
+\makeatletter
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT MARGINS
+%----------------------------------------------------------------------------------------
+
+\textwidth 6.75in
+\textheight 9.25in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\topmargin -1in
+\longindentation 0.50\textwidth
+\parindent 0.4in
+
+%----------------------------------------------------------------------------------------
+%	SENDER INFORMATION
+%----------------------------------------------------------------------------------------
+
+\def\Who{ {{referee_name}} } % Your name
+\def\What{,  {{referee_designation}} } % Your title
+\def\Where{ {{referee_university}} } % Your department/institution
+\def\Address{123 Broadway} % Your address
+\def\CityZip{Berkeley CA 12345} % Your city, zip code, country, etc
+\def\Email{E-mail: {{referee_email}} } % Your email address
+\def\TEL{Phone: {{referee_ph_number}} } % Your phone number
+\def\URL{URL: {{referee_website}} } % Your URL
+
+%----------------------------------------------------------------------------------------
+%	HEADER AND FROM ADDRESS STRUCTURE
+%----------------------------------------------------------------------------------------
+
+\address{
+\includegraphics[width=1in]{logo.jpg} % Include the logo of your institution
+\hspace{5.1in} % Position of the institution logo, increase to move left, decrease to move right
+\vskip -1.07in~\\ % Position of the text in relation to the institution logo, increase to move down, decrease to move up
+\hspace{1.5in}INDIAN INSTITUTE OF INFORMATION TECHNOLOGY \hfill ~\\[0.05in] % First line of institution name, adjust hspace if your logo is wide
+\hspace{1.5in}Alalhabad \hfill \normalsize % Second line of institution name, adjust hspace if your logo is wide
+\makebox[0ex][r]{\bf }\hspace{0.08in} % Print your name and title with a little whitespace to the right
+~\\[-0.11in] % Reduce the whitespace above the horizontal rule
+\hspace{1.5in}\vhrulefill{1pt} \\ % Horizontal rule, adjust hspace if your logo is wide and \vhrulefill for the thickness of the rule
+\hspace{\fill}\parbox[t]{2.85in}{ % Create a box for your details underneath the horizontal rule on the right
+\footnotesize % Use a smaller font size for the details
+\ \\ \em % Your name, all text after this will be italicized
+\ \\ % Your department
+\ \\ % Your address
+\ \\ % Your city and zip code
+\ \\ % Your phone number
+\ \\ % Your email address
+\ % Your URL
+}
+\hspace{-1.4in} % Horizontal position of this block, increase to move left, decrease to move right
+\vspace{-1in} % Move the letter content up for a more compact look
+}
+
+%----------------------------------------------------------------------------------------
+%	TO ADDRESS STRUCTURE
+%----------------------------------------------------------------------------------------
+
+\def\opening#1{\thispagestyle{empty}
+{\centering\fromaddress \vspace{0.6in} \\ % Print the header and from address here, add whitespace to move date down
+\hspace*{\longindentation}\today\hspace*{\fill}\par} % Print today's date, remove \today to not display it
+{\raggedright \toname \\ \toaddress \par} % Print the to name and address
+\vspace{0.4in} % White space after the to address
+\noindent #1 % Print the opening line
+% Uncomment the 4 lines below to print a footnote with custom text
+%\def\thefootnote{}
+%\def\footnoterule{\hrule}
+%\footnotetext{\hspace*{\fill}{\footnotesize\em Footnote text}}
+%\def\thefootnote{\arabic{footnote}}
+}
+
+%----------------------------------------------------------------------------------------
+%	SIGNATURE STRUCTURE
+%----------------------------------------------------------------------------------------
+%\includegraphics[width=1in]{logo.jpg} 
+%\signature{\Who \What} % The signature is a combination of your name and title
+
+\long\def\closing#1{
+\vspace{0.1in} % Some whitespace after the letter content and before the signature
+\noindent % Stop paragraph indentation
+\hspace*{\longindentation} % Move the signature right
+\parbox{\indentedwidth}{\raggedright
+#1 % Print the signature text
+\vskip 0.65in % Whitespace between the signature text and your name
+\fromsig}} % Print your name and title
+% macros %
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{2}
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\vbox to 3cm {\vfil
+		       \hbox to 2cm
+                             \vbox to 1cm {\vfil
+                             {#1}%
+                            \vfil
+                      	}
+                            \vfil
+                      }}		       % Entry name (birth, address, etc.)
+		\hspace{2cm} #2 \par}    % Entry value
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TO ADDRESS
+%----------------------------------------------------------------------------------------
+
+\begin{letter}
+{ }
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+\opening{Dear Sir or Madam,}
+
+I have evaluvated the thesis of the student {{student_name}} and below is the final report. \\ 
+
+\textbf{\textit{ General PhD Student Details}}
+\begin{center}
+    \begin{tabular}{  p{5cm}  p{8cm} }
+    %\hline
+    Student Name & {{student_name}} \\  
+    Roll No &  {{student_id}} \\  
+    Department &  {{student_department}}\\ 
+    %\hline
+    \end{tabular}
+\end{center} 
+\hspace{1.1cm}\textbf{\textit{General Features of Thesis}}
+\begin{center}
+    \begin{tabular}{  p{5cm}  p{8cm} }
+    %\hline
+   Organisation and Get up & {{thesis_organisation_get_up}} \\
+   Whether quality of work is comparable to other universities of repute? & {{quality_check}} \\
+   Whether thesis has embodied any new ideas with original thoughts? & {{orginal_check}} \\
+    %\hline
+    \end{tabular}
+\end{center}
+\break
+\hspace{1.1cm}\textbf{\textit{Comments}}
+\begin{center}
+    \begin{tabular}{  p{5cm}  p{8cm} }
+    %\hline
+   Corrections in punctation, grammar, spelling or language & {{grammer_check}} \\
+   Technical Content of the Thesis? & {{thesis_technical_content}} \\
+    Highlights and strong/weak points of the Thesis &  {{thesis_highlights_points}}\\
+    %\hline
+    \end{tabular}
+\end{center}
+\hspace{1.1cm}\textbf{\textit{Suggestions}}
+\begin{center}
+     \begin{tabular}{  p{13.5cm}  }
+    %\hline
+  
+   {{suggestions_check}}  \\
+    %\hline
+    \end{tabular}
+\end{center}
+\hspace{1.1cm}\textbf{\textit{Specific Recommendations}}
+\begin{center}
+     \begin{tabular}{  p{13.5cm}  }
+    %\hline
+  
+    {{specific_recommendations}}  \\
+    %\hline
+    \end{tabular}
+\end{center}
+\hspace{1.1cm}\textbf{\textit{Feed Back}}
+\begin{center}
+     \begin{tabular}{  p{13.5cm}  }
+    %\hline
+  
+    {{feedback}}  \\
+    %\hline
+    \end{tabular}
+\end{center}
+
+\closing{} \\
+
+%----------------------------------------------------------------------------------------
+
+
+
+\end{letter}
+\end{document}

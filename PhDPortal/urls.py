@@ -9,7 +9,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 import django.contrib.auth.views
 import app
-from app import views, student_views, guide_views, referee_views, director_views
+from app import views, student_views, guide_views, referee_views, director_views, admin_views
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
@@ -32,8 +32,13 @@ urlpatterns = [
     url(r'^user/search/$', app.views.search_user, name='search_user'),
     url(r'^user/search/query/$', app.views.search_user_query, name='search_user_query'),
 
+    # admin urls
+    url(r'^admin/reports/$', app.admin_views.admin_evaluate_reports, name='admin_evaluate_reports'),
+    
+
     # student urls
-    url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),  
+    url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),
+    url(r'^student/add/details/$', app.student_views.student_add_details, name='student_add_details'), 
     url(r'^student/synopsis/upload/$', app.student_views.student_upload_synopsis, name='student_upload_synopsis'),
     url(r'^student/synopsis/view/$', app.student_views.student_view_synopsis, name='student_view_synopsis'),
     url(r'^student/thesis/upload/$', app.student_views.student_upload_thesis, name='student_upload_thesis'),
@@ -57,6 +62,12 @@ urlpatterns = [
     url(r'^guide/panel/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
     url(r'^guide/panel/submit/$', app.guide_views.guide_send_panel_to_director, name='guide_send_panel_to_director'),
     url(r'^guide/panel/save/$', app.guide_views.guide_save_panel_members, name='guide_save_panel_members'),
+    #url added
+    url(r'^guide/feedback/reports/$', app.guide_views.guide_feedback_reports, name='guide_feedback_reports'),
+    url(r'^guide/feedback/reports/reevaluate/$', app.guide_views.guide_re_evaluate),
+    url(r'^guide/feedback/reports/modifications/$', app.guide_views.guide_modifications),
+    url(r'^guide/feedback/reports/vivavoice/$', app.guide_views.guide_viva_voice),
+
     url(r'^guide/panel/referees/indian/$', app.guide_views.guide_get_indian_referee_details, name='guide_get_indian_referee_details'),
     url(r'^guide/panel/referees/foreign/$', app.guide_views.guide_get_foreign_referee_details, name='guide_get_foreign_referee_details'),
     url(r'^guide/status/$', app.guide_views.guide_phd_status, name='guide_phd_status'),
@@ -79,7 +90,7 @@ urlpatterns = [
     url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
     url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),
     url(r'^referee/thesis/$', app.referee_views.referee_evaluate_thesis, name='referee_evaluate_thesis'),
-    url(r'^referee/thesis/evaluate/$', app.referee_views.referee_thesis_approval),
+    url(r'^referee/thesis/evaluate/$', app.referee_views.referee_thesis_approval ),
     url(r'^referee/help/procedure/$', app.referee_views.referee_help_procedure, name='referee_help_procedure'),
     url(r'^referee/help/contacts/$', app.referee_views.referee_help_contacts, name='referee_help_contacts'),
 

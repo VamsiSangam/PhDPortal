@@ -1,0 +1,91 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+{% endblock %}
+{% block content %}
+<br />
+<div class="col-sm-12">
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+            <li>PhD abstract is a short gist/summary of your PhD your are working on.</li>
+            <li>Abstract must ideally be 200-300 words in length.</li>
+            <li>You can submit an abstract again if your guide has requested for changes.</li>
+            <li>To edit your abstract simply edit the field below and submit.</li>
+            <li>Once your guide approves your PhD abstract, you cannot edit it again.</li>
+        </ul>
+    </div>
+
+    {% if detailsError %}
+    <div class="alert alert-danger alert-dismissible fade in" role="alert" id="success-message">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <span id="message">{{ detailsErrorMessage }}</span>
+    </div>
+    {% endif %}
+</div>
+
+<div class="col-sm-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>PhD Thesis Details</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            {% if isDetailsApproved %}
+            <p>
+                You have already submitted your PhD Details. You are not
+                allowed to modify your PhD Details now. You can view your PhD abstact on your 
+                <a href="{% url 'user_profile' %}"><b>profile page<b></a>.
+            </p>
+            {% else %}
+            <form class="form-horizontal" method="post" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="abstract" class="col-sm-3 control-label">Title :</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="title" name="title" rows="2" required = "required"></textarea>
+                        </div>
+                </div><br />
+                <div class="form-group">
+                    <label for="guide" class="col-sm-3 control-label">
+                        Select Guide-1:
+                    </label>
+                    <div class="col-sm-5">
+                       <input type="text" name="guide-1" value="None" style =" height: 30px; width: 250px;" required="required"  id="guide-1" oninput="getSuggestions()"/><br><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="guide" class="col-sm-3 control-label">
+                        Select Guide-2:
+                    </label>
+                    <div class="col-sm-5">
+                       <input type="text" name="guide-2" value="None" style =" height: 30px; width: 250px;" required="required"  id="guide-2" oninput="getSuggestions()"/><br><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="guide" class="col-sm-3 control-label">
+                        Select Co-Guide:
+                    </label>
+                    <div class="col-sm-5">
+                       <input type="text" name="co_guide" value="None" style =" height: 30px; width: 250px;" required="required"  id="co_guide" oninput="getSuggestions()"/><br><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                          <button class="btn btn-success pull-left">
+                                Submit Details
+                        </button>
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+{% endblock %}

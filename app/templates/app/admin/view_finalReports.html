@@ -1,0 +1,96 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<div class="alert alert-info alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    On Clicking the submit a copy of the report will be sent to the respective supevisor of the student
+</div>
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>PhD Final Reports</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title"> {{ thesis.title }} - Submitted by {{ thesis.referee_name }}</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                        <p>
+                            <b>Final Report</b> - <br /><br />
+                            
+                            <object data="{% static thesis.report %}" type="application/pdf" width="100%" height="800px">
+                                <p>PhD Final Reports</p>
+                            </object> 
+                               
+                            <br /><br />
+                            <a class="btn btn-primary pull-right" href="{% static thesis.report %}" download="download">
+                                <i class="fa fa-download"></i> &nbsp; Download Report
+                            </a>
+                            <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.report %}')">
+                                <i class="fa fa-print"></i> &nbsp; Print Report
+                            </a>
+                        </p>
+                        <br />
+                        <hr />
+                        <br />
+                        <button type="button" class="btn btn-success pull-right"
+                                onclick="SendFeedbackToGuide({{ thesis.id }}, {{ thesis.referee_id }}, '{% url 'admin_evaluate_reports' %}', '{{ csrf_token }}')">
+                                <i class="fa fa-check"></i> &nbsp; Send To Guide
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function SendFeedbackToGuide(thesis, referee, url, csrf_token) {
+        $.post(url, {
+            'thesis': thesis,
+            'referee': referee,
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#thesis-' + thesis).fadeOut();
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+            }
+        });
+    }
+
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
+{% endblock %}

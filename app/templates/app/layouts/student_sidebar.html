@@ -10,6 +10,11 @@
             <li><a id="url-user-edit-profile" href="{% url 'user_edit_profile' %}"> Edit Profile</a></li>
         </ul>
         </li>
+    <li><a id="child-menu-reg-details"><i class="fa fa-folder-open"></i> Register PhD Details <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu" id="child-menu-reg-details-list">
+            <li><a id="url-phd-reg-details" href="{% url 'student_add_details' %}"> Submit PhD Details</a></li>
+        </ul>
+        </li>
     <li><a id="child-menu-abstract"><i class="fa fa-paragraph"></i> PhD Abstract <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu" id="child-menu-abstract-list">
             <li><a id="url-phd-abstract" href="{% url 'student_add_abstract' %}"> Add an Abstract to PhD Thesis</a></li>

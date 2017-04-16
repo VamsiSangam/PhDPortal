@@ -73,7 +73,14 @@ PANEL_MEMBER_STATUS_TYPES = (
         ('N', 'Invite not sent'),
         ('S', 'Invite Sent'),
         ('A', 'Approved'),
-        ('R', 'Rejected'), 
+        ('R', 'Rejected'),
+        ('F', 'FeedbackSubmitted'),
+        ('Z', 'FeedbackSubmitted and need Re-Evaluation'),
+    )
+
+FEEDBACK_AT_TYPES = (
+        ('A', 'Admin'),
+        ('G', 'Guide'),
     )
 
 NOTIFICATION_STATUS_TYPES = (

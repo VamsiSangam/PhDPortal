@@ -11,8 +11,10 @@ from django.contrib.auth.decorators import login_required
 from app.models import *
 from app.forms import *
 import logging, json, operator
-from datetime import datetime
+from datetime import datetime, time, timedelta
 from tzlocal import get_localzone
+import pytz
+from django.core.mail import EmailMessage
 
 logger = logging.getLogger('django')
 CONTENT_TYPE_PDF = 'application/pdf'
@@ -24,8 +26,20 @@ URL_NOT_FOUND = 'not_found'
 URL_INTERNAL_SERVER_ERROR = 'internal_server_error'
 URL_STUDENT_HOME = 'student_home'
 URL_USER_PROFILE = 'user_profile'
-INDIAN_REFEREES = 3 #These are constant according to iiita
-FOREIGN_REFEREES = 2
+
+def send_reminder_to_referees():
+   # print("-*--*-*")
+    for panelmember in PanelMember.objects.filter(status = 'S'):
+        now = datetime.utcnow().replace(tzinfo=pytz.UTC)
+    #    print(now)
+        timediff = (now - panelmember.updated_time).days
+     #   print(timediff)
+
+        if int(timediff) >= 10:
+            director = (Approver.objects.filter(active = True)[0]).faculty.user
+            message = "This is a reminder to consider the invitaion and evaluate the synopsis of \"" + panelmember.thesis.title + "\". Please acknowledge us asap."
+            send_notification(director, panelmember.referee.user, message, '')
+      #      print(message)
 
 def _get_user_type(user):
     """
@@ -51,6 +65,8 @@ def _get_user_type(user):
             type = 'G'
     elif Referee.objects.filter(user = user).exists():
         type = 'R'
+    elif Admin.objects.filter(user = user).exists():
+        type = 'A'
 
     return type
 
@@ -72,6 +88,8 @@ def _get_user_type_object(user):
         return Faculty.objects.get(user = user)
     elif type == 'R':
         return Referee.objects.get(user = user)
+    elif type == 'A':
+        return Admin.objects.get(user = user)
 
 def _get_all_user_info(user):
     """
@@ -94,10 +112,24 @@ def _get_all_user_info(user):
         _get_all_guide_info(user, dict)
     elif dict['type'] == 'R':
         _get_all_referee_info(user, dict)
-
+    elif dict['type'] == 'A':
+        _get_all_admin_info(user, dict)
     return dict
 
 def _get_all_referee_info(user, dict):
+    """
+    Adds referee info to dict, given a User object
+
+    Args:
+        user: User object
+        dict: dict() object
+    """
+    dict['first_name'] = user.first_name
+    dict['last_name'] = user.last_name
+    dict['full_name'] = user.first_name + ' ' + user.last_name
+    dict['email'] = user.email
+
+def _get_all_admin_info(user, dict):
     """
     Adds referee info to dict, given a User object
 
@@ -268,6 +300,8 @@ def validate_request(request):
             return False
         elif type == "R" and not (path.startswith('/user') or path.startswith('/referee')):
             return False
+        elif type == "A" and not (path.startswith('/user') or path.startswith('/admin')):
+            return False
         return True
     else:
         return False
@@ -326,7 +360,11 @@ def _add_user_data_to_session(user, request):
         last_name = user.last_name
         full_name = user.first_name + ' ' + user.last_name
         email = user.email
-
+    elif type == 'A':
+        first_name = user.first_name
+        last_name = user.last_name
+        full_name = user.first_name + ' ' + user.last_name
+        email = user.email
     request.session['first_name'] = first_name
     request.session['last_name'] = last_name
     request.session['full_name'] = full_name
@@ -412,6 +450,12 @@ def user_edit_profile(request):
 
     return redirect(reverse(URL_BAD_REQUEST))
 
+#sending email
+def send_text_email(receiver, subject, content):
+    msg = EmailMessage(subject, content, to=[receiver])
+    msg.content_subtype = "html"
+    msg.send()
+
 @login_required
 def user_notifications(request):
     """
@@ -436,7 +480,7 @@ def user_notifications(request):
                 'layout_data' : get_layout_data(request),
                 'read_notifications': read_notifications,
                 'unread_notifications': unread_notifications,
-                'zone' : zone,    
+                'zone' : zone,  
             }
         )
     else:

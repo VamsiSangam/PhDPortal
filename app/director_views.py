@@ -2,16 +2,25 @@ from app.views import *
 from app.student_views import _update_student_status
 from app.guide_views import send_notification_to_other_guides
 from django.db.models import Q
-			
+
+from app.tasks import send_email_task			
+
 STATUS_ID_SUBMIT_ABSTRACT = 5
+STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
 STATUS_ID_SUBMIT_SYNOPSIS = 9
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
 STATUS_ID_SYNOPSIS_APPROVED = 12
 STATUS_ID_SUBMIT_THESIS = 13
+STATUS_ID_THESIS_WAITING_APPROVAL = 14
 STATUS_ID_THESIS_APPROVED = 16
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
 STATUS_ID_PANEL_SENT = 18
 STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
 STATUS_ID_THESIS_UNDER_EVALUATION = 21
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
+STATUS_ID_CALL_FOR_VIVAVOICE = 24
 
 @login_required
 def director_view_student_info(request):
@@ -146,6 +155,7 @@ def director_submit_for_evaluation(request):
                     count_indian += 1
                     hashmap[username] = 'True'
                 else:  #When user selects same referee multiple times
+                    logger.info('shanu')
                     return redirect(reverse(URL_BAD_REQUEST))
          
         hashmap = {}
@@ -159,11 +169,14 @@ def director_submit_for_evaluation(request):
                     count_foreign += 1
                     hashmap[username] = 'True'
                 else: #When user selects same referee multiple times
+                    logger.info('shanu2')
                     return redirect(reverse(URL_BAD_REQUEST))
  
         logger.info(str(count_indian)+ ' ' +str(count_foreign))
+        logger.info(str(required_indian)+ ' ' +str(required_foreign))
         #When number of referees choosen didn't reach the minimum limit
         if count_indian < required_indian or count_foreign < required_foreign:
+            logger.info('Cond is not satisfied')
             return redirect(reverse(URL_BAD_REQUEST))
 
         #start actual process of automation
@@ -222,6 +235,14 @@ def invite_indian_referees(thesis):
             message = "You have received an invitation to evaluate a thesis with title \"" + thesis.title + "\""
             send_notification(director, referee.referee.user, message, '')
             #send email --fill this afterwards
+            #email to referee
+            subject = "[Invitation]"
+            content = "<br>Dear sir,</br><br></br><br></br>"+message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+            email = []
+            receiver = referee.referee.user
+            email.append(receiver.email)
+            send_email_task.delay(email, subject, content)
+            
             totalRequired -= 1
             referee.status = 'S' #until his decision
             referee.save()
@@ -231,8 +252,20 @@ def invite_indian_referees(thesis):
         #Note: Update the status also --Flow maintainance
         message = "Dear sir, you need to re-submit a panel list for the student " + thesis.student.user.username
         send_notification_to_other_guides(director, message, thesis)
-        #email also
+        
+        #email to guides
+        #Email Notification
+        subject = "[Re-submit the Panel] "
+        content = "<br>Dear sir,</br><br></br><br></br>"+ "You need to re-submit a panel list for the student "+ thesis.student.user.username +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+        
+        
+        email = []
 
+        for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+            receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+            email.append(receiver.email)
+
+        send_email_task.delay(email, subject, content)
         _update_student_status(thesis,STATUS_ID_THESIS_APPROVED + 1)
         
 
@@ -257,6 +290,15 @@ def invite_foreign_referees(thesis):
             message = "You have received an invitation to evaluate a thesis with title \"" + thesis.title + "\""
             send_notification(director, referee.referee.user, message, '')
             #send email --fill this afterwards
+            #email to referee
+            subject = "[Invitation]"
+            content = "<br>Dear sir,</br><br></br><br></br>"+message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            receiver = referee.referee.user
+            email.append(receiver.email)
+            send_email_task.delay(email, subject, content)
+
             totalRequired -= 1
             referee.status = 'S' #until his decision
             referee.save()
@@ -267,7 +309,19 @@ def invite_foreign_referees(thesis):
         message = "Dear sir, you need to re-submit a panel list for the student " + thesis.student.user.username
         send_notification_to_other_guides(director, message, thesis)
         #email also
+        #email to guides
+        #Email Notification
+        subject = "[Re-submit the Panel] "
+        content = "<br>Dear sir,</br><br></br><br></br>"+ "You need to re-submit a panel list for the student "+ thesis.student.user.username +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
         
+        
+        email = []
+
+        for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+            receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+            email.append(receiver.email)
+
+        send_email_task.delay(email, subject, content)
         _update_student_status(thesis,STATUS_ID_THESIS_APPROVED + 1)
 
 @login_required

@@ -49,6 +49,8 @@
                 {% include 'app/layouts/director_sidebar.html' %}
             {% elif request.session.type == 'R' %}
                 {% include 'app/layouts/referee_sidebar.html' %}
+            {% elif request.session.type == 'A' %}
+                {% include 'app/layouts/admin_sidebar.html' %}
             {% endif %}
             </div>
         </div>
@@ -76,6 +78,8 @@
                             {% include 'app/layouts/director_top_navbar.html' %}
                         {% elif request.session.type == 'R' %}
                             {% include 'app/layouts/referee_top_navbar.html' %}
+                        {% elif request.session.type == 'A' %}
+                            {% include 'app/layouts/admin_top_navbar.html' %}
                         {% endif %}
                         <li>
                             <a href="{% url 'user_notifications' %}">

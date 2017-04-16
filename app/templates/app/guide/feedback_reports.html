@@ -1,0 +1,129 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>PhD Feedback Reports</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title"> {{ thesis.title }} </h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                        <p><b>Thesis</b> - 
+                           <a class="btn btn-primary " href="{% static thesis.thesis %}" download="download">
+                            <i class="fa fa-download"></i> &nbsp; Download Thesis
+                           </a>
+                        <p>
+                            <b>Feedback Reports</b> - <br /><br />
+                            
+                            {% for reports in thesis.reports %}
+                            Feedback Report - {{ forloop.counter }}
+                            <br>
+                            <a class="btn btn-primary" href="{% static reports.filename %}" download="download">
+                                <i class="fa fa-download"></i> &nbsp; Download Report
+                            </a>
+                            
+                             <br>
+                            <br>
+                            {% endfor %}
+                        
+                            {% if thesis.isguide == "yes" and thesis.isallsubmitted == "yes" %}
+                            
+                            
+                                <button class="btn btn-primary " 
+                                    onclick="SendModifications({{ thesis.id }}, ' {{ request.path }}modifications/ ', '{{ csrf_token }}')">
+                            
+                                     Ask student for modifications
+                                </button>
+                                {% if thesis.show == "yes" %}
+                           
+                                    <button class="btn btn-primary " 
+                                        onclick="CallVivaVoice({{ thesis.id }}, ' {{ request.path }}vivavoice/ ', '{{ csrf_token }}')">
+                                         Call for Viva-Voice
+                                    </button>
+
+                                    {% if thesis.isre_evaluation == "yes" %}
+                                        <button class="btn btn-primary " 
+                                    
+                                            onclick="SendReport({{ thesis.id }}, '{{ request.path }}reevaluate/ ', '{{ csrf_token }}')">
+                                            Send For Re-Evaluvation
+                                        </button>
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %} 
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div> 
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function SendReport(id, url, csrf_token) {
+        
+        $.post(url, {
+            'id': id,
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                window.location = ''
+            }
+        });
+    }
+    function SendModifications(id, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+            }
+        });
+    }
+    function CallVivaVoice(id, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+            }
+        });
+    }
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
+{% endblock %}

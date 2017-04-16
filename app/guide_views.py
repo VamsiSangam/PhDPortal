@@ -2,18 +2,27 @@ from app.views import *
 from django.db.models import Q
 from app.student_views import _update_student_status
 
+from app.tasks import send_email_task
+
 URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
 URL_STUDENT_VIEW_THESIS = 'student_view_thesis'
 URL_STUDENT_ADD_KEYWORDS = 'student_add_keywords'
 STATUS_ID_SUBMIT_ABSTRACT = 5
+STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
 STATUS_ID_SUBMIT_SYNOPSIS = 9
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
 STATUS_ID_SYNOPSIS_APPROVED = 12
 STATUS_ID_SUBMIT_THESIS = 13
+STATUS_ID_THESIS_WAITING_APPROVAL = 14
 STATUS_ID_THESIS_APPROVED = 16
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
 STATUS_ID_PANEL_SENT = 18
 STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
 STATUS_ID_THESIS_UNDER_EVALUATION = 21
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
+STATUS_ID_CALL_FOR_VIVAVOICE = 24
 
 def send_notification_to_other_guides(user, message, thesis):
     """
@@ -110,11 +119,31 @@ def guide_evaluate_unevaluated_abstract(request):
 
                 if accepted:
                     ThesisGuideApproval.objects.filter(thesis = thesis).delete()
-                    _update_student_status(thesis, STATUS_ID_ABSTRACT_APPROVED + 1) ##total approval
+                    _update_student_status(thesis, STATUS_ID_SUBMIT_SYNOPSIS ) ##total approval
                      # notify student about approval
-                    notification_message = request.session['full_name'] + " had accepted the abstract submitted."
+                    notification_message = request.session['full_name'] + " had accepted the abstract submitted "
                     send_notification(user, thesis.student.user, notification_message, '')
-               
+                    ###email to student
+                    subject = "[Abstract Approved]"
+                    content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+                    email = []
+                    receiver = Student.objects.get(user = thesis.student.user)
+                    email.append(receiver.email)
+                    
+                    send_email_task.delay(email, subject, content)
+
+            ##email to other guides about approval
+            subject = "[Abstract Approved] by " + request.session['full_name'] + " of student " + thesis.student.first_name
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+
+                if receiver.user != user:
+                    email.append(receiver.email)
+            send_email_task.delay(email, subject, content)   
         else:
             # need to downgrade status after reject, and remove abstract
             # delete others approvals
@@ -122,17 +151,39 @@ def guide_evaluate_unevaluated_abstract(request):
             if guide_type == 'G':
                 thesisGuideApprovals = ThesisGuideApproval.objects.filter(thesis = thesis)
                 thesisGuideApprovals.delete()
+
                 
             _update_student_status(thesis,STATUS_ID_SUBMIT_ABSTRACT) #status to resubmit ,since main guide rejected
 
             # notify other guides about rejection
             notification_message = request.session['full_name'] + " had rejected the abstract submitted by '" + thesis.student.first_name
             send_notification_to_other_guides(user, notification_message, thesis)
+            ##email to other guides about rejection
+            subject = "[Abstract Rejected] by " + request.session['full_name'] + " of student " + thesis.student.first_name
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+
+                if receiver.user != user:
+                    email.append(receiver.email)
+            send_email_task.delay(email, subject, content)
             # notify student about rejection
-            notification_message = request.session['full_name'] + " had rejected the abstract submitted."
-            notification_message += " Feedback - " + feedback
+            notification_message = request.session['full_name'] + " had rejected the abstract submitted "
+            notification_message += "\nFeedback - " + feedback + "."
+
             send_notification(user, thesis.student.user, notification_message, '')
-           
+            ##email to student
+            subject = "[Abstract Rejection] by " + request.session['full_name']
+            content = "<br>Dear student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            receiver = Student.objects.get(user = thesis.student.user)
+            email.append(receiver.email)
+                    
+            send_email_task.delay(email, subject, content)
+            
 
         return HttpResponse('0', content_type = 'text/plain')
     else:
@@ -200,14 +251,14 @@ def guide_evaluate_unevaluated_synopsis(request):
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'S')
                 thesisGuideApprovals.save()
                 # notify other guides about Approval
-                notification_message = request.session['full_name'] + " had accepted the synopsis submitted by '" + thesis.student.first_name
+                notification_message = request.session['full_name'] + " had accepted the synopsis submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
             else:
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'S')
                 thesisGuideApprovals.save()
                 
                 # notify other guides about Approval
-                notification_message = request.session['full_name'] + " had accepted the synopsis submitted by '" + thesis.student.first_name
+                notification_message = request.session['full_name'] + " had accepted the synopsis submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
 
                 accepted = True
@@ -219,10 +270,30 @@ def guide_evaluate_unevaluated_synopsis(request):
 
                 if accepted:
                     ThesisGuideApproval.objects.filter(thesis = thesis).delete()
-                    _update_student_status(thesis, STATUS_ID_SYNOPSIS_APPROVED + 1) ##total approval
+                    _update_student_status(thesis, STATUS_ID_SUBMIT_THESIS) ##total approval
                      # notify student about approval
                     notification_message = request.session['full_name'] + " had accepted the synopsis submitted "
                     send_notification(user, thesis.student.user, notification_message, '')
+                    #email to student
+                    subject = "[Synopsis Approved] by " + request.session['full_name']
+                    content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+                    email = []
+                    receiver = Student.objects.get(user = thesis.student.user)
+                    email.append(receiver.email)
+                    
+                    send_email_task.delay(email, subject, content)
+            #email to other guides about approval
+            subject = "[Synopsis Approved] by " + request.session['full_name'] + " of student " + thesis.student.first_name
+            content = "<br>Dear sir,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+
+                if receiver.user != user:
+                    email.append(receiver.email)
+            send_email_task.delay(email, subject, content)   
                
         else:
             # need to downgrade status after reject, and remove abstract
@@ -236,10 +307,31 @@ def guide_evaluate_unevaluated_synopsis(request):
             # notify other guides about rejection
             notification_message = request.session['full_name'] + " had rejected the synopsis submitted by '" + thesis.student.first_name
             send_notification_to_other_guides(user, notification_message, thesis)
+            #email to other guides about rejection
+            subject = "[Synopsis Rejected] by " + request.session['full_name'] + " of student " + thesis.student.first_name
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+
+                if receiver.user != user:
+                    email.append(receiver.email)
+            send_email_task.delay(email, subject, content)
             # notify student about rejection
             notification_message = request.session['full_name'] + " had rejected the synopsis submitted "
-            notification_message += "\nFeedback: " + feedback
+            notification_message += "\nFeedback - " + feedback
             send_notification(user, thesis.student.user, notification_message, '')
+            #email to student
+            subject = "[Synopsis Rejection] by " + request.session['full_name']
+            content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            receiver = Student.objects.get(user = thesis.student.user)
+            email.append(receiver.email)
+                    
+            send_email_task.delay(email, subject, content)
+
         
         return HttpResponse('0', content_type = 'text/plain')
     else:
@@ -305,14 +397,14 @@ def guide_evaluate_unevaluated_thesis(request):
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'T')
                 thesisGuideApprovals.save()
                 # notify other guides about Approval
-                notification_message = request.session['full_name'] + " had accepted the thesis submitted by '" + thesis.student.first_name
+                notification_message = request.session['full_name'] + " had accepted the thesis submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
             else:
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'T')
                 thesisGuideApprovals.save()
                 
                 # notify other guides about Approval
-                notification_message = request.session['full_name'] + " had accepted the thesis submitted by '" + thesis.student.first_name
+                notification_message = request.session['full_name'] + " had accepted the thesis submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
 
                 accepted = True
@@ -324,10 +416,30 @@ def guide_evaluate_unevaluated_thesis(request):
 
                 if accepted:
                     ThesisGuideApproval.objects.filter(thesis = thesis).delete()
-                    _update_student_status(thesis, STATUS_ID_THESIS_APPROVED + 1) ##total approval
+                    _update_student_status(thesis, STATUS_ID_WAITING_FOR_PANEL_APPROVAL) ##total approval
                      # notify student about approval
-                    notification_message = request.session['full_name'] + " had accepted the synopsis submitted "
+                    notification_message = request.session['full_name'] + " had accepted the thesis submitted "
                     send_notification(user, thesis.student.user, notification_message, '')
+                    #email to student
+                    subject = "[Thesis Approved] by " + request.session['full_name']
+                    content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+                    email = []
+                    receiver = Student.objects.get(user = thesis.student.user)
+                    email.append(receiver.email)
+                    
+                    send_email_task.delay(email, subject, content)
+            #email to other guides about approval
+            subject = "[Thesis Approved] by " + request.session['full_name'] + " of student " + thesis.student.first_name
+            content = "<br>Dear sir,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+
+                if receiver.user != user:
+                    email.append(receiver.email)
+            send_email_task.delay(email, subject, content)
                
         else:
             # need to downgrade status after reject, and remove abstract
@@ -339,13 +451,33 @@ def guide_evaluate_unevaluated_thesis(request):
             _update_student_status(thesis,STATUS_ID_SUBMIT_THESIS) #status to resubmit ,since main guide rejected
 
             # notify other guides about rejection
-            notification_message = request.session['full_name'] + " had rejected the synopsis submitted by '" + thesis.student.first_name
+            notification_message = request.session['full_name'] + " had rejected the thesis submitted by '" + thesis.student.first_name
             send_notification_to_other_guides(user, notification_message, thesis)
+            #email to other guides about rejection
+            subject = "[Thesis Rejected] by " + request.session['full_name'] + " of student " + thesis.student.first_name
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+
+                if receiver.user != user:
+                    email.append(receiver.email)
+            send_email_task.delay(email, subject, content)
             # notify student about rejection
-            notification_message = request.session['full_name'] + " had rejected the synopsis submitted "
-            notification_message += "\nFeedback: " + feedback
+            # notify student about rejection
+            notification_message = request.session['full_name'] + " had rejected the thesis submitted "
+            notification_message += "\nFeedback - " + feedback
             send_notification(user, thesis.student.user, notification_message, '')
-        
+            #email to student
+            subject = "[Thesis Rejection] by " + request.session['full_name']
+            content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            receiver = Student.objects.get(user = thesis.student.user)
+            email.append(receiver.email)
+                    
+            send_email_task.delay(email, subject, content)
         
         return HttpResponse('0', content_type = 'text/plain')
     else:
@@ -633,7 +765,28 @@ def guide_send_panel_to_director(request):
             send_notification(user, thesis.student.user, "Congratulations! Your thesis had been sent for Evaluation.Stay tuned for results", '')
             #send notification to director
             send_notification(user, director, "Panel had been sent for evaluation of " + thesis.student.first_name + " ", '')
-            ##send E-mail
+            
+            #send E-mail
+
+            #email to student
+            subject = "[Thesis Status]"
+            content = "<br>Dear Student,</br><br></br><br></br>"+"Congratulations! Your thesis had been sent for Evaluation.Stay tuned for results"+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            receiver = Student.objects.get(user = thesis.student.user)
+            email.append(receiver.email)
+                    
+            send_email_task.delay(email, subject, content)
+
+            #email to director
+            subject = "[Panel sent for Evaluation] of student "+ thesis.student.first_name
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+ "Panel had been sent for evaluation of " + thesis.student.first_name +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+            email = []
+            receiver = Approver.objects.filter(active = True)[0].faculty
+            email.append(receiver.email)
+                    
+            send_email_task.delay(email, subject, content)
             dict = {'status' : 'OK', 'message' : 'Panel successfully sent to director!'}
 
         return HttpResponse(json.dumps(dict), content_type = 'application/json')
@@ -723,5 +876,165 @@ def guide_help_contacts(request):
                 'layout_data' : get_layout_data(request),
             }
         )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_feedback_reports(request):
+    """
+    Guide verifies the feedbacks submitted by referees and suggests student for modification if any
+    and may also submit the thesis for reevaluation and finally call for viva voice
+    """
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    user = auth.get_user(request)
+    
+    if request.method == "GET":
+        all_thesis = []     # list of dict
+        
+        for thesis in Thesis.objects.all():
+            guide = Faculty.objects.get(user = user)
+            if ThesisGuide.objects.filter(thesis = thesis, guide = guide):
+                panelmember = PanelMember.objects.filter(thesis = thesis).filter(Q(status = 'F') | Q(status = 'Z')).filter(feedback_at = 'G')
+                if panelmember:
+                    dict = {}
+                    dict['title'] = thesis.title
+                    dict['thesis'] = thesis.thesis
+                    dict['student_full_name'] = thesis.student.first_name + " " + thesis.student.last_name
+                    dict['student_username'] = thesis.student.user.username
+                    dict['id'] = thesis.id
+                    if thesis.status.id == STATUS_ID_THESIS_FEEDBACKS_RECEIVED:
+                        dict['show'] = 'yes'
+                    else:
+                        dict['show'] = 'no'
+                    thesisguide = ThesisGuide.objects.get(thesis = thesis,guide = guide)
+
+                    if thesisguide.type == 'G':
+                        dict['isguide'] = 'yes'
+                    else:
+                        dict['isguide'] = 'no'
+
+                    dict['reports'] = []
+
+                    count = 0
+
+                    isre_evaluation = False
+
+                    for referee in panelmember:
+                        report = {}
+                        report['filename'] = referee.feedback_without_referee_details  ##change this to without details!! 
+                        report['referee'] = referee.referee.id
+                        ##print(report['filename'] + '#################')
+                        ##report['file_path'] = str(referee.feedback_with_referee_details)
+                       
+                        if referee.status == 'F':
+                            report['isreevaluation'] = 'no'
+                            
+                        else:
+                            report['isreevaluation'] = 'yes'
+                            isre_evaluation = True
+                           
+                        dict['reports'].append(report)
+                        count += 1
+
+                    if count == thesis.indian_referees_required + thesis.foreign_referees_required: ##check if all the referees submitted feedback forms
+                        dict['isallsubmitted'] = 'yes'
+                    else:
+                        dict['isallsubmitted'] = 'no'
+
+                    if isre_evaluation == True:
+                        dict['isre_evaluation'] = 'yes'
+                    else:
+                        dict['isre_evaluation'] =  'no'
+                    all_thesis.append(dict)
+
+        return render(request, 'app/guide/feedback_reports.html', {
+            'title':'Final Reports',
+            'all_thesis' : all_thesis,
+            'layout_data' : get_layout_data(request),
+        })
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+   
+@login_required
+def guide_re_evaluate(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    user = auth.get_user(request)
+    
+    if request.method == "POST":
+
+        print("************* ")
+        
+        id = int(request.POST['id'])
+        
+        thesis = Thesis.objects.get(id = id)
+        email = []
+        #send thesis to all referees who asks for re-evaluation
+        for panelmember in PanelMember.objects.filter(thesis = thesis, status = 'Z' , feedback_at = 'G'):
+            #change this to wthout details
+            panelmember.status = 'A'
+            panelmember.feedback_at = 'A'
+            panelmember.save()
+            email.append(panelmember.referee.user.email)
+        ##send notification to refereee
+        admin = Admin.objects.all()[0]
+        send_notification(admin.user, panelmember.referee.user, "A thesis titled + "+ thesis.title + " had been sent for re-evaluation!", ' ')
+        ##send E-Mail
+        subject = "[Thesis sent for Re-Evaluation] of title " + thesis.title
+        content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+ "A thesis titled + "+ thesis.title + " had been sent for re-evaluation!" +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+ 
+        send_email_task.delay(email, subject, content)
+        _update_student_status(thesis, STATUS_ID_THESIS_UNDER_EVALUATION) ##since sent for re-evaluation
+        dict = {'status' : 'OK', 'message' : 'Go go!'}
+        return HttpResponse(json.dumps(dict), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+@login_required
+def guide_modifications(request):
+     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+     user = auth.get_user(request)
+    
+     if request.method == "POST":
+        id = int(request.POST['id'])
+        thesis = Thesis.objects.get(id = id)
+        email = []
+        email.append(thesis.student.email)
+        send_notification(user, thesis.student.user, "You are asked to modify the thesis according to the feedbacks, which are sent to you!", ' ')
+        ##send all the files to student by email
+        subject = "[Thesis asked for Modifications]"
+        content = "<br>Dear Student,</br><br></br><br></br>"+ "You are asked to modify the thesis according to the feedbacks, which are sent to you!" +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+ 
+        send_email_task.delay(email, subject, content)
+        _update_student_status(thesis, STATUS_ID_ASKED_FOR_MODIFICATIONS) 
+        dict = {'status' : 'OK', 'message' : 'Feedback reports are sent to the Student!'}
+        return HttpResponse(json.dumps(dict), content_type = 'application/json')
+     else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def guide_viva_voice(request):
+   
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    user = auth.get_user(request)
+    
+    if request.method == "POST":
+        id = int(request.POST['id'])
+        thesis = Thesis.objects.get(id = id)
+        email = []
+        for approver in Approver.objects.filter(active = True):
+            send_notification(user, approver.faculty.user, "A thesis titled + "+ thesis.title + " had been approved by referees and asked to cunduct Viva-voice!", ' ')
+            email.append(approver.faculty.email)
+            ##send all the files to student by email
+        subject = "[Thesis requested for Viva-Voice]"
+        content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+ " had been approved by referees and asked to cunduct Viva-voice!" +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+ 
+        send_email_task.delay(email, subject, content)
+        
+        _update_student_status(thesis, STATUS_ID_CALL_FOR_VIVAVOICE) 
+        dict = {'status' : 'OK', 'message' : 'Successfully Reported to Director!'}
+        return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))

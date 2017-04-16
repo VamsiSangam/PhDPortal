@@ -14639,3 +14639,18 @@ System.FormatException: Input string was not in a correct format.
 2017-04-16T20:03:27: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\redis"
 2017-04-16T20:03:28: Deleting 1 files
 2017-04-16T20:03:28: Deleting "E:\Education\GitHub Projects\PhDPortal\env\.ptvs\kombu\celery.utils.idb"
+
+2017-04-16T22:58:43: Start analysis
+2017-04-16T22:58:43: [WARNING] Library was set explicitly - skipping path detection
+2017-04-16T22:58:43: IncludeModulesFromModulePath = win32com
+2017-04-16T22:58:44: Deleting 0 files
+
+2017-04-16T23:39:53: Start analysis
+2017-04-16T23:39:53: [WARNING] Library was set explicitly - skipping path detection
+2017-04-16T23:39:53: IncludeModulesFromModulePath = win32com
+2017-04-16T23:39:54: Deleting 0 files
+
+2017-04-16T23:40:10: Start analysis
+2017-04-16T23:40:10: [WARNING] Library was set explicitly - skipping path detection
+2017-04-16T23:40:10: IncludeModulesFromModulePath = win32com
+2017-04-16T23:40:11: Deleting 0 files

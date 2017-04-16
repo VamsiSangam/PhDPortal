@@ -36,6 +36,7 @@ class UserTests(TestCase):
         self.password = password
         self.driver = driver
         self.user = User.objects.get(username = username)
+        self.maxDiff = None
 
     def login(self):
         """

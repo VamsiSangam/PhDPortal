@@ -30,6 +30,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\fixtures\data.json" />
     <Content Include="app\log.txt" />
     <Content Include="app\static\app\css\add_keywords.css" />
     <Content Include="app\static\app\css\animate.min.css" />
@@ -96,6 +97,7 @@
     <Content Include="app\static\app\css\smart_wizard_vertical.css" />
     <Content Include="app\static\app\css\starrr.css" />
     <Content Include="app\static\app\css\switchery.min.css" />
+    <Content Include="app\static\app\file.pdf" />
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
@@ -576,6 +578,34 @@
     <Content Include="app\static\app\js\transitionize.min.js" />
     <Content Include="app\static\app\js\validator.js" />
     <Content Include="app\static\app\js\vfs_fonts.js" />
+    <Content Include="app\static\Synopsis\216_Report.pdf" />
+    <Content Include="app\static\Synopsis\216_Report_iLPKXzk.pdf" />
+    <Content Include="app\static\Synopsis\DIC_rd_theory_quantization_07.pdf" />
+    <Content Include="app\static\Synopsis\economics.pdf" />
+    <Content Include="app\static\Synopsis\GPS.pdf" />
+    <Content Include="app\static\Synopsis\GPS_eWC0THk.pdf" />
+    <Content Include="app\static\Synopsis\GPS_iOfVi47.pdf" />
+    <Content Include="app\static\Synopsis\GPS_J9lXPWz.pdf" />
+    <Content Include="app\static\Synopsis\GPS_OxISfoe.pdf" />
+    <Content Include="app\static\Synopsis\GPS_Rb9i3lt.pdf" />
+    <Content Include="app\static\Synopsis\LBG.pdf" />
+    <Content Include="app\static\Synopsis\Mezirows_chapter_How_Critical_Refletion_Triggers_TL.pdf" />
+    <Content Include="app\static\Synopsis\MichaelChao.pdf" />
+    <Content Include="app\static\Synopsis\Microsoft-Streamlined-Certification-Paths.pdf" />
+    <Content Include="app\static\Synopsis\Microsoft-Streamlined-Certification-Paths_evVEPaa.pdf" />
+    <Content Include="app\static\Synopsis\srs_example_2010_group2.pdf" />
+    <Content Include="app\static\Synopsis\srs_example_2010_group2_VVob3Mh.pdf" />
+    <Content Include="app\static\Thesis\030_Decaf_Specification.pdf" />
+    <Content Include="app\static\Thesis\11CS30001.pdf" />
+    <Content Include="app\static\Thesis\149.conjunctionschart.pdf" />
+    <Content Include="app\static\Thesis\149.conjunctionschart_gqMMTgz.pdf" />
+    <Content Include="app\static\Thesis\216_Report.pdf" />
+    <Content Include="app\static\Thesis\economics.pdf" />
+    <Content Include="app\static\Thesis\Microsoft-Streamlined-Certification-Paths.pdf" />
+    <Content Include="app\static\Thesis\Microsoft-Streamlined-Certification-Paths_p44tQRt.pdf" />
+    <Content Include="app\static\Thesis\SS04WobckeW.pdf" />
+    <Content Include="app\static\Thesis\SS04WobckeW_A0YJGAb.pdf" />
+    <Content Include="app\templates\app\admin\view_finalReports.html" />
     <Content Include="app\templates\app\common\edit_profile.html" />
     <Content Include="app\templates\app\common\search_user.html" />
     <Content Include="app\templates\app\common\user_profile.html" />
@@ -585,6 +615,7 @@
     <Content Include="app\templates\app\director\submit_for_evaluation.html" />
     <Content Include="app\templates\app\director\view_student_info.html" />
     <Content Include="app\templates\app\guide\edit_profile.html" />
+    <Content Include="app\templates\app\guide\feedback_reports.html" />
     <Content Include="app\templates\app\guide\guide_profile.html" />
     <Content Include="app\templates\app\guide\help_contacts.html" />
     <Content Include="app\templates\app\guide\phd_status.html" />
@@ -593,6 +624,8 @@
     <Content Include="app\templates\app\guide\unevaluated_abstract.html" />
     <Content Include="app\templates\app\guide\unevaluated_synopsis.html" />
     <Content Include="app\templates\app\guide\unevaluated_thesis.html" />
+    <Content Include="app\templates\app\layouts\admin_sidebar.html" />
+    <Content Include="app\templates\app\layouts\admin_top_navbar.html" />
     <Content Include="app\templates\app\layouts\director_sidebar.html" />
     <Content Include="app\templates\app\layouts\director_top_navbar.html" />
     <Content Include="app\templates\app\layouts\error.html" />
@@ -615,6 +648,7 @@
     <Content Include="app\templates\app\student\help_contacts.html" />
     <Content Include="app\templates\app\common\notifications.html" />
     <Content Include="app\templates\app\student\phd_abstract.html" />
+    <Content Include="app\templates\app\student\phd_add_details.html" />
     <Content Include="app\templates\app\student\phd_status.html" />
     <Content Include="app\templates\app\student\procedure.html" />
     <Content Include="app\templates\app\student\student_profile.html" />
@@ -622,6 +656,10 @@
     <Content Include="app\templates\app\student\upload_thesis.html" />
     <Content Include="app\templates\app\student\view_synopsis.html" />
     <Content Include="app\templates\app\student\view_thesis.html" />
+    <Content Include="app\templates\final_report.tex" />
+    <Content Include="app\templates\final_report_without_details.tex" />
+    <Content Include="app\templates\logo.jpg" />
+    <Content Include="app\templates\signature.jpg" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -640,12 +678,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
+    <Folder Include="app\fixtures\" />
     <Folder Include="app\migrations\" />
     <Folder Include="app\static\app\css\font-awesome\" />
     <Folder Include="app\static\app\css\font-awesome\css\" />
     <Folder Include="app\static\app\css\font-awesome\fonts\" />
     <Folder Include="app\static\app\css\font-awesome\less\" />
     <Folder Include="app\static\app\css\font-awesome\scss\" />
+    <Folder Include="app\static\Feedback_Without_Details\" />
+    <Folder Include="app\static\Feedback_With_Details\" />
+    <Folder Include="app\static\Synopsis\" />
+    <Folder Include="app\static\Thesis\" />
     <Folder Include="app\tests\" />
     <Folder Include="app\scripts\" />
     <Folder Include="app\static\" />
@@ -695,6 +738,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\admin.py" />
+    <Compile Include="app\admin_views.py" />
     <Compile Include="app\apps.py" />
     <Compile Include="app\choices.py">
       <SubType>Code</SubType>
@@ -717,6 +761,7 @@
     <Compile Include="app\student_views.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\tasks.py" />
     <Compile Include="app\tests\testing_utilities.py">
       <SubType>Code</SubType>
     </Compile>
@@ -746,6 +791,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="manage.py" />
+    <Compile Include="PhDPortal\celery.py" />
     <Compile Include="PhDPortal\settings.py" />
     <Compile Include="PhDPortal\urls.py" />
     <Compile Include="PhDPortal\wsgi.py" />

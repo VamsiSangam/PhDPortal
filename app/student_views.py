@@ -1,17 +1,28 @@
 from app.views import *
 
+from app.tasks import send_email_task
+
 URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
 URL_STUDENT_VIEW_THESIS = 'student_view_thesis'
 URL_STUDENT_ADD_KEYWORDS = 'student_add_keywords'
+URL_STUDENT_ADD_DETAILS = 'student_add_details'
+
 STATUS_ID_SUBMIT_ABSTRACT = 5
+STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
 STATUS_ID_SUBMIT_SYNOPSIS = 9
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
 STATUS_ID_SYNOPSIS_APPROVED = 12
 STATUS_ID_SUBMIT_THESIS = 13
+STATUS_ID_THESIS_WAITING_APPROVAL = 14
 STATUS_ID_THESIS_APPROVED = 16
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
 STATUS_ID_PANEL_SENT = 18
 STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
 STATUS_ID_THESIS_UNDER_EVALUATION = 21
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
+STATUS_ID_CALL_FOR_VIVAVOICE = 24
 
 def send_notification_to_guides(user, message):
     """
@@ -48,6 +59,72 @@ def _update_student_status(thesis, check_status_id):
         thesis.status = status_type
         thesis.save()
 
+
+@login_required
+def student_add_details(request):
+    """
+    View method. Renders a page where student can submit PhD abstract
+    """
+    
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    user = auth.get_user(request)
+    student = Student.objects.get(user = user)
+    thesis = Thesis.objects.get(student = student)
+    isDetailsApproved = (thesis.status.id >= STATUS_ID_SUBMIT_ABSTRACT)
+
+    if request.method == "GET":
+
+        return render(request, 'app/student/phd_add_details.html', {
+            'layout_data' : get_layout_data(request),
+            'isDetailsApproved' : isDetailsApproved
+        })
+    elif request.method == "POST" and (not isDetailsApproved):
+        title = request.POST['title']
+        guide_1 = request.POST['guide-1']
+        guide_2 = request.POST['guide-2']
+        co_guide = request.POST['co_guide']
+        print(title)
+        if (guide_1 == 'None' and guide_2 == 'None' and co_guide == 'None') or (guide_1 != 'None' and guide_2 != 'None' and co_guide != 'None') or (guide_1 == 'None' and guide_2 == 'None'):
+            #dict = {'status' : 'OK', 'message' : 'Please Update The Details Properly According to the rules!'}
+            print('herererererere')
+            return render(request, 'app/student/phd_add_details.html', {
+            'layout_data' : get_layout_data(request),
+            'isDetailsApproved' : isDetailsApproved,
+            'detailsError' : True,
+            'detailsErrorMessage' : 'Please Update The Details Properly According to the rules!'
+        })
+        else :
+
+            thesis.title = title
+            thesis.save()
+            
+            if guide_1 != 'None':
+                guide_1 = int(guide_1)
+                guide = Faculty.objects.get(id = guide_1)
+                ThesisGuide(thesis = thesis, guide = guide, type = 'G').save()
+            
+            if guide_2 != 'None':
+                guide_2 = int(guide_2)
+                guide = Faculty.objects.get(id = guide_2)
+                ThesisGuide(thesis = thesis, guide = guide, type = 'G').save()
+            
+            if co_guide != 'None':
+                co_guide = int(co_guide)
+                guide = Faculty.objects.get(id = co_guide)
+                ThesisGuide(thesis = thesis, guide = guide, type = 'C').save()
+            
+            _update_student_status(thesis, STATUS_ID_SUBMIT_ABSTRACT) 
+            #notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD abstract '
+            #notification_message += 'for the PhD titled "' + thesis.title + '"'
+            #send_notification_to_guides(user, notification_message)
+            #_update_student_status(thesis, STATUS_ID_ABSTRACT_APPROVED - 1)
+
+            return redirect(reverse(URL_STUDENT_ADD_DETAILS))
+
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
 @login_required
 def student_add_abstract(request):
     """
@@ -82,9 +159,26 @@ def student_add_abstract(request):
         notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD abstract '
         notification_message += 'for the PhD titled "' + thesis.title + '"'
         send_notification_to_guides(user, notification_message)
-        _update_student_status(thesis, STATUS_ID_ABSTRACT_APPROVED - 1)
+        ##sending email
+        ##Email Notification
+        subject = "[Abstract Submitted] by " + request.session['full_name']
+        content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'.Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>DUPGC."
         
-        return redirect(reverse(URL_STUDENT_ADD_ABSTRACT))
+        student = Student.objects.get(user = user)
+
+        thesis = Thesis.objects.get(student = student)
+        email = []
+
+        for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+            receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+            email.append(receiver.email)
+
+        send_email_task.delay(email, subject, content)
+        
+        _update_student_status(thesis, STATUS_ID_ABSTRACT_WAITING_APPROVAL)
+        
+       # return redirect(reverse(URL_STUDENT_ADD_ABSTRACT))
+        return redirect(reverse(URL_STUDENT_ADD_ABSTRACT)) 
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
@@ -128,7 +222,21 @@ def student_upload_synopsis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD synopsis '
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(user, notification_message)
-            _update_student_status(thesis, STATUS_ID_SYNOPSIS_APPROVED - 1)
+                 ##Email Notification
+            subject = "[Synopsis Submitted] by " + request.session['full_name']
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+        
+            student = Student.objects.get(user = user)
+
+            thesis = Thesis.objects.get(student = student)
+            email = []
+
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+                email.append(receiver.email)
+
+            send_email_task.delay(email, subject, content)
+            _update_student_status(thesis, STATUS_ID_SYNOPSIS_WAITING_APPROVAL)
 
             return redirect(reverse('student_view_synopsis'))
         else:
@@ -176,7 +284,8 @@ def student_upload_thesis(request):
     user = auth.get_user(request)
     student = Student.objects.get(user = user)
     thesis = Thesis.objects.get(student = student)
-    canSubmitThesis = thesis.status.id >= STATUS_ID_SUBMIT_THESIS
+    canSubmitThesis = thesis.status.id >= STATUS_ID_SUBMIT_THESIS 
+    canReSubmitThesis = (thesis.status.id == STATUS_ID_ASKED_FOR_MODIFICATIONS)
     isThesisApproved = thesis.status.id >= STATUS_ID_THESIS_APPROVED
     thesisWaitingApproval = thesis.status.id > STATUS_ID_SUBMIT_THESIS and thesis.status.id < STATUS_ID_THESIS_APPROVED
 
@@ -191,6 +300,7 @@ def student_upload_thesis(request):
                 'layout_data' : get_layout_data(request),
                 'thesisExists' : thesisExists,
                 'canSubmitThesis' : canSubmitThesis,
+                'canReSubmitThesis' : canReSubmitThesis,
                 'isThesisApproved' : isThesisApproved,
                 'thesisWaitingApproval' : thesisWaitingApproval
             }
@@ -205,7 +315,50 @@ def student_upload_thesis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD thesis document '
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(user, notification_message)
-            _update_student_status(thesis, STATUS_ID_THESIS_APPROVED - 1)
+            ##Email Notification
+            subject = "[Thesis Submitted] by " + request.session['full_name']
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+        
+            student = Student.objects.get(user = user)
+
+            thesis = Thesis.objects.get(student = student)
+            email = []
+
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+                email.append(receiver.email)
+
+            send_email_task.delay(email, subject, content)
+            _update_student_status(thesis, STATUS_ID_THESIS_WAITING_APPROVAL)
+
+            return redirect(reverse(URL_STUDENT_VIEW_THESIS))
+        else:
+            return redirect(reverse(URL_BAD_REQUEST))
+    elif request.method == "POST" and canReSubmitThesis:
+        form = ThesisForm(request.POST, request.FILES)
+        
+        if form.is_valid() and validate_pdf(request.FILES['thesis']):    
+            thesis.thesis = request.FILES['thesis']
+            thesis.save()
+
+            notification_message = 'Student ' + request.session['full_name'] + ' has Re-submitted their PhD thesis document after modifications'
+            notification_message += 'for the PhD titled "' + thesis.title + '"'
+            send_notification_to_guides(user, notification_message)
+            ##Email Notification
+            subject = "[Thesis Submitted] by " + request.session['full_name']
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+        
+            student = Student.objects.get(user = user)
+
+            thesis = Thesis.objects.get(student = student)
+            email = []
+
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+                email.append(receiver.email)
+
+            send_email_task.delay(email, subject, content)
+            _update_student_status(thesis, STATUS_ID_THESIS_FEEDBACKS_RECEIVED)
 
             return redirect(reverse(URL_STUDENT_VIEW_THESIS))
         else:
@@ -263,6 +416,8 @@ def student_add_keywords(request):
                 'title':'Add Keywords',
                 'layout_data' : get_layout_data(request),
                 'thesis' : thesis,
+                'STATUS_ID_THESIS_APPROVED' : STATUS_ID_THESIS_APPROVED,
+                'STATUS_ID_SUBMIT_SYNOPSIS' : STATUS_ID_SUBMIT_SYNOPSIS,
                 'thesis_keywords' : thesis_keywords,
             }
         )
@@ -428,7 +583,16 @@ def student_add_keyword_to_thesis(request):
                 notification_message = 'Student ' + request.session['full_name'] + ' has added the keyword ' + keyword.keyword
                 notification_message += ' for the PhD titled "' + thesis.title + '"'
                 send_notification_to_guides(user, notification_message)
+                ##Email Notification
+                subject = "[Keywords added] by " + request.session['full_name'];
+                content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+                email = []
 
+                for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                    receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+                    email.append(receiver.email)
+
+                send_email_task.delay(email, subject, content)
                 return redirect(reverse(URL_STUDENT_ADD_KEYWORDS))
             else:
                 # this keyword was already added

@@ -31,7 +31,7 @@
             </p>
             <br />
             <a class="btn btn-primary pull-right" href="{% url 'student_view_thesis' %}">View Thesis</a>
-            {% elif isThesisApproved %}
+            {% elif isThesisApproved and not canReSubmitThesis %}
             <p>
                 You have already submitted your full PhD thesis document and it was evaluted and approved by your Guide/Co-guide.
                 You cannot alter your PhD thesis document now. You can view your submitted thesis document by clicking on the

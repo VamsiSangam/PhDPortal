@@ -42,17 +42,13 @@ class ApplicationTests(StaticLiveServerTestCase):
         student.login()
         student.go_to_submit_phd_abstract()
         state['abstract'] = 'I, ' + student.full_name + ' will be working on ' + student.thesis.title + '.'
-        state['abstract'] += """ One of the first applications of digital images was in the newspaper industry,
-                                when pictures were first sent by submarine cable between London and
-                                New York. Introduction of the Bartlane cable picture transmission system
-                                in the early 1920s reduced the time required to transport a picture across
-                                the Atlantic from more than a week to less than three hours."""
+        state['abstract'] += """ One of the first applications of digital images was in the newspaper industry,when pictures were first sent by submarine cable between London and New York. Introduction of the Bartlane cable picture transmission system in the early 1920s reduced the time required to transport a picture across the Atlantic from more than a week to less than three hours."""
         
         student.submit_phd_abstract(state['abstract'])
 
         if not partial:
             student.go_to_homepage()
-            student.check_abstract_displayed_on_homepage(abstract)
+            student.check_abstract_displayed_on_homepage(state['abstract'])
             student.check_submission_pages(False, False, False, False, False, False, 6)
         
         student.logout()
@@ -79,7 +75,7 @@ class ApplicationTests(StaticLiveServerTestCase):
         guide.go_to_abstract_evalutation_page()
         state['abstract-reject-feedback'] = 'Please be more technical in your abstract description.'
         date_rejection = datetime.now()
-        guide.evaluate_abstract(id, False, state['abstract-reject-feedback'])
+        guide.evaluate_abstract(state['student'].thesis.id , False, state['abstract-reject-feedback'])
         guide.logout()
 
         if not partial:
@@ -88,7 +84,7 @@ class ApplicationTests(StaticLiveServerTestCase):
             student.login()
             student.go_to_notifications_page()
             message = guide.full_name + " had rejected the abstract submitted."
-            message += " Feedback - " + feedback
+            message += " Feedback - " + state['abstract-reject-feedback']
             student.check_if_notification_exists(message, guide.username, date_rejection)
             student.logout()
 

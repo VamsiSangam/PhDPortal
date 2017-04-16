@@ -92,6 +92,11 @@ class NotificationAdmin(admin.ModelAdmin):
     search_fields = ('receiver', 'sender', 'message',)
     list_filter = ('status',)
 
+class AdminAdmin(admin.ModelAdmin):
+    list_display = ('user',)
+    search_fields = ('user',)
+    list_filter = ('user',)
+
 # Registering classes to Django admin
 admin.site.register(Section, SectionAdmin)
 admin.site.register(App, AppAdmin)
@@ -113,6 +118,7 @@ admin.site.register(IEEEKeyword, IEEEKeywordAdmin)
 admin.site.register(ThesisKeyword, ThesisKeywordAdmin)
 admin.site.register(PanelMember, PanelMemberAdmin)
 admin.site.register(Notification, NotificationAdmin)
+admin.site.register(Admin, AdminAdmin)  # TODO: add Admin model
 
 
 ## Define an inline admin descriptor for Employee model
