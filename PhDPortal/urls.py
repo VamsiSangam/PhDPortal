@@ -87,6 +87,7 @@ urlpatterns = [
     url(r'^director/help/contacts/$', app.director_views.director_help_contacts, name='director_help_contacts'),
 
     #Referee urls
+    url(r'^referee/change-password/$', app.referee_views.referee_change_password, name='referee_change_password'),
     url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
     url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),
     url(r'^referee/thesis/$', app.referee_views.referee_evaluate_thesis, name='referee_evaluate_thesis'),

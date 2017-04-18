@@ -317,3 +317,79 @@ NameError: name 'datetime' is not defined
 2017-04-03 20:32:48 - INFO - views:login:352 - User angelina successfully authenticated
 2017-04-03 20:33:38 - INFO - views:login:352 - User anshul successfully authenticated
 2017-04-03 20:34:00 - INFO - views:login:352 - User ash successfully authenticated
+2017-04-18 11:37:20 - INFO - views:login:390 - User janit successfully authenticated
+2017-04-18 11:37:26 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/change-password/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Github Projects\PhDPortal\app\referee_views.py", line 37, in referee_change_password
+    user_details = _get_user_type_object(user)
+NameError: name '_get_user_type_object' is not defined
+2017-04-18 12:51:20 - INFO - views:logout:412 - User janit successfully logged out
+2017-04-18 12:51:32 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 12:52:46 - INFO - views:logout:412 - User anshul successfully logged out
+2017-04-18 12:53:15 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 12:53:39 - INFO - views:logout:412 - User anshul successfully logged out
+2017-04-18 12:53:53 - INFO - views:login:390 - User ranjana successfully authenticated
+2017-04-18 12:54:11 - INFO - views:logout:412 - User ranjana successfully logged out
+2017-04-18 13:38:00 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 13:45:09 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 13:56:26 - INFO - views:logout:412 - User anshul successfully logged out
+2017-04-18 13:56:37 - INFO - views:login:390 - User janit successfully authenticated
+2017-04-18 14:25:40 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/change-password/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Github Projects\PhDPortal\app\referee_views.py", line 45, in referee_change_password
+    user = _get_user_type_object(user)  # temporary fix
+NameError: name '_get_user_type_object' is not defined
+2017-04-18 14:26:30 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/change-password/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'new-password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Github Projects\PhDPortal\app\referee_views.py", line 47, in referee_change_password
+    new = request.POST['new-password']
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'new-password'"
+2017-04-18 14:28:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/change-password/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'new-password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Github Projects\PhDPortal\app\referee_views.py", line 47, in referee_change_password
+    new = request.POST['new-password']
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'new-password'"
+2017-04-18 14:29:46 - INFO - views:logout:412 - User janit successfully logged out
+2017-04-18 14:29:59 - INFO - views:login:390 - User janit successfully authenticated
