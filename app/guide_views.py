@@ -636,6 +636,7 @@ def guide_get_foreign_referee_details(request):
 
     if request.method == "GET":
         name = request.GET['term']
+        thesis_id = request.GET['thesis_id']
 
         return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
     else:
@@ -652,6 +653,7 @@ def guide_get_indian_referee_details(request):
 
     if request.method == "GET":
         name = request.GET['term']
+        thesis_id = request.GET['thesis_id']
 
         return HttpResponse(json.dumps(_get_referee_details(name, 'I')), content_type = 'application/json')
     else:

@@ -577,3 +577,537 @@ Traceback (most recent call last):
     thesis = User.objects.get(username = request.session['username']).student.thesis
 AttributeError: 'Student' object has no attribute 'thesis'
 2017-04-19 18:45:51 - INFO - views:login:390 - User pavan successfully authenticated
+2017-04-19 19:49:27 - INFO - views:login:414 - User pavan successfully authenticated
+2017-04-19 19:49:57 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/feedback/reports/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 160, in __get__
+    rel_obj = getattr(instance, self.cache_name)
+AttributeError: 'PanelMember' object has no attribute '_referee_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 1015, in guide_feedback_reports
+    report['referee'] = referee.referee.id
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 169, in __get__
+    rel_obj = qs.get()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 381, in get
+    num = len(clone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 19:50:23 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/feedback/reports/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 160, in __get__
+    rel_obj = getattr(instance, self.cache_name)
+AttributeError: 'PanelMember' object has no attribute '_referee_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 1015, in guide_feedback_reports
+    report['referee'] = referee.referee.id
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 169, in __get__
+    rel_obj = qs.get()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 381, in get
+    num = len(clone)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 19:55:46 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 640, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 618, in _get_referee_details
+    for referee in referees:
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 258, in __iter__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 19:55:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 640, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 618, in _get_referee_details
+    for referee in referees:
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 258, in __iter__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 19:55:48 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 640, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 618, in _get_referee_details
+    for referee in referees:
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 258, in __iter__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 19:55:55 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 640, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 618, in _get_referee_details
+    for referee in referees:
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 258, in __iter__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 19:59:36 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_referee.added_by_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 640, in guide_get_foreign_referee_details
+    return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 618, in _get_referee_details
+    for referee in referees:
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 258, in __iter__
+    self._fetch_all()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_referee.added_by_id
+2017-04-19 20:01:00 - INFO - views:login:414 - User pavan successfully authenticated
+2017-04-19 20:04:04 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:05 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:07 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:07 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:37 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:37 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:37 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:57 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:04:58 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:07:27 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/panel/referees/foreign/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'term'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\guide_views.py", line 638, in guide_get_foreign_referee_details
+    name = request.GET['term']
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'term'"

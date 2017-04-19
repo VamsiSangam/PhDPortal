@@ -150,36 +150,71 @@
     }
 
     $(document).ready(function () {
-        var select2Parameters = {
-            ajax: {
-                url: '/guide/panel/referees/foreign/',
-                dataType: 'json',
-                processResults: function (data, params) {
-                    // parse the results into the format expected by Select2
-                    // since we are using custom formatting functions we do not need to
-                    // alter the remote JSON data, except to indicate that infinite
-                    // scrolling can be used
-                    params.page = params.page || 1;
+       $(".select2-foreign").each(function () {
+            var thesis = $(this).attr('id');
+            thesis = thesis.substring(thesis.lastIndexOf("-") + 1);
 
-                    return {
-                        results: data,
-                        pagination: {
-                            more: (params.page * 30) < data.total_count
+            $(this).select2({
+                ajax: {
+                    url: '/guide/panel/referees/foreign/',
+                    dataType: 'json',
+                    data: function (term, page) {
+                        return {
+                            term: term['term'],
+                            thesis_id: thesis
                         }
-                    };
-                },
-            },
-            // placeholder: "Select Panel Member",
-            minimumInputLength: 1,
-            maximumSelectionSize: 10,
-            templateResult: formatRefereeData,
-            templateSelection: formatRefereeSelection,
-            width: '100%',
-        };
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
 
-        $(".select2-foreign").select2(select2Parameters);
-        select2Parameters.ajax.url = '/guide/panel/referees/indian/';
-        $(".select2-indian").select2(select2Parameters);
+                        return {
+                            results: data,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }
+                        };
+                    },
+                },
+                minimumInputLength: 1,
+                maximumSelectionSize: 10,
+                templateResult: formatRefereeData,
+                templateSelection: formatRefereeSelection,
+                width: '100%',
+            });
+       });
+
+       $(".select2-indian").each(function () {
+           var thesis = $(this).attr('id');
+           thesis = thesis.substring(thesis.lastIndexOf("-") + 1);
+
+           $(this).select2({
+               ajax: {
+                   url: '/guide/panel/referees/indian/',
+                   dataType: 'json',
+                   data: function (term, page) {
+                       return {
+                           term: term['term'],
+                           thesis_id: thesis
+                       }
+                   },
+                   processResults: function (data, params) {
+                       params.page = params.page || 1;
+
+                       return {
+                           results: data,
+                           pagination: {
+                               more: (params.page * 30) < data.total_count
+                           }
+                       };
+                   },
+               },
+               minimumInputLength: 1,
+               maximumSelectionSize: 10,
+               templateResult: formatRefereeData,
+               templateSelection: formatRefereeSelection,
+               width: '100%',
+           });
+       });
     });
 
     function saveChanges(id, url, csrf_token) {
