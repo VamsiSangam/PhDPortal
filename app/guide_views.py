@@ -629,6 +629,7 @@ def _get_referee_details(str, type):
 def guide_get_foreign_referee_details(request):
     """
     Handles a user request for foreign referee details
+    This is accessed by a guide and the director
     Outputs JSON
     """
 
@@ -646,6 +647,7 @@ def guide_get_foreign_referee_details(request):
 def guide_get_indian_referee_details(request):
     """
     Handles a user request for indian referee details
+    This is accessed by a guide and the director
     Outputs JSON
     """
 

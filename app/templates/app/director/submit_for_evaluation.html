@@ -33,6 +33,10 @@
                        aria-expanded="true">Referees</a>
                 </li>
                 <li role="presentation">
+                    <a href="#phd-add-panel-members-{{ thesis.id }}" role="tab" id="add-panelmembers-tab-{{ thesis.id }}" data-toggle="tab" 
+                       aria-expanded="false">Add Panel Members</a>
+                </li>
+                <li role="presentation">
                     <a href="#phd-panel-{{ thesis.id }}" role="tab" id="panel-tab-{{ thesis.id }}" data-toggle="tab" 
                        aria-expanded="false">Choose Final Panel</a>
                 </li>
@@ -94,6 +98,39 @@
                             </ul>
                         </p>
                     </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="phd-add-panel-members-{{ thesis.id }}" 
+                     aria-labelledby="add-panelmembers-tab-{{ thesis.id }}">
+                    <p>
+                        <b>Note</b> - You can add referees to the panel. This last minute addition must be done before
+                        assigning priorities and submitting.
+                    </p>
+                    <form class="form-horizontal" method="post" action="{% url 'director_add_panel_members' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="thesis-id" value="{{ thesis.id }}"/>
+                        <div class="form-group">
+                            <label for="foreign-referees-{{ thesis.id }}" class="col-sm-2 control-label">
+                                Select Foreign Referees
+                            </label>
+                            <div class="col-sm-10">
+                                <select class="form-control select2-foreign" name="foreign-referees" id="foreign-referees-{{ thesis.id }}" multiple>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="indian-referees-{{ thesis.id }}" class="col-sm-2 control-label">
+                                Select Indian Referees
+                            </label>
+                            <div class="col-sm-10">
+                                <select class="form-control select2-indian" name="indian-referees" id="indian-referees-{{ thesis.id }}" multiple>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <button class="btn btn-success">Add these panel members</button>
+                        </div>
+                    </form>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="phd-panel-{{ thesis.id }}" aria-labelledby="panel-tab-{{ thesis.id }}">
                     <form class="form-horizontal" method="post" action="{{ request.path }}">
@@ -160,5 +197,104 @@
         });
         $('.collapse-link').click();
     });
+</script>
+<script>
+    function formatRefereeData(user) {
+        var option = $(
+          '<span class="clearfix">' +
+            '<img class="img-responsive img-rounded pull-right" style="height:65px;" src="http://localhost:8000/static/app/images/user.png"/>' +
+            '<h5>' + user.text + '</h5>' +
+            '<p>' + user.email + '</p>' +
+          '</span>'
+        );
+        return option;
+    };
+
+    function formatRefereeSelection(referee) {
+        return referee.text;
+    }
+
+    $(document).ready(function () {
+       $(".select2-foreign").each(function () {
+            var thesis = $(this).attr('id');
+            thesis = thesis.substring(thesis.lastIndexOf("-") + 1);
+
+            $(this).select2({
+                ajax: {
+                    url: '/user/panel/referees/foreign/',
+                    dataType: 'json',
+                    data: function (term, page) {
+                        return {
+                            term: term['term'],
+                            thesis_id: thesis
+                        }
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+
+                        return {
+                            results: data,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }
+                        };
+                    },
+                },
+                minimumInputLength: 1,
+                maximumSelectionSize: 10,
+                templateResult: formatRefereeData,
+                templateSelection: formatRefereeSelection,
+                width: '100%',
+            });
+       });
+
+       $(".select2-indian").each(function () {
+           var thesis = $(this).attr('id');
+           thesis = thesis.substring(thesis.lastIndexOf("-") + 1);
+
+           $(this).select2({
+               ajax: {
+                   url: '/user/panel/referees/indian/',
+                   dataType: 'json',
+                   data: function (term, page) {
+                       return {
+                           term: term['term'],
+                           thesis_id: thesis
+                       }
+                   },
+                   processResults: function (data, params) {
+                       params.page = params.page || 1;
+
+                       return {
+                           results: data,
+                           pagination: {
+                               more: (params.page * 30) < data.total_count
+                           }
+                       };
+                   },
+               },
+               minimumInputLength: 1,
+               maximumSelectionSize: 10,
+               templateResult: formatRefereeData,
+               templateSelection: formatRefereeSelection,
+               width: '100%',
+           });
+       });
+    });
+
+    function saveChanges(id, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'indian_referees': $('#indian-referees-' + id).val(),
+            'foreign_referees': $('#foreign-referees-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#success-message #message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').delay(3000).fadeOut();
+            }
+        });
+    }
 </script>
 {% endblock %}

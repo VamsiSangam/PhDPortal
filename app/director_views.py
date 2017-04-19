@@ -23,6 +23,27 @@ STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
 STATUS_ID_CALL_FOR_VIVAVOICE = 24
 
 @login_required
+def director_add_panel_members(request):
+    """
+    Handles post request from director to add referee panel members
+    to a thesis (which already has a panel)
+    """
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        thesis_id = int(request.POST['thesis-id'])
+        indian_referees = request.POST.getlist('indian-referees')   # list of strings, where each string is ID
+        foreign_referees = request.POST.getlist('foreign-referees')
+
+        print(thesis_id)
+        print(indian_referees)
+        print(foreign_referees)
+
+        return None
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
 def director_view_student_info(request):
     """
     View method. Renders student info page

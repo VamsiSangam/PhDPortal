@@ -1111,3 +1111,167 @@ Traceback (most recent call last):
   File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
     raise MultiValueDictKeyError(repr(key))
 django.utils.datastructures.MultiValueDictKeyError: "'term'"
+2017-04-19 20:34:36 - INFO - views:login:414 - User gcnandi successfully authenticated
+2017-04-19 20:35:03 - INFO - views:logout:436 - User gcnandi successfully logged out
+2017-04-19 20:35:07 - INFO - views:login:414 - User pavan successfully authenticated
+2017-04-19 20:36:27 - INFO - guide_views:guide_save_panel_members:915 - 4   shanu
+2017-04-19 20:36:27 - INFO - guide_views:guide_save_panel_members:915 - 2   shanu
+2017-04-19 20:36:27 - INFO - guide_views:guide_save_panel_members:915 - 1   shanu
+2017-04-19 20:36:27 - INFO - guide_views:guide_save_panel_members:915 - 6   shanu
+2017-04-19 20:36:35 - INFO - guide_views:guide_send_panel_to_director:797 - Before_Deletion
+2017-04-19 20:36:35 - INFO - guide_views:guide_send_panel_to_director:801 - After_Deletion
+2017-04-19 20:36:36 - INFO - guide_views:guide_send_panel_to_director:827 - here
+2017-04-19 20:36:36 - INFO - guide_views:guide_send_panel_to_director:840 - True
+2017-04-19 20:36:42 - INFO - views:logout:436 - User pavan successfully logged out
+2017-04-19 20:36:48 - INFO - views:login:414 - User gcnandi successfully authenticated
+2017-04-19 20:58:52 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.director_add_panel_members' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 145, in director_submit_for_evaluation
+    'all_list' : all_list
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'director_add_panel_members' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-19 20:59:42 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.director_add_panel_members' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 145, in director_submit_for_evaluation
+    'all_list' : all_list
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'director_add_panel_members' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-19 21:00:36 - WARNING - csrf:_reject:103 - Forbidden (CSRF token missing or incorrect.): /director/panel/add/
+2017-04-19 21:01:18 - WARNING - csrf:_reject:103 - Forbidden (CSRF token missing or incorrect.): /director/panel/add/
+2017-04-19 21:01:39 - WARNING - csrf:_reject:103 - Forbidden (CSRF token missing or incorrect.): /director/panel/add/
+2017-04-19 21:03:28 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/panel/add/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view app.director_views.director_add_panel_members didn't return an HttpResponse object. It returned None instead.
+2017-04-19 21:04:01 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/panel/add/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view app.director_views.director_add_panel_members didn't return an HttpResponse object. It returned None instead.
+2017-04-19 21:04:25 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/panel/add/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view app.director_views.director_add_panel_members didn't return an HttpResponse object. It returned None instead.
+2017-04-19 21:05:19 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/panel/add/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view app.director_views.director_add_panel_members didn't return an HttpResponse object. It returned None instead.

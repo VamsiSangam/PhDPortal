@@ -73,8 +73,8 @@ urlpatterns = [
     url(r'^guide/feedback/reports/modifications/$', app.guide_views.guide_modifications),
     url(r'^guide/feedback/reports/vivavoice/$', app.guide_views.guide_viva_voice),
 
-    url(r'^guide/panel/referees/indian/$', app.guide_views.guide_get_indian_referee_details, name='guide_get_indian_referee_details'),
-    url(r'^guide/panel/referees/foreign/$', app.guide_views.guide_get_foreign_referee_details, name='guide_get_foreign_referee_details'),
+    url(r'^user/panel/referees/indian/$', app.guide_views.guide_get_indian_referee_details, name='guide_get_indian_referee_details'),
+    url(r'^user/panel/referees/foreign/$', app.guide_views.guide_get_foreign_referee_details, name='guide_get_foreign_referee_details'),
     url(r'^guide/status/$', app.guide_views.guide_phd_status, name='guide_phd_status'),
     url(r'^guide/help/procedure/$', app.guide_views.guide_help_procedure, name='guide_help_procedure'),
     url(r'^guide/help/contacts/$', app.guide_views.guide_help_contacts, name='guide_help_contacts'),
@@ -87,6 +87,7 @@ urlpatterns = [
 
     #Director urls
     url(r'^director/students/$', app.director_views.director_view_student_info, name='director_view_student_info'),
+    url(r'^director/panel/add/$', app.director_views.director_add_panel_members, name='director_add_panel_members'),
     url(r'^director/evaluate/$', app.director_views.director_submit_for_evaluation, name='director_submit_for_evaluation'),
     url(r'^director/help/procedure/$', app.director_views.director_help_procedure, name='director_help_procedure'),
     url(r'^director/help/contacts/$', app.director_views.director_help_contacts, name='director_help_contacts'),
