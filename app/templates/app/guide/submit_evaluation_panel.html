@@ -1,7 +1,7 @@
 ﻿{% extends "app/layouts/home.html" %}
 {% block styles %}
 <!-- Add any page specific styles here -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<link href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 {% endblock %}
 {% block content %}
 <div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
@@ -125,8 +125,6 @@
                 </div>
             </div>
             {% endfor %}
-
-
         </div>
     </div>
 </div>
@@ -134,7 +132,7 @@
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script>
     function formatRefereeData(user) {
         var option = $(

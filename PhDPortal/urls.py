@@ -18,6 +18,7 @@ admin.autodiscover()
 
 urlpatterns = [
     # common urls
+    url(r'^forgotpassword$', app.views.forgotpassword, name='forgotpassword'),
     url(r'^$', app.views.login, name='login'),
     url(r'^logout/$', app.views.logout, name='logout'),
     url(r'^user/profile/$', app.views.user_profile, name='user_profile'),
@@ -34,7 +35,8 @@ urlpatterns = [
 
     # admin urls
     url(r'^admin/reports/$', app.admin_views.admin_evaluate_reports, name='admin_evaluate_reports'),
-    
+    url(r'^admin/add/referee/$', app.admin_views.admin_add_referee, name='admin_add_referee'),
+    url(r'^admin/approve/referee/$', app.admin_views.admin_approve_referee, name='admin_approve_referee'),
 
     # student urls
     url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),
@@ -56,13 +58,16 @@ urlpatterns = [
     url(r'^guide/abstract/unevaluated/$', app.guide_views.guide_unevaluated_abstract, name='guide_unevaluated_abstract'),
     url(r'^guide/abstract/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_abstract),
     url(r'^guide/synopsis/unevaluated/$', app.guide_views.guide_unevaulated_synopsis, name='guide_unevaulated_synopsis'),
+    
+    url(r'^guide/add/referee/$', app.guide_views.guide_add_referee, name='guide_add_referee'),
     url(r'^guide/synopsis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_synopsis),
     url(r'^guide/thesis/unevaluated/$', app.guide_views.guide_unevaluated_thesis, name='guide_unevaluated_thesis'),
     url(r'^guide/thesis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_thesis),
+    
     url(r'^guide/panel/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
     url(r'^guide/panel/submit/$', app.guide_views.guide_send_panel_to_director, name='guide_send_panel_to_director'),
     url(r'^guide/panel/save/$', app.guide_views.guide_save_panel_members, name='guide_save_panel_members'),
-    #url added
+    
     url(r'^guide/feedback/reports/$', app.guide_views.guide_feedback_reports, name='guide_feedback_reports'),
     url(r'^guide/feedback/reports/reevaluate/$', app.guide_views.guide_re_evaluate),
     url(r'^guide/feedback/reports/modifications/$', app.guide_views.guide_modifications),
@@ -87,6 +92,7 @@ urlpatterns = [
     url(r'^director/help/contacts/$', app.director_views.director_help_contacts, name='director_help_contacts'),
 
     #Referee urls
+    url(r'^referee/change-password/$', app.referee_views.referee_change_password, name='referee_change_password'),
     url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
     url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),
     url(r'^referee/thesis/$', app.referee_views.referee_evaluate_thesis, name='referee_evaluate_thesis'),

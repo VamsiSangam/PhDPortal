@@ -424,6 +424,72 @@ def student_add_keywords(request):
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
+@login_required
+def student_search_keywords(request):
+    """
+    Handles an AJAX request for keyword search
+    """
+
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        keyword_typed = request.POST['keyword-typed']
+        keywords = IEEEKeyword.objects.filter(keyword__icontains = keyword_typed)
+
+        # TODO : add logic to send atmost 20 search results
+        # TODO : add logic to remove keywords already added to thesis
+
+        result = _ieee_keywords_to_list(keywords)
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def student_keyword_recommendations(request):
+    """
+    Handles AJAX request to load a student's recommended keywords
+    """
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        keywords = IEEEKeyword.objects.filter(keyword__icontains = 'process')
+
+        # TODO : add recommender logic here, output format should be same
+        #        as that of what is returned from _ieee_keywords_to_list.
+        #        A list of dict with keys - id, keyword
+        #        Keys parent, subkeywords not needed.
+        #        Recommendations should never be 0. Have an upper limit.
+
+        result = _ieee_keywords_to_list(keywords)
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def student_add_custom_keyword(request):
+    """
+    Handles AJAX request to add a custom keyword.
+    """
+
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        keyword = request.POST['keyword']
+        parent = int(request.POST['parent'])
+
+        # TODO : implement adding custom keyword logic here. If u want to send an error message
+        #        follow the format below. If keyword is added successfully then redirect to
+        #        add keywords page.
+
+        result = {'message' : 'error message'}
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+
 def _validate_keyword(id, user):
     """
     Validates a thesis keyword. Used while deleting keyword.

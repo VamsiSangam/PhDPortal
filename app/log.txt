@@ -317,3 +317,263 @@ NameError: name 'datetime' is not defined
 2017-04-03 20:32:48 - INFO - views:login:352 - User angelina successfully authenticated
 2017-04-03 20:33:38 - INFO - views:login:352 - User anshul successfully authenticated
 2017-04-03 20:34:00 - INFO - views:login:352 - User ash successfully authenticated
+2017-04-17 15:28:48 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 11:59:24 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 12:00:22 - INFO - views:logout:412 - User anshul successfully logged out
+2017-04-18 12:00:30 - INFO - views:login:390 - User pavan successfully authenticated
+2017-04-18 12:01:36 - INFO - views:logout:412 - User pavan successfully logged out
+2017-04-18 12:03:06 - INFO - views:login:390 - User admin successfully authenticated
+2017-04-18 12:04:23 - INFO - views:logout:412 - User admin successfully logged out
+2017-04-18 12:04:30 - INFO - views:login:390 - User gcnandi successfully authenticated
+2017-04-18 12:05:02 - INFO - views:logout:412 - User gcnandi successfully logged out
+2017-04-18 12:05:16 - INFO - views:login:390 - User angelina successfully authenticated
+2017-04-18 12:06:51 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /admin/app/thesis/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\options.py", line 1468, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\views\main.py", line 78, in __init__
+    self.queryset = self.get_queryset(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\views\main.py", line 356, in get_queryset
+    request, qs, self.query)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\options.py", line 900, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookup_class = field.get_lookup(lookups[0])
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related.py", line 688, in get_lookup
+    raise TypeError('Related Field got invalid lookup: %s' % lookup_name)
+TypeError: Related Field got invalid lookup: icontains
+2017-04-18 12:07:14 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /admin/app/thesis/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\options.py", line 1468, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\views\main.py", line 78, in __init__
+    self.queryset = self.get_queryset(request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\views\main.py", line 356, in get_queryset
+    request, qs, self.query)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\admin\options.py", line 900, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookup_class = field.get_lookup(lookups[0])
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\fields\related.py", line 688, in get_lookup
+    raise TypeError('Related Field got invalid lookup: %s' % lookup_name)
+TypeError: Related Field got invalid lookup: icontains
+2017-04-18 12:10:43 - INFO - views:logout:412 - User angelina successfully logged out
+2017-04-18 12:10:48 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 12:14:15 - INFO - views:logout:412 - User anshul successfully logged out
+2017-04-18 12:14:26 - INFO - views:login:390 - User kishore successfully authenticated
+2017-04-18 12:15:14 - INFO - views:logout:412 - User kishore successfully logged out
+2017-04-18 12:15:22 - INFO - views:login:390 - User janit successfully authenticated
+2017-04-18 12:15:54 - INFO - views:logout:412 - User janit successfully logged out
+2017-04-18 12:42:31 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 12:54:39 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 17:59:39 - INFO - views:login:390 - User anshul successfully authenticated
+2017-04-18 18:28:08 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.search-keywords' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 421, in student_add_keywords
+    'thesis_keywords' : thesis_keywords,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'search-keywords' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-18 18:33:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/search/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 438, in student_search_keywords
+    keywords = IEEEKeyword.objects.icontains(keyword_typed)
+AttributeError: 'Manager' object has no attribute 'icontains'
+2017-04-18 18:35:51 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/search/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 438, in student_search_keywords
+    keywords = IEEEKeyword.objects.filter(keyword_icontains = keyword_typed)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1149, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1035, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\db\models\sql\query.py", line 1330, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'keyword_icontains' into field. Choices are: id, ieeekeyword, keyword, parent, parent_id, thesiskeyword
+2017-04-18 18:36:19 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/search/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 440, in student_search_keywords
+    return HttpResponse(json.dumps(keywords), content_type = 'application/json')
+  File "C:\Python3.6\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python3.6\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python3.6\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python3.6\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'QuerySet' is not JSON serializable
+2017-04-18 18:38:54 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/search/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 440, in student_search_keywords
+    return HttpResponse(json.dumps(keywords), content_type = 'application/json')
+  File "C:\Python3.6\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python3.6\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python3.6\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python3.6\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'IEEEKeyword' is not JSON serializable
+2017-04-18 19:20:26 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/recommendations/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 456, in student_keyword_recommendations
+    thesis = User.objects.get(username = request.session['username']).student.thesis
+AttributeError: 'Student' object has no attribute 'thesis'
+2017-04-19 18:45:51 - INFO - views:login:390 - User pavan successfully authenticated

@@ -1577,3 +1577,24 @@ le	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.ad
 1492370778789	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8691
 1492370779536	Marionette	INFO	Listening on port 8691
 1492370841487	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1492497695391	geckodriver	INFO	Listening on 127.0.0.1:4844
+1492497697406	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.RDwnYkZxzyqd
+1492497697406	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1492497697422	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4850
+1492497698287	Marionette	INFO	Listening on port 4850
+1492497701622	geckodriver	INFO	Listening on 127.0.0.1:4860
+1492497703658	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.qAn1Glo9EKMp
+1492497703662	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1492497703679	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4867
+1492497704427	Marionette	INFO	Listening on port 4867
+JavaScript error: chrome://browser/content/preferences/in-content/advanced.js, line 352: TypeError: prefStrBundle.getFormattedString is not a function
+1492497753663	geckodriver	INFO	Listening on 127.0.0.1:4880
+1492497755694	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.iqPZiGNVMT0s
+1492497755697	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1492497755713	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4886
+1492497756430	Marionette	INFO	Listening on port 4886
+1492497818336	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+le	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.dQSpGqSMWBCI
+1492497794819	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1492497794836	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5143
+1492497795609	Marionette	INFO	Listening on port 5143

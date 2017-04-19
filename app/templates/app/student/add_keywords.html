@@ -6,6 +6,9 @@
 {% endblock %}
 {% block content %}
 <!-- Student's add / view keywords to thesis page -->
+<div class="alert alert-info alert-dismissible fade in" role="alert" id="message-box" hidden>
+    <span id="message"></span>
+</div>
 <div class="row">
     <div class="col-md-12">
         <div class="x_panel">
@@ -59,10 +62,21 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2>Add new keywords to your thesis</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Collapse">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-link" data-toggle="tooltip" data-placement="top" title="Close">
+                            <i class="fa fa-close"></i>
+                        </a>
+                    </li>
+                </ul>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-
                 {% if thesis.status.id > STATUS_ID_THESIS_APPROVED %}
                     <p>Your Thesis is already been approved, you cannot add new keywords!</p>
                 {% elif thesis.status.id < STATUS_ID_SUBMIT_SYNOPSIS %}
@@ -71,6 +85,81 @@
                     <div class="list-group" id="keywords-list-group">
 
                     </div>
+                <div id="custom-keyword">
+                    <p>
+                        <b>Note</b> - The form below is to add a custom keyword at the current level. Use this
+                        to add a new keyword which is not there in the list of IEEE keywords. The new keyword
+                        you mention is added at the level which the above keywords are placed, i.e., the above
+                        keywords and your new custom keyword will have the same parent keyword.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label for="custom-keyword" class="col-sm-2 control-label">Custom Keyword</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="custom-keyword" placeholder="Type your own keyword">
+                                <input type="hidden" id="custom-keyword-parent" name="parent" value="-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br /><br /><br />
+                            <button type="button" class="btn btn-success pull-right" 
+                                    onclick="addCustomKeyword('{% url 'student_add_custom_keyword' %}', '{{ csrf_token }}')">
+                                Add Custom Keyword
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Search Keywords</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Collapse">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-link" data-toggle="tooltip" data-placement="top" title="Close">
+                            <i class="fa fa-close"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                {% if thesis.status.id > STATUS_ID_THESIS_APPROVED %}
+                    <p>Your Thesis is already been approved, you cannot add new keywords!</p>
+                {% elif thesis.status.id < STATUS_ID_SUBMIT_SYNOPSIS %}
+                    <p>Your Abstract need to be Approved to add keywords to your Thesis!</p>
+                {% else %}
+                <form>
+                    <div class="form-group">
+                        <label for="keyword-typed" class="col-sm-2">Keyword</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="keyword-typed" placeholder="Type a Keyword" 
+                                    oninput="searchKeywords('{% url 'student_search_keywords' %}', '{{ csrf_token }}')">
+                        </div>
+                    </div>
+                </form>
+                <br />
+                <button class="btn btn-success pull-right" 
+                        onclick="searchKeywords('{% url 'student_keyword_recommendations' %}', '{{ csrf_token }}')">
+                    View suggested keywords
+                </button>
+                <br />
+                <div class="row">
+                    <br /><br />
+                    <div class="col-sm-12" id="keyword-search-results">
+                    </div>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -94,6 +183,9 @@
             csrfmiddlewaretoken : '{{ csrf_token }}',
             parent : id
         }, loadKeywordsCallback);
+
+        // for custom keyword
+        $('#custom-keyword-parent').val(id);
     }
 
     function loadKeywordsCallback(data) {
@@ -145,12 +237,62 @@
     function getGoBackItemMarkup(id, keyword) {
         html = '<a class="list-group-item">' +
                     '<button class="btn btn-danger pull-right list-item-button" data-toggle="tooltip" data-placement="left"' +
-                        'title="View subcategories" onclick="loadKeywords(\'' + id + '\').submit()">' +
+                        'title="Go back" onclick="loadKeywords(\'' + id + '\').submit()">' +
                         '<i class="fa fa-long-arrow-left"></i>' +
                     '</button>' + keyword +
                 '</a>';
 
         return html;
+    }
+
+    function searchKeywordResultMarkup(keyword, id, csrf_token) {
+        html = '<div class="col-sm-6">' +
+                        '<blockquote>' +
+                            '<form style="display:none" id="add-searched-keyword-' + id + '" method="post" action="add/">' +
+                                '<input type="hidden" name="csrfmiddlewaretoken" value="' + csrf_token + '">' +
+                                '<input type="hidden" name="id" value="' + id + '">' +
+                            '</form>' +
+                            '<button class="btn btn-primary pull-right list-item-button" data-toggle="tooltip" data-placement="left"' +
+                                    'title="Add this keyword to thesis" onclick="$(\'#add-searched-keyword-' + id + '\').submit()">' +
+                                '<i class="fa fa-plus"></i>' +
+                            '</button>' +
+                            keyword +
+                        '</blockquote>' +
+                    '</div>';
+
+        return html;
+    }
+
+    function searchKeywords(url, csrf_token) {
+        $.post(url, {
+            'keyword-typed': $('#keyword-typed').val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            $('#keyword-search-results').empty();
+
+            if ($(data).length === 0) {
+                $('#keyword-search-results').html('No results.');
+            }
+
+            $(data).each(function (index) {
+                var html = searchKeywordResultMarkup(this['keyword'], this['id'], csrf_token)
+                $('#keyword-search-results').append($(html));
+            });
+
+            loadTooltips();
+        });
+    }
+
+    function addCustomKeyword(url, csrf_token) {
+        $.post(url, {
+            'keyword': $('#custom-keyword').val(),
+            'parent': $('#custom-keyword-parent').val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            $('#message').html(data.message);
+            $('#message-box').show();
+            $('#message-box').fadeOut(5000);
+        })
     }
 </script>
 {% endblock %}

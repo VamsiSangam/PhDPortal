@@ -20,8 +20,10 @@ class ApplicationTests(StaticLiveServerTestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         super(ApplicationTests, self).setUp()
+        self.student_username = 'anshul'
+        self.student_password = 'HelloWorld'
 
-    def test_abstract_submission(self, partial = False):
+    def test_1(self, partial = False):
         """
         Tests if the student is able to submit PhD abstract or not.
 
@@ -34,7 +36,7 @@ class ApplicationTests(StaticLiveServerTestCase):
                    have information about the progress in the application workflow.
         """
         driver = self.driver
-        student = StudentTests('anshul', 'HelloWorld', driver)
+        student = StudentTests(self.student_username, self.student_password, driver)
         
         state = {}
         state['student'] = student
@@ -55,9 +57,9 @@ class ApplicationTests(StaticLiveServerTestCase):
 
         return state
 
-    def test_abstract_rejection_first_guide(self, partial = False):
+    def test_2(self, partial = False):
         """
-        Tests if the application handles the case when one of the two
+        Tests if the application handles the case when 'one' of the two
         guides (or maybe one guide) rejects the student's abstract.
 
         Args:
@@ -68,8 +70,10 @@ class ApplicationTests(StaticLiveServerTestCase):
             state: dict object. A dictionary object which has keys and values which
                    have information about the progress in the application workflow.
         """
-        state = self.test_abstract_submission(True)
+        state = self.test_1(partial = True)
         
+        thesis_guides = state['student'].thesis_guides
+
         guide = GuideTests('ranjana', 'HelloWorld', self.driver)
         guide.login()
         guide.go_to_abstract_evalutation_page()

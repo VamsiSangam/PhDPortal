@@ -24,6 +24,95 @@ STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
 STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
 STATUS_ID_CALL_FOR_VIVAVOICE = 24
 
+@login_required
+def guide_add_referee(request):
+    """
+    Suggesting new referee by guide
+    """
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = auth.get_user(request)
+    
+    dict = {'status' : 'Not-Done', 'message' : 'Your suggestion has not been considered!' }
+    if request.method == 'POST': 
+        user_form = UserForm(request.POST)
+        referee_form = RefereeForm(request.POST)
+
+        if user_form.is_valid() and referee_form.is_valid():
+            
+            new_user = user_form.save(commit = False)
+            new_user.is_active = False
+            new_user.save()
+            #to get added_by key
+            new_referee = referee_form.save(commit = False)
+            new_referee.added_by = user
+            new_referee.user = new_user
+            new_referee.save()
+
+            #notication to Admin
+            message = "A new Referee has been added and is waiting for your approval."
+            admin = Admin.objects.all()
+            email = []
+            for admin in admin:
+                send_notification(user, admin.user, message, '')
+                email.append(admin.user.email)
+
+        
+            #Email to Admin
+            subject = '[Referee Suggested] by ' + user.first_name + ' ' + user.last_name
+            
+            content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
+            send_email_task.delay(email, subject, content)
+
+
+            dict = {'status' : 'Done', 'message' : 'Your suggestion has been considered!' }
+            
+            
+    elif request.method == 'GET':
+        user_form = UserForm(None)
+        referee_form = RefereeForm(None)
+
+    else:
+        #simply
+        return redirect(reverse(URL_BAD_REQUEST))
+    
+    return render(request, 'app/guide/add_referee.html', 
+        {'userform': user_form,
+         'refereeform': referee_form,
+         'dict' :dict,
+        'layout_data': get_layout_data(request)
+        })
+    #if request.method == 'GET':
+    #    user = auth.get_user(request)
+    #    #user_details = _get_user_type_object(user)
+        
+    #    return render(request, 'app/guide/add_referee.html', {
+    #            'title':'Suggest a Referee',
+    #            'layout_data' : get_layout_data(request),
+    #        })
+    #elif request.method == 'POST':
+    #    user = auth.get_user(request)
+
+    #    faculty = Faculty.objects.get(user = user)
+
+    #    request.POST['is_active'] = 0
+    #    request.POST['added_by'] = faculty
+    #    request.POST['user_id'] = user
+
+    #    user_form = UserForm(request.POST)
+    #    referee_form = RefereeForm(request.POST)
+    #    if user_form.is_valid() and referee_form.is_valid():
+    #        user_form.save()
+    #        referee_form.save()
+    #        messages.success(request, _('Your profile was successfully updated!'))
+    #        return redirect('settings:profile')
+    #    else:
+    #        messages.error(request, _('Please correct the error below.'))
+
+    #    dict = {'status' : 'Done', 'message' : 'Your suggestion has been considered!' }
+        
+    #    return HttpResponse(json.dumps(dict), content_type = 'application/json')
+    #return redirect(reverse(URL_BAD_REQUEST))
+
 def send_notification_to_other_guides(user, message, thesis):
     """
     Utility method which sends a message to the other guides
@@ -170,8 +259,8 @@ def guide_evaluate_unevaluated_abstract(request):
                     email.append(receiver.email)
             send_email_task.delay(email, subject, content)
             # notify student about rejection
-            notification_message = request.session['full_name'] + " had rejected the abstract submitted "
-            notification_message += "\nFeedback - " + feedback + "."
+            notification_message = request.session['full_name'] + " had rejected the abstract submitted."
+            notification_message += " Feedback - " + feedback
 
             send_notification(user, thesis.student.user, notification_message, '')
             ##email to student
@@ -319,8 +408,8 @@ def guide_evaluate_unevaluated_synopsis(request):
                     email.append(receiver.email)
             send_email_task.delay(email, subject, content)
             # notify student about rejection
-            notification_message = request.session['full_name'] + " had rejected the synopsis submitted "
-            notification_message += "\nFeedback - " + feedback
+            notification_message = request.session['full_name'] + " had rejected the synopsis submitted."
+            notification_message += " Feedback - " + feedback
             send_notification(user, thesis.student.user, notification_message, '')
             #email to student
             subject = "[Synopsis Rejection] by " + request.session['full_name']
@@ -466,8 +555,8 @@ def guide_evaluate_unevaluated_thesis(request):
             send_email_task.delay(email, subject, content)
             # notify student about rejection
             # notify student about rejection
-            notification_message = request.session['full_name'] + " had rejected the thesis submitted "
-            notification_message += "\nFeedback - " + feedback
+            notification_message = request.session['full_name'] + " had rejected the thesis submitted."
+            notification_message += " Feedback - " + feedback
             send_notification(user, thesis.student.user, notification_message, '')
             #email to student
             subject = "[Thesis Rejection] by " + request.session['full_name']
