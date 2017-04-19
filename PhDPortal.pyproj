@@ -605,6 +605,8 @@
     <Content Include="app\static\Thesis\Microsoft-Streamlined-Certification-Paths_p44tQRt.pdf" />
     <Content Include="app\static\Thesis\SS04WobckeW.pdf" />
     <Content Include="app\static\Thesis\SS04WobckeW_A0YJGAb.pdf" />
+    <Content Include="app\templates\app\admin\add_referee.html" />
+    <Content Include="app\templates\app\admin\approve_referee.html" />
     <Content Include="app\templates\app\admin\view_finalReports.html" />
     <Content Include="app\templates\app\common\edit_profile.html" />
     <Content Include="app\templates\app\common\search_user.html" />
@@ -614,6 +616,7 @@
     <Content Include="app\templates\app\director\procedure.html" />
     <Content Include="app\templates\app\director\submit_for_evaluation.html" />
     <Content Include="app\templates\app\director\view_student_info.html" />
+    <Content Include="app\templates\app\guide\add_referee.html" />
     <Content Include="app\templates\app\guide\edit_profile.html" />
     <Content Include="app\templates\app\guide\feedback_reports.html" />
     <Content Include="app\templates\app\guide\guide_profile.html" />

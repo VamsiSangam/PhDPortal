@@ -14,7 +14,12 @@
                           <li><a href="{% url 'admin_evaluate_reports' %}">View Submitted PhD Reports</a></li>
                        </ul>
                   </li>
-                  
+                  <li><a><i class="fa fa-file-text-o"></i> New Referees <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                          <li><a href="{% url 'admin_add_referee' %}">Add New Referee</a></li>
+                          <li><a href="{% url 'admin_approve_referee' %}">Add Suggested Referee</a></li>
+                       </ul>
+                  </li>
                 </ul>
                 </div>
             </div>

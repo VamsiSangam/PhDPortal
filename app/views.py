@@ -41,6 +41,30 @@ def send_reminder_to_referees():
             send_notification(director, panelmember.referee.user, message, '')
       #      print(message)
 
+
+def forgotpassword(request):
+    """
+    Forgot Pasword Module
+    """
+    if request.method == 'GET':
+        return render(request, 'app/other/forgot_password.html', {'title':'Forgot Password?',})
+    elif request.method == 'POST':
+
+        username = request.POST['username']
+        email = request.POST['email']
+        if User.objects.filter(username = username).exists():
+            default_password = 'HelloWorld'
+            user = User.objects.get(username = username)
+            if Referee.objects.filter(user = user).exists():
+                referee = Referee.objects.get(user = user)
+                user.set_password(default_password)
+            else:
+                dict = {message : ''}
+
+        return redirect(reverse(URL_BAD_REQUEST))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
 def _get_user_type(user):
     """
     Returns a single character for a given username string denoting the user type

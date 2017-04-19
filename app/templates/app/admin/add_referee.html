@@ -1,0 +1,84 @@
+﻿{% extends "app/layouts/home.html" %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+{% if dict.status == "Done" %}
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"> {{ dict.message }}</span>
+    <meta http-equiv="refresh" content="2">
+</div>
+{% endif %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Add a new Referee/Examiner</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form style="" method="post" action="/admin/add/referee/" id="add-referee">
+            {% csrf_token %}
+            {% for field in userform %}
+               <div class="row">
+                <div class="fieldWrapper">
+                        
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12" >{{ field.label_tag }} 
+                            
+                        </label>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            {{ field }}
+                        
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                            {{ field.errors }}
+                        </div>
+                        <div class="col-md-3 col-sm-12 col-xs-12"></div>
+                </div>
+                <br>
+              </div>
+           {% endfor %}
+            
+            {% for field in refereeform %}
+            <div class="row">    
+                <div class="fieldWrapper">
+                        
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12" >{{ field.label_tag }}</label>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            {{ field }}
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                            {{ field.errors }}
+                        </div>
+                </div>
+            </div>
+           {% endfor %}
+            {% if dict.status == "Done" %}
+                <button type="submit" class="btn btn-primary pull-right" disabled>Submit </button>
+            {% else %}
+                <button type="submit" class="btn btn-primary pull-right">Submit </button>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+    function Addreferee(url, csrf_token) {
+        $.post(url, {
+            
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "Done") {
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+            }
+        });
+    }
+
+{% endblock %}

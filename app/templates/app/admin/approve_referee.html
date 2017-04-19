@@ -1,0 +1,109 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+
+
+{% if dict.status == "Done" %}
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"> {{ dict.message }}</span>
+    <meta http-equiv="refresh" content="2">
+</div>
+{% endif %}
+{% if dict.status == "Not-Done" %}
+<div class="alert alert-danger alert-dismissible fade in" role="alert" id="success-message" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"> {{ dict.message }}</span>
+    <meta http-equiv="refresh" content="2">
+</div>
+{% endif %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Approving Suggested Referees</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for referee in suggested_referees %}
+            <div class="panel" id="{{ forloop.counter }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title"> {{ referee.full_name }} - Suggested by {{ referee.added_by }}</h4>
+                </a>
+            </div>
+            <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                   <div class="panel-body">
+                        <p>
+                           <form style="" method="post" action="/admin/approve/referee/" id="add-referee">
+                                {% csrf_token %}
+                                {% for field in referee.userform %}
+                                   <div class="row">
+                                    <div class="fieldWrapper">
+                        
+                                            <label class="control-label col-md-3 col-sm-12 col-xs-12" >{{ field.label_tag }} 
+                            
+                                            </label>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                {{ field }}
+                                                {% if field.help_text %}
+                                                <p class="help">{{ field.help_text|safe }}</p>
+                                                {% endif %}
+                                                {{ field.errors }}
+                                            </div>
+                                            <div class="col-md-3 col-sm-12 col-xs-12"></div>
+                                    </div>
+                                    <br>
+                                  </div>
+                               {% endfor %}
+            
+                                {% for field in referee.refereeform %}
+                                <div class="row">    
+                                    <div class="fieldWrapper">
+                        
+                                            <label class="control-label col-md-3 col-sm-12 col-xs-12" >{{ field.label_tag }}</label>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                {{ field }}
+                                                {% if field.help_text %}
+                                                <p class="help">{{ field.help_text|safe }}</p>
+                                                {% endif %}
+                                                {{ field.errors }}
+                                            </div>
+                                    </div>
+                                </div>
+                               {% endfor %}
+                                <input type="hidden" name="referee_username" value="{{ referee.referee }}"/>
+                                {% if dict.status == "Done" %}
+                                    <button type="submit" class="btn btn-primary pull-right" disabled>Submit </button>
+                                {% else %}
+                                    <button type="submit" class="btn btn-primary pull-right">Submit </button>
+                                {% endif %}
+                            </form> 
+                        
+                        <br />
+                        <hr />
+                        <br />
+                        
+                    </div>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    
+</script>
+{% endblock %}
