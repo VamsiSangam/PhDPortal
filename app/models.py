@@ -170,9 +170,10 @@ class Referee(models.Model):
 
     user = models.OneToOneField(User, null = True)
     type = models.CharField(max_length = 1, choices = REFEREE_TYPES)
-    university = models.CharField(max_length = 100)
-    designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, default = 'Prof', verbose_name = 'Your Designation')
-    website = models.CharField(max_length = 150)    # use URL validator in django forms / model
+    university = models.CharField(max_length = 100, null = True)
+    designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, null = True, default = 'Prof', verbose_name = 'Designation')
+    website = models.CharField(max_length = 150, null = True)    # use URL validator in django forms / model
+    added_by = models.ForeignKey(User, blank = True, null = True,related_name = 'added_by')
 
 class Admin(models.Model):
     class Meta:
@@ -304,3 +305,11 @@ class Notification(models.Model):
 
     def __str__(self):
         return self.receiver.first_name + ' notification'
+
+class sample(models.Model):
+    phone_regex = RegexValidator(regex = r'^\+91-\d{10}$', \
+                                 message = "Phone number must be entered in the format: '+91-9830098300'. +91 is the country code of India.")
+
+    designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, default = 'Prof', verbose_name = 'Your Designation')
+    phone_number = models.CharField(validators = [phone_regex], default = '+91-', max_length = 16,
+                                    verbose_name = 'Mobile Number')

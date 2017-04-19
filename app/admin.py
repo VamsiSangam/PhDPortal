@@ -57,6 +57,7 @@ class RefereeAdmin(admin.ModelAdmin):
     search_fields = ('user', 'university', 'designation', 'website',)
     list_filter = ('type',)
 
+
 class ApproverAdmin(admin.ModelAdmin):
     list_display = ('faculty', 'active')
     search_fields = ('faculty', 'active')

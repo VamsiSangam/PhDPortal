@@ -29,6 +29,38 @@ STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
 STATUS_ID_CALL_FOR_VIVAVOICE = 24
 
 @login_required
+def referee_change_password(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    if request.method == 'GET':
+        user = auth.get_user(request)
+        #user_details = _get_user_type_object(user)
+        
+        return render(request, 'app/referee/change_password.html', {
+                'title':'Change Password',
+                'layout_data' : get_layout_data(request),
+            })
+    elif request.method == 'POST':
+        user = auth.get_user(request)
+        #user = _get_user_type_object(user)  # temporary fix
+        old = request.POST['old-password']
+        new = request.POST['new-password']
+        re_type = request.POST['re-type']
+        if user.check_password(old):
+            if new == re_type:
+                user.set_password(new)
+                user.save()
+                dict = {'status' : 'Done', 'message' : 'Your password has been changed successfully' }
+            else:
+                dict = {'status' : 'Error-1', 'message' : 'Make sure that New password and Re-type fields are same' }
+        else:
+            dict = {'status' : 'Error-2', 'message' : 'Make sure that the old password is correct' }
+
+        return HttpResponse(json.dumps(dict), content_type = 'application/json')
+
+    return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
 def referee_evaluate_synopsis(request):
     """
     View method. Renders page for referee to evaluate PhD synopsis
