@@ -740,6 +740,12 @@ def guide_submit_evaluation_panel(request):
                         dict['foreign_referees'].append(referee)
                     else:
                         dict['indian_referees'].append(referee)
+
+                # get referee recommendations
+                recommendations = get_referee_recommendations(thesis)
+                dict['recommended_indian'] = recommendations['indian']
+                dict['recommended_foreign'] = recommendations['foreign']
+
                 #dict['referees'] = []
                 #for panel in PanelMember.objects.filter(thesis = thesis, status = 'D').exclude(guide = guide):
                 #    addreferee = []
@@ -760,9 +766,7 @@ def guide_submit_evaluation_panel(request):
                 #    addreferee['full_name'] = referee.user.first_name + ' ' + referee.user.last_name
                         
                 #    dict['referees'].append(addreferee)
-                    
-                        
-
+                
                 all_thesis.append(dict)
         return render(
             request,
@@ -1048,7 +1052,7 @@ def guide_feedback_reports(request):
         })
     else:
         return redirect(reverse(URL_BAD_REQUEST))
-   
+
 @login_required
 def guide_re_evaluate(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))

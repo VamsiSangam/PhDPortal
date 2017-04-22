@@ -8,7 +8,7 @@ from subprocess import check_output
 import tempfile
 import datetime
 from datetime import time
-
+import shutil
 from app.tasks import send_email_task
 
 STATUS_ID_SUBMIT_ABSTRACT = 5
@@ -192,30 +192,47 @@ def referee_evaluate_thesis(request):
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
-@login_required
-def convert_latex(request,user_template,context):
+#@login_required
+#def convert_latex(request,user_template,context):
     
-    tempdir = 'C:\\Users\\Shanu\\Documents' # move this to settings.py
+#    #tempdir = 'C:\\Users\\Sarada\\Documents' # move this to settings.py
 
-    template = get_template(user_template)
+#    template = get_template(user_template)
     
-    rendered_tpl = template.render(context).encode('utf-8')  
+#    rendered_tpl = template.render(context).encode('utf-8')  
     
-    with open(tempdir + '/results2.tex', 'wb') as file_:
-        file_.write(rendered_tpl)
-    
-    for i in range(2):
-        m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+#    with tempfile.TemporaryDirectory() as tempdir:
+#        shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
+#        shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
+#        with open(tempdir + '/texput.tex', 'wb') as file_:
+#            file_.write(rendered_tpl)
+#        print("**************************************")
+#        for i in range(2):
+#            str = 'pdflatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex'
+#            print(str)
+#            m = check_output(str)
+#        print(os.listdir(tempdir))
+#        with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+#            pdf = f.read()
 
-    with open(os.path.join(tempdir, 'results2.pdf'), 'rb') as f:
-        pdf = f.read()
+#    #with open(tempdir + '/results2.tex', 'wb') as file_:
+#    #    file_.write(rendered_tpl)
+#    #print("**************************************")
+#    #for i in range(2):
+#    #    str = 'pdflatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex'
+#    #    print(str)
+#    #    m = check_output(str)
+
+#    #with open(os.path.join(tempdir, 'results2.pdf'), 'rb') as f:
+#    #    pdf = f.read()
         
     
-   # r = HttpResponse(content_type='application/pdf')
+#   # r = HttpResponse(content_type='application/pdf')
     
-    #r['Content-Disposition'] = 'attachment; filename=raf.pdf'
-    #r.write(pdf)
-    return pdf
+#    #r['Content-Disposition'] = 'attachment; filename=raf.pdf'
+#    #r.write(pdf)
+#    #return pdf
+#    return tempdir
 
 _latex_special_chars = {
         u'$': u'\\$',
@@ -315,6 +332,7 @@ def referee_thesis_approval(request):
         thesis_organisation_get_up = text_escape(thesis_organisation_get_up)
         thesis_technical_content = text_escape(thesis_technical_content)
         thesis_highlights_points = text_escape(thesis_highlights_points)
+        print(feedback)
         context = Context({
             'student_name': student_name,
             'student_id': student_id,
@@ -337,60 +355,93 @@ def referee_thesis_approval(request):
             'specific_recommendations': specific_recommendations        
             })
 
-        pdf = convert_latex(request, 'final_report.tex',context)
-        print(" ********* ")
-        panelmember = PanelMember.objects.get(thesis = thesis, referee = referee)
-        print(" ********* ")
-        if IsReevaluation:
-            panelmember.status = 'Z'
-        else:
-            panelmember.status = 'F'
-        time =str(datetime.datetime.now())
-        timestamp = ''
-        for i in time:
-            if not (i == ':' or i == '-'):
-                timestamp += i
+
+
+        template = get_template('final_report.tex')
+    
+        rendered_tpl = template.render(context).encode('utf-8')  
+    
+        with tempfile.TemporaryDirectory() as tempdir:
+            shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
+            shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
+            with open(tempdir + '/texput.tex', 'wb') as file_:
+                file_.write(rendered_tpl)
+            print("**************************************")
+            for i in range(2):
+                m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+            print(os.listdir(tempdir))
+            with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+                pdf = f.read()
+            #tempdir = convert_latex(request, 'final_report.tex',context)
+            print(os.listdir(tempdir))
+            print(" ********* ")
+            panelmember = PanelMember.objects.get(thesis = thesis, referee = referee)
+            print(" ********* ")
+            if IsReevaluation:
+                panelmember.status = 'Z'
+            else:
+                panelmember.status = 'F'
+            time = str(datetime.datetime.now())
+            timestamp = ''
+            for i in time:
+                if not (i == ':' or i == '-'):
+                    timestamp += i
         
-        print(" ********* " + timestamp + "**********")
+            print(" ********* " + timestamp + "**********")
+            print()
+            #tempdir = "C:\\Users\\Sarada\\Documents"
+            shutil.copy(tempdir+"\\texput.pdf", os.getcwd() + "\\app\\static\\Feedback_With_Details\\"+ student_username + timestamp +".pdf")
 
-        tempdir = "C:\\Users\\Sarada\\Documents"
-        os.rename(tempdir+"\\results2.pdf", os.getcwd() + "\\app\\static\\Feedback_With_Details\\"+ student_username + timestamp +".pdf")
-
-        panelmember.feedback_with_referee_details = 'Feedback_With_Details\\' + student_username + timestamp + '.pdf'
-        panelmember.save()
+            panelmember.feedback_with_referee_details = 'Feedback_With_Details\\' + student_username + timestamp + '.pdf'
+            panelmember.save()
         
-        ##without details
-        pdf = convert_latex(request, 'final_report_without_details.tex',context)
-        time =str(datetime.datetime.now())
-        timestamp = ''
-        for i in time:
-            if not (i == ':' or i == '-'):
-                timestamp += i
+            ##without details
+            template = get_template('final_report_without_details.tex')
+    
+            rendered_tpl = template.render(context).encode('utf-8')  
+    
+            with tempfile.TemporaryDirectory() as tempdir:
+                shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
+                shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
+                with open(tempdir + '/texput.tex', 'wb') as file_:
+                    file_.write(rendered_tpl)
+                print("**************************************")
+                for i in range(2):
+                    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+                print(os.listdir(tempdir))
+                with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+                    pdf = f.read()
+                #tempdir = convert_latex(request, 'final_report_without_details.tex',context)
+                time =str(datetime.datetime.now())
+                timestamp = ''
+                for i in time:
+                    if not (i == ':' or i == '-'):
+                        timestamp += i
         
-        print(" ********* " + timestamp + "**********")
+                print(" ********* " + timestamp + "**********")
 
-        tempdir = "C:\\Users\\Sarada\\Documents"
-        os.rename(tempdir+"\\results2.pdf", os.getcwd() + "\\app\\static\\Feedback_Without_Details\\"+ student_username + timestamp +".pdf")
+                #tempdir = "C:\\Users\\Sarada\\Documents"
+                shutil.copy(tempdir+"\\texput.pdf", os.getcwd() + "\\app\\static\\Feedback_Without_Details\\"+ student_username + timestamp +".pdf")
 
-        panelmember.feedback_without_referee_details = 'Feedback_Without_Details\\' + student_username + timestamp + '.pdf'
-        panelmember.save()
+                panelmember.feedback_without_referee_details = 'Feedback_Without_Details\\' + student_username + timestamp + '.pdf'
+                panelmember.save()
         
-        message = 'A Feedback report of Thesis titled ' + thesis.title + ' has been sent'
-        #notication to Admin
-        admin = Admin.objects.all()
-        email = []
-        for admin in admin:
-            send_notification(user, admin.user, message, '')
-            email.append(admin.user.email)
+            message = 'A Feedback report of Thesis titled ' + thesis.title + ' has been sent'
+            #notication to Admin
+            admin = Admin.objects.all()
+            email = []
+            for admin in admin:
+                send_notification(user, admin.user, message, '')
+                email.append(admin.user.email)
 
         
-        #Email to Admin
-        subject = '[Feedback Report]'
-        content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
-        send_email_task.delay(email, subject, content)
-        dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
+            #Email to Admin
+            subject = '[Feedback Report]'
+            content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
+            send_email_task.delay(email, subject, content)
+            dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
 
-        return HttpResponse(json.dumps(dict), content_type = 'application/json')
+            return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 

@@ -2,7 +2,7 @@ from app.views import *
 from app.student_views import _update_student_status
 from app.guide_views import send_notification_to_other_guides
 from django.db.models import Q
-
+import operator
 from app.tasks import send_email_task			
 
 STATUS_ID_SUBMIT_ABSTRACT = 5
@@ -34,6 +34,8 @@ def director_add_panel_members(request):
         thesis_id = int(request.POST['thesis-id'])
         indian_referees = request.POST.getlist('indian-referees')   # list of strings, where each string is ID
         foreign_referees = request.POST.getlist('foreign-referees')
+
+        # ----- add logic here -----
 
         print(thesis_id)
         print(indian_referees)
@@ -142,6 +144,12 @@ def director_submit_for_evaluation(request):
                         this_thesis['required_indian'] -= 1
                     if referee.type == 'F' and (finalpanel.status == 'A' or finalpanel.status == 'S'):
                         this_thesis['required_foreign'] -= 1
+
+                # storing recommended referee information
+                recommendations = get_referee_recommendations(thesis)
+                this_thesis['recommended_indian'] = recommendations['indian']
+                this_thesis['recommended_foreign'] = recommendations['foreign']
+
                 all_list.append(this_thesis)
              
         return render(

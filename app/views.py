@@ -15,6 +15,7 @@ from datetime import datetime, time, timedelta
 from tzlocal import get_localzone
 import pytz
 from django.core.mail import EmailMessage
+from django.db.models import Q
 
 logger = logging.getLogger('django')
 CONTENT_TYPE_PDF = 'application/pdf'
@@ -26,6 +27,7 @@ URL_NOT_FOUND = 'not_found'
 URL_INTERNAL_SERVER_ERROR = 'internal_server_error'
 URL_STUDENT_HOME = 'student_home'
 URL_USER_PROFILE = 'user_profile'
+STATUS_ID_THESIS_UNDER_EVALUATION = 21
 
 def send_reminder_to_referees():
    # print("-*--*-*")
@@ -77,7 +79,7 @@ def _get_user_type(user):
     """
 
     type = None                
-    
+    print(user)
     if Student.objects.filter(user = user).exists():
         type = 'S'
     elif Faculty.objects.filter(user = user).exists():
@@ -91,6 +93,8 @@ def _get_user_type(user):
         type = 'R'
     elif Admin.objects.filter(user = user).exists():
         type = 'A'
+
+    print(type)
 
     return type
 
@@ -681,37 +685,137 @@ def search_user_query(request):
         dict = {}
 
         for user in User.objects.all():
-            if type == _get_user_type(user):
-                dict[user] = 3
-            
-        if len(first_name.strip()) > 0:
-            for user in User.objects.filter(first_name__icontains = first_name):
-                if user in dict:
-                    dict[user] = dict[user] + 1
-                else:
-                    dict[user] = 1
+            user_type = _get_user_type(user)
 
-        if len(last_name.strip()) > 0:
-            for user in User.objects.filter(last_name__icontains = last_name):
-                if user in dict:
-                    dict[user] = dict[user] + 1
-                else:
-                    dict[user] = 1
+            if user_type is None or user_type == 'A':
+                continue    # for user who are not S, G, F, D, R, A
+
+            user_first_name = None
+            user_last_name = None
+            user_email = None
+            votes = 0
+
+            if user_type == type:
+                votes += 2
+            print('Queried User type = ' + user_type)
+            if user_type == 'S':
+                user_first_name = user.student.first_name
+                user_last_name = user.student.last_name
+                user_email = user.student.email
+            elif user_type == 'G' or user_type == 'D':
+                user_first_name = user.faculty.first_name
+                user_last_name = user.faculty.last_name
+                user_email = user.faculty.email
+            elif user_type == 'R':
+                user_first_name = user.first_name
+                user_last_name = user.last_name
+                user_email = user.email
+
+            if first_name.upper() in user_first_name.upper():
+                votes += 1
+
+            if last_name.upper() in user_last_name.upper():
+                votes += 1
+
+            if email.upper() in user_email.upper():
+                votes += 1
+
+            dict[user] = votes
         
-        if len(email.strip()) > 0:
-            for user in User.objects.filter(email__icontains = email):
-                if user in dict:
-                    dict[user] = dict[user] + 1
-                else:
-                    dict[user] = 1
-
         sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
         sorted_results.reverse()
+
+        # print sorted results
+        for item in sorted_results:
+            print(item)
+        print('\n')
+
         result = _clean_user_info_results(sorted_results)
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))
+
+def get_referee_recommendations(thesis):
+    """
+    Returns referee recommendations for a given thesis id
+
+    Args:
+        thesis: Thesis model object
+
+    Returns: 
+        dictionary of indian and foreign referee information
+    """
+
+    dict = {}
+    keywords = []   # a list of thesis keyword ids
+    referees = []   # a list of current thesis' referee model ID
+    MAX_RECOMMENDATIONS = 10
+    
+    # query thesis keyword ids
+    for thesis_keyword in ThesisKeyword.objects.filter(thesis = thesis):
+        keywords.append(thesis_keyword.keyword.id)
+
+    print('Thesis - ' + thesis.title + " has " + str(len(keywords)) + " keywords")
+
+    # query current thesis referees, store referee model ID
+    for panel_member in PanelMember.objects.filter(thesis = thesis):
+        referees.append(panel_member.referee.id)
+
+    print('Thesis - ' + thesis.title + " has " + str(len(referees)) + " referees")
+
+    # query all archived thesis => whose status >= STATUS_ID_THESIS_UNDER_EVALUATION
+    for archived_thesis in Thesis.objects.filter(status__id__gte = STATUS_ID_THESIS_UNDER_EVALUATION):
+        similarity = 0
+
+        # count how many keywords match
+        for thesis_keyword in ThesisKeyword.objects.filter(thesis = archived_thesis):
+            if thesis_keyword.keyword.id in keywords:
+                similarity += 1
+        
+        # query for all approved status = Approved/FeedbackSubmitted/FeedbackSubmitted & need Re-Evaluation
+        for panel_member in PanelMember.objects.filter(thesis = archived_thesis) \
+            .filter(Q(status = 'A') | Q(status = 'F') | Q(status = 'Z')):
+            referee = panel_member.referee
+
+            if not (referee.id in referees):
+                if referee in dict:
+                    dict[referee] += similarity
+                else:
+                    dict[referee] = similarity
+
+    print('Thesis - ' + thesis.title + " has found " + str(len(dict)) + " matches")
+    
+    # filter results
+    sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
+    sorted_results.reverse()
+
+    indian = []
+    foreign = []
+    
+    for tuple in sorted_results:
+        referee = tuple[0]
+        details = {}           
+        details['username'] = referee.user.username
+        details['full_name'] = referee.user.first_name + " " + referee.user.last_name
+        details['address'] = "No yet included in database"  # Need to change
+        details['designation'] = referee.designation
+        details['website'] = referee.website
+        details['university'] = referee.university
+
+        if referee.type == "I" and len(indian) < MAX_RECOMMENDATIONS:
+            details['type'] = "Indian"
+            indian.append(details)
+        elif len(foreign) < MAX_RECOMMENDATIONS:
+            details['type'] = "Foreign"
+            foreign.append(details)
+        else:
+            break
+
+    print('Thesis - ' + thesis.title + " has " + str(len(indian)) + " indian referee recommendations")
+    print('Thesis - ' + thesis.title + " has " + str(len(foreign)) + " foreign referee recommendations")
+    
+    return {'indian' : indian, 'foreign': foreign}
 
 def get_layout_data(request):
     """

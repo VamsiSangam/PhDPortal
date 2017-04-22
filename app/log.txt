@@ -1275,3 +1275,988 @@ Traceback (most recent call last):
   File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
     % (callback.__module__, view_name))
 ValueError: The view app.director_views.director_add_panel_members didn't return an HttpResponse object. It returned None instead.
+2017-04-20 10:26:53 - INFO - views:login:414 - User dinesh successfully authenticated
+2017-04-20 10:27:41 - INFO - views:login:414 - User dinesh successfully authenticated
+2017-04-20 10:28:32 - INFO - views:login:414 - User dinesh successfully authenticated
+2017-04-20 10:31:25 - INFO - views:login:414 - User rahul successfully authenticated
+2017-04-20 10:53:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 706, in search_user_query
+    if first_name.upper() in user_first_name.upper():
+AttributeError: 'NoneType' object has no attribute 'upper'
+2017-04-20 10:53:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 706, in search_user_query
+    if first_name.upper() in user_first_name.upper():
+AttributeError: 'NoneType' object has no attribute 'upper'
+2017-04-20 10:53:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 706, in search_user_query
+    if first_name.upper() in user_first_name.upper():
+AttributeError: 'NoneType' object has no attribute 'upper'
+2017-04-20 10:53:06 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 706, in search_user_query
+    if first_name.upper() in user_first_name.upper():
+AttributeError: 'NoneType' object has no attribute 'upper'
+2017-04-20 10:55:23 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 706, in search_user_query
+    if first_name.upper() in user_first_name.upper():
+AttributeError: 'NoneType' object has no attribute 'upper'
+2017-04-20 10:58:28 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 692, in search_user_query
+    print('Queried User type = ' + user_type)
+TypeError: must be str, not NoneType
+2017-04-20 11:02:18 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 692, in search_user_query
+    print('Queried User type = ' + user_type)
+TypeError: must be str, not NoneType
+2017-04-20 11:02:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 694, in search_user_query
+    print('Queried User type = ' + user_type)
+TypeError: must be str, not NoneType
+2017-04-20 11:04:31 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /user/search/query/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 712, in search_user_query
+    if first_name.upper() in user_first_name.upper():
+AttributeError: 'NoneType' object has no attribute 'upper'
+2017-04-20 11:09:14 - INFO - guide_views:guide_evaluate_unevaluated_abstract:184 - SHANU
+2017-04-20 11:09:25 - INFO - views:logout:438 - User rahul successfully logged out
+2017-04-20 11:09:37 - INFO - views:login:416 - User sanjeev successfully authenticated
+2017-04-20 11:10:02 - INFO - guide_views:guide_evaluate_unevaluated_abstract:184 - SHANU
+2017-04-20 11:10:13 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.student_search_keywords' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 421, in student_add_keywords
+    'thesis_keywords' : thesis_keywords,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'student_search_keywords' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-20 11:11:43 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.student_search_keywords' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 421, in student_add_keywords
+    'thesis_keywords' : thesis_keywords,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'student_search_keywords' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-20 11:12:00 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /student/keywords/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.student_keyword_recommendations' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\student_views.py", line 421, in student_add_keywords
+    'thesis_keywords' : thesis_keywords,
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'student_keyword_recommendations' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-20 11:17:59 - INFO - views:logout:438 - User sanjeev successfully logged out
+2017-04-20 11:18:10 - INFO - views:login:416 - User sanjeev successfully authenticated
+2017-04-20 11:19:02 - INFO - views:logout:438 - User sanjeev successfully logged out
+2017-04-20 11:19:12 - INFO - views:login:416 - User rahul successfully authenticated
+2017-04-20 11:19:48 - INFO - guide_views:guide_save_panel_members:917 - 1   shanu
+2017-04-20 11:21:29 - INFO - views:logout:438 - User rahul successfully logged out
+2017-04-20 11:21:38 - INFO - views:login:416 - User sanjeev successfully authenticated
+2017-04-20 11:22:42 - INFO - views:logout:438 - User dinesh successfully logged out
+2017-04-20 11:22:52 - INFO - views:login:416 - User rahul successfully authenticated
+2017-04-20 11:25:20 - INFO - guide_views:guide_send_panel_to_director:799 - Before_Deletion
+2017-04-20 11:25:20 - INFO - guide_views:guide_send_panel_to_director:803 - After_Deletion
+2017-04-20 11:25:20 - INFO - guide_views:guide_send_panel_to_director:829 - here
+2017-04-20 11:25:20 - INFO - guide_views:guide_send_panel_to_director:842 - True
+2017-04-20 11:25:27 - INFO - views:logout:438 - User sanjeev successfully logged out
+2017-04-20 11:25:32 - INFO - views:login:416 - User gcnandi successfully authenticated
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:186 - scarlett
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:186 - kelly
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:196 - 2 2
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:197 - 2 1
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:213 - gopal
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:213 - apuroop
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:221 - scarlett
+2017-04-20 11:26:03 - INFO - director_views:director_submit_for_evaluation:221 - kelly
+2017-04-20 11:26:07 - INFO - views:logout:438 - User gcnandi successfully logged out
+2017-04-20 11:26:41 - INFO - views:login:416 - User scarlett successfully authenticated
+2017-04-20 11:27:20 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 204, in convert_latex
+    with open(tempdir + '/results2.tex', 'wb') as file_:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Shanu\\Documents/results2.tex'
+2017-04-20 11:28:49 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 208, in convert_latex
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-20 11:33:15 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 208, in convert_latex
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-20 11:35:01 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 208, in convert_latex
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-20 11:54:40 - INFO - views:logout:438 - User rahul successfully logged out
+2017-04-20 11:55:07 - INFO - views:login:416 - User anush successfully authenticated
+2017-04-20 11:56:19 - INFO - views:logout:438 - User anush successfully logged out
+2017-04-20 11:56:28 - INFO - views:login:416 - User akansha successfully authenticated
+2017-04-20 12:07:16 - INFO - views:logout:438 - User akansha successfully logged out
+2017-04-20 12:07:37 - INFO - views:login:416 - User manish successfully authenticated
+2017-04-20 12:08:07 - INFO - guide_views:guide_evaluate_unevaluated_abstract:184 - SHANU
+2017-04-20 12:08:10 - INFO - views:logout:438 - User manish successfully logged out
+2017-04-20 12:08:25 - INFO - views:login:416 - User sonali successfully authenticated
+2017-04-20 12:08:39 - INFO - guide_views:guide_evaluate_unevaluated_abstract:184 - SHANU
+2017-04-20 12:08:41 - INFO - views:logout:438 - User sonali successfully logged out
+2017-04-20 12:08:52 - INFO - views:login:416 - User akansha successfully authenticated
+2017-04-20 12:19:01 - INFO - views:logout:438 - User akansha successfully logged out
+2017-04-20 12:19:13 - INFO - views:login:416 - User sonali successfully authenticated
+2017-04-20 12:19:32 - INFO - views:logout:438 - User sonali successfully logged out
+2017-04-20 12:19:37 - INFO - views:login:416 - User manish successfully authenticated
+2017-04-20 12:21:47 - INFO - views:logout:438 - User manish successfully logged out
+2017-04-20 12:21:52 - INFO - views:login:416 - User akansha successfully authenticated
+2017-04-20 12:22:15 - INFO - views:logout:438 - User akansha successfully logged out
+2017-04-20 12:22:21 - INFO - views:login:416 - User sonali successfully authenticated
+2017-04-20 12:22:30 - INFO - views:logout:438 - User sonali successfully logged out
+2017-04-20 12:22:35 - INFO - views:login:416 - User manish successfully authenticated
+2017-04-20 12:22:45 - INFO - views:logout:438 - User manish successfully logged out
+2017-04-20 12:22:58 - INFO - views:login:416 - User manish successfully authenticated
+2017-04-20 12:24:19 - INFO - guide_views:guide_save_panel_members:917 - 4   shanu
+2017-04-20 12:35:46 - INFO - views:logout:438 - User manish successfully logged out
+2017-04-20 12:35:51 - INFO - views:login:416 - User sonali successfully authenticated
+2017-04-20 12:36:19 - INFO - views:logout:438 - User sonali successfully logged out
+2017-04-20 12:36:27 - INFO - views:login:416 - User akansha successfully authenticated
+2017-04-20 12:51:00 - INFO - views:logout:438 - User akansha successfully logged out
+2017-04-20 12:51:10 - INFO - views:login:416 - User sonali successfully authenticated
+2017-04-20 12:51:32 - INFO - views:logout:438 - User sonali successfully logged out
+2017-04-20 12:51:39 - INFO - views:login:416 - User manish successfully authenticated
+2017-04-20 12:52:44 - INFO - views:logout:438 - User manish successfully logged out
+2017-04-20 12:52:50 - INFO - views:login:416 - User akansha successfully authenticated
+2017-04-20 12:53:15 - INFO - views:logout:438 - User akansha successfully logged out
+2017-04-20 12:53:28 - INFO - views:login:416 - User sonali successfully authenticated
+2017-04-20 12:54:40 - INFO - guide_views:guide_save_panel_members:917 - 2   shanu
+2017-04-20 12:54:43 - INFO - guide_views:guide_send_panel_to_director:799 - Before_Deletion
+2017-04-20 12:54:43 - INFO - guide_views:guide_send_panel_to_director:803 - After_Deletion
+2017-04-20 12:54:43 - INFO - guide_views:guide_send_panel_to_director:829 - here
+2017-04-20 12:54:43 - INFO - guide_views:guide_send_panel_to_director:842 - True
+2017-04-20 12:54:49 - INFO - views:logout:438 - User sonali successfully logged out
+2017-04-20 12:54:55 - INFO - views:login:416 - User gcnandi successfully authenticated
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:186 - scarlett
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:186 - kelly
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:196 - 2 2
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:197 - 2 1
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:213 - janit
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:213 - kishore
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:221 - scarlett
+2017-04-20 12:57:09 - INFO - director_views:director_submit_for_evaluation:221 - kelly
+2017-04-20 12:57:35 - INFO - views:logout:438 - User gcnandi successfully logged out
+2017-04-20 12:57:54 - INFO - views:login:416 - User janit successfully authenticated
+2017-04-21 15:11:38 - INFO - views:login:416 - User kishore successfully authenticated
+2017-04-21 15:11:57 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 208, in convert_latex
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 15:16:22 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 208, in convert_latex
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 15:19:42 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 340, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 208, in convert_latex
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 15:20:48 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 210, in convert_latex
+    m = check_output(str)
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 15:24:35 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 210, in convert_latex
+    m = check_output(str)
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 17:49:23 - INFO - views:login:416 - User kishore successfully authenticated
+2017-04-21 17:49:52 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'texput.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 200, in convert_latex
+    template = get_template(user_template)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\template\loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: texput.tex
+2017-04-21 17:50:16 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 210, in convert_latex
+    m = check_output(str)
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 17:55:03 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 210, in convert_latex
+    m = check_output(str, shell=True)
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'xelatex -interaction=nonstopmode -output-directory=C:\Users\Sarada\Documents C:\Users\Sarada\Documents\results2.tex' returned non-zero exit status 1.
+2017-04-21 17:55:57 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 210, in convert_latex
+    m = check_output(str, shell=True)
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'pdflatex -interaction=nonstopmode -output-directory=C:\Users\Sarada\Documents C:\Users\Sarada\Documents\results2.tex' returned non-zero exit status 1.
+2017-04-21 17:58:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 342, in referee_thesis_approval
+    pdf = convert_latex(request, 'final_report.tex',context)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 210, in convert_latex
+    m = check_output(str)
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Python3.6\lib\subprocess.py", line 707, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python3.6\lib\subprocess.py", line 990, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2017-04-21 19:16:59 - INFO - views:login:416 - User kishore successfully authenticated
+2017-04-21 19:17:20 - INFO - views:logout:438 - User kishore successfully logged out
+2017-04-21 19:17:59 - INFO - views:login:416 - User admin successfully authenticated
+2017-04-21 19:50:15 - INFO - views:login:416 - User kishore successfully authenticated
+2017-04-21 19:50:24 - INFO - views:logout:438 - User kishore successfully logged out
+2017-04-21 19:50:39 - INFO - views:login:416 - User brad successfully authenticated
+2017-04-21 19:50:45 - INFO - views:logout:438 - User brad successfully logged out
+2017-04-21 19:51:05 - INFO - views:login:416 - User scarlett successfully authenticated
+2017-04-21 19:51:15 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 374, in referee_thesis_approval
+    shutil.copy(tempdir+"\\texput.pdf", os.getcwd() + "\\app\\static\\Feedback_With_Details\\"+ student_username + timestamp +".pdf")
+  File "C:\Python3.6\lib\shutil.py", line 235, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Python3.6\lib\shutil.py", line 114, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Sarada\\AppData\\Local\\Temp\\tmpuu4qz3yz\\texput.pdf'
+2017-04-21 19:53:37 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 358, in referee_thesis_approval
+    print(os.listdir(tempdir))
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\Sarada\\AppData\\Local\\Temp\\tmpckcegg3f'
+2017-04-21 20:02:26 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 385, in referee_thesis_approval
+    time =str(datetime.datetime.now())
+TypeError: 'str' object is not callable
+2017-04-21 20:03:43 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 385, in referee_thesis_approval
+    time =str(datetime.now())
+AttributeError: module 'datetime' has no attribute 'now'
+2017-04-21 20:06:52 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 385, in referee_thesis_approval
+    time = str(datetime.datetime.now())
+TypeError: 'str' object is not callable
+2017-04-21 20:11:14 - INFO - views:login:416 - User janit successfully authenticated
+2017-04-21 20:12:01 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 370, in referee_thesis_approval
+    m = check_output('pdflatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'pdflatex -interaction=nonstopmode -output-directory=C:\Users\Sarada\AppData\Local\Temp\tmpbybi7_te C:\Users\Sarada\AppData\Local\Temp\tmpbybi7_te\texput.tex' returned non-zero exit status 1.
+2017-04-21 20:13:36 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 370, in referee_thesis_approval
+    m = check_output('pdflatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'pdflatex -interaction=nonstopmode -output-directory=C:\Users\Sarada\AppData\Local\Temp\tmppmiwu6vg C:\Users\Sarada\AppData\Local\Temp\tmppmiwu6vg\texput.tex' returned non-zero exit status 1.
+2017-04-21 20:14:39 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 370, in referee_thesis_approval
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'xelatex -interaction=nonstopmode -output-directory=C:\Users\Sarada\AppData\Local\Temp\tmp3bskxdpq C:\Users\Sarada\AppData\Local\Temp\tmp3bskxdpq\texput.tex' returned non-zero exit status 1.
+2017-04-21 20:17:53 - INFO - views:logout:438 - User janit successfully logged out
+2017-04-21 20:17:59 - INFO - views:login:416 - User kishore successfully authenticated
+2017-04-21 20:18:05 - INFO - views:logout:438 - User kishore successfully logged out
+2017-04-21 20:18:28 - INFO - views:login:416 - User angelina successfully authenticated
+2017-04-21 20:20:32 - INFO - views:logout:438 - User angelina successfully logged out
+2017-04-21 20:20:38 - INFO - views:login:416 - User kelly successfully authenticated
+2017-04-21 20:20:49 - INFO - views:logout:438 - User kelly successfully logged out
+2017-04-21 20:22:07 - INFO - views:login:416 - User scarlett successfully authenticated
+2017-04-21 20:23:02 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\referee_views.py", line 371, in referee_thesis_approval
+    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+  File "C:\Python3.6\lib\subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "C:\Python3.6\lib\subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'xelatex -interaction=nonstopmode -output-directory=C:\Users\Sarada\AppData\Local\Temp\tmpoqs8fzjb C:\Users\Sarada\AppData\Local\Temp\tmpoqs8fzjb\texput.tex' returned non-zero exit status 1.
+2017-04-22 18:15:02 - INFO - views:login:416 - User gcnandi successfully authenticated
+2017-04-22 18:15:07 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 762, in get_referee_recommendations
+    for archived_thesis in Thesis.objects.filter(status__id >= STATUS_ID_THESIS_UNDER_EVALUATION):
+NameError: name 'status__id' is not defined
+2017-04-22 18:16:02 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 762, in get_referee_recommendations
+    for archived_thesis in Thesis.objects.filter(statustype__id >= STATUS_ID_THESIS_UNDER_EVALUATION):
+NameError: name 'statustype__id' is not defined
+2017-04-22 18:18:27 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 762, in get_referee_recommendations
+    for archived_thesis in Thesis.objects.filter(status__id >= STATUS_ID_THESIS_UNDER_EVALUATION):
+NameError: name 'status__id' is not defined
+2017-04-22 18:31:04 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 762, in get_referee_recommendations
+    for archived_thesis in Thesis.objects.filter(status__id >= STATUS_ID_THESIS_UNDER_EVALUATION):
+NameError: name 'status__id' is not defined
+2017-04-22 18:31:41 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 762, in get_referee_recommendations
+    for archived_thesis in Thesis.objects.filter(status__id = STATUS_ID_THESIS_UNDER_EVALUATION):
+NameError: name 'STATUS_ID_THESIS_UNDER_EVALUATION' is not defined
+2017-04-22 18:32:48 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 773, in get_referee_recommendations
+    .filter(Q(status = 'A') | Q(status = 'F') | Q(status = 'Z')):
+NameError: name 'Q' is not defined
+2017-04-22 18:33:08 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 792, in get_referee_recommendations
+    details['username'] = referee.user.username
+AttributeError: 'tuple' object has no attribute 'user'
+2017-04-22 18:34:46 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /director/evaluate/
+Traceback (most recent call last):
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\env\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Education\GitHub Projects\PhDPortal\app\director_views.py", line 149, in director_submit_for_evaluation
+    recommendations = get_referee_recommendations(thesis)
+  File "E:\Education\GitHub Projects\PhDPortal\app\views.py", line 793, in get_referee_recommendations
+    details['username'] = referee.user.username
+AttributeError: 'str' object has no attribute 'user'
+2017-04-22 18:40:08 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-22 18:40:18 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-22 18:40:51 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-22 18:40:58 - INFO - views:login:418 - User prashant successfully authenticated
+2017-04-22 18:41:29 - INFO - views:logout:440 - User prashant successfully logged out
+2017-04-22 18:41:34 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-22 18:41:39 - INFO - guide_views:guide_evaluate_unevaluated_abstract:184 - SHANU
+2017-04-22 18:41:41 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-22 18:41:46 - INFO - views:login:418 - User sonali successfully authenticated
+2017-04-22 18:41:50 - INFO - guide_views:guide_evaluate_unevaluated_abstract:184 - SHANU
+2017-04-22 18:41:52 - INFO - views:logout:440 - User sonali successfully logged out
+2017-04-22 18:42:12 - INFO - views:login:418 - User prashant successfully authenticated
+2017-04-22 18:42:34 - INFO - views:logout:440 - User prashant successfully logged out
+2017-04-22 18:42:40 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-22 18:42:51 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-22 18:42:57 - INFO - views:login:418 - User sonali successfully authenticated
+2017-04-22 18:43:06 - INFO - views:logout:440 - User sonali successfully logged out
+2017-04-22 18:43:14 - INFO - views:login:418 - User prashant successfully authenticated
+2017-04-22 18:43:55 - INFO - views:logout:440 - User prashant successfully logged out
+2017-04-22 18:44:00 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-22 18:44:16 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-22 18:44:20 - INFO - views:login:418 - User sonali successfully authenticated
+2017-04-22 18:44:29 - INFO - views:logout:440 - User sonali successfully logged out
+2017-04-22 18:44:39 - INFO - views:login:418 - User prashant successfully authenticated
+2017-04-22 18:44:47 - INFO - views:logout:440 - User prashant successfully logged out
+2017-04-22 18:44:51 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-22 18:46:44 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-22 18:46:51 - INFO - views:login:418 - User prashant successfully authenticated
+2017-04-22 19:12:08 - INFO - views:logout:440 - User prashant successfully logged out
+2017-04-22 19:12:14 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-22 19:13:18 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-22 19:13:22 - INFO - views:login:418 - User prashant successfully authenticated
+2017-04-22 19:13:52 - INFO - views:logout:440 - User prashant successfully logged out
+2017-04-22 19:13:59 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-22 19:14:31 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-22 19:15:09 - INFO - views:login:418 - User preeti successfully authenticated
+2017-04-22 19:15:30 - INFO - views:logout:440 - User preeti successfully logged out
+2017-04-22 19:15:34 - INFO - views:login:418 - User anshul successfully authenticated
+2017-04-22 19:15:54 - INFO - views:logout:440 - User anshul successfully logged out
+2017-04-22 19:15:59 - INFO - views:login:418 - User ranjana successfully authenticated
+2017-04-22 19:16:10 - INFO - views:logout:440 - User ranjana successfully logged out
+2017-04-22 19:16:14 - INFO - views:login:418 - User sonali successfully authenticated
+2017-04-22 19:16:23 - INFO - views:logout:440 - User sonali successfully logged out
+2017-04-22 19:16:28 - INFO - views:login:418 - User anshul successfully authenticated
+2017-04-22 19:17:36 - INFO - views:logout:440 - User anshul successfully logged out
+2017-04-22 19:17:44 - INFO - views:login:418 - User sonali successfully authenticated
+2017-04-22 19:17:53 - INFO - views:logout:440 - User sonali successfully logged out
+2017-04-22 19:17:59 - INFO - views:login:418 - User ranjana successfully authenticated
+2017-04-22 19:29:27 - INFO - guide_views:guide_save_panel_members:921 - 9   shanu
+2017-04-22 19:29:29 - INFO - views:logout:440 - User ranjana successfully logged out
+2017-04-22 19:29:33 - INFO - views:login:418 - User sonali successfully authenticated
+2017-04-22 19:31:56 - INFO - guide_views:guide_save_panel_members:921 - 2   shanu
+2017-04-22 19:31:58 - INFO - guide_views:guide_send_panel_to_director:803 - Before_Deletion
+2017-04-22 19:31:58 - INFO - guide_views:guide_send_panel_to_director:807 - After_Deletion
+2017-04-22 19:31:58 - INFO - guide_views:guide_send_panel_to_director:833 - here
+2017-04-22 19:31:58 - INFO - guide_views:guide_send_panel_to_director:846 - True
+2017-04-22 19:32:08 - INFO - views:logout:440 - User sonali successfully logged out
+2017-04-22 19:32:14 - INFO - views:login:418 - User gcnandi successfully authenticated

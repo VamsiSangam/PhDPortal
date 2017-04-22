@@ -61,6 +61,39 @@
                             </ul>
                             <br />
                         </div>
+                        <p>
+                            <b>Recommended Foreign Referees -</b>
+                            {% if thesis.recommended_foreign|length != 0 %}
+                            <ul>
+                                {% for referee in thesis.recommended_foreign %}
+                                <li>
+                                    <a href="{% url 'user_profile' %}{{ referee.username }}/">
+                                    {{ referee.full_name }}
+                                    </a>, Designation - {{ referee.designation }}, at {{ referee.university }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            No recommendations for this thesis.
+                            {% endif %}
+                        </p>
+                        <p>
+                        <b>Recommended Indian Referees -</b>
+                        {% if thesis.recommended_indian|length != 0 %}
+                        <ul>
+                            {% for referee in thesis.recommended_indian %}
+                            <li>
+                                <a href="{% url 'user_profile' %}{{ referee.username }}/">
+                                {{ referee.full_name }}
+                                </a>, Designation - {{ referee.designation }}, at {{ referee.university }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        No recommendations for this thesis.
+                        {% endif %}
+                    </p>
+                        
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label for="foreign-referees-{{ thesis.id }}" class="col-sm-2 control-label">
