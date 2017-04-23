@@ -1,0 +1,158 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<style>
+    input[type="file"] {
+        display: none;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+</div>
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Panel Approvals</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title">{{ thesis.title }}</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <br>
+                                <p><b>Title</b> - {{ thesis.title }}</p>
+                                <p><b>Student</b> - 
+                                    <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                                </p>
+                                <p><b>Guides</b> - 
+                                    <ul>
+                                        {% for guide in thesis.guides %}
+                                        <li>
+                                              {{ guide.fullname }} ({{ guide.type }})
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <br>
+                                <br>
+                                    <button type="button" onclick="javascript:location.replace('/admin/Panel/print/' + {{ thesis.id }});"
+                                            class="btn btn-primary">Print Panel List
+                                    </button>
+                                </p>
+                                
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <form method="post" action="/admin/Panel/upload/{{ thesis.id }}"  enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="col-sm">
+                                            &nbsp;<b><span style="line-height:45px;">Upload File (PDF only)</span></b>
+                                        </div>
+                                        <div class="col-sm">
+                                            <label for="file-upload">
+                                                <a for="file-upload" class="btn btn-primary pull-left btn-lg">
+                                                    <i class="fa fa-upload"></i> &nbsp; Upload Signed Copy
+                                                </a>
+                                            </label>
+                                            <input id="file-upload" name="panel_signed_copy" type="file"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                
+                                        <div class="col-sm">
+                                            <span id="file-selected">Your filename will appear here</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                               
+                                        <div class="col-sm">
+                                            <span id="file-size">Your file size (in MB) will appear here</span>
+                                        </div>
+                                    </div>
+                               
+                                    <button type="submit" class="btn btn-success "> <i class="fa fa-check"></i> &nbsp; Approve Panel </button>
+                                </form>
+                            </div>
+                        </div>
+                        <hr />
+                        <br>
+                        
+                        <p>
+                            If you want to reject the Panel , please mention the reason to notify the respective Guides(if possible mention the guide/guides names).
+                        </p>
+                        
+                                                
+                        <textarea class="form-control" id="feedback-{{ thesis.id }}" rows="5"></textarea>
+                        
+                        
+                        <br />
+                        
+                        <button type="button" class="btn btn-danger pull-right" 
+                                onclick="ApprovePanel({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-close"></i> &nbsp; Reject Panel </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function ApprovePanel(id, isApproved, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'isApproved': isApproved,
+            'feedback' : $('#feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            $('#thesis-' + id).fadeOut()
+        });
+        
+    }
+
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
+
+<script type="text/javascript">
+    $('#file-upload').bind('change', function () {
+        var fileName = '';
+        var fileSize = this.files[0].size;  // bytes
+
+        fileName = $(this).val();
+        $('#file-selected').html(fileName);
+
+        fileSize = fileSize / 1024.0;       // KB
+
+        if (fileSize > 1024) {
+            fileSize = fileSize / 1024.0;   // MB
+            fileSize = fileSize.toFixed(2) + ' MB';
+        } else {
+            fileSize = fileSize.toFixed(2) + ' KB';
+        }
+
+        $('#file-size').html(fileSize);
+    });
+</script>
+
+{% endblock %}

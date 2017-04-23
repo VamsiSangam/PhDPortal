@@ -11,7 +11,7 @@
 {% block content %}
 <br>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-8">
         <div class="x_panel">
             <div class="x_title">
                 <h2>Upload</h2>
@@ -20,8 +20,7 @@
             <div class="x_content">
             {% if not canSubmitThesis %}
             <p>
-                You cannot submit a PhD thesis yet. This is because your PhD synopsis hasn't yet been approved by your 
-                Guide/Co-guide.
+                You cannot submit a PhD thesis yet. This is because your PhD synopsis hasn't yet been approved.
             </p>
             {% elif thesisWaitingApproval %}
             <p>
@@ -43,34 +42,70 @@
             <br />
             <form class="form-horizontal" action="{% url 'student_upload_thesis' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="form-group">
-                    <div class="col-sm-4">
-                        <span style="line-height:45px;">Upload File (PDF only)</span>
+                <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <span style="line-height:20px;">Upload Thesis (PDF only)</span>
+                        </div>
+                        <div class="col-sm-8">
+                            <label for="file-upload">
+                                <a for="file-upload" class="btn btn-primary btn-lg">
+                                    <i class="fa fa-upload"></i> &nbsp; Upload Thesis
+                                </a>
+                            </label>
+                            <input id="file-upload" name="thesis" type="file"/>
+                        </div>
+                    </div><br />
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <p>File Name</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <span id="file-selected">Your filename will appear here</span>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <label for="file-upload">
-                            <a for="file-upload" class="btn btn-primary btn-lg">
-                                <i class="fa fa-upload"></i> &nbsp; Upload Thesis
-                            </a>
-                        </label>
-                        <input id="file-upload" name="thesis" type="file"/>
-                    </div>
-                </div><br />
-                <div class="form-group">
-                    <div class="col-sm-4">
-                        <p>File Name</p>
-                    </div>
-                    <div class="col-sm-8">
-                        <span id="file-selected">Your filename will appear here</span>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <p>File Size</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <span id="file-size">Your file size (in MB) will appear here</span>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-4">
-                        <p>File Size</p>
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <span style="line-height:5px;">Upload Modifications (PDF only)</span>
+                        </div>
+                        <div class="col-sm-8">
+                            <label for="file-upload-1">
+                                <a for="file-upload-1" class="btn btn-primary btn-lg">
+                                    <i class="fa fa-upload"></i> &nbsp;Upload File
+                                </a>
+                            </label>
+                            <input id="file-upload-1" name="thesis_modifications" type="file" />
+                        </div>
+                    </div><br />
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <p>File Name</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <span id="file-selected-1">Your filename will appear here</span>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <span id="file-size">Your file size (in MB) will appear here</span>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <p>File Size</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <span id="file-size-1">Your file size (in MB) will appear here</span>
+                        </div>
                     </div>
+                </div>
                 </div>
                 <button type="submit" class="btn btn-success pull-right">Submit</button>
             </form>
@@ -78,7 +113,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="x_panel">
             <div class="x_title">
                 <h2>Upload Instructions</h2>
@@ -125,6 +160,26 @@
         }
 
         $('#file-size').html(fileSize);
+    });
+</script>
+<script type="text/javascript">
+    $('#file-upload-1').bind('change', function () {
+        var fileName = '';
+        var fileSize = this.files[0].size;  // bytes
+
+        fileName = $(this).val();
+        $('#file-selected-1').html(fileName);
+
+        fileSize = fileSize / 1024.0;       // KB
+
+        if (fileSize > 1024) {
+            fileSize = fileSize / 1024.0;   // MB
+            fileSize = fileSize.toFixed(2) + ' MB';
+        } else {
+            fileSize = fileSize.toFixed(2) + ' KB';
+        }
+
+        $('#file-size-1').html(fileSize);
     });
 </script>
 {% endblock %}

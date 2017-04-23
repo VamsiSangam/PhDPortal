@@ -1,0 +1,76 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>PhD Synopsis</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title">{{ thesis.title }}</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                        <p>
+                            <b>Credits</b> -
+                            <br>
+                            <p>
+                                Display of Credits wll be Shown here.
+                            </p>
+                        </p>
+                        <br />
+                        <hr />
+                        <p>
+                            If you want to reject the permission requested , please mention the reason to notify the student.
+                        </p>
+                        <textarea class="form-control" id="feedback-{{ thesis.id }}" rows="5"></textarea>
+                        <br />
+                        <button type="button" class="btn btn-success"
+                                onclick="requestSynopsis({{ thesis.id }}, 'True', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-check"></i> &nbsp; Grant Permission </button>
+                        <button type="button" class="btn btn-danger pull-right" 
+                                onclick="requestSynopsis({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                <i class="fa fa-close"></i> &nbsp; Reject Permission </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function requestSynopsis(id, isGranted, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'isGranted': isGranted,
+            'feedback' : $('#feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            $('#thesis-' + id).fadeOut()
+        });
+    }
+
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
+{% endblock %}

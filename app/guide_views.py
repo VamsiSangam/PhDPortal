@@ -10,19 +10,25 @@ URL_STUDENT_ADD_KEYWORDS = 'student_add_keywords'
 STATUS_ID_SUBMIT_ABSTRACT = 5
 STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
-STATUS_ID_SUBMIT_SYNOPSIS = 9
-STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
-STATUS_ID_SYNOPSIS_APPROVED = 12
-STATUS_ID_SUBMIT_THESIS = 13
-STATUS_ID_THESIS_WAITING_APPROVAL = 14
-STATUS_ID_THESIS_APPROVED = 16
-STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
-STATUS_ID_PANEL_SENT = 18
-STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
-STATUS_ID_THESIS_UNDER_EVALUATION = 21
-STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
-STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
-STATUS_ID_CALL_FOR_VIVAVOICE = 24
+STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS = 9
+STATUS_ID_REQUEST_PENDING_BY_SPGC_TO_UPLOAD_SYNOPSIS = 10
+STATUS_ID_SUBMIT_SYNOPSIS = 11
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 12
+STATUS_ID_SYNOPSIS_APPROVED = 14
+STATUS_ID_PRE_SUBMISSION = 15
+STATUS_ID_SUBMIT_THESIS = 16
+STATUS_ID_THESIS_WAITING_APPROVAL = 17
+STATUS_ID_THESIS_APPROVED = 19
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 20
+STATUS_ID_PANEL_SENT = 21
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_ADMIN = 22
+STATUS_ID_PANEL_SENT_TO_DIRECTOR = 23
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_DIRECTOR = 24
+STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 25
+STATUS_ID_THESIS_UNDER_EVALUATION = 26
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 27
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 28
+STATUS_ID_CALL_FOR_VIVAVOICE = 29
 
 @login_required
 def guide_add_referee(request):
@@ -31,46 +37,51 @@ def guide_add_referee(request):
     """
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     user = auth.get_user(request)
-    
-    dict = {'status' : 'Not-Done', 'message' : 'Your suggestion has not been considered!' }
+    dict = {}
     if request.method == 'POST': 
         user_form = UserForm(request.POST)
         referee_form = RefereeForm(request.POST)
+        email = request.POST['email']
+        
+        if user_form.is_valid() and referee_form.is_valid() :
+            if User.objects.filter(email = email).exists() == False :
+                new_user = user_form.save(commit = False)
+                new_user.is_active = False
+                new_user.username = request.POST['email']
+                new_user.save()
+                #to get added_by key
+                new_referee = referee_form.save(commit = False)
+                new_referee.added_by = user
+                new_referee.isapproved = False
+                new_referee.user = new_user
+                new_referee.save()
 
-        if user_form.is_valid() and referee_form.is_valid():
-            
-            new_user = user_form.save(commit = False)
-            new_user.is_active = False
-            new_user.save()
-            #to get added_by key
-            new_referee = referee_form.save(commit = False)
-            new_referee.added_by = user
-            new_referee.user = new_user
-            new_referee.save()
-
-            #notication to Admin
-            message = "A new Referee has been added and is waiting for your approval."
-            admin = Admin.objects.all()
-            email = []
-            for admin in admin:
-                send_notification(user, admin.user, message, '')
-                email.append(admin.user.email)
+                #notication to Admin
+                message = "A new Referee has been added and is waiting for your approval."
+                admin = Admin.objects.all()
+                email = []
+                for admin in admin:
+                    send_notification(user, admin.user, message, '')
+                    email.append(admin.user.email)
 
         
-            #Email to Admin
-            subject = '[Referee Suggested] by ' + user.first_name + ' ' + user.last_name
+                #Email to Admin
+                subject = '[Referee Suggested] by ' + user.first_name + ' ' + user.last_name
             
-            content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
-            send_email_task.delay(email, subject, content)
+                content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
+                send_email_task.delay(email, subject, content)
 
 
-            dict = {'status' : 'Done', 'message' : 'Your suggestion has been considered!' }
+                dict = {'status' : 'Done', 'message' : 'Your suggestion has been considered!' }
+            else:
+                dict = {'status' : 'Not-Done', 'message' : 'Email-id already Exists!' }
+        else:
+            dict = {'status' : 'Not-Done', 'message' : 'Fill the Fields appropriately!' }
             
             
     elif request.method == 'GET':
         user_form = UserForm(None)
         referee_form = RefereeForm(None)
-
     else:
         #simply
         return redirect(reverse(URL_BAD_REQUEST))
@@ -81,38 +92,7 @@ def guide_add_referee(request):
          'dict' :dict,
         'layout_data': get_layout_data(request)
         })
-    #if request.method == 'GET':
-    #    user = auth.get_user(request)
-    #    #user_details = _get_user_type_object(user)
-        
-    #    return render(request, 'app/guide/add_referee.html', {
-    #            'title':'Suggest a Referee',
-    #            'layout_data' : get_layout_data(request),
-    #        })
-    #elif request.method == 'POST':
-    #    user = auth.get_user(request)
-
-    #    faculty = Faculty.objects.get(user = user)
-
-    #    request.POST['is_active'] = 0
-    #    request.POST['added_by'] = faculty
-    #    request.POST['user_id'] = user
-
-    #    user_form = UserForm(request.POST)
-    #    referee_form = RefereeForm(request.POST)
-    #    if user_form.is_valid() and referee_form.is_valid():
-    #        user_form.save()
-    #        referee_form.save()
-    #        messages.success(request, _('Your profile was successfully updated!'))
-    #        return redirect('settings:profile')
-    #    else:
-    #        messages.error(request, _('Please correct the error below.'))
-
-    #    dict = {'status' : 'Done', 'message' : 'Your suggestion has been considered!' }
-        
-    #    return HttpResponse(json.dumps(dict), content_type = 'application/json')
-    #return redirect(reverse(URL_BAD_REQUEST))
-
+    
 def send_notification_to_other_guides(user, message, thesis):
     """
     Utility method which sends a message to the other guides
@@ -123,11 +103,13 @@ def send_notification_to_other_guides(user, message, thesis):
         message: string containing notification text
         thesis: Thesis model object
     """
-
+    print("***" + str(thesis.id))
     for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+        print(thesisGuide.guide.user.username)
         receiver = User.objects.get(username = thesisGuide.guide.user.username)
-
+        print("******")
         if receiver != user:
+            print("******")
             send_notification(user, receiver, message, '')
 
 @login_required
@@ -176,8 +158,10 @@ def guide_evaluate_unevaluated_abstract(request):
     
     if request.method == "POST":
         user = auth.get_user(request)
+        print(user.username)
         guide = Faculty.objects.get(user = user)
         thesisid = int(request.POST['id'])
+        print(thesisid)
         isApproved = (request.POST['isApproved'] == "True")
         feedback = request.POST['feedback']
         thesis = Thesis.objects.get(id = thesisid)
@@ -192,25 +176,28 @@ def guide_evaluate_unevaluated_abstract(request):
                 notification_message = request.session['full_name'] + " had accepted the abstract submitted by " + thesis.student.first_name
                 send_notification_to_other_guides(user, notification_message, thesis)
             else:
+                print("******")
                 thesisGuideApprovals = ThesisGuideApproval(thesis = thesis, guide = guide, type = 'A')
                 thesisGuideApprovals.save()
-                
+                print("******")
                 # notify other guides about Approval
                 notification_message = request.session['full_name'] + " had accepted the abstract submitted by " + thesis.student.first_name
+                print("******")
                 send_notification_to_other_guides(user, notification_message, thesis)
-
+                print("******")
                 accepted = True
                 
                 for _guide_for_thesis in ThesisGuide.objects.filter(thesis = thesis):
                       if _guide_for_thesis.type == 'G':
                           if not ThesisGuideApproval.objects.filter(thesis = thesis).filter(guide = _guide_for_thesis.guide):
                               accepted = False
-
+                print("******")
                 if accepted:
+                    print("******")
                     ThesisGuideApproval.objects.filter(thesis = thesis).delete()
-                    _update_student_status(thesis, STATUS_ID_SUBMIT_SYNOPSIS ) ##total approval
+                    _update_student_status(thesis, STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS) ##total approval
                      # notify student about approval
-                    notification_message = request.session['full_name'] + " had accepted the abstract submitted "
+                    notification_message = request.session['full_name'] + " had accepted the abstract submitted and Please request SPGC to approve for the submission of synopsis"
                     send_notification(user, thesis.student.user, notification_message, '')
                     ###email to student
                     subject = "[Abstract Approved]"
@@ -359,9 +346,9 @@ def guide_evaluate_unevaluated_synopsis(request):
 
                 if accepted:
                     ThesisGuideApproval.objects.filter(thesis = thesis).delete()
-                    _update_student_status(thesis, STATUS_ID_SUBMIT_THESIS) ##total approval
+                    _update_student_status(thesis, STATUS_ID_PRE_SUBMISSION) ##total approval
                      # notify student about approval
-                    notification_message = request.session['full_name'] + " had accepted the synopsis submitted "
+                    notification_message = "Your Synopsis has been accepted by all the guides and a pre-submission seminar will be conducted soon. "
                     send_notification(user, thesis.student.user, notification_message, '')
                     #email to student
                     subject = "[Synopsis Approved] by " + request.session['full_name']
@@ -372,6 +359,22 @@ def guide_evaluate_unevaluated_synopsis(request):
                     email.append(receiver.email)
                     
                     send_email_task.delay(email, subject, content)
+
+                    #notify admin about presubmission seminar
+                    admin = Admin.objects.all()[0]
+                    notify = "Respected Sir/Madam! Please conduct the pres-submission seminar of student "+ thesis.student.first_name + " " + thesis.student.last_name
+                    send_notification(user, admin.user, notify, '')
+                    #send email --fill this afterwards
+                    #email to referee
+                    subject = "[Requesting Pre submission seminar]"
+                    content = "<br>Dear sir,</br><br></br><br></br>"+notify+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+
+                    email = []
+                    receiver = admin.user
+                    email.append(receiver.email)
+                    send_email_task.delay(email, subject, content)
+
+
             #email to other guides about approval
             subject = "[Synopsis Approved] by " + request.session['full_name'] + " of student " + thesis.student.first_name
             content = "<br>Dear sir,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
@@ -448,6 +451,8 @@ def guide_unevaluated_thesis(request):
                     dict['student_full_name'] = thesis.student.first_name + " " + thesis.student.last_name
                     dict['abstract'] = thesis.abstract
                     dict['thesis'] = thesis.thesis
+                    
+                    dict['thesis_modifications'] = thesis.thesis_modifications
                     dict['student_username'] = thesis.student.user.username
                     dict['id'] = thesis.id
                     all_thesis.append(dict)
@@ -606,22 +611,26 @@ def guide_phd_status(request):
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
-def _get_referee_details(str, type):
+def _get_referee_details(str, type, thesis_id):
     """
     Gets all the referees of the given 'type' with their name matching with 'str'
     """
 
-    users = User.objects.filter(Q(first_name__icontains = str) | Q(last_name__icontains = str))
+    users = User.objects.filter(Q(first_name__icontains = str) | Q(last_name__icontains = str)).filter(is_active = True)
     referees = Referee.objects.filter(type = type).filter(user__in = users)
     result = []
 
     for referee in referees:
-        dict = {}
-        dict['text'] = referee.user.first_name + ' ' + referee.user.last_name
-        dict['email'] = referee.user.email
-        dict['id'] = referee.id
-        dict['username'] = referee.user.username
-        result.append(dict)
+        if PanelMember.objects.filter(thesis = thesis_id,referee = referee).exists():
+            #dont add those referees
+            dict = {}
+        else:
+            dict = {}
+            dict['text'] = referee.user.first_name + ' ' + referee.user.last_name
+            dict['email'] = referee.user.email
+            dict['id'] = referee.id
+            dict['username'] = referee.user.username
+            result.append(dict)
 
     return result
 
@@ -637,9 +646,9 @@ def guide_get_foreign_referee_details(request):
 
     if request.method == "GET":
         name = request.GET['term']
-        thesis_id = request.GET['thesis_id']
+        thesis_id = int(request.GET['thesis_id'])
 
-        return HttpResponse(json.dumps(_get_referee_details(name, 'F')), content_type = 'application/json')
+        return HttpResponse(json.dumps(_get_referee_details(name, 'F', thesis_id)), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
@@ -655,9 +664,9 @@ def guide_get_indian_referee_details(request):
 
     if request.method == "GET":
         name = request.GET['term']
-        thesis_id = request.GET['thesis_id']
+        thesis_id = int(request.GET['thesis_id'])
 
-        return HttpResponse(json.dumps(_get_referee_details(name, 'I')), content_type = 'application/json')
+        return HttpResponse(json.dumps(_get_referee_details(name, 'I',thesis_id)), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
@@ -701,7 +710,7 @@ def guide_submit_evaluation_panel(request):
         for thesisGuides in ThesisGuide.objects.filter(guide = guide):
             thesis = thesisGuides.thesis
             # check the status i.e., Here the submitted thesis must be approved b all guide/co-guide
-            if thesis.status.id >= STATUS_ID_SYNOPSIS_APPROVED and thesis.status.id < STATUS_ID_PANEL_SENT:
+            if thesis.status.id >= STATUS_ID_SUBMIT_THESIS and thesis.status.id < STATUS_ID_PANEL_SENT:
                 # this 'if can be avoided,if status is used properly 
                 dict = {}
                 dict['title'] = thesis.title
@@ -740,7 +749,7 @@ def guide_submit_evaluation_panel(request):
                         dict['foreign_referees'].append(referee)
                     else:
                         dict['indian_referees'].append(referee)
-
+                        
                 # get referee recommendations
                 recommendations = get_referee_recommendations(thesis)
                 dict['recommended_indian'] = recommendations['indian']
@@ -766,7 +775,9 @@ def guide_submit_evaluation_panel(request):
                 #    addreferee['full_name'] = referee.user.first_name + ' ' + referee.user.last_name
                         
                 #    dict['referees'].append(addreferee)
-                
+                    
+                        
+
                 all_thesis.append(dict)
         return render(
             request,
@@ -782,7 +793,7 @@ def guide_submit_evaluation_panel(request):
         return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
-def guide_send_panel_to_director(request):
+def guide_send_panel_to_admin(request):
     """
     Handles a request from a guide to send panel members to the director
     """
@@ -855,14 +866,14 @@ def guide_send_panel_to_director(request):
                     referee.save()
 
             ### Updating Student Status
-            _update_student_status(thesis, STATUS_ID_PANEL_SENT + 1)
+            _update_student_status(thesis, STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_ADMIN)
             ##notifications
             director = Approver.objects.filter(active = True)[0].faculty.user
             ##send notification to student
             send_notification(user, thesis.student.user, "Congratulations! Your thesis had been sent for Evaluation.Stay tuned for results", '')
             #send notification to director
             send_notification(user, director, "Panel had been sent for evaluation of " + thesis.student.first_name + " ", '')
-            
+            #change Notifications and E-mail
             #send E-mail
 
             #email to student
@@ -884,7 +895,7 @@ def guide_send_panel_to_director(request):
             email.append(receiver.email)
                     
             send_email_task.delay(email, subject, content)
-            dict = {'status' : 'OK', 'message' : 'Panel successfully sent to director!'}
+            dict = {'status' : 'OK', 'message' : 'Panel successfully sent to Admin!'}
 
         return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
@@ -1052,7 +1063,7 @@ def guide_feedback_reports(request):
         })
     else:
         return redirect(reverse(URL_BAD_REQUEST))
-
+   
 @login_required
 def guide_re_evaluate(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))

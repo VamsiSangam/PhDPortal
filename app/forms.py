@@ -26,7 +26,12 @@ class SynopsisForm(ModelForm):
 class ThesisForm(ModelForm):
     class Meta:
         model = Thesis
-        fields = ['thesis']
+        fields = ['thesis', 'thesis_modifications']
+
+class PanelListSignedCopyForm(ModelForm):
+    class Meta:
+        model = Thesis
+        fields = ['panel_signed_copy']
 
 #class sampleForm(ModelForm):
    
@@ -39,13 +44,13 @@ class ThesisForm(ModelForm):
 class RefereeForm(ModelForm):
     class Meta:
         model = Referee
-        exclude = ['user', 'added_by']
+        exclude = ['user', 'added_by', 'isapproved']
 
     def __init__(self, *args, **kwargs):
         # first call parent's constructor
         super(RefereeForm, self).__init__(*args, **kwargs)
         self.fields['type'].required = True
-        self.fields['university'].required = False
+        self.fields['university'].required = True
         self.fields['designation'].required = True
         self.fields['website'].required = False
         
@@ -54,12 +59,12 @@ class UserForm(ModelForm):
     first_name = models.CharField(help_text="FirstName: ")
     last_name = models.CharField(help_text="LastName: ")
     email = models.CharField(help_text="Email: ")
-    username = models.CharField(help_text="Usename: ")
+    username = models.CharField(forms.HiddenInput())
     is_active = models.BooleanField(forms.HiddenInput())
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'username')
+        fields = ('first_name', 'last_name', 'email')
 
     
     def __init__(self, *args, **kwargs):
@@ -69,4 +74,3 @@ class UserForm(ModelForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = False
         self.fields['email'].required = True
-        self.fields['username'].required = True

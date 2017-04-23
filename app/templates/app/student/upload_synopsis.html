@@ -17,10 +17,21 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-            {% if not canSubmitSynopsis %}
+            {% if not isAbstaractApproved %}
             <p>
                 You cannot submit a PhD synopsis yet. This is because your PhD abstract hasn't yet been approved by your 
                 Guide/Co-guide.
+            </p>
+            {% elif canRequestSynopsis %}
+            <p>    You need to seek permission from SPGC to submit your synopsis. </p>
+            <form class="form-horizontal" action="{% url 'student_request_synopsis' %}" method="post" enctype="">
+                {% csrf_token %}
+                
+                <button type="submit" class="btn btn-info pull-right">Request for Permission</button>
+            </form>   
+            {% elif requestWaitingApproval %}
+            <p>
+                Your request for submission of Synopsis has been considered.You will be notified once your request is Approved.
             </p>
             {% elif synopsisWaitingApproval %}
             <p>

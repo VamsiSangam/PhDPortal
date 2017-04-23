@@ -2,31 +2,134 @@ from app.views import *
 from app.director_views import invite_indian_referees
 from app.director_views import invite_foreign_referees
 import os
+import shutil
 from django.template import Context
 from django.template.loader import get_template
 from subprocess import check_output
 import tempfile
 import datetime
 from datetime import time
-import shutil
 from app.tasks import send_email_task
+
+from app.tokens import PasswordResetTokenGenerator
+
 
 STATUS_ID_SUBMIT_ABSTRACT = 5
 STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
-STATUS_ID_SUBMIT_SYNOPSIS = 9
-STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
-STATUS_ID_SYNOPSIS_APPROVED = 12
-STATUS_ID_SUBMIT_THESIS = 13
-STATUS_ID_THESIS_WAITING_APPROVAL = 14
-STATUS_ID_THESIS_APPROVED = 16
-STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
-STATUS_ID_PANEL_SENT = 18
-STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
-STATUS_ID_THESIS_UNDER_EVALUATION = 21
-STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
-STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
-STATUS_ID_CALL_FOR_VIVAVOICE = 24
+STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS = 9
+STATUS_ID_REQUEST_PENDING_BY_SPGC_TO_UPLOAD_SYNOPSIS = 10
+STATUS_ID_SUBMIT_SYNOPSIS = 11
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 12
+STATUS_ID_SYNOPSIS_APPROVED = 14
+STATUS_ID_PRE_SUBMISSION = 15
+STATUS_ID_SUBMIT_THESIS = 16
+STATUS_ID_THESIS_WAITING_APPROVAL = 17
+STATUS_ID_THESIS_APPROVED = 19
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 20
+STATUS_ID_PANEL_SENT = 21
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_ADMIN = 22
+STATUS_ID_PANEL_SENT_TO_DIRECTOR = 23
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_DIRECTOR = 24
+STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 25
+STATUS_ID_THESIS_UNDER_EVALUATION = 26
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 27
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 28
+STATUS_ID_CALL_FOR_VIVAVOICE = 29
+
+
+def forgotpassword(request):
+    """
+    Forgot Pasword Module
+    Send an OTP to the email and mobile
+    """
+    if request.method == 'GET':
+        return render(request, 'app/other/forgot_password.html', {'title':'Forgot Password?',})
+    elif request.method == 'POST':
+        print('Entered')
+        username = request.POST['username']
+        #python -m pip install -U pip
+        #pip install cryptography
+        if User.objects.filter(username = username).exists():
+            user = User.objects.get(username = username)
+            if Referee.objects.filter(user = user).exists():
+                referee = Referee.objects.get(user = user)
+                #generate token
+                passwordResetTokenGenerator = PasswordResetTokenGenerator()
+                token = PasswordResetTokenGenerator.generate_token(passwordResetTokenGenerator, str(user.id))
+                token = str(token.decode('utf-8'))
+                print(token)
+                #email to referee
+                subject = "[Password Reset Link]"
+                message = 'http:////localhost:8000//reset//token=//' + token
+                print(message)
+                content = "<br>Dear sir,</br><br></br><br></br>Link is: "+message+'. Please click on the link to change the credentials.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+                email = []
+                receiver = referee.user
+                email.append(receiver.email)
+                send_email_task.delay(email, subject, content)
+                #redirect to same page with status to check your mail and click on activation link
+                
+                dict = {'status' : 'Done', 'message' : 'An Activation link has been sent to your mail-id'}
+                return HttpResponse(json.dumps(dict), content_type = 'application/json')
+            else:#given username is not valid to use this feature
+                dict = {'status': 'Error', 'message' : 'You are not Authorized to change password'}
+                return HttpResponse(json.dumps(dict), content_type = 'application/json')
+        else:#given username is not valid to use this feature
+            dict = {'status': 'Error', 'message' : 'Invalid Username, Try Again!'}
+            return HttpResponse(json.dumps(dict), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+def validate_password_reset_link(request, token):
+    """
+    Checks the validity of the reset link 
+    corresponding to the given 'token' parameter.
+    """
+    print("reset")
+    if request.method == "GET":
+        print("reset")
+        passwordResetTokenGenerator = PasswordResetTokenGenerator()
+        id = PasswordResetTokenGenerator.get_token_value(passwordResetTokenGenerator, token)
+        print(id)
+        if id != None:
+            id = int(id)
+
+            if User.objects.filter(id = id).exists():
+                user = User.objects.get(id = id)
+                request.session['user'] = user.username
+                print(request.session['user'])
+                return render(request, 'app/referee/change_forgot_password.html', {
+                'title':'Change Password',
+                'user': user.username
+                })
+            else:##the user is invalid
+                return redirect(reverse(URL_BAD_REQUEST))
+        else:##either the link is expired or invalid
+             return redirect(reverse(URL_BAD_REQUEST))
+    else:##else --dont care
+        return redirect(reverse(URL_BAD_REQUEST))
+
+def referee_change_forgot_password(request):
+   # if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    if request.method == 'POST':
+        print("changing")
+        username = request.POST['user']
+        print(username + "********")
+        user = User.objects.get(username = username)
+        new = request.POST['new-password']
+        re_type = request.POST['re-type']
+        if new == re_type:
+            user.set_password(new)
+            user.save()
+            dict = {'status' : 'Done', 'message' : 'Your password has been changed successfully' }
+        else:
+            dict = {'status' : 'Error-1', 'message' : 'Make sure that New password and Re-type fields are same' }
+
+        return HttpResponse(json.dumps(dict), content_type = 'application/json')
+
+    return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def referee_change_password(request):

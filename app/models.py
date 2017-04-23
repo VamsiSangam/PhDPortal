@@ -174,6 +174,7 @@ class Referee(models.Model):
     designation = models.CharField(max_length = 30, choices = DESIG_CHOICES, null = True, default = 'Prof', verbose_name = 'Designation')
     website = models.CharField(max_length = 150, null = True)    # use URL validator in django forms / model
     added_by = models.ForeignKey(User, blank = True, null = True,related_name = 'added_by')
+    isapproved = models.BooleanField(default = False)
 
 class Admin(models.Model):
     class Meta:
@@ -181,6 +182,7 @@ class Admin(models.Model):
         verbose_name_plural = 'Admins'
 
     user = models.OneToOneField(User, null = True)
+   # approved_byadmin = models.BooleanField(default = False)
     
 class Approver(models.Model):
     faculty = models.OneToOneField(
@@ -215,9 +217,11 @@ class Thesis(models.Model):
 
     student = models.ForeignKey(Student, on_delete = models.CASCADE)
     title = models.CharField(max_length = 150, null = False)
-    abstract = models.TextField(max_length = 500, null = True, blank = True)
-    synopsis = models.FileField(upload_to = 'Synopsis', null = True, blank = True)
-    thesis = models.FileField(upload_to = 'Thesis', null = True, blank = True)
+    abstract = models.TextField(max_length = 500, null = True, blank = False)
+    synopsis = models.FileField(upload_to = 'Synopsis', null = True, blank = False)
+    thesis = models.FileField(upload_to = 'Thesis', null = True, blank = False)
+    thesis_modifications = models.FileField(upload_to = 'ThesisModifications', null = True, blank = True)
+    panel_signed_copy = models.FileField(upload_to = 'PanelListSignedCopy', null = True, blank = False)
     status = models.ForeignKey(StatusType, on_delete = models.CASCADE)
     indian_referees_required = models.PositiveIntegerField(default = 2)
     foreign_referees_required = models.PositiveIntegerField(default = 1)

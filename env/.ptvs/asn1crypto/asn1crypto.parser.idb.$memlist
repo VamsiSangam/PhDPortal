@@ -1,0 +1,17 @@
+sys
+_PY2
+unicode_literals
+parse
+_parse
+type_name
+int_to_bytes
+int_from_bytes
+emit
+_dump_header
+absolute_import
+print_function
+division
+peek
+chr_cls
+_INSUFFICIENT_DATA_MESSAGE
+byte_cls

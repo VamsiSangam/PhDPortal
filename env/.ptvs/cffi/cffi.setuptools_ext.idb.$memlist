@@ -1,0 +1,10 @@
+os
+sys
+_add_py_module
+error
+_add_c_module
+execfile
+basestring
+cffi_modules
+add_cffi_module
+_set_py_limited_api
