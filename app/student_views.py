@@ -1,5 +1,7 @@
 from app.views import *
-
+import datetime
+from datetime import time, timedelta
+from django.utils.datastructures import MultiValueDictKeyError
 from app.tasks import send_email_task
 
 URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
@@ -10,19 +12,25 @@ URL_STUDENT_ADD_DETAILS = 'student_add_details'
 STATUS_ID_SUBMIT_ABSTRACT = 5
 STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
-STATUS_ID_SUBMIT_SYNOPSIS = 9
-STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
-STATUS_ID_SYNOPSIS_APPROVED = 12
-STATUS_ID_SUBMIT_THESIS = 13
-STATUS_ID_THESIS_WAITING_APPROVAL = 14
-STATUS_ID_THESIS_APPROVED = 16
-STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
-STATUS_ID_PANEL_SENT = 18
-STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
-STATUS_ID_THESIS_UNDER_EVALUATION = 21
-STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
-STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
-STATUS_ID_CALL_FOR_VIVAVOICE = 24
+STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS = 9
+STATUS_ID_REQUEST_PENDING_BY_SPGC_TO_UPLOAD_SYNOPSIS = 10
+STATUS_ID_SUBMIT_SYNOPSIS = 11
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 12
+STATUS_ID_SYNOPSIS_APPROVED = 14
+STATUS_ID_PRE_SUBMISSION = 15
+STATUS_ID_SUBMIT_THESIS = 16
+STATUS_ID_THESIS_WAITING_APPROVAL = 17
+STATUS_ID_THESIS_APPROVED = 19
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 20
+STATUS_ID_PANEL_SENT = 21
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_ADMIN = 22
+STATUS_ID_PANEL_SENT_TO_DIRECTOR = 23
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_DIRECTOR = 24
+STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 25
+STATUS_ID_THESIS_UNDER_EVALUATION = 26
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 27
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 28
+STATUS_ID_CALL_FOR_VIVAVOICE = 29
 
 def send_notification_to_guides(user, message):
     """
@@ -183,6 +191,40 @@ def student_add_abstract(request):
         return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
+def student_request_synopsis(request):
+    """
+    View method. Renders a page where student can submit PhD synopsis
+    """
+    
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    
+    user = auth.get_user(request)
+    student = Student.objects.get(user = user)
+    thesis = Thesis.objects.get(student = student)
+   
+    
+    if request.method == 'POST':
+        _update_student_status(thesis, STATUS_ID_REQUEST_PENDING_BY_SPGC_TO_UPLOAD_SYNOPSIS)
+        ##notify admin to give permission to upload synopsis
+        admin = Admin.objects.all()[0]
+        notify = "Respected Sir/Madam! Please grant me the permission to upload the synopsis on portal, since I completed my credits."
+        send_notification(user, admin.user, notify, '')
+        #send email --fill this afterwards
+        #email to referee
+        subject = "[Requesting permission to Upload synopsis]"
+        content = "<br>Dear sir,</br><br></br><br></br>"+notify+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>"+ student.first_name+ " " + student.last_name
+
+        email = []
+        receiver = admin.user
+        email.append(receiver.email)
+        send_email_task.delay(email, subject, content)
+
+        return redirect(reverse('student_upload_synopsis'))    
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+
+@login_required
 def student_upload_synopsis(request):
     """
     View method. Renders a page where student can submit PhD synopsis
@@ -193,9 +235,10 @@ def student_upload_synopsis(request):
     user = auth.get_user(request)
     student = Student.objects.get(user = user)
     thesis = Thesis.objects.get(student = student)
-    """
-    subtracting 1 to balance with the status of approved by guide(8)
-    """
+   
+    isAbstaractApproved = thesis.status.id >= STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS
+    canRequestSynopsis = thesis.status.id == STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS
+    requestWaitingApproval = thesis.status.id > STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS and thesis.status.id < STATUS_ID_SUBMIT_SYNOPSIS
     canSubmitSynopsis = thesis.status.id >= (STATUS_ID_SUBMIT_SYNOPSIS)
     synopsisWaitingApproval = thesis.status.id > STATUS_ID_SUBMIT_SYNOPSIS and thesis.status.id < STATUS_ID_SYNOPSIS_APPROVED
     isSynopsisApproved = thesis.status.id >= STATUS_ID_SYNOPSIS_APPROVED
@@ -207,6 +250,9 @@ def student_upload_synopsis(request):
             {   
                 'title' : 'Upload Synopsis',
                 'layout_data' : get_layout_data(request),
+                'isAbstaractApproved' : isAbstaractApproved,
+                'canRequestSynopsis' : canRequestSynopsis,
+                'requestWaitingApproval' : requestWaitingApproval,
                 'canSubmitSynopsis' : canSubmitSynopsis,
                 'isSynopsisApproved' : isSynopsisApproved,
                 'synopsisWaitingApproval' : synopsisWaitingApproval
@@ -216,6 +262,12 @@ def student_upload_synopsis(request):
         form = SynopsisForm(request.POST, request.FILES)
         
         if form.is_valid() and validate_pdf(request.FILES['synopsis']):
+            time = str(datetime.datetime.now())
+            timestamp = ''
+            for i in time:
+                if not (i == ':' or i == '-'):
+                    timestamp += i
+            request.FILES['synopsis'].name = user.username+"_synopsis_"+timestamp+".pdf"
             thesis.synopsis = request.FILES['synopsis']
             thesis.save()
 
@@ -307,9 +359,26 @@ def student_upload_thesis(request):
         )
     elif request.method == "POST" and canSubmitThesis and (not isThesisApproved):
         form = ThesisForm(request.POST, request.FILES)
-        
-        if form.is_valid() and validate_pdf(request.FILES['thesis']):    
+        isModifications = True
+        isPdf = False
+        try:
+            modifications_file = request.FILES['thesis_modifications']
+            isModifications = validate_pdf(modifications_file)
+            isPdf = True
+        except MultiValueDictKeyError:
+            isModifications = True
+       
+        if form.is_valid() and validate_pdf(request.FILES['thesis']) and isModifications == True:   
+            time = str(datetime.datetime.now())
+            timestamp = ''
+            for i in time:
+                if not (i == ':' or i == '-'):
+                    timestamp += i
+            request.FILES['thesis'].name = user.username+"_thesis_"+timestamp+".pdf"
             thesis.thesis = request.FILES['thesis']
+            if isPdf == True:
+                request.FILES['thesis_modifications'].name = user.username+"_thesismodify_"+timestamp+".pdf"
+                thesis.thesis_modifications = request.FILES['thesis_modifications']
             thesis.save()
 
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD thesis document '
@@ -682,7 +751,11 @@ def student_phd_status(request):
         student = Student.objects.get(user = user)
         thesis = Thesis.objects.get(student = student)
         phdStatus = thesis.status.id
-        phdStatuses = StatusType.objects.all()
+        phdStatus_message = thesis.status.status_message
+        print(phdStatus_message)
+        
+        print(phdStatus)
+        phdStatuses = StatusType.objects.all().order_by('id')
 
         return render(
             request,

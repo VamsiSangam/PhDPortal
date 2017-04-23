@@ -18,7 +18,6 @@ admin.autodiscover()
 
 urlpatterns = [
     # common urls
-    url(r'^forgotpassword$', app.views.forgotpassword, name='forgotpassword'),
     url(r'^$', app.views.login, name='login'),
     url(r'^logout/$', app.views.logout, name='logout'),
     url(r'^user/profile/$', app.views.user_profile, name='user_profile'),
@@ -37,11 +36,21 @@ urlpatterns = [
     url(r'^admin/reports/$', app.admin_views.admin_evaluate_reports, name='admin_evaluate_reports'),
     url(r'^admin/add/referee/$', app.admin_views.admin_add_referee, name='admin_add_referee'),
     url(r'^admin/approve/referee/$', app.admin_views.admin_approve_referee, name='admin_approve_referee'),
+    url(r'^admin/Synopsis/$', app.admin_views.admin_view_request_for_synopsis, name='admin_view_request_for_synopsis'),
+    url(r'^admin/Synopsis/evaluate/$', app.admin_views.admin_evaluate_request_for_synopsis, name='admin_evaluate_request_for_synopsis'),
+    url(r'^admin/Synopsis/seminar/list/conduct/$', app.admin_views.admin_conductSeminar, name='admin_conductSeminar'),
+    url(r'^admin/Synopsis/seminar/list/$', app.admin_views.admin_preSubmissionSeminars, name='admin_preSubmissionSeminars'),
+    url(r'^admin/Synopsis/seminar/list/evaluate/$', app.admin_views.admin_preSubmissionSeminars_evaluate, name='admin_preSubmissionSeminars_evaluate'),
+    url(r'^admin/Panel/$', app.admin_views.admin_panelapproval, name='admin_panelapproval'),
+    url(r'^admin/Panel/upload/(?P<id>\d+)$', app.admin_views.admin_panel_upload, name='admin_panel_upload'),
+    url(r'^admin/Panel/evaluate/$', app.admin_views.admin_panelapproval_evaluate, name='admin_panelapproval_evaluate'),
+    url(r'^admin/Panel/print/(?P<id>\d+)$', app.admin_views.admin_panel_print, name='admin_panel_print'),
 
     # student urls
     url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),
     url(r'^student/add/details/$', app.student_views.student_add_details, name='student_add_details'), 
     url(r'^student/synopsis/upload/$', app.student_views.student_upload_synopsis, name='student_upload_synopsis'),
+    url(r'^student/request/synopsis/$', app.student_views.student_request_synopsis, name='student_request_synopsis'),
     url(r'^student/synopsis/view/$', app.student_views.student_view_synopsis, name='student_view_synopsis'),
     url(r'^student/thesis/upload/$', app.student_views.student_upload_thesis, name='student_upload_thesis'),
     url(r'^student/thesis/view/$', app.student_views.student_view_thesis, name='student_view_thesis'),
@@ -65,7 +74,7 @@ urlpatterns = [
     url(r'^guide/thesis/unevaluated/evaluate/$', app.guide_views.guide_evaluate_unevaluated_thesis),
     
     url(r'^guide/panel/$', app.guide_views.guide_submit_evaluation_panel, name='guide_submit_evaluation_panel'),
-    url(r'^guide/panel/submit/$', app.guide_views.guide_send_panel_to_director, name='guide_send_panel_to_director'),
+    url(r'^guide/panel/submit/$', app.guide_views.guide_send_panel_to_admin, name='guide_send_panel_to_admin'),
     url(r'^guide/panel/save/$', app.guide_views.guide_save_panel_members, name='guide_save_panel_members'),
     
     url(r'^guide/feedback/reports/$', app.guide_views.guide_feedback_reports, name='guide_feedback_reports'),
@@ -93,6 +102,10 @@ urlpatterns = [
     url(r'^director/help/contacts/$', app.director_views.director_help_contacts, name='director_help_contacts'),
 
     #Referee urls
+    #for password reset link		
+	url(r'^reset/token=/(?P<token>.*)$', app.referee_views.validate_password_reset_link, name='validate_password_reset_link'),		
+	url(r'^forgotpassword$', app.referee_views.forgotpassword, name='forgotpassword'),		
+	url(r'^referee/change-forgot-password/$', app.referee_views.referee_change_forgot_password, name='referee_change_forgot_password'),
     url(r'^referee/change-password/$', app.referee_views.referee_change_password, name='referee_change_password'),
     url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
     url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),

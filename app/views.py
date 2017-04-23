@@ -341,7 +341,6 @@ def validate_pdf(file_dict):
         True : if file is a valid PDF
         False : if not
     """
-
     if file_dict.name.endswith('.pdf'):
         if file_dict.content_type == CONTENT_TYPE_PDF:
             if file_dict.size <= MAX_SIZE_PDF:

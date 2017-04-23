@@ -13,6 +13,15 @@
     <meta http-equiv="refresh" content="2">
 </div>
 {% endif %}
+{% if dict.status == "Not-Done" %}
+<div class="alert alert-danger alert-dismissible fade in" role="alert" id="success-message" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"> {{ dict.message }}</span>
+    
+</div>
+{% endif %}
 <div class="x_panel">
     <div class="x_title">
         <h2>Add a new Referee/Examiner</h2>
@@ -68,17 +77,6 @@
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
-    function Addreferee(url, csrf_token) {
-        $.post(url, {
-            
-            'csrfmiddlewaretoken': csrf_token
-        }, function (data) {
-            if (data.status === "Done") {
-                $('#message').html(data.message);
-                $('#success-message').show();
-                $('#success-message').fadeOut(3000);
-            }
-        });
-    }
+    
 
 {% endblock %}

@@ -1,0 +1,123 @@
+﻿{% extends "app/layouts/home.html" %}
+{% load staticfiles %}
+{% block styles %}
+<!-- Add any page specific styles here -->
+
+{% endblock %}
+{% block content %}
+<div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+</div>
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Pre Submission Seminar</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for thesis in all_thesis %}
+            <div class="panel" id="thesis-{{ thesis.id }}">
+                <a class="panel-heading" role="tab" id="heading{{ forloop.counter }}" data-toggle="collapse"
+                   data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapseOne">
+                    <h4 class="panel-title">{{ thesis.title }}</h4>
+                </a>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" 
+                   aria-labelledby="heading{{ forloop.counter }}">
+                    <div class="panel-body">
+                        <p><b>Title</b> - {{ thesis.title }}</p>
+                        <p><b>Student</b> - 
+                            <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
+                        </p>
+                        <p>
+                            <b>Synopsis</b> -
+                            <object data="{% static thesis.synopsis %}" type="application/pdf" width="100%" height="800px">
+                                <p>PhD Synopsis</p>
+                            </object>
+                            <br /><br />
+                            <a class="btn btn-primary pull-right" href="{% static thesis.synopsis %}" download="download">
+                                <i class="fa fa-download"></i> &nbsp; Download Synopsis
+                            </a>
+                            <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.synopsis %}')">
+                                <i class="fa fa-print"></i> &nbsp; Print Synopsis
+                            </a>
+                        </p>
+                        <br />
+                        <hr />
+                        <p>
+                            If you want to reject the Synopsis , please mention the reason to notify the student.
+                        </p>
+                        <textarea class="form-control" id="feedback-{{ thesis.id }}" rows="5"></textarea>
+                        <ul>
+                         <b>NOTE:-</b>
+                            <li>Please conduct the pre-submission seminar of the thesis titled {{ thesis.title }}</li>
+                            <li>Also contact the guides of the thesis guides names before conducting the pre-submission seminar</li>
+                            <li>Approve the Synopsis only after the seminar is conducted and the synopsis is accepted</li>   
+                        </ul>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="btn btn-primary pull-left" 
+                                    onclick="ConductSeminar({{ thesis.id }}, '{% url 'admin_conductSeminar' %}', '{{ csrf_token }}')">
+                                        Conduct Seminar
+                                </button>
+                            </div>
+                            <div class="col-md-4" >
+                                <button type="button" class="btn btn-success"
+                                    onclick="approveSynopsis({{ thesis.id }}, 'True', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                    <i class="fa fa-check"></i> &nbsp; Approve 
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-danger pull-right" 
+                                    onclick="approveSynopsis({{ thesis.id }}, 'False', '{{ request.path }}evaluate/', '{{ csrf_token }}')">
+                                    <i class="fa fa-close"></i> &nbsp; Reject 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<!-- Add any page specific javascript files here -->
+<script>
+    function approveSynopsis(id, isApproved, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'isApproved': isApproved,
+            'feedback' : $('#feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            $('#thesis-' + id).fadeOut()
+        });
+    }
+
+    function ConductSeminar(id, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'feedback': $('#feedback-' + id).val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+            }
+        });
+    }
+
+    function printPdf(link) {
+        w = window.open(link);
+        w.print();
+        w.close();
+    }
+</script>
+{% endblock %}

@@ -8,19 +8,25 @@ from app.tasks import send_email_task
 STATUS_ID_SUBMIT_ABSTRACT = 5
 STATUS_ID_ABSTRACT_WAITING_APPROVAL = 6
 STATUS_ID_ABSTRACT_APPROVED = 8
-STATUS_ID_SUBMIT_SYNOPSIS = 9
-STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 10
-STATUS_ID_SYNOPSIS_APPROVED = 12
-STATUS_ID_SUBMIT_THESIS = 13
-STATUS_ID_THESIS_WAITING_APPROVAL = 14
-STATUS_ID_THESIS_APPROVED = 16
-STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 17
-STATUS_ID_PANEL_SENT = 18
-STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 20
-STATUS_ID_THESIS_UNDER_EVALUATION = 21
-STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 22
-STATUS_ID_ASKED_FOR_MODIFICATIONS = 23
-STATUS_ID_CALL_FOR_VIVAVOICE = 24
+STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS = 9
+STATUS_ID_REQUEST_PENDING_BY_SPGC_TO_UPLOAD_SYNOPSIS = 10
+STATUS_ID_SUBMIT_SYNOPSIS = 11
+STATUS_ID_SYNOPSIS_WAITING_APPROVAL = 12
+STATUS_ID_SYNOPSIS_APPROVED = 14
+STATUS_ID_PRE_SUBMISSION = 15
+STATUS_ID_SUBMIT_THESIS = 16
+STATUS_ID_THESIS_WAITING_APPROVAL = 17
+STATUS_ID_THESIS_APPROVED = 19
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL = 20
+STATUS_ID_PANEL_SENT = 21
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_ADMIN = 22
+STATUS_ID_PANEL_SENT_TO_DIRECTOR = 23
+STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_DIRECTOR = 24
+STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR = 25
+STATUS_ID_THESIS_UNDER_EVALUATION = 26
+STATUS_ID_THESIS_FEEDBACKS_RECEIVED = 27
+STATUS_ID_ASKED_FOR_MODIFICATIONS = 28
+STATUS_ID_CALL_FOR_VIVAVOICE = 29
 
 @login_required
 def director_add_panel_members(request):
@@ -34,12 +40,49 @@ def director_add_panel_members(request):
         thesis_id = int(request.POST['thesis-id'])
         indian_referees = request.POST.getlist('indian-referees')   # list of strings, where each string is ID
         foreign_referees = request.POST.getlist('foreign-referees')
-
-        print(thesis_id)
-        print(indian_referees)
-        print(foreign_referees)
-
-        return None
+        thesis = Thesis.objects.get(id = thesis_id)
+        user = auth.get_user(request)
+        director = Faculty.objects.get(user = user)
+        ##########################################################################################
+        #Counting total submitted of indian and foreign
+        ##################################################################################
+        indian_count = 0
+        foreign_count = 0
+        #adding indian
+        for indian in indian_referees:
+            indian_count += 1
+        #adding foreign
+        for foreign in foreign_referees:
+            foreign_count += 1
+        ### Checking for a min of 2 indian and 1 foreign referee
+        count_F = 0
+        count_I = 0
+        logger.info('here')
+        for panelmember in PanelMember.objects.filter(thesis = thesis).filter(Q(status = 'S')|Q(status = 'A')|Q(status = 'G')):
+            if panelmember.referee.type == 'F':
+                count_F += 1
+            else:
+                count_I += 1
+        cond_minReferees = False
+        if (indian_count>=thesis.indian_referees_required-count_I  and foreign_count>=thesis.foreign_referees_required-count_F):
+            cond_minReferees = True
+        ##################################################################
+        logger.info(cond_minReferees)
+        if cond_minReferees == False:
+            dict = {'status' : 'Not-Done', 'message' : 'Choose atleast '+ str(thesis.indian_referees_required-count_I)+' Indian and '+str(thesis.foreign_referees_required-count_F)+' Foreign Referees!'}
+        else:
+                #adding indian
+            for indian in indian_referees:
+                referee = Referee.objects.get(id = int(indian))
+                panel_member = PanelMember(thesis = thesis, referee = referee, added_by = director, priority = 0, status = 'G')
+                panel_member.save()
+            #adding foreign
+            for foreign in foreign_referees:
+                referee = Referee.objects.get(id = int(foreign))
+                panel_member = PanelMember(thesis = thesis, referee = referee, added_by = director, priority = 0, status = 'G')
+                panel_member.save()
+            dict = {'status' : 'Done', 'message' : 'Added successfully!!'}
+        return redirect(reverse(director_submit_for_evaluation))
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
@@ -87,13 +130,14 @@ def director_submit_for_evaluation(request):
             this_thesis = {}
         
             #need to use one more status if referees are out of bound
-            if thesis.status.id >= STATUS_ID_PANEL_SENT and thesis.status.id < STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR:
+            if thesis.status.id >= STATUS_ID_PANEL_SENT_TO_DIRECTOR and thesis.status.id < STATUS_ID_PANEL_SUBMITTED_BY_DIRECTOR:
             #if  PanelMember.objects.filter(thesis = thesis,status='G'):  
                 #storing thesis information
                 this_thesis['id'] = thesis.id
                 this_thesis['username'] = thesis.student.user.username
                 this_thesis['fullname'] = thesis.student.first_name + " " + thesis.student.last_name
                 this_thesis['title'] = thesis.title
+                this_thesis['panel_signed_copy'] = thesis.panel_signed_copy
                 this_thesis['abstract'] = thesis.abstract
                 this_thesis['guides'] = []
                 #storing guides of a thesis
@@ -135,13 +179,17 @@ def director_submit_for_evaluation(request):
                 
                 this_thesis['required_indian'] = thesis.indian_referees_required
                 this_thesis['required_foreign'] = thesis.foreign_referees_required
-                
+                print('***s**' + str(thesis.id) + 'eee' )
                 for finalpanel in PanelMember.objects.filter(thesis = thesis):
                     referee = finalpanel.referee
+                    print(referee.id)
+
                     if referee.type == 'I' and (finalpanel.status == 'A' or finalpanel.status == 'S'):
                         this_thesis['required_indian'] -= 1
                     if referee.type == 'F' and (finalpanel.status == 'A' or finalpanel.status == 'S'):
                         this_thesis['required_foreign'] -= 1
+                                    
+                print("out")
                 all_list.append(this_thesis)
              
         return render(
@@ -205,6 +253,18 @@ def director_submit_for_evaluation(request):
         #delete thesis panel info from panelmembers (guide submitted one)
         thesis = Thesis.objects.get(id = thesis_id)
 
+        #finding the top priority present in panel member for indian
+        indian_priority_start_from = 0
+        foreign_priority_start_from = 0
+        for panelmember in PanelMember.objects.filter(thesis = thesis):
+            if panelmember.status!='D' and panelmember.status!='G':
+                if panelmember.referee.type == 'I':
+                    if panelmember.priority > indian_priority_start_from:
+                        indian_priority_start_from = panelmember.priority
+                else:
+                    if panelmember.priority > foreign_priority_start_from:
+                        foreign_priority_start_from = panelmember.priority
+
         
         #storing the priotiy list in FinalPanel
         for i in range(0,count_indian):
@@ -212,7 +272,7 @@ def director_submit_for_evaluation(request):
             user = Referee.objects.get(user=user1)
             logger.info(indian[i])
             finalpanel = PanelMember.objects.get(thesis = thesis, referee = user)
-            finalpanel.priority = i+1
+            finalpanel.priority = indian_priority_start_from + i + 1 
             finalpanel.status = 'N'
             finalpanel.save()
         for i in range(0,count_foreign):
@@ -220,10 +280,11 @@ def director_submit_for_evaluation(request):
             user = Referee.objects.get(user=user1)
             logger.info(foreign[i])
             finalpanel = PanelMember.objects.get(thesis = thesis, referee = user)
-            finalpanel.priority = i+1
+            finalpanel.priority = foreign_priority_start_from + i + 1
             finalpanel.status = 'N'
             finalpanel.save()
-
+        
+            
         #sending the referees notifications and emails (only the top priotity one)
         invite_indian_referees(thesis)
         invite_foreign_referees(thesis)

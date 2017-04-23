@@ -12,7 +12,7 @@
 
 <div class="x_panel">
     <div class="x_title">
-        <h2>Submit PhD Evaluation Panel to Director for accepted PhDs</h2>
+        <h2>Submit PhD Evaluation Panel to Admin for accepted PhD's</h2>
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
@@ -95,8 +95,8 @@
                         <!-- Only guides with type G can view the submit panel button -->
                         {% if thesis.guide_type == 'G' and thesis.canSubmitPanel %}
                         <button class="btn btn-success pull-left" 
-                                onclick="sendPanel({{ thesis.id }}, '{% url 'guide_send_panel_to_director' %}', '{{ csrf_token }}')">
-                                Submit Referee Panel to Director
+                                onclick="sendPanel({{ thesis.id }}, '{% url 'guide_send_panel_to_admin' %}', '{{ csrf_token }}')">
+                                Submit Referee Panel to Admin
                         </button>
                         <script>
                             function sendPanel(id, url, csrf_token) {
@@ -109,7 +109,7 @@
                                     if (data.status === "OK" && data.message === "Panel successfully sent to director!") {
                                         $('#success-message #message').html(data.message);
                                         $('#success-message').show();
-                                        $('#success-message').delay(3000).fadeOut();
+                                        $('#success-message').delay(1000).fadeOut();
                                         $('#thesis-' + id).fadeOut();
                                     }
                                     else if (data.status === "OK") {
