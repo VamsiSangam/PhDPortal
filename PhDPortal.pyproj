@@ -578,6 +578,9 @@
     <Content Include="app\static\app\js\transitionize.min.js" />
     <Content Include="app\static\app\js\validator.js" />
     <Content Include="app\static\app\js\vfs_fonts.js" />
+    <Content Include="app\static\PanelListSignedCopy\results2.pdf" />
+    <Content Include="app\static\PanelListSignedCopy\results2_8Fm53BX.pdf" />
+    <Content Include="app\static\PanelListSignedCopy\signed_copy_vibhu_20170423_140030.101701.pdf" />
     <Content Include="app\static\Synopsis\216_Report.pdf" />
     <Content Include="app\static\Synopsis\216_Report_iLPKXzk.pdf" />
     <Content Include="app\static\Synopsis\DIC_rd_theory_quantization_07.pdf" />
@@ -595,6 +598,11 @@
     <Content Include="app\static\Synopsis\Microsoft-Streamlined-Certification-Paths_evVEPaa.pdf" />
     <Content Include="app\static\Synopsis\srs_example_2010_group2.pdf" />
     <Content Include="app\static\Synopsis\srs_example_2010_group2_VVob3Mh.pdf" />
+    <Content Include="app\static\ThesisModifications\abc.pdf" />
+    <Content Include="app\static\ThesisModifications\nidhi_20170423_133540.157555.pdf" />
+    <Content Include="app\static\ThesisModifications\rit2013036_resume._2.pdf" />
+    <Content Include="app\static\ThesisModifications\rit2013036_resume._2_HlUuTBJ.pdf" />
+    <Content Include="app\static\ThesisModifications\vibhu_20170423_135240.789859.pdf" />
     <Content Include="app\static\Thesis\030_Decaf_Specification.pdf" />
     <Content Include="app\static\Thesis\11CS30001.pdf" />
     <Content Include="app\static\Thesis\149.conjunctionschart.pdf" />
@@ -603,8 +611,30 @@
     <Content Include="app\static\Thesis\economics.pdf" />
     <Content Include="app\static\Thesis\Microsoft-Streamlined-Certification-Paths.pdf" />
     <Content Include="app\static\Thesis\Microsoft-Streamlined-Certification-Paths_p44tQRt.pdf" />
+    <Content Include="app\static\Thesis\Product_Engineer_JD.pdf" />
+    <Content Include="app\static\Thesis\Product_Engineer_JD_0gVwyZp.pdf" />
+    <Content Include="app\static\Thesis\Product_Engineer_JD_sjqLmR2.pdf" />
+    <Content Include="app\static\Thesis\Product_Engineer_JD_Vqzvzad.pdf" />
+    <Content Include="app\static\Thesis\Raghavendra_Sadineni.pdf" />
+    <Content Include="app\static\Thesis\Raghavendra_Sadineni_DMlfciS.pdf" />
+    <Content Include="app\static\Thesis\Raghavendra_Sadineni_ne5fMxS.pdf" />
+    <Content Include="app\static\Thesis\Raghavendra_Sadineni_pR34tS7.pdf" />
+    <Content Include="app\static\Thesis\Report_SearchEngines.pdf" />
+    <Content Include="app\static\Thesis\Rinchen_Angmo.pdf" />
+    <Content Include="app\static\Thesis\Rinchen_Angmo_rgaGDco.pdf" />
+    <Content Include="app\static\Thesis\servlets-file-uploading.pdf" />
+    <Content Include="app\static\Thesis\srs_example_2010_group2.pdf" />
     <Content Include="app\static\Thesis\SS04WobckeW.pdf" />
     <Content Include="app\static\Thesis\SS04WobckeW_A0YJGAb.pdf" />
+    <Content Include="app\static\Thesis\SS04WobckeW_NHqOEta.pdf" />
+    <Content Include="app\static\Thesis\vibhu_20170423_135133.805201.pdf" />
+    <Content Include="app\static\Thesis\vibhu_20170423_135240.789859.pdf" />
+    <Content Include="app\static\Thesis\Viswakanth_Korada.pdf" />
+    <Content Include="app\templates\app\admin\add_referee.html" />
+    <Content Include="app\templates\app\admin\approval_for_synopsis.html" />
+    <Content Include="app\templates\app\admin\approve_referee.html" />
+    <Content Include="app\templates\app\admin\panel_approval.html" />
+    <Content Include="app\templates\app\admin\pre_submission_seminar_approval.html" />
     <Content Include="app\templates\app\admin\view_finalReports.html" />
     <Content Include="app\templates\app\common\edit_profile.html" />
     <Content Include="app\templates\app\common\search_user.html" />
@@ -614,6 +644,7 @@
     <Content Include="app\templates\app\director\procedure.html" />
     <Content Include="app\templates\app\director\submit_for_evaluation.html" />
     <Content Include="app\templates\app\director\view_student_info.html" />
+    <Content Include="app\templates\app\guide\add_referee.html" />
     <Content Include="app\templates\app\guide\edit_profile.html" />
     <Content Include="app\templates\app\guide\feedback_reports.html" />
     <Content Include="app\templates\app\guide\guide_profile.html" />
@@ -636,7 +667,10 @@
     <Content Include="app\templates\app\layouts\referee_top_navbar.html" />
     <Content Include="app\templates\app\layouts\student_sidebar.html" />
     <Content Include="app\templates\app\layouts\student_top_navbar.html" />
+    <Content Include="app\templates\app\other\forgot_password.html" />
     <Content Include="app\templates\app\other\login.html" />
+    <Content Include="app\templates\app\referee\change_forgot_password.html" />
+    <Content Include="app\templates\app\referee\change_password.html" />
     <Content Include="app\templates\app\referee\edit_profile.html" />
     <Content Include="app\templates\app\referee\help_contacts.html" />
     <Content Include="app\templates\app\referee\procedure.html" />
@@ -659,6 +693,7 @@
     <Content Include="app\templates\final_report.tex" />
     <Content Include="app\templates\final_report_without_details.tex" />
     <Content Include="app\templates\logo.jpg" />
+    <Content Include="app\templates\panel.tex" />
     <Content Include="app\templates\signature.jpg" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
@@ -674,7 +709,9 @@
     <Folder Include="app\static\app\css\font-awesome\scss\" />
     <Folder Include="app\static\Feedback_Without_Details\" />
     <Folder Include="app\static\Feedback_With_Details\" />
+    <Folder Include="app\static\PanelListSignedCopy\" />
     <Folder Include="app\static\Synopsis\" />
+    <Folder Include="app\static\ThesisModifications\" />
     <Folder Include="app\static\Thesis\" />
     <Folder Include="app\tests\" />
     <Folder Include="app\scripts\" />
@@ -772,6 +809,7 @@
     <Compile Include="app\tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\tokens.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\scripts\data.py">

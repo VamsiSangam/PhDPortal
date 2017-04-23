@@ -2260,3 +2260,75 @@ AttributeError: 'str' object has no attribute 'user'
 2017-04-22 19:31:58 - INFO - guide_views:guide_send_panel_to_director:846 - True
 2017-04-22 19:32:08 - INFO - views:logout:440 - User sonali successfully logged out
 2017-04-22 19:32:14 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 18:52:56 - INFO - views:login:418 - User anshul successfully authenticated
+2017-04-23 18:55:53 - INFO - views:logout:440 - User anshul successfully logged out
+2017-04-23 18:55:58 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 18:56:31 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 18:56:37 - INFO - views:login:418 - User anshul successfully authenticated
+2017-04-23 18:56:45 - INFO - views:logout:440 - User anshul successfully logged out
+2017-04-23 18:56:51 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 18:57:21 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 18:57:34 - INFO - views:login:418 - User anush successfully authenticated
+2017-04-23 18:58:05 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-23 18:58:10 - INFO - guide_views:guide_evaluate_unevaluated_abstract:168 - SHANU
+2017-04-23 18:58:37 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-23 18:58:41 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 18:58:53 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 18:59:21 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-23 19:00:13 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-23 19:00:17 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:01:42 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 19:01:46 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-23 19:02:58 - INFO - guide_views:guide_send_panel_to_admin:814 - Before_Deletion
+2017-04-23 19:02:58 - INFO - guide_views:guide_send_panel_to_admin:818 - After_Deletion
+2017-04-23 19:02:58 - INFO - guide_views:guide_send_panel_to_admin:844 - here
+2017-04-23 19:02:58 - INFO - guide_views:guide_send_panel_to_admin:857 - False
+2017-04-23 19:03:15 - INFO - guide_views:guide_send_panel_to_admin:814 - Before_Deletion
+2017-04-23 19:03:15 - INFO - guide_views:guide_send_panel_to_admin:818 - After_Deletion
+2017-04-23 19:03:16 - INFO - guide_views:guide_send_panel_to_admin:844 - here
+2017-04-23 19:03:16 - INFO - guide_views:guide_send_panel_to_admin:857 - True
+2017-04-23 19:04:27 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-23 19:04:31 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 19:04:35 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 19:04:40 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:05:13 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 19:05:22 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-23 19:05:44 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-23 19:05:48 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:12:50 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 19:12:55 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 19:13:09 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 19:13:12 - INFO - views:login:418 - User anshul successfully authenticated
+2017-04-23 19:15:24 - INFO - views:logout:440 - User anshul successfully logged out
+2017-04-23 19:15:27 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:20:11 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 19:20:17 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 19:20:30 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 19:20:36 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-23 19:21:03 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-23 19:21:07 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:21:30 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 19:21:34 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 19:22:00 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 19:22:08 - INFO - views:login:418 - User vibhu successfully authenticated
+2017-04-23 19:22:20 - INFO - views:logout:440 - User vibhu successfully logged out
+2017-04-23 19:22:24 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-23 19:23:10 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-23 19:23:17 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 19:23:39 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 19:23:47 - INFO - views:login:418 - User manali successfully authenticated
+2017-04-23 19:23:50 - INFO - views:logout:440 - User manali successfully logged out
+2017-04-23 19:23:55 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-23 19:24:20 - INFO - guide_views:guide_send_panel_to_admin:814 - Before_Deletion
+2017-04-23 19:24:20 - INFO - guide_views:guide_send_panel_to_admin:818 - After_Deletion
+2017-04-23 19:24:20 - INFO - guide_views:guide_send_panel_to_admin:844 - here
+2017-04-23 19:24:20 - INFO - guide_views:guide_send_panel_to_admin:857 - True
+2017-04-23 19:24:37 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-23 19:24:42 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:32:28 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 19:34:38 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 19:34:43 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 19:35:10 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-23 19:35:18 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-23 19:35:36 - INFO - guide_views:guide_save_panel_members:932 - 2   shanu
+2017-04-23 19:36:56 - INFO - views:login:418 - User admin successfully authenticated
