@@ -2332,3 +2332,18 @@ AttributeError: 'str' object has no attribute 'user'
 2017-04-23 19:35:18 - INFO - views:login:418 - User pavan successfully authenticated
 2017-04-23 19:35:36 - INFO - guide_views:guide_save_panel_members:932 - 2   shanu
 2017-04-23 19:36:56 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-24 20:42:51 - INFO - views:login:419 - User scarlett successfully authenticated
+2017-04-24 20:43:46 - INFO - views:logout:441 - User scarlett successfully logged out
+2017-04-24 20:43:51 - INFO - views:login:419 - User pavan successfully authenticated
+2017-04-24 20:45:48 - INFO - views:logout:441 - User pavan successfully logged out
+2017-04-24 20:45:55 - INFO - views:login:419 - User gopal successfully authenticated
+2017-04-24 20:46:07 - INFO - views:logout:441 - User gopal successfully logged out
+2017-04-24 20:46:12 - INFO - views:login:419 - User janit successfully authenticated
+2017-04-24 20:47:24 - INFO - views:logout:441 - User janit successfully logged out
+2017-04-24 20:47:29 - INFO - views:login:419 - User admin successfully authenticated
+2017-04-24 20:48:09 - INFO - views:logout:441 - User admin successfully logged out
+2017-04-24 20:48:14 - INFO - views:login:419 - User gcnandi successfully authenticated
+2017-04-24 20:48:34 - INFO - views:logout:441 - User gcnandi successfully logged out
+2017-04-24 20:48:38 - INFO - views:login:419 - User rahul successfully authenticated
+2017-04-24 20:48:54 - INFO - views:logout:441 - User rahul successfully logged out
+2017-04-24 20:49:01 - INFO - views:login:419 - User pavan successfully authenticated

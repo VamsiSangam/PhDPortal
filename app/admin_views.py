@@ -1,4 +1,7 @@
 from app.views import *
+from app.views import _get_user_type
+from app.views import _clean_user_info_results
+
 from app.student_views import _update_student_status
 from django.db.models import Q
 import os
@@ -230,34 +233,49 @@ def admin_evaluate_reports(request):
             'all_thesis' : all_thesis
         })
     elif request.method == "POST":
+        form = PanelMember2Form(request.POST, request.FILES)
+        
+
         thesis = int(request.POST['thesis'])
         referee = int(request.POST['referee'])
-        referee = Referee.objects.get(id = referee)
-        thesis = Thesis.objects.get(id = thesis)
-        panelmember = PanelMember.objects.get(thesis = thesis,referee = referee)
-        panelmember.feedback_at = 'G'
         
-        panelmember.save()
+        if form.is_valid() and validate_pdf(request.FILES['feedback_without_referee_details']):
+            referee = Referee.objects.get(id = referee)
+            thesis = Thesis.objects.get(id = thesis)
+            panelmember = PanelMember.objects.get(thesis = thesis,referee = referee)
+            panelmember.feedback_at = 'G'
+            
+            time = str(datetime.datetime.now())
+            timestamp = ''
+            for i in time:
+                if not (i == ':' or i == '-'):
+                    timestamp += i
+            request.FILES['feedback_without_referee_details'].name = "Evaluation_Report_"+thesis.student.user.username+"_"+timestamp+".pdf"
+           
+            panelmember.feedback_without_referee_details = request.FILES['feedback_without_referee_details']
+            panelmember.save()
 
-        total_feedbacks = PanelMember.objects.filter(thesis = thesis, feedback_at = 'G').count()
-        if total_feedbacks == thesis.indian_referees_required + thesis.foreign_referees_required:
-            _update_student_status(thesis, STATUS_ID_THESIS_FEEDBACKS_RECEIVED) 
+            total_feedbacks = PanelMember.objects.filter(thesis = thesis, feedback_at = 'G').count()
+            if total_feedbacks == thesis.indian_referees_required + thesis.foreign_referees_required:
+                _update_student_status(thesis, STATUS_ID_THESIS_FEEDBACKS_RECEIVED) 
 
-        dict = {'status' : 'OK', 'message' : 'Feedback Report Sent Successfully!'}
-        #send notification to all guide
-        send_notification_to_all_guides(admin, thesis, "A feedback report has been sent of student " + thesis.student.first_name + " " + thesis.student.last_name)
-        #email
-        subject = "[Feed Back reports] of the Thesis titled" + thesis.title
-        content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+"A feedback report has been sent of student " + thesis.student.first_name + " " + thesis.student.last_name +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
+            #dict = {'status' : 'OK', 'message' : 'Feedback Report Sent Successfully!'}
+            #send notification to all guide
+            send_notification_to_all_guides(admin, thesis, "A feedback report has been sent of student " + thesis.student.first_name + " " + thesis.student.last_name)
+            #email
+            subject = "[Feed Back reports] of the Thesis titled" + thesis.title
+            content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+"A feedback report has been sent of student " + thesis.student.first_name + " " + thesis.student.last_name +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
         
-        email = []
+            email = []
 
-        for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
-            receiver = Faculty.objects.get(user = thesisGuide.guide.user)
-            email.append(receiver.email)
+            for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
+                receiver = Faculty.objects.get(user = thesisGuide.guide.user)
+                email.append(receiver.email)
 
-        send_email_task.delay(email, subject, content)
-        return HttpResponse(json.dumps(dict), content_type = 'application/json')
+            send_email_task.delay(email, subject, content)
+            return redirect(reverse(admin_evaluate_reports))
+        else:
+            return redirect(reverse(URL_BAD_REQUEST))
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
@@ -410,6 +428,8 @@ def admin_panel_upload(request, id):
             return redirect(reverse('admin_panelapproval'))
         else:
             return redirect(reverse(URL_BAD_REQUEST))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
 
 @login_required
@@ -582,3 +602,127 @@ def admin_conductSeminar(request):
         return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))
+
+
+
+@login_required
+def admin_search_student(request):
+    """
+    View method. Renders a search utility to search for admin.
+    """
+
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    if request.session['type'] == 'S' or request.session['type'] == 'R': return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "GET":
+        return render(
+            request,
+            'app/admin/admin_search_student.html',
+            {
+                'title':'Student Info',
+                'layout_data' : get_layout_data(request),
+            }
+        )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def admin_search_student_query(request):
+    """
+    Handles an AJAX request from the search admin view
+
+    Returns:
+        Top 15 search results in JSON format.
+    """
+
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    if request.session['type'] == 'S' or request.session['type'] == 'R': return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "POST":
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        type = request.POST['type']
+        dict = {}
+
+        for user in User.objects.all():
+            user_type = _get_user_type(user)
+
+            if user_type is None or user_type == 'A':
+                continue    # for user who are not S, G, F, D, R, A
+
+            user_first_name = None
+            user_last_name = None
+            user_email = None
+            
+            votes = 0
+
+            if user_type == type:
+                votes += 2
+            print('Queried User type = ' + user_type)
+            if user_type == 'S':
+                user_first_name = user.student.first_name
+                user_last_name = user.student.last_name
+                user_email = user.student.email
+            elif user_type == 'G' or user_type == 'D':
+                user_first_name = user.faculty.first_name
+                user_last_name = user.faculty.last_name
+                user_email = user.faculty.email
+            elif user_type == 'R':
+                user_first_name = user.first_name
+                user_last_name = user.last_name
+                user_email = user.email
+
+            if first_name.upper() in user_first_name.upper():
+                votes += 1
+
+            if last_name.upper() in user_last_name.upper():
+                votes += 1
+
+            if email.upper() in user_email.upper():
+                votes += 1
+
+            dict[user] = votes
+        
+        sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
+        sorted_results.reverse()
+
+        # print sorted results
+        for item in sorted_results:
+            print(item)
+        print('\n')
+
+        result = _clean_user_info_results(sorted_results)
+
+        return HttpResponse(json.dumps(result), content_type = 'application/json')
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def admin_student_refresh(request,id):
+    thesis = Thesis.objects.get(id = id)
+    print('Entered')
+    if request.method == "GET":
+        #thesisguideapproval = ThesisGuideApproval.objects.filter(thesis = thesis)
+        #for val in thesisguideapproval:
+        #    val.delete()
+            
+        #panelmember = PanelMember.objects.filter(thesis = thesis)
+        #for val in panelmember:
+        #    val.delete()
+        
+        ThesisGuideApproval.objects.filter(thesis = thesis).delete()
+        PanelMember.objects.filter(thesis = thesis).delete()
+        ThesisKeyword.objects.filter(thesis = thesis).delete()
+        thesis.abstract = ''
+        thesis.thesis_modifications = ''
+        thesis.panel_signed_copy = ''
+        thesis.synopsis = ''
+        thesis.thesis = ''
+        
+        status_type = StatusType.objects.get(id = 5)
+        thesis.status = status_type
+        thesis.save()
+        
+
+    return redirect(reverse('admin_search_student'))

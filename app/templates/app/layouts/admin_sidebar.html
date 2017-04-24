@@ -14,6 +14,11 @@
                           <li><a href="{% url 'admin_evaluate_reports' %}">View Submitted PhD Reports</a></li>
                        </ul>
                   </li>
+                  <li><a><i class="fa fa-file-text-o"></i> Referesh a User <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'admin_search_student' %}">Refresh Student Database</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-file-text-o"></i> Approvals <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                           <li><a href="{% url 'admin_view_request_for_synopsis' %}">Synopsis Requests</a></li>

@@ -276,6 +276,16 @@ def referee_evaluate_thesis(request):
             dict['synopsis'] = thesis.synopsis
             dict['thesis'] = thesis.thesis
             dict['keywords'] = []
+
+            if panelMember.answer_for_questions == True:
+                if thesis.thesis_modifications == "NULL" or thesis.thesis_modifications == "":
+                        dict['thesis_modifications'] = None
+                else:
+                    dict['thesis_modifications'] = thesis.thesis_modifications
+            else:
+                dict['thesis_modifications'] = None
+
+
             for keys in ThesisKeyword.objects.filter(thesis = thesis):
                     dict['keywords'].append((IEEEKeyword.objects.get(id = keys.keyword.id)).keyword)
             
@@ -369,7 +379,8 @@ def text_escape(s):
 @login_required
 def referee_thesis_approval(request):
     """
-    Handles user request to approve/reject thesis document
+    Handles user request to Fill the feedback form and download it..
+    To upload it later.
     """
 
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
@@ -380,16 +391,17 @@ def referee_thesis_approval(request):
     if request.method == "POST":
         
         id = int(request.POST['id'])
-        thesis_organisation_get_up = request.POST['thesis-organisation-get-up']
-        quality_check = request.POST['quality-check']
-        orginal_check = request.POST['orginal-check']
-        grammer_check = request.POST['grammer-check']
-        thesis_technical_content = request.POST['thesis-technical-content']
-        thesis_highlights_points = request.POST['thesis-highlights-points']
+        append = '-' + str(id)
+        thesis_organisation_get_up = request.POST['thesis-organisation-get-up' + append]
+        quality_check = request.POST['quality-check' + append]
+        orginal_check = request.POST['orginal-check' + append]
+        grammer_check = request.POST['grammar-check' + append]
+        thesis_technical_content = request.POST['thesis-technical-content' + append]
+        thesis_highlights_points = request.POST['thesis-highlights-points' + append]
         
         IsReevaluation = False
 
-        suggestions_check = request.POST['suggestions-check']
+        suggestions_check = request.POST['suggestions-check' + append]
         
         if suggestions_check == '1':
             suggestions_check = 'Minor queries or suggestions or modifications to which the student replies in writing and which is communicated to the oral board together with my report.'
@@ -397,7 +409,7 @@ def referee_thesis_approval(request):
             suggestions_check = 'Suggestions and modifications to which the students written reposnse is sent to me. I will give my reply to the same in two weeks of its receipt. This is neccessary before the thesis is considered by the oral board.'
             IsReevaluation = True
         
-        specific_recommendations = request.POST['specific-recommendations']
+        specific_recommendations = request.POST['specific-recommendations' + append]
 
         if specific_recommendations == '1':
             specific_recommendations = 'Thesis is acceptable in the present form for the award of PhD degeree.'
@@ -407,14 +419,14 @@ def referee_thesis_approval(request):
             specific_recommendations = 'The thesis needs techincal improvement or modifications, which must be carried out to my satisfaction before I recomment this thesis for acceptance.'
             IsReevaluation = True
         
-        feedback = request.POST['feedback']
+        feedback = request.POST['thesis-feedback' + append]
        
         thesis = Thesis.objects.get(id = id)
 
         #studentdetails
         student = Student.objects.get(user = thesis.student.user)
 
-        student_department = request.POST['Department']
+        student_department = "Information Technology"
 
         student_name = student.first_name + ' ' + student.middle_name + ' ' + student.last_name
 
@@ -477,74 +489,83 @@ def referee_thesis_approval(request):
                 pdf = f.read()
             #tempdir = convert_latex(request, 'final_report.tex',context)
             print(os.listdir(tempdir))
-            print(" ********* ")
+
+        r = HttpResponse(content_type = 'application/pdf')
+        r['Content-Disposition'] = 'attachement;filename = Evaluation_Report.pdf'
+        r.write(pdf)
+        return r
+
+        
+    ###### Notifications ######
+            #message = 'A Feedback report of Thesis titled ' + thesis.title + ' has been sent'
+            ##notication to Admin
+            #admin = Admin.objects.all()
+            #email = []
+            #for admin in admin:
+            #    send_notification(user, admin.user, message, '')
+            #    email.append(admin.user.email)
+
+        
+            ##Email to Admin
+            #subject = '[Feedback Report]'
+            #content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
+            #send_email_task.delay(email, subject, content)
+            #dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
+
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def referee_report_upload(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+
+    user = auth.get_user(request)
+    referee = Referee.objects.get(user = user)
+
+    if request.method == "POST":
+        form = PanelMemberForm(request.POST, request.FILES)
+        id = int(request.POST['id'])
+        isReevaluation = request.POST['re-evaluation-' + str(id)]
+
+        if form.is_valid() and validate_pdf(request.FILES['feedback_with_referee_details']):
+            thesis = Thesis.objects.get(id = id)
             panelmember = PanelMember.objects.get(thesis = thesis, referee = referee)
-            print(" ********* ")
-            if IsReevaluation:
-                panelmember.status = 'Z'
-            else:
-                panelmember.status = 'F'
+            
             time = str(datetime.datetime.now())
             timestamp = ''
             for i in time:
                 if not (i == ':' or i == '-'):
                     timestamp += i
-        
-            print(" ********* " + timestamp + "**********")
-            print()
-            #tempdir = "C:\\Users\\Sarada\\Documents"
-            shutil.copy(tempdir+"\\texput.pdf", os.getcwd() + "\\app\\static\\Feedback_With_Details\\"+ student_username + timestamp +".pdf")
+            request.FILES['feedback_with_referee_details'].name = "Evaluation_Report_"+thesis.student.user.username+"_"+timestamp+".pdf"
 
-            panelmember.feedback_with_referee_details = 'Feedback_With_Details\\' + student_username + timestamp + '.pdf'
+            if isReevaluation == "yes":
+                panelmember.status = 'Z'
+            else:
+                panelmember.status = 'F'
+            
+            panelmember.feedback_with_referee_details = request.FILES['feedback_with_referee_details']
             panelmember.save()
-        
-            ##without details
-            template = get_template('final_report_without_details.tex')
-    
-            rendered_tpl = template.render(context).encode('utf-8')  
-    
-            with tempfile.TemporaryDirectory() as tempdir:
-                shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
-                shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
-                with open(tempdir + '/texput.tex', 'wb') as file_:
-                    file_.write(rendered_tpl)
-                print("**************************************")
-                for i in range(2):
-                    m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
-                print(os.listdir(tempdir))
-                with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
-                    pdf = f.read()
-                #tempdir = convert_latex(request, 'final_report_without_details.tex',context)
-                time =str(datetime.datetime.now())
-                timestamp = ''
-                for i in time:
-                    if not (i == ':' or i == '-'):
-                        timestamp += i
-        
-                print(" ********* " + timestamp + "**********")
 
-                #tempdir = "C:\\Users\\Sarada\\Documents"
-                shutil.copy(tempdir+"\\texput.pdf", os.getcwd() + "\\app\\static\\Feedback_Without_Details\\"+ student_username + timestamp +".pdf")
+            return redirect(reverse('referee_evaluate_thesis'))
+        else:
+            return redirect(reverse(URL_BAD_REQUEST))
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
 
-                panelmember.feedback_without_referee_details = 'Feedback_Without_Details\\' + student_username + timestamp + '.pdf'
-                panelmember.save()
-        
-            message = 'A Feedback report of Thesis titled ' + thesis.title + ' has been sent'
-            #notication to Admin
-            admin = Admin.objects.all()
-            email = []
-            for admin in admin:
-                send_notification(user, admin.user, message, '')
-                email.append(admin.user.email)
+@login_required
+def downloads(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
-        
-            #Email to Admin
-            subject = '[Feedback Report]'
-            content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
-            send_email_task.delay(email, subject, content)
-            dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
-
-            return HttpResponse(json.dumps(dict), content_type = 'application/json')
+    if request.method == "GET":
+        return render(
+            request,
+            'app/referee/downloads.html',
+            {
+                'title':'Download Documents',
+                'layout_data' : get_layout_data(request),
+            }
+        )
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 

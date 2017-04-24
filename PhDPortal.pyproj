@@ -631,6 +631,7 @@
     <Content Include="app\static\Thesis\vibhu_20170423_135240.789859.pdf" />
     <Content Include="app\static\Thesis\Viswakanth_Korada.pdf" />
     <Content Include="app\templates\app\admin\add_referee.html" />
+    <Content Include="app\templates\app\admin\admin_search_student.html" />
     <Content Include="app\templates\app\admin\approval_for_synopsis.html" />
     <Content Include="app\templates\app\admin\approve_referee.html" />
     <Content Include="app\templates\app\admin\panel_approval.html" />
