@@ -2332,3 +2332,581 @@ AttributeError: 'str' object has no attribute 'user'
 2017-04-23 19:35:18 - INFO - views:login:418 - User pavan successfully authenticated
 2017-04-23 19:35:36 - INFO - guide_views:guide_save_panel_members:932 - 2   shanu
 2017-04-23 19:36:56 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-23 21:51:24 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:239 - scarlett
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:239 - brad
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:249 - 2 2
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:250 - 2 1
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:278 - gopal
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:278 - kishore
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:286 - scarlett
+2017-04-23 21:53:20 - INFO - director_views:director_submit_for_evaluation:286 - brad
+2017-04-23 21:54:00 - INFO - director_views:director_submit_for_evaluation:239 - scarlett
+2017-04-23 21:54:00 - INFO - director_views:director_submit_for_evaluation:239 - angelina
+2017-04-23 21:54:00 - INFO - director_views:director_submit_for_evaluation:239 - dennis
+2017-04-23 21:54:00 - INFO - director_views:director_submit_for_evaluation:249 - 2 3
+2017-04-23 21:54:00 - INFO - director_views:director_submit_for_evaluation:250 - 1 0
+2017-04-23 21:54:00 - INFO - director_views:director_submit_for_evaluation:278 - gopal
+2017-04-23 21:54:01 - INFO - director_views:director_submit_for_evaluation:278 - chiranjeevi
+2017-04-23 21:54:01 - INFO - director_views:director_submit_for_evaluation:286 - scarlett
+2017-04-23 21:54:01 - INFO - director_views:director_submit_for_evaluation:286 - angelina
+2017-04-23 21:54:01 - INFO - director_views:director_submit_for_evaluation:286 - dennis
+2017-04-23 21:54:06 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-23 21:54:12 - INFO - views:login:418 - User kishore successfully authenticated
+2017-04-23 22:10:17 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 235, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python34\lib\site-packages\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'bytes' object has no attribute 'get'
+2017-04-23 22:46:44 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "C:\Python34\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python34\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'PhDPortal.referee_thesis_approval' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 292, in referee_evaluate_thesis
+    'all_thesis' : all_thesis
+  File "C:\Python34\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python34\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "C:\Python34\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "C:\Python34\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "C:\Python34\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "C:\Python34\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 955, in render_annotated
+    return self.render(context)
+  File "C:\Python34\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "C:\Python34\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "C:\Python34\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python34\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python34\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'referee_thesis_approval' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-04-23 22:47:31 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 383, in referee_thesis_approval
+    id = int(request.POST['id'])
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'id'"
+2017-04-23 22:48:50 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'thesis-organisation-get-up'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 384, in referee_thesis_approval
+    thesis_organisation_get_up = request.POST['thesis-organisation-get-up']
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'thesis-organisation-get-up'"
+2017-04-23 22:49:53 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'thesis-organisation-get-up'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 384, in referee_thesis_approval
+    thesis_organisation_get_up = request.POST['thesis-organisation-get-up']
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'thesis-organisation-get-up'"
+2017-04-23 22:50:24 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'thesis-organisation-get-up'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 384, in referee_thesis_approval
+    thesis_organisation_get_up = request.POST['thesis-organisation-get-up']
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'thesis-organisation-get-up'"
+2017-04-23 22:53:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'grammer-check-1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 388, in referee_thesis_approval
+    grammer_check = request.POST['grammer-check' + append]
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'grammer-check-1'"
+2017-04-23 22:54:58 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'specific-recommendations'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 402, in referee_thesis_approval
+    specific_recommendations = request.POST['specific-recommendations']
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'specific-recommendations'"
+2017-04-23 22:55:59 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'feedback-1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 412, in referee_thesis_approval
+    feedback = request.POST['feedback' + append]
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'feedback-1'"
+2017-04-23 22:56:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'Department-1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 419, in referee_thesis_approval
+    student_department = request.POST['Department' + append]
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'Department-1'"
+2017-04-23 22:57:39 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'department-1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 419, in referee_thesis_approval
+    student_department = request.POST['department' + append]
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'department-1'"
+2017-04-24 00:03:38 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/upload/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 515, in referee_report_upload
+    print(request.POST['re-evaluation-' + id])
+TypeError: Can't convert 'int' object to str implicitly
+2017-04-24 00:04:01 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/upload/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 're-evaluation-1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 515, in referee_report_upload
+    print(request.POST['re-evaluation-' + str(id)])
+  File "C:\Python34\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'re-evaluation-1'"
+2017-04-24 00:07:39 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/upload/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 518, in referee_report_upload
+    thesis = Thesis.objects.filter(thesis = thesis)
+UnboundLocalError: local variable 'thesis' referenced before assignment
+2017-04-24 00:24:09 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/upload/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view app.referee_views.referee_report_upload didn't return an HttpResponse object. It returned None instead.
+2017-04-24 00:25:47 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/evaluate/upload/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 530, in referee_report_upload
+    request.FILES['feedback_with_referee_details'].name = "Evaluation_Report_"+thesis.student.user.username+"_"+timestamp+".pdf"
+AttributeError: 'QuerySet' object has no attribute 'student'
+2017-04-24 00:28:13 - INFO - views:logout:440 - User kishore successfully logged out
+2017-04-24 00:28:21 - INFO - views:login:418 - User scarlett successfully authenticated
+2017-04-24 00:28:30 - INFO - views:logout:440 - User scarlett successfully logged out
+2017-04-24 00:28:38 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:239 - scarlett
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:239 - angelina
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:239 - none
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:249 - 2 2
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:250 - 2 1
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:278 - kishore
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:278 - sridhar
+2017-04-24 00:29:06 - INFO - director_views:director_submit_for_evaluation:286 - scarlett
+2017-04-24 00:29:07 - INFO - director_views:director_submit_for_evaluation:286 - angelina
+2017-04-24 00:29:15 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-24 00:29:20 - INFO - views:login:418 - User scarlett successfully authenticated
+2017-04-24 00:34:09 - INFO - views:logout:440 - User scarlett successfully logged out
+2017-04-24 00:34:17 - INFO - views:login:418 - User scarlett successfully authenticated
+2017-04-24 00:58:54 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/downloads/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 506, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 556, in downloads
+    'layout_data' : get_layout_data(request),
+  File "C:\Python34\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python34\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python34\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Python34\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "C:\Python34\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Python34\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python34\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 514, in parse
+    raise self.error(token, e)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python34\lib\site-packages\django\template\loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 514, in parse
+    raise self.error(token, e)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python34\lib\site-packages\django\template\loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 508, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 562, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until]),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 8: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2017-04-24 01:17:36 - INFO - views:logout:440 - User scarlett successfully logged out
+2017-04-24 01:17:56 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-24 10:29:29 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-24 11:06:27 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-24 11:06:34 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-24 11:09:53 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-24 11:09:59 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-24 11:10:29 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-24 11:10:34 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-24 11:10:44 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-24 11:10:49 - INFO - views:login:418 - User gopal successfully authenticated
+2017-04-24 11:12:53 - INFO - views:logout:440 - User gopal successfully logged out
+2017-04-24 11:12:58 - INFO - views:login:418 - User admin successfully authenticated
+2017-04-24 11:13:36 - INFO - views:logout:440 - User admin successfully logged out
+2017-04-24 11:13:41 - INFO - views:login:418 - User pavan successfully authenticated
+2017-04-24 11:57:21 - INFO - views:logout:440 - User pavan successfully logged out
+2017-04-24 11:57:30 - INFO - views:login:418 - User gcnandi successfully authenticated
+2017-04-24 11:57:56 - INFO - views:logout:440 - User gcnandi successfully logged out
+2017-04-24 11:58:03 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-24 11:58:16 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-24 11:58:22 - INFO - views:login:418 - User nidhi successfully authenticated
+2017-04-24 11:59:17 - INFO - views:logout:440 - User nidhi successfully logged out
+2017-04-24 11:59:22 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-24 12:00:01 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-24 12:00:07 - INFO - views:login:418 - User nidhi successfully authenticated
+2017-04-24 12:00:22 - INFO - views:logout:440 - User nidhi successfully logged out
+2017-04-24 12:00:26 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-24 12:02:34 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-24 12:02:39 - INFO - views:login:418 - User nidhi successfully authenticated
+2017-04-24 12:02:52 - INFO - views:logout:440 - User nidhi successfully logged out
+2017-04-24 12:02:57 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-24 12:04:55 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-24 12:05:06 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-24 12:05:15 - INFO - views:logout:440 - User manish successfully logged out
+2017-04-24 12:05:20 - INFO - views:login:418 - User nidhi successfully authenticated
+2017-04-24 12:05:34 - INFO - views:logout:440 - User nidhi successfully logged out
+2017-04-24 12:05:51 - INFO - views:login:418 - User manish successfully authenticated
+2017-04-24 12:28:24 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/thesis/unevaluated/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\guide_views.py", line 465, in guide_unevaluated_thesis
+    'all_thesis' : all_thesis
+  File "C:\Python34\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python34\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python34\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Python34\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "C:\Python34\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Python34\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python34\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 514, in parse
+    raise self.error(token, e)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python34\lib\site-packages\django\template\loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 514, in parse
+    raise self.error(token, e)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python34\lib\site-packages\django\template\loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 514, in parse
+    raise self.error(token, e)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python34\lib\site-packages\django\template\defaulttags.py", line 886, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 514, in parse
+    raise self.error(token, e)
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python34\lib\site-packages\django\template\defaulttags.py", line 1027, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "C:\Python34\lib\site-packages\django\template\smartif.py", line 201, in parse
+    self.current_token.display())
+django.template.exceptions.TemplateSyntaxError: Unused 'thesis.thesis_modifications' at end of if expression.
+2017-04-24 12:30:49 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/thesis/unevaluated/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\guide_views.py", line 455, in guide_unevaluated_thesis
+    dict['thesis_modifications'] = NULL
+NameError: name 'NULL' is not defined
+2017-04-24 12:31:43 - INFO - views:logout:441 - User manish successfully logged out
+2017-04-24 12:31:50 - INFO - views:login:419 - User nidhi successfully authenticated
+2017-04-24 12:32:09 - INFO - views:logout:441 - User nidhi successfully logged out
+2017-04-24 12:32:18 - INFO - views:login:419 - User manish successfully authenticated
+2017-04-24 12:32:36 - INFO - views:logout:441 - User manish successfully logged out
+2017-04-24 12:32:43 - INFO - views:login:419 - User nidhi successfully authenticated
+2017-04-24 12:33:31 - INFO - views:logout:441 - User nidhi successfully logged out
+2017-04-24 12:33:36 - INFO - views:login:419 - User manish successfully authenticated
+2017-04-24 12:36:17 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /guide/feedback/reports/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: app_panelmember.answer_for_questions
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\guide_views.py", line 1010, in guide_feedback_reports
+    if panelmember:
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 262, in __bool__
+    self._fetch_all()
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "C:\Python34\lib\site-packages\django\db\models\sql\compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python34\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python34\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python34\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: app_panelmember.answer_for_questions
+2017-04-24 12:59:02 - INFO - views:logout:441 - User manish successfully logged out
+2017-04-24 13:00:24 - INFO - views:login:419 - User scarlett successfully authenticated
+2017-04-24 13:01:35 - INFO - views:logout:441 - User scarlett successfully logged out
+2017-04-24 13:01:48 - INFO - views:login:419 - User manish successfully authenticated
+2017-04-24 13:08:35 - INFO - views:logout:441 - User manish successfully logged out
+2017-04-24 13:08:42 - INFO - views:login:419 - User gopal successfully authenticated
+2017-04-24 14:59:37 - INFO - views:login:419 - User pavan successfully authenticated
+2017-04-24 15:04:24 - INFO - views:logout:441 - User pavan successfully logged out
+2017-04-24 15:04:34 - INFO - views:login:419 - User scarlett successfully authenticated
+2017-04-24 15:15:10 - INFO - views:logout:441 - User scarlett successfully logged out
+2017-04-24 15:15:16 - INFO - views:login:419 - User gopal successfully authenticated
+2017-04-24 15:15:27 - INFO - views:logout:441 - User gopal successfully logged out
+2017-04-24 15:15:34 - INFO - views:login:419 - User kishore successfully authenticated
+2017-04-24 15:15:39 - INFO - views:logout:441 - User kishore successfully logged out
+2017-04-24 15:15:48 - INFO - views:login:419 - User brad successfully authenticated
+2017-04-24 15:15:55 - INFO - views:logout:441 - User brad successfully logged out
+2017-04-24 15:16:06 - INFO - views:login:419 - User sridhar successfully authenticated
+2017-04-24 15:16:21 - ERROR - base:handle_uncaught_exception:284 - Internal Server Error: /referee/thesis/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "J:\Github Projects\PhDPortal\app\referee_views.py", line 280, in referee_evaluate_thesis
+    if panelmember.answer_for_questions == True:
+NameError: name 'panelmember' is not defined

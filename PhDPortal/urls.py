@@ -33,6 +33,9 @@ urlpatterns = [
     url(r'^user/search/query/$', app.views.search_user_query, name='search_user_query'),
 
     # admin urls
+    url(r'^admin/search/student/$', app.admin_views.admin_search_student, name='admin_search_student'),
+    url(r'^admin/search/student/refresh/(?P<id>\d+)$', app.admin_views.admin_student_refresh, name='admin_student_refresh'),
+    url(r'^admin/search/student/query/$', app.admin_views.admin_search_student_query, name='admin_search_student_query'),
     url(r'^admin/reports/$', app.admin_views.admin_evaluate_reports, name='admin_evaluate_reports'),
     url(r'^admin/add/referee/$', app.admin_views.admin_add_referee, name='admin_add_referee'),
     url(r'^admin/approve/referee/$', app.admin_views.admin_approve_referee, name='admin_approve_referee'),
@@ -113,9 +116,11 @@ urlpatterns = [
     url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
     url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),
     url(r'^referee/thesis/$', app.referee_views.referee_evaluate_thesis, name='referee_evaluate_thesis'),
-    url(r'^referee/thesis/evaluate/$', app.referee_views.referee_thesis_approval ),
+    url(r'^referee/thesis/evaluate/$', app.referee_views.referee_thesis_approval, name='referee_thesis_approval' ),
+    url(r'^referee/thesis/evaluate/upload/$', app.referee_views.referee_report_upload, name='referee_report_upload' ),
     url(r'^referee/help/procedure/$', app.referee_views.referee_help_procedure, name='referee_help_procedure'),
     url(r'^referee/help/contacts/$', app.referee_views.referee_help_contacts, name='referee_help_contacts'),
+    url(r'^referee/downloads/$', app.referee_views.downloads, name='downloads'),
 
     # other
     url(r'^400/$', app.views.bad_request, name='bad_request'),

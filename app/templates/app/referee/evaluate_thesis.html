@@ -1,8 +1,11 @@
 ﻿{% extends "app/layouts/home.html" %}
 {% load staticfiles %}
 {% block styles %}
-<!-- Add any page specific styles here -->
-
+<style>
+    input[type="file"] {
+        display: none;
+    }
+</style>
 {% endblock %}
 {% block content %}
 <!-- Guide homepage -->
@@ -36,6 +39,9 @@
                 </li>
                 <li role="presentation">
                     <a href="#phd-report-{{ thesis.id }}" role="tab" id="report-tab-{{ thesis.id }}" data-toggle="tab" aria-expanded="false">Final Report</a>
+                </li>
+                <li role="presentation">
+                    <a href="#phd-upload-{{ thesis.id }}" role="tab" id="upload-tab-{{ thesis.id }}" data-toggle="tab" aria-expanded="false">Upload Evaluation Report</a>
                 </li>
             </ul>
             <div id="thesis-tabs-content-{{ thesis.id }}" class="tab-content">
@@ -71,6 +77,11 @@
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="phd-thesis-{{ thesis.id }}" aria-labelledby="thesis-tab-{{ thesis.id }}">
                     <p>
+                        {% if thesis.thesis_modifications != NULL %}
+                            <a class="btn btn-primary pull-right" href="{% static thesis.thesis_modifications %}" download="download">
+                                <i class="fa fa-download"></i> &nbsp; View Modifications
+                            </a>
+                         {% endif %}
                         <a class="btn btn-primary pull-right" href="{% static thesis.thesis %}" download="download">
                             <i class="fa fa-download"></i> &nbsp; Download Thesis
                         </a>
@@ -88,8 +99,9 @@
                     <hr />
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="phd-report-{{ thesis.id }}" aria-labelledby="report-tab-{{ thesis.id }}">
-                    <form class="form-horizontal" method="post" action="">
+                    <form class="form-horizontal" method="post" action="{% url 'referee_thesis_approval' %}">
                         {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ thesis.id }}"/>
                         <h4>General PhD Student Details</h4>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Student Name</label>
@@ -106,7 +118,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Department</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="Information Technology" disabled>
+                                <input type="text" class="form-control" name="department-{{ thesis.id }}" value="Information Technology" disabled>
                             </div>
                         </div>
                         <br />
@@ -114,7 +126,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Organisation and Get up</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id ="thesis-organisation-and-get-up-{{ thesis.id }}" name="thesis-organisation-and-get-up-{{ thesis.id }}" rows="4" ></textarea>
+                                <textarea class="form-control" name="thesis-organisation-get-up-{{ thesis.id }}" rows="4" ></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -164,13 +176,13 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Technical Content of the Thesis</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id ="thesis-technical-content-{{ thesis.id }}"name="thesis-technical-content" rows="5" ></textarea>
+                                <textarea class="form-control" id ="thesis-technical-content-{{ thesis.id }}"name="thesis-technical-content-{{ thesis.id }}" rows="5" ></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Highlights and strong/weak points of the Thesis</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id ="thesis-highlights-points-{{ thesis.id }}" name="thesis-technical-content" rows="5" ></textarea>
+                                <textarea class="form-control" id ="thesis-highlights-points-{{ thesis.id }}" name="thesis-highlights-points-{{ thesis.id }}" rows="5" ></textarea>
                             </div>
                         </div>
                         <br />
@@ -211,48 +223,120 @@
                             </div>
                         </div>
                         <h4>FeedBack</h4>
-                        <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" rows="5" ></textarea>
+                        <textarea class="form-control" id="thesis-feedback-{{ thesis.id }}" name="thesis-feedback-{{ thesis.id }}" rows="5" ></textarea>
 
                         <br />
-                        <button type="button" class="btn btn-primary pull-right"
-                        onclick="evaluateThesis({{ thesis.id }},'{{ request.path }}evaluate/', '{{ csrf_token }}')">Submit Feedback</button>
+                        <button class="btn btn-primary pull-right"><i class="fa fa-download"></i> &nbsp; Download Report</button>
                      </form>
                 </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="phd-upload-{{ thesis.id }}" aria-labelledby="upload-tab-{{ thesis.id }}">
+                    
+                    <div class="row">
+            <div class="col-sm-6">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Upload</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        
+                        <form method="post" action="/referee/thesis/evaluate/upload/"  enctype="multipart/form-data">
+
+                                    {% csrf_token %}
+                                    <input type="hidden" name="re-evaluation-{{ thesis.id }}" value="no"/>
+                                    <input type="checkbox" name="re-evaluation-{{ thesis.id }}"  value="yes"><b>&nbsp;&nbsp;Need Re-evaluation?</b><br>
+                                    <input type="hidden" name="id" value="{{ thesis.id }}"/>
+                                    <div class="form-group">
+                                        <div class="col-sm">
+                                            &nbsp;<b><span style="line-height:45px;">Upload File (PDF only)</span></b>
+                                        </div>
+                                        <div class="col-sm">
+                                            <label for="file-upload-{{ thesis.id }}">
+                                                <a for="file-upload-{{ thesis.id }}" class="btn btn-primary pull-left btn-lg">
+                                                    <i class="fa fa-upload"></i> &nbsp; Upload Evaluation Report
+                                                </a>
+                                            </label>
+                                            <input id="file-upload-{{ thesis.id }}" name="feedback_with_referee_details" type="file"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                
+                                        <div class="col-sm">
+                                            <span id="file-selected-{{ thesis.id }}">Your filename will appear here</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                               
+                                        <div class="col-sm">
+                                            <span id="file-size-{{ thesis.id }}">Your file size (in MB) will appear here</span>
+                                        </div>
+                                    </div>
+                               
+                                    <button type="submit" class="btn btn-success pull-right">Submit</button>
+                                </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Upload Instructions</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content"><br />
+                            <p>Please read the following instructions carefully before uploading the Evaluation Report.</p>
+                            <ul>
+                                <li>The file must be strictly in PDF format.</li>
+                                <li>File size should not exceed 5 MB.</li>
+                                <li>Please Sign the Evaluation Report of the PhD Thesis before uploading it.</li>
+                                <li>Before clicking the submit button, please tick the check box if re-evaluation of the thesis is required.</li>
+                                <li>All your responses will be sent to the PhDCell of IIIT-Allahabad.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+                </div>
+
+
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('#file-upload-{{ thesis.id }}').bind('change', function () {
+        var fileName = '';
+        var fileSize = this.files[0].size;  // bytes
+
+        fileName = $(this).val();
+        $('#file-selected-{{ thesis.id }}').html(fileName);
+
+        fileSize = fileSize / 1024.0;       // KB
+
+        if (fileSize > 1024) {
+            fileSize = fileSize / 1024.0;   // MB
+            fileSize = fileSize.toFixed(2) + ' MB';
+        } else {
+            fileSize = fileSize.toFixed(2) + ' KB';
+        }
+
+        $('#file-size-{{ thesis.id }}').html(fileSize);
+    });
+</script>
+
 {% endfor %}
 
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
 <script>
-    function evaluateThesis(id, url, csrf_token) {
-        $.post(url, {
-            'id': id,
-            'Department': 'Information Technology',
-            'thesis-organisation-get-up': $('#thesis-organisation-and-get-up-' + id).val(),
-            'quality-check': $('input[name="quality-check-' + id + '"]:checked').val(),
-            'orginal-check': $('input[name="orginal-check-' + id + '"]:checked').val(),
-            'grammer-check': $('input[name="grammar-check-' + id + '"]:checked').val(),
-            'thesis-technical-content': $('#thesis-technical-content-' + id).val(),
-            'thesis-highlights-points': $('#thesis-highlights-points-' + id).val(),
-            'suggestions-check': $('input[name="suggestions-check-' + id + '"]:checked').val(),
-            'specific-recommendations': $('input[name="specific-recommendations-' + id + '"]:checked').val(),
-            'feedback' : $('#thesis-feedback-' + id).val(),
-            'csrfmiddlewaretoken': csrf_token
-        }, function (data) {
-            if (data.status === "OK") {
-                $('#thesis-' + id).fadeOut();
-                $('#message').html(data.message);
-                $('#success-message').show();
-                $('#success-message').fadeOut(3000);
-
-            }
-        });
-    }
-
     function printPdf(link) {
         w = window.open(link);
         w.print();

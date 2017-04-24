@@ -451,8 +451,11 @@ def guide_unevaluated_thesis(request):
                     dict['student_full_name'] = thesis.student.first_name + " " + thesis.student.last_name
                     dict['abstract'] = thesis.abstract
                     dict['thesis'] = thesis.thesis
-                    
-                    dict['thesis_modifications'] = thesis.thesis_modifications
+                    if thesis.thesis_modifications == "NULL" or thesis.thesis_modifications == "":
+                        dict['thesis_modifications'] = None
+                    else:
+                        dict['thesis_modifications'] = thesis.thesis_modifications
+
                     dict['student_username'] = thesis.student.user.username
                     dict['id'] = thesis.id
                     all_thesis.append(dict)
@@ -1011,6 +1014,11 @@ def guide_feedback_reports(request):
                     dict['student_full_name'] = thesis.student.first_name + " " + thesis.student.last_name
                     dict['student_username'] = thesis.student.user.username
                     dict['id'] = thesis.id
+                    if thesis.thesis_modifications == "NULL" or thesis.thesis_modifications == "":
+                        dict['thesis_modifications'] = None
+                    else:
+                        dict['thesis_modifications'] = thesis.thesis_modifications
+
                     if thesis.status.id == STATUS_ID_THESIS_FEEDBACKS_RECEIVED:
                         dict['show'] = 'yes'
                     else:

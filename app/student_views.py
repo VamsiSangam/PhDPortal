@@ -380,6 +380,8 @@ def student_upload_thesis(request):
             if isPdf == True:
                 request.FILES['thesis_modifications'].name = user.username+"_thesismodify_"+timestamp+".pdf"
                 thesis.thesis_modifications = request.FILES['thesis_modifications']
+            else:
+                thesis.thesis_modifications = 'NULL'
             thesis.save()
 
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD thesis document '
@@ -406,11 +408,40 @@ def student_upload_thesis(request):
             return redirect(reverse(URL_BAD_REQUEST))
     elif request.method == "POST" and canReSubmitThesis:
         form = ThesisForm(request.POST, request.FILES)
+        isModifications = True
+        isPdf = False
         
-        if form.is_valid() and validate_pdf(request.FILES['thesis']):    
+        try:
+            modifications_file = request.FILES['thesis_modifications']
+            isModifications = validate_pdf(modifications_file)
+            isPdf = True
+        except MultiValueDictKeyError:
+            isModifications = True
+
+        if form.is_valid() and validate_pdf(request.FILES['thesis']) and isModifications == True:    
+            time = str(datetime.datetime.now())
+            timestamp = ''
+            for i in time:
+                if not (i == ':' or i == '-'):
+                    timestamp += i
+            request.FILES['thesis'].name = user.username+"_thesis_"+timestamp+".pdf"
             thesis.thesis = request.FILES['thesis']
             thesis.save()
-
+            
+            if isPdf == True:
+                request.FILES['thesis_modifications'].name = user.username+"_thesismodify_"+timestamp+".pdf"
+                for panelmember in PanelMember.objects.filter(thesis = thesis, status = 'Z'):
+                    panelmember.answer_for_questions = True
+                    panelmember.save()
+                thesis.thesis_modifications = request.FILES['thesis_modifications']
+                
+            else:
+                for panelmember in PanelMember.objects.filter(thesis = thesis, status = 'Z'):
+                    panelmember.answer_for_questions = False
+                    panelmember.save()
+                thesis.thesis_modifications = 'NULL'
+            thesis.save()
+            
             notification_message = 'Student ' + request.session['full_name'] + ' has Re-submitted their PhD thesis document after modifications'
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(user, notification_message)

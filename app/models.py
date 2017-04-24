@@ -287,8 +287,9 @@ class PanelMember(models.Model):
     added_by = models.ForeignKey(Faculty, on_delete = models.CASCADE)
     created_time = models.DateTimeField(auto_now_add = True)
     updated_time = models.DateTimeField(auto_now = True)
-    feedback_with_referee_details = models.FileField(null = True, blank = True, upload_to = 'Feedback_With_Details')
-    feedback_without_referee_details = models.FileField(null = True, blank = True, upload_to = 'Feedback_Without_Details')
+    feedback_with_referee_details = models.FileField(null = True, blank = False, upload_to = 'Feedback_With_Details')
+    feedback_without_referee_details = models.FileField(null = True, blank = False, upload_to = 'Feedback_Without_Details')
+    answer_for_questions = models.BooleanField(choices=BOOL_CHOICES, default=False, editable=False)
     feedback_at = models.CharField(max_length = 1, default = 'A', choices = FEEDBACK_AT_TYPES)
     def __str__(self):
         return self.referee.user.first_name

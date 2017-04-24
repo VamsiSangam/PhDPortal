@@ -33,6 +33,17 @@ class PanelListSignedCopyForm(ModelForm):
         model = Thesis
         fields = ['panel_signed_copy']
 
+class PanelMemberForm(ModelForm):
+    class Meta:
+        model = PanelMember
+        fields = ['feedback_with_referee_details']
+
+
+class PanelMember2Form(ModelForm):
+    class Meta:
+        model = PanelMember
+        fields = ['feedback_without_referee_details']
+
 #class sampleForm(ModelForm):
    
 #    designation = forms.CharField(max_length = 30, help_text="Please enter the category name.")
