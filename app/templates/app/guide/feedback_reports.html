@@ -32,9 +32,21 @@
                             <a href="{% url 'user_profile' %}{{ thesis.student_username }}/">{{ thesis.student_full_name }}</a>
                         </p>
                         <p><b>Thesis</b> - 
+                        <div class="row">
+                            
+                            <div class=" col-md-2">
                            <a class="btn btn-primary " href="{% static thesis.thesis %}" download="download">
                             <i class="fa fa-download"></i> &nbsp; Download Thesis
                            </a>
+                           </div>
+                           <div class="col-md-4">
+                            {% if thesis.thesis_modifications != NULL %}
+                                <a class="btn btn-primary pull-right" href="{% static thesis.thesis_modifications %}" download="download">
+                                    <i class="fa fa-download"></i> &nbsp; View Modifications
+                                </a>
+                            {% endif %}
+                            </div>
+                        </div>
                         <p>
                             <b>Feedback Reports</b> - <br /><br />
                             

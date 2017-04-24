@@ -2,7 +2,11 @@
 {% load staticfiles %}
 {% block styles %}
 <!-- Add any page specific styles here -->
-
+<style>
+    input[type="file"] {
+        display: none;
+    }
+</style>
 {% endblock %}
 {% block content %}
 <div class="alert alert-info alert-dismissible fade in" role="alert">
@@ -55,14 +59,93 @@
                         <br />
                         <hr />
                         <br />
-                        <button type="button" class="btn btn-success pull-right"
-                                onclick="SendFeedbackToGuide({{ thesis.id }}, {{ thesis.referee_id }}, '{% url 'admin_evaluate_reports' %}', '{{ csrf_token }}')">
-                                <i class="fa fa-check"></i> &nbsp; Send To Guide
-                        </button>
-                        
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Upload</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                              <form method="post" action="/admin/reports/"  enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="thesis" value="{{ thesis.id }}"/>
+                                        <input type="hidden" name="referee" value="{{ thesis.referee_id }}"/>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                &nbsp;<b><span style="line-height:45px;">Upload File (PDF only)</span></b>
+                                            </div>
+                                            <div class="col-sm">
+                                                <label for="file-upload-{{ thesis.id }}">
+                                                    <a for="file-upload-{{ thesis.id }}" class="btn btn-primary pull-left btn-lg">
+                                                        <i class="fa fa-upload"></i> &nbsp; Upload Evaluation Report
+                                                    </a>
+                                                </label>
+                                                <input id="file-upload-{{ thesis.id }}" name="feedback_without_referee_details" type="file"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                
+                                            <div class="col-sm">
+                                                <span id="file-selected-{{ thesis.id }}">Your filename will appear here</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                               
+                                            <div class="col-sm">
+                                                <span id="file-size-{{ thesis.id }}">Your file size (in MB) will appear here</span>
+                                            </div>
+                                        </div>
+                               
+                                        <button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> &nbsp; Send To Guide</button>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Upload Instructions</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content"><br />
+                            <p>Please read the following instructions carefully before uploading the Evaluation Report.</p>
+                            <ul>
+                                <li>The file must be strictly in PDF format.</li>
+                                <li>File size should not exceed 5 MB.</li>
+                                <li>Please make sure this file do not have any identities(i.e., signature, name e.t.c.,) related to Examiner.</li>
+                                <li>This Evaluation report will be sent to the Supervisor(s) of the respective thesis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
                     </div>
                 </div>
             </div>
+<script type="text/javascript">
+    $('#file-upload-{{ thesis.id }}').bind('change', function () {
+        var fileName = '';
+        var fileSize = this.files[0].size;  // bytes
+
+        fileName = $(this).val();
+        $('#file-selected-{{ thesis.id }}').html(fileName);
+
+        fileSize = fileSize / 1024.0;       // KB
+
+        if (fileSize > 1024) {
+            fileSize = fileSize / 1024.0;   // MB
+            fileSize = fileSize.toFixed(2) + ' MB';
+        } else {
+            fileSize = fileSize.toFixed(2) + ' KB';
+        }
+
+        $('#file-size-{{ thesis.id }}').html(fileSize);
+    });
+</script>
             {% endfor %}
         </div>
     </div>

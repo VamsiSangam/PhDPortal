@@ -192,6 +192,7 @@ def _get_all_student_info(user, dict):
     thesis = Thesis.objects.get(student = student)
     
     dict['title'] = thesis.title
+    dict['thesis_id'] = thesis.id
     dict['abstract'] = thesis.abstract
     dict['guides'] = []
     dict['keywords'] = []
