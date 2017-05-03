@@ -1598,3 +1598,467 @@ le	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.dQ
 1492497794819	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
 1492497794836	geckodriver::marionette	INFO	Connecting to Marionette on localhost:5143
 1492497795609	Marionette	INFO	Listening on port 5143
+1493115615806	geckodriver	INFO	Listening on 127.0.0.1:10672
+1493115617722	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Wg2oirSNHHxH
+1493115617722	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493115617738	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10688
+1493115618680	Marionette	INFO	Listening on port 10688
+1493115652791	geckodriver	INFO	Listening on 127.0.0.1:10801
+1493115654823	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.zZFx6CNscUCN
+1493115654826	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493115654846	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10813
+1493115655643	Marionette	INFO	Listening on port 10813
+1493115669262	geckodriver	INFO	Listening on 127.0.0.1:10894
+1493115671296	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.zsJqTGwKLvzN
+1493115671300	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493115671323	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10908
+1493115672227	Marionette	INFO	Listening on port 10908
+JavaScript error: chrome://browser/content/preferences/in-content/advanced.js, line 352: TypeError: prefStrBundle.getFormattedString is not a function
+1493115708195	geckodriver	INFO	Listening on 127.0.0.1:11025
+1493115710238	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Go1pOagRKi5G
+1493115710337	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493115710358	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11039
+1493115711465	Marionette	INFO	Listening on port 11039
+console.warn: Asynchronous operation was aborted as selection changed.
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.92, type getOriginalLocation failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1178:7
+frontProto/</proto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1338:14
+.getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1795:12
+Rule.prototype.getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:145:12
+RuleEditor.prototype.updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:239:7
+RuleEditor.prototype._create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:122:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:75:3
+CssRuleView.prototype._createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1162:23
+CssRuleView.prototype._populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:965:28
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1125:23
+StyleSheetFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:1013:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1033:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+exports.InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:3967:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1844:13
+TaskImpl_run@resource://gre/modules/Task.jsm:315:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:529:9
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.92, type getOriginalLocation failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1178:7
+frontProto/</proto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1338:14
+.getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1795:12
+Rule.prototype.getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:145:12
+RuleEditor.prototype.updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:239:7
+RuleEditor.prototype._create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:122:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:75:3
+CssRuleView.prototype._createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1162:23
+CssRuleView.prototype._populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:965:28
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1125:23
+StyleSheetFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:1013:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1033:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+exports.InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:3967:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1844:13
+TaskImpl_run@resource://gre/modules/Task.jsm:315:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:529:9
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.92, type getOriginalLocation failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1178:7
+frontProto/</proto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1338:14
+.getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1795:12
+Rule.prototype.getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:145:12
+RuleEditor.prototype.updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:239:7
+RuleEditor.prototype._create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:122:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:75:3
+CssRuleView.prototype._createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1162:23
+CssRuleView.prototype._populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:965:28
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1125:23
+StyleSheetFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:1013:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1033:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+exports.InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:3967:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1844:13
+TaskImpl_run@resource://gre/modules/Task.jsm:315:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:529:9
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.92, type getOriginalLocation failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1178:7
+frontProto/</proto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1338:14
+.getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1795:12
+Rule.prototype.getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:145:12
+RuleEditor.prototype.updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:239:7
+RuleEditor.prototype._create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:122:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:75:3
+CssRuleView.prototype._createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1162:23
+CssRuleView.prototype._populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:965:28
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1125:23
+StyleSheetFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:1013:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1033:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+exports.InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:3967:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1844:13
+TaskImpl_run@resource://gre/modules/Task.jsm:315:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:529:9
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.92, type getOriginalLocation failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1178:7
+frontProto/</proto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1338:14
+.getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1795:12
+Rule.prototype.getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:145:12
+RuleEditor.prototype.updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:239:7
+RuleEditor.prototype._create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:122:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:75:3
+CssRuleView.prototype._createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1162:23
+CssRuleView.prototype._populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:965:28
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1125:23
+StyleSheetFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:1013:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1033:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+exports.InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:3967:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1844:13
+TaskImpl_run@resource://gre/modules/Task.jsm:315:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:529:9
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.92, type getOriginalLocation failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1178:7
+frontProto/</proto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1338:14
+.getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1795:12
+Rule.prototype.getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:145:12
+RuleEditor.prototype.updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:239:7
+RuleEditor.prototype._create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:122:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:75:3
+CssRuleView.prototype._createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1162:23
+CssRuleView.prototype._populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:965:28
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1125:23
+StyleSheetFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:1013:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/styles.js:1033:5
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:1127:5
+exports.InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/inspector.js:3967:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1844:13
+TaskImpl_run@resource://gre/modules/Task.jsm:315:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:529:9
+
+console.error: 
+  Message: Error: Failed to fetch http://localhost:8081/static/app/css/bootstrap.min.css.map. Code 2152398850.
+  Stack:
+    mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+
+mainThreadFetch/onResponse@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/DevToolsUtils.js:418:23
+NetUtil_asyncFetch/<.onStopRequest@resource://gre/modules/NetUtil.jsm:128:17
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+eloper.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.transport is null
+Full stack: DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+*************************
+console.error: 
+  Message: TypeError: this.transport is null
+  Stack:
+    DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+*************************
+A coding exception was thrown in a Promise rejection callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.transport is null
+Full stack: DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+*************************
+console.error: 
+  Message: TypeError: this.transport is null
+  Stack:
+    DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+*************************
+A coding exception was thrown in a Promise rejection callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.transport is null
+Full stack: DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+*************************
+console.error: 
+  Message: TypeError: this.transport is null
+  Stack:
+    DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+*************************
+A coding exception was thrown in a Promise rejection callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.transport is null
+Full stack: DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+*************************
+console.error: 
+  Message: TypeError: this.transport is null
+  Stack:
+    DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+*************************
+A coding exception was thrown in a Promise rejection callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.transport is null
+Full stack: DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+*************************
+console.error: 
+  Message: TypeError: this.transport is null
+  Stack:
+    DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+*************************
+A coding exception was thrown in a Promise rejection callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.transport is null
+Full stack: DSC_send@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js:1391:5
+Actor<.writeError@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/protocol.js:911:5
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:936:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+
+*************************
+1493115837668	addons.productaddons	WARN	File download failed: 0x80004004
+1493115837800	addons.productaddons	WARN	File download failed: 0x80040111
+1493115938088	geckodriver	INFO	Listening on 127.0.0.1:11906
+1493115940141	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.NSx11rsEJuPY
+1493115940141	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493115940156	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11912
+1493115941049	Marionette	INFO	Listening on port 11912
+1493115980463	geckodriver	INFO	Listening on 127.0.0.1:12257
+1493115982510	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.poImRamDRLOK
+1493115982510	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493115982542	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12266
+1493115983398	Marionette	INFO	Listening on port 12266
+1493116246754	geckodriver	INFO	Listening on 127.0.0.1:12882
+1493116248801	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.fmWZAFeVeswL
+1493116248801	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493116248823	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12889
+1493116249711	Marionette	INFO	Listening on port 12889
+1493116290419	geckodriver	INFO	Listening on 127.0.0.1:13201
+1493116292470	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.P3zPvGoQDrWb
+1493116292485	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493116292501	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13208
+1493116293302	Marionette	INFO	Listening on port 13208
+1493116665424	geckodriver	INFO	Listening on 127.0.0.1:13836
+1493116667457	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.KYT57OYm9cHw
+1493116667460	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493116667483	geckodriver::marionette	INFO	Connecting to Marionette on localhost:13843
+1493116668565	Marionette	INFO	Listening on port 13843
+1493116709018	geckodriver	INFO	Listening on 127.0.0.1:14145
+1493116711051	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.14zNzqyJlgu8
+1493116711054	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493116711078	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14154
+1493116712532	Marionette	INFO	Listening on port 14154
+1493116965118	geckodriver	INFO	Listening on 127.0.0.1:14824
+1493116967043	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.sngJDzgRYEM1
+1493116967050	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493116967093	geckodriver::marionette	INFO	Connecting to Marionette on localhost:14830
+1493116969243	Marionette	INFO	Listening on port 14830
+1493117009410	geckodriver	INFO	Listening on 127.0.0.1:1187
+1493117011452	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.c6rd9qeknyme
+1493117011454	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117011472	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1194
+1493117012446	Marionette	INFO	Listening on port 1194
+1493117243358	geckodriver	INFO	Listening on 127.0.0.1:1823
+1493117245374	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.x7uzYwKk2OGB
+1493117245377	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117245395	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1830
+1493117246116	Marionette	INFO	Listening on port 1830
+1493117285389	geckodriver	INFO	Listening on 127.0.0.1:2151
+1493117287429	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1tlczJSS49WO
+1493117287442	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117287462	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2158
+1493117288167	Marionette	INFO	Listening on port 2158
+1493117473962	geckodriver	INFO	Listening on 127.0.0.1:2612
+1493117475983	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.bTd6nXRRE4y1
+1493117475987	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117476008	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2619
+1493117477582	Marionette	INFO	Listening on port 2619
+1493117517663	geckodriver	INFO	Listening on 127.0.0.1:2927
+1493117519704	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.volrL8ZlDssl
+1493117519707	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117519728	geckodriver::marionette	INFO	Connecting to Marionette on localhost:2933
+1493117520558	Marionette	INFO	Listening on port 2933
+1493117596195	addons.productaddons	WARN	File download failed: 0x80004004
+1493117596273	addons.productaddons	WARN	File download failed: 0x80040111
+1493117610369	geckodriver	INFO	Listening on 127.0.0.1:3275
+1493117612412	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.Ce1l83dMQA0g
+1493117612416	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117612437	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3281
+1493117613347	Marionette	INFO	Listening on port 3281
+1493117647902	geckodriver	INFO	Listening on 127.0.0.1:3567
+1493117649943	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.5knsWeARKK5I
+1493117649946	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493117649967	geckodriver::marionette	INFO	Connecting to Marionette on localhost:3574
+1493117650843	Marionette	INFO	Listening on port 3574
+1493118243501	geckodriver	INFO	Listening on 127.0.0.1:4438
+1493118245533	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.nDHOqwh3I64h
+1493118245537	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493118245558	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4450
+1493118246656	Marionette	INFO	Listening on port 4450
+1493118286963	geckodriver	INFO	Listening on 127.0.0.1:4814
+1493118288994	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.LCZO6mDR1TRX
+1493118289066	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493118289088	geckodriver::marionette	INFO	Connecting to Marionette on localhost:4820
+1493118289899	Marionette	INFO	Listening on port 4820
+1493128384426	geckodriver	INFO	Listening on 127.0.0.1:6563
+1493128386493	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.rOJhtMm5qM6Q
+1493128386493	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493128386508	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6570
+1493128387314	Marionette	INFO	Listening on port 6570
+1493128426015	geckodriver	INFO	Listening on 127.0.0.1:6838
+1493128428092	mozprofile::profile	INFO	Using profile path C:\Users\Sarada\AppData\Local\Temp\rust_mozprofile.1so6KBqTDigp
+1493128428092	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1493128428114	geckodriver::marionette	INFO	Connecting to Marionette on localhost:6844
+1493128428816	Marionette	INFO	Listening on port 6844

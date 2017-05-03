@@ -19155,3 +19155,47 @@ System.FormatException: Input string was not in a correct format.
 2017-04-23T18:41:32: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\tzlocal"
 2017-04-23T18:41:33: Deleting 1 files
 2017-04-23T18:41:33: Deleting "E:\Education\GitHub Projects\PhDPortal\env\.ptvs\kombu\celery.utils.idb"
+
+2017-05-04T04:31:48: Start analysis
+2017-05-04T04:31:48: [WARNING] Library was set explicitly - skipping path detection
+2017-05-04T04:31:48: IncludeModulesFromModulePath = win32com
+2017-05-04T04:31:49: Deleting 0 files
+2017-05-04T04:31:49: astropy.CallDepth = 0
+2017-05-04T04:31:49: matplotlib.CallDepth = 3
+2017-05-04T04:31:49: pandas.CallDepth = 0
+2017-05-04T04:31:49: sympy.CallDepth = 0
+2017-05-04T04:31:49: Start group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant" with 14 files
+2017-05-04T04:31:49: Parsing "enchant.errors" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\errors.py")
+2017-05-04T04:31:49: Parsing "enchant.pypwl" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\pypwl.py")
+2017-05-04T04:31:49: Parsing "enchant.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\tests.py")
+2017-05-04T04:31:49: Parsing "enchant.utils" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\utils.py")
+2017-05-04T04:31:49: Parsing "enchant._enchant" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\_enchant.py")
+2017-05-04T04:31:49: Parsing "enchant" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\__init__.py")
+2017-05-04T04:31:49: Parsing "enchant.checker.CmdLineChecker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\checker\CmdLineChecker.py")
+2017-05-04T04:31:49: Parsing "enchant.checker.GtkSpellCheckerDialog" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\checker\GtkSpellCheckerDialog.py")
+2017-05-04T04:31:49: Parsing "enchant.checker.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\checker\tests.py")
+2017-05-04T04:31:49: Parsing "enchant.checker.wxSpellCheckerDialog" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\checker\wxSpellCheckerDialog.py")
+2017-05-04T04:31:49: Parsing "enchant.checker" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\checker\__init__.py")
+2017-05-04T04:31:49: Parsing "enchant.tokenize.en" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\tokenize\en.py")
+2017-05-04T04:31:49: Parsing "enchant.tokenize.tests" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\tokenize\tests.py")
+2017-05-04T04:31:49: Parsing "enchant.tokenize" ("E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant\tokenize\__init__.py")
+2017-05-04T04:31:49: Parsing complete
+2017-05-04T04:31:49: Analyzing "enchant.errors"
+2017-05-04T04:31:49: Analyzing "enchant.pypwl"
+2017-05-04T04:31:49: Analyzing "enchant.tests"
+2017-05-04T04:31:49: Analyzing "enchant.utils"
+2017-05-04T04:31:49: Analyzing "enchant._enchant"
+2017-05-04T04:31:49: Analyzing "enchant"
+2017-05-04T04:31:49: Analyzing "enchant.checker.CmdLineChecker"
+2017-05-04T04:31:49: Analyzing "enchant.checker.GtkSpellCheckerDialog"
+2017-05-04T04:31:49: Analyzing "enchant.checker.tests"
+2017-05-04T04:31:49: Analyzing "enchant.checker.wxSpellCheckerDialog"
+2017-05-04T04:31:49: Analyzing "enchant.checker"
+2017-05-04T04:31:49: Analyzing "enchant.tokenize.en"
+2017-05-04T04:31:49: Analyzing "enchant.tokenize.tests"
+2017-05-04T04:31:49: Analyzing "enchant.tokenize"
+2017-05-04T04:31:49: Starting analysis of 14 modules
+2017-05-04T04:31:52: Analysis complete
+2017-05-04T04:31:52: Saving group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant"
+2017-05-04T04:31:52: End of group "E:\Education\GitHub Projects\PhDPortal\env\Lib\site-packages\enchant"
+2017-05-04T04:31:53: Deleting 0 files

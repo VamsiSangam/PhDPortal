@@ -300,12 +300,13 @@ class UserTests(TestCase):
             match_count = 0
 
             for notification in unread_notifications:
-                notification_message = notification.find_element_by_class_name('notification-message').text
+                notification_message = notification.find_element_by_class_name('notification-message').text.strip(' ')
+                #print('Notification message (actual) = ' + notification_message + '****')
                 notification_sender = notification.find_element_by_class_name('notification-sender').text
                 notification_date = parse(notification.find_element_by_class_name('notification-date').text)
 
                 if sender == notification_sender and message == notification_message and \
-                    (date - notification_date).total_seconds() < 30:
+                    (date - notification_date).total_seconds() < 600:
                     result = True
                     break
         else:

@@ -1,6 +1,7 @@
 ﻿{% extends "app/layouts/home.html" %}
 {% load staticfiles %}
 {% block styles %}
+<link href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 {% endblock %}
 {% block content %}
 <br />
@@ -10,21 +11,28 @@
             <span aria-hidden="true">&times;</span>
         </button>
         <ul>
-            <li>PhD abstract is a short gist/summary of your PhD your are working on.</li>
-            <li>Abstract must ideally be 200-300 words in length.</li>
-            <li>You can submit an abstract again if your guide has requested for changes.</li>
-            <li>To edit your abstract simply edit the field below and submit.</li>
-            <li>Once your guide approves your PhD abstract, you cannot edit it again.</li>
+            <li>PhD details to fill are Title of the work and the Guide(s) or Co-Guide.</li>
+            <li>Title must ideally be 5-20 words in length.</li>
+            <li>You Should submit guides and coguides according to Limit od IIITA.</li>
+            <li>Currently the limit 1 Guide and 1 Coguide or 2 Guides or a single Guide.</li>
+            <li>Any issues contact administrator to solve them.</li>
         </ul>
     </div>
 
-    {% if detailsError %}
-    <div class="alert alert-danger alert-dismissible fade in" role="alert" id="success-message">
+    
+    <div class="alert alert-success alert-dismissible fade in" role="alert" id="success-message" hidden>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
     </button>
-    <span id="message">{{ detailsErrorMessage }}</span>
+    <span id="message"></span>
+  
     </div>
-    {% endif %}
+    
+    <div class="alert alert-danger alert-dismissible fade in" role="alert" id="fail-message" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <span id="message"></span>
+    </div>
+    
 </div>
 
 <div class="col-sm-12">
@@ -41,46 +49,41 @@
                 <a href="{% url 'user_profile' %}"><b>profile page<b></a>.
             </p>
             {% else %}
-            <form class="form-horizontal" method="post" action="">
-                {% csrf_token %}
+            <form class="form-horizontal">
                 <div class="form-group">
-                    <label for="abstract" class="col-sm-3 control-label">Title :</label>
+                    <label for="abstract" class="col-sm-2 control-label">Title :</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" id="title" name="title" rows="2" required = "required"></textarea>
                         </div>
-                </div><br />
+                </div>
+                <br>
                 <div class="form-group">
-                    <label for="guide" class="col-sm-3 control-label">
-                        Select Guide-1:
+                    <label for="Guides" class="col-sm-2 control-label">
+                        Select Guides
                     </label>
                     <div class="col-sm-5">
-                       <input type="text" name="guide-1" value="None" style =" height: 30px; width: 250px;" required="required"  id="guide-1" oninput="getSuggestions()"/><br><br>
+                        <select class="form-control select2-faculty" id="guides" multiple>
+                            
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="guide" class="col-sm-3 control-label">
-                        Select Guide-2:
+                    <label for="Co-Guides" class="col-sm-2 control-label">
+                        Select Co-Guides
                     </label>
                     <div class="col-sm-5">
-                       <input type="text" name="guide-2" value="None" style =" height: 30px; width: 250px;" required="required"  id="guide-2" oninput="getSuggestions()"/><br><br>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="guide" class="col-sm-3 control-label">
-                        Select Co-Guide:
-                    </label>
-                    <div class="col-sm-5">
-                       <input type="text" name="co_guide" value="None" style =" height: 30px; width: 250px;" required="required"  id="co_guide" oninput="getSuggestions()"/><br><br>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                          <button class="btn btn-success pull-left">
-                                Submit Details
-                        </button>
+                        <select class="form-control select2-faculty" id="co_guides" multiple>
+                            
+                        </select>
                     </div>
                 </div>
             </form>
+            <br />
+            <button class="btn btn-primary pull-right" 
+                    onclick="confirm('{% url 'student_add_details' %}', '{{ csrf_token }}')">
+                    Confirm
+            </button>
+            
             {% endif %}
         </div>
     </div>
@@ -88,4 +91,73 @@
 {% endblock %}
 {% block scripts %}
 <!-- Add any page specific javascript files here -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+    function formatFacultyData(user) {
+        var option = $(
+          '<span class="clearfix">' +
+            '<img class="img-responsive img-rounded pull-right" style="height:65px;" src="http://localhost:8000/static/app/images/user.png"/>' +
+            '<h5>' + user.text + '</h5>' +
+            '<p>' + user.email + '</p>' +
+          '</span>'
+        );
+        return option;
+    };
+
+    function formatFacultySelection(user) {
+        return user.text;
+    }
+
+    $(document).ready(function () {
+        $(".select2-faculty").each(function () {
+            
+            $(this).select2({
+                ajax: {
+                    url: '/student/details/faculty/all/',
+                    dataType: 'json',
+                    data: function (term, page) {
+                        return {
+                            term: term['term'],
+                        }
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+
+                        return {
+                            results: data,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }
+                        };
+                    },
+                },
+                minimumInputLength: 1,
+                maximumSelectionSize: 10,
+                templateResult: formatFacultyData,
+                templateSelection: formatFacultySelection,
+                width: '100%',
+            });
+       });
+    });
+
+    function confirm(url, csrf_token) {
+        $.post(url, {
+            'title': $('#title').val(),
+            'guides': $('#guides').val(),
+            'co_guides': $('#co_guides').val(),
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "OK") {
+                $('#success-message #message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').delay(3000).fadeOut();
+                window.location = ''
+            } else {
+                $('#fail-message #message').html(data.message);
+                $('#fail-message').show();
+                $('#fail-message').delay(3000).fadeOut();
+            }
+        });
+    }
+</script>
 {% endblock %}

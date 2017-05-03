@@ -693,6 +693,7 @@
     <Content Include="app\templates\app\student\view_thesis.html" />
     <Content Include="app\templates\final_report.tex" />
     <Content Include="app\templates\final_report_without_details.tex" />
+    <Content Include="app\templates\keywordtex.tex" />
     <Content Include="app\templates\logo.jpg" />
     <Content Include="app\templates\panel.tex" />
     <Content Include="app\templates\signature.jpg" />

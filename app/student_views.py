@@ -3,6 +3,14 @@ import datetime
 from datetime import time, timedelta
 from django.utils.datastructures import MultiValueDictKeyError
 from app.tasks import send_email_task
+from enchant.checker import SpellChecker
+import os
+import shutil
+from django.template import Context
+from django.template.loader import get_template
+from subprocess import check_output
+import tempfile
+
 
 URL_STUDENT_ADD_ABSTRACT = 'student_add_abstract'
 URL_STUDENT_VIEW_THESIS = 'student_view_thesis'
@@ -82,53 +90,53 @@ def student_add_details(request):
     isDetailsApproved = (thesis.status.id >= STATUS_ID_SUBMIT_ABSTRACT)
 
     if request.method == "GET":
+        dict = {'status' : 'get', 'message' : 'Please Provide the Title!'}
 
         return render(request, 'app/student/phd_add_details.html', {
             'layout_data' : get_layout_data(request),
-            'isDetailsApproved' : isDetailsApproved
+            'isDetailsApproved' : isDetailsApproved,
+            'dict': dict 
         })
     elif request.method == "POST" and (not isDetailsApproved):
         title = request.POST['title']
-        guide_1 = request.POST['guide-1']
-        guide_2 = request.POST['guide-2']
-        co_guide = request.POST['co_guide']
-        print(title)
-        if (guide_1 == 'None' and guide_2 == 'None' and co_guide == 'None') or (guide_1 != 'None' and guide_2 != 'None' and co_guide != 'None') or (guide_1 == 'None' and guide_2 == 'None'):
-            #dict = {'status' : 'OK', 'message' : 'Please Update The Details Properly According to the rules!'}
-            print('herererererere')
-            return render(request, 'app/student/phd_add_details.html', {
-            'layout_data' : get_layout_data(request),
-            'isDetailsApproved' : isDetailsApproved,
-            'detailsError' : True,
-            'detailsErrorMessage' : 'Please Update The Details Properly According to the rules!'
-        })
+        guides = request.POST.getlist('guides[]')
+        co_guides = request.POST.getlist('co_guides[]')
+        
+        isrepeat = False
+        for guide in guides:
+            for coguide in co_guides:
+                if int(guide) == int(coguide):
+                    dict = {'status' : 'nope', 'message' : 'Please Update The Details Properly According to the rules!'}
+                    return HttpResponse(json.dumps(dict), content_type = 'application/json')
+
+        guide_count = 0
+        co_guide_count = 0
+        for guide in guides:
+            guide_count = guide_count + 1
+        for co_guide in co_guides:
+            co_guide_count = co_guide_count + 1
+        if str(len(title)) == '0':
+            dict = {'status' : 'nope', 'message' : 'Please Provide the Title!'}
+        elif guide_count < 1:
+            dict = {'status' : 'nope', 'message' : 'Please Update The Details Properly According to the rules!'}
         else :
 
             thesis.title = title
             thesis.save()
             
-            if guide_1 != 'None':
-                guide_1 = int(guide_1)
-                guide = Faculty.objects.get(id = guide_1)
+            for guide in guides:
+                guide = Faculty.objects.get(id = int(guide))
                 ThesisGuide(thesis = thesis, guide = guide, type = 'G').save()
             
-            if guide_2 != 'None':
-                guide_2 = int(guide_2)
-                guide = Faculty.objects.get(id = guide_2)
-                ThesisGuide(thesis = thesis, guide = guide, type = 'G').save()
-            
-            if co_guide != 'None':
-                co_guide = int(co_guide)
-                guide = Faculty.objects.get(id = co_guide)
+            for co_guide in co_guides:
+                guide = Faculty.objects.get(id = int(co_guide))
                 ThesisGuide(thesis = thesis, guide = guide, type = 'C').save()
             
-            _update_student_status(thesis, STATUS_ID_SUBMIT_ABSTRACT) 
-            #notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD abstract '
-            #notification_message += 'for the PhD titled "' + thesis.title + '"'
-            #send_notification_to_guides(user, notification_message)
-            #_update_student_status(thesis, STATUS_ID_ABSTRACT_APPROVED - 1)
+            _update_student_status(thesis, STATUS_ID_SUBMIT_ABSTRACT)
+            dict = {'status' : 'OK', 'message' : 'Details Added Successfully!'}
 
-            return redirect(reverse(URL_STUDENT_ADD_DETAILS))
+
+        return HttpResponse(json.dumps(dict), content_type = 'application/json')
 
     else:
         return redirect(reverse(URL_BAD_REQUEST))
@@ -167,8 +175,7 @@ def student_add_abstract(request):
         notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD abstract '
         notification_message += 'for the PhD titled "' + thesis.title + '"'
         send_notification_to_guides(user, notification_message)
-        ##sending email
-        ##Email Notification
+        # Email Notification
         subject = "[Abstract Submitted] by " + request.session['full_name']
         content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'.Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>DUPGC."
         
@@ -185,7 +192,6 @@ def student_add_abstract(request):
         
         _update_student_status(thesis, STATUS_ID_ABSTRACT_WAITING_APPROVAL)
         
-       # return redirect(reverse(URL_STUDENT_ADD_ABSTRACT))
         return redirect(reverse(URL_STUDENT_ADD_ABSTRACT)) 
     else:
         return redirect(reverse(URL_BAD_REQUEST))
@@ -206,12 +212,11 @@ def student_request_synopsis(request):
     
     if request.method == 'POST':
         _update_student_status(thesis, STATUS_ID_REQUEST_PENDING_BY_SPGC_TO_UPLOAD_SYNOPSIS)
-        ##notify admin to give permission to upload synopsis
+        # notify admin to give permission to upload synopsis
         admin = Admin.objects.all()[0]
         notify = "Respected Sir/Madam! Please grant me the permission to upload the synopsis on portal."
         send_notification(user, admin.user, notify, '')
-        #send email --fill this afterwards
-        #email to referee
+        # email to referee
         subject = "[Requesting permission to Upload synopsis]"
         content = "<br>Dear sir,</br><br></br><br></br>"+notify+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>"+ student.first_name+ " " + student.last_name
 
@@ -243,6 +248,7 @@ def student_upload_synopsis(request):
     canSubmitSynopsis = thesis.status.id >= (STATUS_ID_SUBMIT_SYNOPSIS)
     synopsisWaitingApproval = thesis.status.id > STATUS_ID_SUBMIT_SYNOPSIS and thesis.status.id < STATUS_ID_SYNOPSIS_APPROVED
     isSynopsisApproved = thesis.status.id >= STATUS_ID_SYNOPSIS_APPROVED
+    canCancelSynosis = thesis.status.id == STATUS_ID_SYNOPSIS_WAITING_APPROVAL
 
     if request.method == 'GET':
         return render(
@@ -255,6 +261,7 @@ def student_upload_synopsis(request):
                 'canRequestSynopsis' : canRequestSynopsis,
                 'requestWaitingApproval' : requestWaitingApproval,
                 'canSubmitSynopsis' : canSubmitSynopsis,
+                'canCancelSynosis' : canCancelSynosis,
                 'isSynopsisApproved' : isSynopsisApproved,
                 'synopsisWaitingApproval' : synopsisWaitingApproval
             }
@@ -275,7 +282,6 @@ def student_upload_synopsis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD synopsis '
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(user, notification_message)
-                 ##Email Notification
             subject = "[Synopsis Submitted] by " + request.session['full_name']
             content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
         
@@ -387,7 +393,7 @@ def student_upload_thesis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has submitted their PhD thesis document '
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(user, notification_message)
-            ##Email Notification
+            # Email Notification
             subject = "[Thesis Submitted] by " + request.session['full_name']
             content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
         
@@ -445,7 +451,7 @@ def student_upload_thesis(request):
             notification_message = 'Student ' + request.session['full_name'] + ' has Re-submitted their PhD thesis document after modifications'
             notification_message += 'for the PhD titled "' + thesis.title + '"'
             send_notification_to_guides(user, notification_message)
-            ##Email Notification
+            # Email Notification
             subject = "[Thesis Submitted] by " + request.session['full_name']
             content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
         
@@ -509,7 +515,7 @@ def student_add_keywords(request):
         student = Student.objects.get(user = user)
         thesis = Thesis.objects.get(student = student)
         thesis_keywords = ThesisKeyword.objects.filter(thesis = thesis)
-
+        custom_keywords = CustomKeyword.objects.filter(thesis = thesis)
         return render(
             request,
             'app/student/add_keywords.html',
@@ -520,6 +526,7 @@ def student_add_keywords(request):
                 'STATUS_ID_THESIS_APPROVED' : STATUS_ID_THESIS_APPROVED,
                 'STATUS_ID_SUBMIT_SYNOPSIS' : STATUS_ID_SUBMIT_SYNOPSIS,
                 'thesis_keywords' : thesis_keywords,
+                'custom_keywords' : custom_keywords
             }
         )
     else:
@@ -529,6 +536,7 @@ def student_add_keywords(request):
 def student_search_keywords(request):
     """
     Handles an AJAX request for keyword search
+    For better User interface
     """
 
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
@@ -537,9 +545,7 @@ def student_search_keywords(request):
         keyword_typed = request.POST['keyword-typed']
         keywords = IEEEKeyword.objects.filter(keyword__icontains = keyword_typed)
 
-        # TODO : add logic to send atmost 20 search results
-        # TODO : add logic to remove keywords already added to thesis
-
+        
         result = _ieee_keywords_to_list(keywords)
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
@@ -550,17 +556,13 @@ def student_search_keywords(request):
 def student_keyword_recommendations(request):
     """
     Handles AJAX request to load a student's recommended keywords
+
+    Displays the recommended keywords and it isn't the scope of this project 
     """
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
 
     if request.method == "POST":
         keywords = IEEEKeyword.objects.filter(keyword__icontains = 'process')
-
-        # TODO : add recommender logic here, output format should be same
-        #        as that of what is returned from _ieee_keywords_to_list.
-        #        A list of dict with keys - id, keyword
-        #        Keys parent, subkeywords not needed.
-        #        Recommendations should never be 0. Have an upper limit.
 
         result = _ieee_keywords_to_list(keywords)
 
@@ -578,13 +580,28 @@ def student_add_custom_keyword(request):
 
     if request.method == "POST":
         keyword = request.POST['keyword']
-        parent = int(request.POST['parent'])
+        user = auth.get_user(request)
+        student = Student.objects.get(user = user)
+        thesis = Thesis.objects.get(student = student)
 
-        # TODO : implement adding custom keyword logic here. If u want to send an error message
-        #        follow the format below. If keyword is added successfully then redirect to
-        #        add keywords page.
+        chkr = SpellChecker("en_US")
+        
+        chkr.set_text(keyword)
+        
+        iserror = False
 
-        result = {'message' : 'error message'}
+        if keyword == '':
+            iserror = True
+
+        for err in chkr:
+            iserror = True
+
+        if iserror == True:
+            result = {'message' : 'Error! Please check the spelling once again!!'}
+        else:
+            custom = CustomKeyword(thesis = thesis, keyword = keyword)
+            custom.save()
+            result = {'message' : 'Success! Added the keyword to your thesis!!'}
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
     else:
@@ -625,7 +642,20 @@ def student_delete_keyword(request, id):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     
     if request.method == "POST":
+        
+        try:
+            custom_keyword = request.POST['custom_keyword']
+            user = auth.get_user(request)
+            for keyword in CustomKeyword.objects.filter(keyword = custom_keyword):
+                if keyword.thesis.student.user == user:
+                    keyword.delete()
+            return redirect(reverse(URL_STUDENT_ADD_KEYWORDS))
+        except MultiValueDictKeyError:
+            simply = 1
+        
+
         if _validate_keyword(id, auth.get_user(request)):
+            
             thesis_keyword = ThesisKeyword.objects.get(id = id)
             thesis_keyword.delete()
 
@@ -689,7 +719,7 @@ def get_ieee_keywords(request):
         
         result = _ieee_keywords_to_list(keywords)
 
-        # add parent to result, if present - this is used to create go back link
+        # add parent to result, if present -> this is used to create 'Go back' link
         if parent != -1:
             parent_keyword = IEEEKeyword.objects.get(id = parent)
             parent_keyword = parent_keyword.parent
@@ -750,7 +780,7 @@ def student_add_keyword_to_thesis(request):
                 notification_message = 'Student ' + request.session['full_name'] + ' has added the keyword ' + keyword.keyword
                 notification_message += ' for the PhD titled "' + thesis.title + '"'
                 send_notification_to_guides(user, notification_message)
-                ##Email Notification
+                # Email Notification
                 subject = "[Keywords added] by " + request.session['full_name'];
                 content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
                 email = []
@@ -784,9 +814,6 @@ def student_phd_status(request):
         thesis = Thesis.objects.get(student = student)
         phdStatus = thesis.status.id
         phdStatus_message = thesis.status.status_message
-        print(phdStatus_message)
-        
-        print(phdStatus)
         phdStatuses = StatusType.objects.all().order_by('id')
 
         return render(
@@ -839,5 +866,129 @@ def student_help_contacts(request):
                 'layout_data' : get_layout_data(request),
             }
         )
+    else:
+        return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def student_cancel_synopsis(request):
+    """
+    Here the student can cancel the submission at an instant
+
+    """
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = auth.get_user(request)
+    student = Student.objects.get(user = user)
+    thesis = Thesis.objects.get(student = student)
+
+    if request.method == 'POST':
+        _update_student_status(thesis, STATUS_ID_SUBMIT_SYNOPSIS)
+        return redirect(reverse('student_upload_synopsis'))
+
+    return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def student_cancel_thesis(request):
+
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = auth.get_user(request)
+    student = Student.objects.get(user = user)
+    thesis = Thesis.objects.get(student = student)
+
+    if request.method == 'POST':
+        _update_student_status(thesis, STATUS_ID_SUBMIT_THESIS)
+        return redirect(reverse('student_upload_thesis'))
+
+    return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def student_keywords_print(request):
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+    user = auth.get_user(request)
+    student = Student.objects.get(user = user)
+    thesis = Thesis.objects.get(student = student)
+    
+    keywordList = []
+    keys = ''
+    
+    i = 0
+    for keyword in ThesisKeyword.objects.filter(thesis = thesis):
+        i += 1
+
+    j = 0
+    for keyword in ThesisKeyword.objects.filter(thesis = thesis):
+        keywordList.append(keyword.keyword)
+        keys += str(keyword.keyword)
+        j += 1
+        if j == i:
+            simply = 1
+        else:
+            keys += ', '
+
+    for keyword in CustomKeyword.objects.filter(thesis = thesis):
+        keys += ', '
+        keywordList.append(keyword.keyword)
+        keys += str(keyword.keyword)
+
+    keys += '.'
+    
+    context = Context({
+        'keywords' : keys
+        })
+
+
+
+    template = get_template('keywordtex.tex')
+    
+    rendered_tpl = template.render(context).encode('utf-8')  
+    
+    with tempfile.TemporaryDirectory() as tempdir:
+        shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
+        
+        with open(tempdir + '/texput.tex', 'wb') as file_:
+            file_.write(rendered_tpl)
+        
+        for i in range(2):
+            m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
+        
+        with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+            pdf = f.read()
+
+    r = HttpResponse(content_type = 'application/pdf')
+    r['Content-Disposition'] = 'attachement;filename = keywords.pdf'
+    r.write(pdf)
+    return r
+
+def _get_faculty_details(str):
+    """
+    Gets all the faculty'
+    """
+    faculties = Faculty.objects.filter(Q(first_name__icontains = str) | Q(last_name__icontains = str))
+    result = []
+
+    for faculty in faculties:
+        if faculty.user.is_active == False:
+            continue
+        dict = {}
+        dict['text'] = faculty.first_name + ' ' + faculty.last_name
+        dict['email'] = faculty.email
+        dict['id'] = faculty.id
+        dict['username'] = faculty.user.username
+        result.append(dict)
+
+    return result
+
+@login_required
+def student_get_all_faculty_details(request):
+    """
+    Handles a user request for guide details
+    This is accessed by a student
+    Outputs JSON
+    """
+
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    if request.method == "GET":
+        name = request.GET['term']
+        return HttpResponse(json.dumps(_get_faculty_details(name)), content_type = 'application/json')
     else:
         return redirect(reverse(URL_BAD_REQUEST))

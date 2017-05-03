@@ -49,6 +49,19 @@
                                 {{ thesis_keyword.keyword.keyword }}
                             </a>
                         {% endfor %}
+                        {% for thesis_keyword in custom_keywords %}
+                            <a class="list-group-item">
+                                <form style="display:none" method="post" action="{{ request.path }}delete/{{ thesis_keyword.id }}" id="delete-custom-keyword-{{ thesis_keyword.id }}">
+                                    <input type="hidden" name="custom_keyword" value="{{ thesis_keyword.keyword }}"/>
+                                    {% csrf_token %}
+                                </form>
+                                <button class="btn btn-danger pull-right list-item-button" data-toggle="tooltip" data-placement="left"
+                                        title="Delete" onclick="$('#delete-custom-keyword-{{ thesis_keyword.id }}').submit()">
+                                    <i class="fa fa-close"></i>
+                                </button>
+                                {{ thesis_keyword.keyword }}
+                            </a>
+                        {% endfor %}
                     </div>
                 {% endif %}
             </div>
@@ -85,19 +98,19 @@
                     <div class="list-group" id="keywords-list-group">
 
                     </div>
-                <div id="custom-keyword">
+                <div id="custom_keyword">
                     <p>
                         <b>Note</b> - The form below is to add a custom keyword at the current level. Use this
                         to add a new keyword which is not there in the list of IEEE keywords. The new keyword
                         you mention is added at the level which the above keywords are placed, i.e., the above
                         keywords and your new custom keyword will have the same parent keyword.
                     </p>
-                    <form>
+                    
                         <div class="form-group">
-                            <label for="custom-keyword" class="col-sm-2 control-label">Custom Keyword</label>
+                            <label for="custom-keyword-ok" class="col-sm-2 control-label">Custom Keyword</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="custom-keyword" placeholder="Type your own keyword">
-                                <input type="hidden" id="custom-keyword-parent" name="parent" value="-1">
+                                
                             </div>
                         </div>
                         <div class="form-group">
@@ -107,7 +120,7 @@
                                 Add Custom Keyword
                             </button>
                         </div>
-                    </form>
+                    
                 </div>
                 {% endif %}
             </div>
@@ -150,11 +163,23 @@
                     </div>
                 </form>
                 <br />
-                <button class="btn btn-success pull-right" 
-                        onclick="searchKeywords('{% url 'student_keyword_recommendations' %}', '{{ csrf_token }}')">
-                    View suggested keywords
-                </button>
-                <br />
+                <br><br>
+                <div class="row">
+                   <div class="col-md-6">
+                        <form  action="{% url 'student_keywords_print' %}" method="post" enctype="">
+                        {% csrf_token %}
+                         <button type ="submit" class="btn btn-primary pull-left">Print added keywords</button>
+                        </form>
+                   </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-success pull-right" 
+                                onclick="searchKeywords('{% url 'student_keyword_recommendations' %}', '{{ csrf_token }}')">
+                            View suggested keywords
+                        </button>
+                    </div>
+                </div>
+                    <br />
                 <div class="row">
                     <br /><br />
                     <div class="col-sm-12" id="keyword-search-results">
@@ -286,13 +311,16 @@
     function addCustomKeyword(url, csrf_token) {
         $.post(url, {
             'keyword': $('#custom-keyword').val(),
-            'parent': $('#custom-keyword-parent').val(),
             'csrfmiddlewaretoken': csrf_token
         }, function (data) {
             $('#message').html(data.message);
             $('#message-box').show();
             $('#message-box').fadeOut(5000);
-        })
+
+            if (data.message.startsWith("Success")) {
+                window.location = ''
+            }
+        });
     }
 </script>
 {% endblock %}

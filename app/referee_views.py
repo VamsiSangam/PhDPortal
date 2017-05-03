@@ -10,7 +10,6 @@ import tempfile
 import datetime
 from datetime import time
 from app.tasks import send_email_task
-
 from app.tokens import PasswordResetTokenGenerator
 
 
@@ -46,36 +45,32 @@ def forgotpassword(request):
     if request.method == 'GET':
         return render(request, 'app/other/forgot_password.html', {'title':'Forgot Password?',})
     elif request.method == 'POST':
-        print('Entered')
         username = request.POST['username']
-        #python -m pip install -U pip
-        #pip install cryptography
+
         if User.objects.filter(username = username).exists():
             user = User.objects.get(username = username)
             if Referee.objects.filter(user = user).exists():
                 referee = Referee.objects.get(user = user)
-                #generate token
+                # generate token
                 passwordResetTokenGenerator = PasswordResetTokenGenerator()
                 token = PasswordResetTokenGenerator.generate_token(passwordResetTokenGenerator, str(user.id))
                 token = str(token.decode('utf-8'))
-                print(token)
-                #email to referee
+                # email to referee
                 subject = "[Password Reset Link]"
                 message = 'http:////localhost:8000//reset//token=//' + token
-                print(message)
                 content = "<br>Dear sir,</br><br></br><br></br>Link is: "+message+'. Please click on the link to change the credentials.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
                 email = []
                 receiver = referee.user
                 email.append(receiver.email)
                 send_email_task.delay(email, subject, content)
-                #redirect to same page with status to check your mail and click on activation link
+                # redirect to same page with status to check your mail and click on activation link
                 
                 dict = {'status' : 'Done', 'message' : 'An Activation link has been sent to your mail-id'}
                 return HttpResponse(json.dumps(dict), content_type = 'application/json')
-            else:#given username is not valid to use this feature
+            else:   # given username is not valid to use this feature
                 dict = {'status': 'Error', 'message' : 'You are not Authorized to change password'}
                 return HttpResponse(json.dumps(dict), content_type = 'application/json')
-        else:#given username is not valid to use this feature
+        else:   # given username is not valid to use this feature
             dict = {'status': 'Error', 'message' : 'Invalid Username, Try Again!'}
             return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
@@ -86,37 +81,33 @@ def validate_password_reset_link(request, token):
     Checks the validity of the reset link 
     corresponding to the given 'token' parameter.
     """
-    print("reset")
+
     if request.method == "GET":
-        print("reset")
         passwordResetTokenGenerator = PasswordResetTokenGenerator()
         id = PasswordResetTokenGenerator.get_token_value(passwordResetTokenGenerator, token)
-        print(id)
+
         if id != None:
             id = int(id)
 
             if User.objects.filter(id = id).exists():
                 user = User.objects.get(id = id)
                 request.session['user'] = user.username
-                print(request.session['user'])
+
                 return render(request, 'app/referee/change_forgot_password.html', {
                 'title':'Change Password',
                 'user': user.username
                 })
-            else:##the user is invalid
+            else:   # the user is invalid
                 return redirect(reverse(URL_BAD_REQUEST))
-        else:##either the link is expired or invalid
+        else:   # either the link is expired or invalid
              return redirect(reverse(URL_BAD_REQUEST))
-    else:##else --dont care
+    else:
         return redirect(reverse(URL_BAD_REQUEST))
 
 def referee_change_forgot_password(request):
-   # if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     
     if request.method == 'POST':
-        print("changing")
         username = request.POST['user']
-        print(username + "********")
         user = User.objects.get(username = username)
         new = request.POST['new-password']
         re_type = request.POST['re-type']
@@ -137,7 +128,6 @@ def referee_change_password(request):
     
     if request.method == 'GET':
         user = auth.get_user(request)
-        #user_details = _get_user_type_object(user)
         
         return render(request, 'app/referee/change_password.html', {
                 'title':'Change Password',
@@ -145,7 +135,6 @@ def referee_change_password(request):
             })
     elif request.method == 'POST':
         user = auth.get_user(request)
-        #user = _get_user_type_object(user)  # temporary fix
         old = request.POST['old-password']
         new = request.POST['new-password']
         re_type = request.POST['re-type']
@@ -216,9 +205,6 @@ def referee_synopsis_approval(request):
 
         dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
         
-        #noentry = NoEntryPanel(thesis_id = thesis, referee_username = referee)
-        #noentry.save()
-
         if isApproved:
             panelMember.status = 'A'
             panelMember.save()
@@ -229,24 +215,6 @@ def referee_synopsis_approval(request):
                 invite_indian_referees(thesis)
             else:
                 invite_foreign_referees(thesis)
-        
-        
-        ############################################################################
-        # notify guides & co-guides ---notify only admin and director
-        #for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
-        #    guide = thesisGuide.guide.user
-        #    message = 'Referee ' + referee.user.first_name + ' ' + referee.user.last_name + ' '
-
-        #    if isApproved:
-        #        message += 'has approved to evaluate the PhD with title ' + thesis.title + '.'
-        #    else:
-        #        message += 'has rejected to evaluate the PhD with title ' + thesis.title + '.'
-
-        #    if len(feedback.strip()) > 0:
-        #        message += ' Referee has given the following feedback - ' + feedback
-
-        #    send_notification(referee.user, guide, message, '')
-        #################################################################################
 
         return HttpResponse(json.dumps(dict), content_type = 'application/json')
     else:
@@ -305,77 +273,27 @@ def referee_evaluate_thesis(request):
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
-#@login_required
-#def convert_latex(request,user_template,context):
-    
-#    #tempdir = 'C:\\Users\\Sarada\\Documents' # move this to settings.py
-
-#    template = get_template(user_template)
-    
-#    rendered_tpl = template.render(context).encode('utf-8')  
-    
-#    with tempfile.TemporaryDirectory() as tempdir:
-#        shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
-#        shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
-#        with open(tempdir + '/texput.tex', 'wb') as file_:
-#            file_.write(rendered_tpl)
-#        print("**************************************")
-#        for i in range(2):
-#            str = 'pdflatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex'
-#            print(str)
-#            m = check_output(str)
-#        print(os.listdir(tempdir))
-#        with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
-#            pdf = f.read()
-
-#    #with open(tempdir + '/results2.tex', 'wb') as file_:
-#    #    file_.write(rendered_tpl)
-#    #print("**************************************")
-#    #for i in range(2):
-#    #    str = 'pdflatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\results2.tex'
-#    #    print(str)
-#    #    m = check_output(str)
-
-#    #with open(os.path.join(tempdir, 'results2.pdf'), 'rb') as f:
-#    #    pdf = f.read()
-        
-    
-#   # r = HttpResponse(content_type='application/pdf')
-    
-#    #r['Content-Disposition'] = 'attachment; filename=raf.pdf'
-#    #r.write(pdf)
-#    #return pdf
-#    return tempdir
-
 _latex_special_chars = {
         u'$': u'\\$',
         u'%': u'\\%',
         u'&': u'\\&',
         u'#': u'\\#',
         u'_': u'\\_',
-        #u'{': u'\\{',
-        #u'}': u'\\}',
-        #u'[': u'{[}',
-        #u']': u'{]}',
         u'"': u"{''}",
-        #u'\\': u'\\textbackslash{}',
         u'~': u'\\textasciitilde{}',
         u'<': u'\\textless{}',
         u'>': u'\\textgreater{}',
         u'^': u'\\textasciicircum{}',
-        #    u'`':  u'{}`',   # avoid ?` and !`
-        #    u'\n': u'\\\\',
         }
 
 
 def text_escape(s):
-    #s = s.encode('ascii', 'ignore')
-    
     s = str(s)
     s = s.replace('"', '\'')
-    #print(s)
     s = u''.join(_latex_special_chars.get(c, c) for c in s)
+
     return s
+
 @login_required
 def referee_thesis_approval(request):
     """
@@ -389,7 +307,6 @@ def referee_thesis_approval(request):
     referee = Referee.objects.get(user = user)
     
     if request.method == "POST":
-        
         id = int(request.POST['id'])
         append = '-' + str(id)
         thesis_organisation_get_up = request.POST['thesis-organisation-get-up' + append]
@@ -423,31 +340,28 @@ def referee_thesis_approval(request):
        
         thesis = Thesis.objects.get(id = id)
 
-        #studentdetails
+        # studentdetails
         student = Student.objects.get(user = thesis.student.user)
-
         student_department = "Information Technology"
-
         student_name = student.first_name + ' ' + student.middle_name + ' ' + student.last_name
 
-        ##referee details
+        # referee details
         student_id = student.current_roll_no
-        
         student_username = student.user.username
         referee_name = referee.user.first_name + ' ' + referee.user.last_name
         referee_designation = referee.designation
         referee_university = referee.university
         referee_website = referee.website
-        #need to be changed
+        
+        # need to be changed
         referee_ph_number = '+91-8935020870'
         referee_email = referee.user.email
-        print(" ********* ")
 
         feedback = text_escape(feedback)
         thesis_organisation_get_up = text_escape(thesis_organisation_get_up)
         thesis_technical_content = text_escape(thesis_technical_content)
         thesis_highlights_points = text_escape(thesis_highlights_points)
-        print(feedback)
+
         context = Context({
             'student_name': student_name,
             'student_id': student_id,
@@ -456,7 +370,6 @@ def referee_thesis_approval(request):
             'referee_designation': referee_designation,
             'referee_university': referee_university,
             'referee_website': referee_website,
-            #need to be changed
             'referee_ph_number': referee_ph_number,
             'referee_email': referee_email,
             'feedback': feedback,
@@ -470,55 +383,32 @@ def referee_thesis_approval(request):
             'specific_recommendations': specific_recommendations        
             })
 
-
-
         template = get_template('final_report.tex')
-    
         rendered_tpl = template.render(context).encode('utf-8')  
     
         with tempfile.TemporaryDirectory() as tempdir:
             shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
             shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
+            
             with open(tempdir + '/texput.tex', 'wb') as file_:
                 file_.write(rendered_tpl)
-            print("**************************************")
+            
             for i in range(2):
                 m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
-            print(os.listdir(tempdir))
+            
             with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
                 pdf = f.read()
-            #tempdir = convert_latex(request, 'final_report.tex',context)
-            print(os.listdir(tempdir))
 
         r = HttpResponse(content_type = 'application/pdf')
         r['Content-Disposition'] = 'attachement;filename = Evaluation_Report.pdf'
         r.write(pdf)
         return r
-
-        
-    ###### Notifications ######
-            #message = 'A Feedback report of Thesis titled ' + thesis.title + ' has been sent'
-            ##notication to Admin
-            #admin = Admin.objects.all()
-            #email = []
-            #for admin in admin:
-            #    send_notification(user, admin.user, message, '')
-            #    email.append(admin.user.email)
-
-        
-            ##Email to Admin
-            #subject = '[Feedback Report]'
-            #content = "<br>Dear sir,</br><br></br><br></br>"+ message + '. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal." 
-            #send_email_task.delay(email, subject, content)
-            #dict = {'status' : 'OK', 'message' : 'Your response has been submitted successfully' }
-
     else:
         return redirect(reverse(URL_BAD_REQUEST))
 
 @login_required
 def referee_report_upload(request):
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
-
 
     user = auth.get_user(request)
     referee = Referee.objects.get(user = user)
@@ -568,6 +458,36 @@ def downloads(request):
         )
     else:
         return redirect(reverse(URL_BAD_REQUEST))
+
+@login_required
+def request_hardcopy(request):
+    """
+    Sending the notification to send the hardcopy
+    """
+    
+    if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
+
+    user = auth.get_user(request)
+    id = int(request.POST['id'])
+    thesis = Thesis.objects.get(id = id)
+    
+    # notify admin to send the hard copy
+    admin = Admin.objects.all()[0]
+    notify = "Respected Sir/Madam! Please send the hard copy of thesis "+ thesis.title + ' to me ASAP.'
+    send_notification(user, admin.user, notify, '')
+    
+    # email to referee
+    subject = "[Requesting Hardcopy]"
+    content = "<br>Dear sir,</br><br></br><br></br>"+notify+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>" + user.first_name + ' ' + user.last_name 
+
+    email = []
+    receiver = admin.user
+    email.append(receiver.email)
+    send_email_task.delay(email, subject, content)
+
+    dict = {'status' : 'SentRequest', 'message' : 'Notified to Admin Successfully!'}
+
+    return HttpResponse(json.dumps(dict), content_type = 'application/json')
 
 @login_required
 def referee_help_procedure(request):

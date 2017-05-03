@@ -19,7 +19,7 @@ from django.db.models import Q
 
 logger = logging.getLogger('django')
 CONTENT_TYPE_PDF = 'application/pdf'
-MAX_SIZE_PDF = 5 * 1024 * 1024   # in bytes (currently 5 MB)
+MAX_SIZE_PDF = 30 * 1024 * 1024   # in bytes (currently 30 MB)
 URL_BAD_REQUEST = 'bad_request'
 URL_UNAUTHORIZED_ACCESS = 'unauthorized_access'
 URL_FORBIDDEN = 'forbidden'
@@ -30,19 +30,24 @@ URL_USER_PROFILE = 'user_profile'
 STATUS_ID_THESIS_UNDER_EVALUATION = 21
 
 def send_reminder_to_referees():
-   # print("-*--*-*")
+
     for panelmember in PanelMember.objects.filter(status = 'S'):
         now = datetime.utcnow().replace(tzinfo=pytz.UTC)
-    #    print(now)
         timediff = (now - panelmember.updated_time).days
-     #   print(timediff)
 
-        if int(timediff) >= 10:
-            director = (Approver.objects.filter(active = True)[0]).faculty.user
-            message = "This is a reminder to consider the invitaion and evaluate the synopsis of \"" + panelmember.thesis.title + "\". Please acknowledge us asap."
-            send_notification(director, panelmember.referee.user, message, '')
-      #      print(message)
-
+        timespan = int(timediff)
+        if timespan%10 == 0:
+            if timespan == 90: # if referee doesn't respond in 90 days.. mark him reject
+                panelmember.status = 'R'
+                panelmember.save()
+                if panelmember.referee.type == 'I':
+                    invite_indian_referees(panelmember.thesis)
+                else:
+                    invite_foreign_referees(panelmember.thesis)
+            else:
+                director = (Approver.objects.filter(active = True)[0]).faculty.user
+                message = "This is a reminder to consider the invitaion and evaluate the synopsis of \"" + panelmember.thesis.title + "\". Please acknowledge us asap."
+                send_notification(director, panelmember.referee.user, message, '')
 
 def forgotpassword(request):
     """
@@ -51,7 +56,6 @@ def forgotpassword(request):
     if request.method == 'GET':
         return render(request, 'app/other/forgot_password.html', {'title':'Forgot Password?',})
     elif request.method == 'POST':
-
         username = request.POST['username']
         email = request.POST['email']
         if User.objects.filter(username = username).exists():
@@ -79,7 +83,7 @@ def _get_user_type(user):
     """
 
     type = None                
-    print(user)
+    
     if Student.objects.filter(user = user).exists():
         type = 'S'
     elif Faculty.objects.filter(user = user).exists():
@@ -93,8 +97,6 @@ def _get_user_type(user):
         type = 'R'
     elif Admin.objects.filter(user = user).exists():
         type = 'A'
-
-    print(type)
 
     return type
 
@@ -464,7 +466,7 @@ def user_edit_profile(request):
             })
     elif request.method == 'POST':
         user = auth.get_user(request)
-        user = _get_user_type_object(user)  # temporary fix
+        user = _get_user_type_object(user)
         first_name = request.POST['first-name']
         last_name = request.POST['last-name']
         email_id = request.POST['email-id']
@@ -479,7 +481,6 @@ def user_edit_profile(request):
 
     return redirect(reverse(URL_BAD_REQUEST))
 
-#sending email
 def send_text_email(receiver, subject, content):
     msg = EmailMessage(subject, content, to=[receiver])
     msg.content_subtype = "html"
@@ -698,7 +699,7 @@ def search_user_query(request):
 
             if user_type == type:
                 votes += 2
-            print('Queried User type = ' + user_type)
+
             if user_type == 'S':
                 user_first_name = user.student.first_name
                 user_last_name = user.student.last_name
@@ -726,11 +727,6 @@ def search_user_query(request):
         sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
         sorted_results.reverse()
 
-        # print sorted results
-        for item in sorted_results:
-            print(item)
-        print('\n')
-
         result = _clean_user_info_results(sorted_results)
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
@@ -757,13 +753,9 @@ def get_referee_recommendations(thesis):
     for thesis_keyword in ThesisKeyword.objects.filter(thesis = thesis):
         keywords.append(thesis_keyword.keyword.id)
 
-    print('Thesis - ' + thesis.title + " has " + str(len(keywords)) + " keywords")
-
     # query current thesis referees, store referee model ID
     for panel_member in PanelMember.objects.filter(thesis = thesis):
         referees.append(panel_member.referee.id)
-
-    print('Thesis - ' + thesis.title + " has " + str(len(referees)) + " referees")
 
     # query all archived thesis => whose status >= STATUS_ID_THESIS_UNDER_EVALUATION
     for archived_thesis in Thesis.objects.filter(status__id__gte = STATUS_ID_THESIS_UNDER_EVALUATION):
@@ -785,8 +777,6 @@ def get_referee_recommendations(thesis):
                 else:
                     dict[referee] = similarity
 
-    print('Thesis - ' + thesis.title + " has found " + str(len(dict)) + " matches")
-    
     # filter results
     sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
     sorted_results.reverse()
@@ -813,9 +803,6 @@ def get_referee_recommendations(thesis):
         else:
             break
 
-    print('Thesis - ' + thesis.title + " has " + str(len(indian)) + " indian referee recommendations")
-    print('Thesis - ' + thesis.title + " has " + str(len(foreign)) + " foreign referee recommendations")
-    
     return {'indian' : indian, 'foreign': foreign}
 
 def get_layout_data(request):
@@ -834,8 +821,6 @@ def get_layout_data(request):
     dict = {}
     dict['unread_notifications_count'] = Notification.objects.filter(receiver = user).filter(status = 'U').count()
     dict['unread_notifications'] = Notification.objects.filter(receiver = user).filter(status = 'U')[:3]
-    #dict['unread_notifications_count'] = 0
-    #dict['unread_notifications'] = None
 
     return dict
 

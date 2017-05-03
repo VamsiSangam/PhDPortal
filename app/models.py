@@ -1,13 +1,8 @@
-"""
-Definition of models.
-"""
-
 from django.db import models
 from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from app.choices import *
-# Create your models here.
 
 class Section(models.Model):
     name = models.CharField(max_length=65)
@@ -182,7 +177,6 @@ class Admin(models.Model):
         verbose_name_plural = 'Admins'
 
     user = models.OneToOneField(User, null = True)
-   # approved_byadmin = models.BooleanField(default = False)
     
 class Approver(models.Model):
     faculty = models.OneToOneField(
@@ -275,6 +269,17 @@ class ThesisKeyword(models.Model):
     def __str__(self):
         return 'Keyword ' + self.keyword.keyword + ' ' + ' for ' + self.thesis.title
 
+class CustomKeyword(models.Model):
+    class Meta:
+        verbose_name = 'Custom Keyword'
+        verbose_name_plural = 'Custom Keywords'
+        unique_together = (('thesis', 'keyword'),)
+    thesis = models.ForeignKey(Thesis, on_delete = models.CASCADE)
+    keyword = models.CharField(max_length = 100, null = False)
+
+    def __str__(self):
+        return 'Keyword ' + self.keyword + ' ' + ' for ' + self.thesis.title
+
 class PanelMember(models.Model):
     class Meta:
         verbose_name = 'Panel Member'
@@ -291,10 +296,9 @@ class PanelMember(models.Model):
     feedback_without_referee_details = models.FileField(null = True, blank = False, upload_to = 'Feedback_Without_Details')
     answer_for_questions = models.BooleanField(choices=BOOL_CHOICES, default=False, editable=False)
     feedback_at = models.CharField(max_length = 1, default = 'A', choices = FEEDBACK_AT_TYPES)
+    
     def __str__(self):
         return self.referee.user.first_name
-    #def __str__(self):
-    #    return self.feedback_with_referee_details.name
 
 class Notification(models.Model):
     class Meta:

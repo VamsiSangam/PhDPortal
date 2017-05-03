@@ -112,5 +112,5 @@ class ApplicationTests(StaticLiveServerTestCase):
         student.logout()
 
     def tearDown(self):
-        self.driver.close()
+        self.driver.quit()
         super(ApplicationTests, self).tearDown()

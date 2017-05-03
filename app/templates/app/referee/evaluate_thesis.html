@@ -88,11 +88,17 @@
                         <a class="btn btn-success pull-right" onclick="printPdf('{% static thesis.thesis %}')">
                             <i class="fa fa-print"></i> &nbsp; Print Thesis
                         </a>
-                        
+                        <a class="btn btn-success pull-right" onclick="RequestHardcopy({{ thesis.id }}, '{% url 'request_hardcopy' %}', '{{ csrf_token }}')">
+                            <i class="fa fa-book"></i> &nbsp; Request Hardcopy
+
+                        </a>
+                        <br />
                         <b>Thesis</b> - <br /><br />
+                        
                         <object data="{% static thesis.thesis %}" type="application/pdf" width="100%" height="800px">
                             <p>PhD Thesis</p>
                         </object>
+
                         <br /><br />
                     </p>
                     <br />
@@ -347,5 +353,23 @@
     $(document).ready(function () {
         //$('.collapse-link').click();
     });
+</script>
+
+
+<script>
+    function RequestHardcopy(id, url, csrf_token) {
+        $.post(url, {
+            'id': id,
+            'csrfmiddlewaretoken': csrf_token
+        }, function (data) {
+            if (data.status === "SentRequest") {
+                $('#thesis-' + id).fadeOut();
+                $('#message').html(data.message);
+                $('#success-message').show();
+                $('#success-message').fadeOut(3000);
+                window.location = ''
+            }
+        });
+    }
 </script>
 {% endblock %}

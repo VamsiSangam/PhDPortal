@@ -163,7 +163,6 @@ LOGGING = {
 MEDIA_ROOT = os.path.join(BASE_DIR, 'app/static/')
 MEDIA_URL = '/app/static/'
 
-
 # CELERY
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
@@ -172,12 +171,12 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 
-#Email Settings
-#For email
+# Email Settings
+# For email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'akshaych974@gmail.com'
-#Must generate specific password for your app in gmail settings
+# Must generate specific password for your app in gmail settings
 EMAIL_HOST_PASSWORD = 'hasanparthy'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

@@ -29,7 +29,12 @@
                 button below.
             </p>
             <br />
-            <a class="btn btn-primary pull-right" href="{% url 'student_view_thesis' %}">View Thesis</a>
+            <form  action="{% url 'student_cancel_thesis' %}" method="post" enctype="">
+                {% csrf_token %}
+                 <button type ="submit" class="btn btn-danger pull-left">Cancel Thesis Submission</button>
+                <a class="btn btn-primary pull-right" href="{% url 'student_view_thesis' %}">View Thesis</a>
+            </form>
+            
             {% elif isThesisApproved and not canReSubmitThesis %}
             <p>
                 You have already submitted your full PhD thesis document and it was evaluted and approved by your Guide/Co-guide.
@@ -123,7 +128,7 @@
                 <p>Please read the following instructions carefully before uploading your synopsis.</p>
                 <ul>
                     <li>The file must be strictly in PDF format.</li>
-                    <li>File size should not exceed 5 MB.</li>
+                    <li>File size should not exceed 30 MB.</li>
                     <li>If you have already uploaded a Thesis, then uploading a PDF file again will automatically
                     replace it, provided you are still allowed to do it.</li>
                     <li>Once your thesis is accepted by the guide you cannot upload a thesis document again to replace it.</li>

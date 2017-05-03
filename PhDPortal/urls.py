@@ -51,12 +51,14 @@ urlpatterns = [
 
     # student urls
     url(r'^student/abstract/$', app.student_views.student_add_abstract, name='student_add_abstract'),
-    url(r'^student/add/details/$', app.student_views.student_add_details, name='student_add_details'), 
+    url(r'^student/add/details/$', app.student_views.student_add_details, name='student_add_details'),
     url(r'^student/synopsis/upload/$', app.student_views.student_upload_synopsis, name='student_upload_synopsis'),
     url(r'^student/request/synopsis/$', app.student_views.student_request_synopsis, name='student_request_synopsis'),
     url(r'^student/synopsis/view/$', app.student_views.student_view_synopsis, name='student_view_synopsis'),
+    url(r'^student/synopsis/cancel/$', app.student_views.student_cancel_synopsis, name='student_cancel_synopsis'),
     url(r'^student/thesis/upload/$', app.student_views.student_upload_thesis, name='student_upload_thesis'),
     url(r'^student/thesis/view/$', app.student_views.student_view_thesis, name='student_view_thesis'),
+    url(r'^student/thesis/cancel/$', app.student_views.student_cancel_thesis, name='student_cancel_thesis'),
     url(r'^student/keywords/$', app.student_views.student_add_keywords, name='student_add_keywords'),
     url(r'^student/keywords/get/$', app.student_views.get_ieee_keywords, name='get_ieee_keywords'),
     url(r'^student/keywords/get/parent/$', app.student_views.get_ieee_keywords_parent, name='get_ieee_keywords_parent'),
@@ -65,7 +67,9 @@ urlpatterns = [
     url(r'^student/keywords/add/$', app.student_views.student_add_keyword_to_thesis, name='student_add_keyword_to_thesis'),
     url(r'^student/keywords/add/custom/$', app.student_views.student_add_custom_keyword, name='student_add_custom_keyword'),
     url(r'^student/keywords/recommendations/$', app.student_views.student_keyword_recommendations, name='student_keyword_recommendations'),
+    url(r'^student/keywords/print/$', app.student_views.student_keywords_print, name='student_keywords_print'),
     url(r'^student/status/$', app.student_views.student_phd_status, name='student_phd_status'),
+    url(r'^student/details/faculty/all/$', app.student_views.student_get_all_faculty_details, name='student_get_all_faculty_details'),
     url(r'^student/help/procedure/$', app.student_views.student_help_procedure, name='student_help_procedure'),
     url(r'^student/help/contacts/$', app.student_views.student_help_contacts, name='student_help_contacts'),
 
@@ -116,6 +120,7 @@ urlpatterns = [
     url(r'^referee/synopsis/$', app.referee_views.referee_evaluate_synopsis, name='referee_evaluate_synopsis'),
     url(r'^referee/synopsis/evaluate/$', app.referee_views.referee_synopsis_approval),
     url(r'^referee/thesis/$', app.referee_views.referee_evaluate_thesis, name='referee_evaluate_thesis'),
+    url(r'^referee/thesis/request_hardcopy/$', app.referee_views.request_hardcopy, name='request_hardcopy'),
     url(r'^referee/thesis/evaluate/$', app.referee_views.referee_thesis_approval, name='referee_thesis_approval' ),
     url(r'^referee/thesis/evaluate/upload/$', app.referee_views.referee_report_upload, name='referee_report_upload' ),
     url(r'^referee/help/procedure/$', app.referee_views.referee_help_procedure, name='referee_help_procedure'),

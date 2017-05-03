@@ -75,19 +75,18 @@ def admin_add_referee(request):
                 passwd = 'HelloWorld'
                 new_user.set_password(passwd)
                 new_user.save()
-                #to get added_by key
+                # to get added_by key
                 new_referee = referee_form.save(commit = False)
                 new_referee.isapproved = True
                 new_referee.added_by = user
                 new_referee.user = new_user
                 new_referee.save()
 
-                #send notification to that referee
+                # send notification to that referee
                 notify = "Hi sir/Madam! Welcome to the PhDPortal if IIIT-Allahabad.Please Update your Password"
                 message = "You are added to the PhDPortal of IIIT-Allahabad.Please kindly check the Portal and update your Password.<br>Username is "+ str(request.POST.get('username')) + "<br>Password is" + passwd + "<br>"
                 send_notification(user, new_user, notify, '')
-                #send email --fill this afterwards
-                #email to referee
+                # email to referee
                 subject = "[Invitation]"
                 content = "<br>Dear sir,</br><br></br><br></br>"+message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
 
@@ -107,7 +106,6 @@ def admin_add_referee(request):
         referee_form = RefereeForm()
 
     else:
-        #simply
         return redirect(reverse(URL_BAD_REQUEST))
     
     return render(request, 'app/admin/add_referee.html', 
@@ -147,7 +145,7 @@ def admin_approve_referee(request):
         email = request.POST['email']
         if user_form.is_valid() and referee_form.is_valid():
             if User.objects.filter(email = email).exists() == False: 
-                passwd = 'HelloWorld' ##change this to customized timestamp
+                passwd = 'HelloWorld' # change this to customized timestamp
                 existing_user.set_password(passwd)
                 existing_user.username = email
                 existing_user.is_active = True
@@ -156,12 +154,11 @@ def admin_approve_referee(request):
                 user_form.save()
                 referee_form.save()
             
-                #send notification to that referee
+                # send notification to that referee
                 notify = "Hi sir/Madam! Welcome to the PhDPortal of IIIT-Allahabad.Please Update your Password."
                 message = "You are added to the PhDPortal of IIIT-Allahabad.Please kindly check the Portal and update your Password.<br>Username is "+ str(request.POST.get('username')) + "<br>Password is" + passwd + "<br>"
                 send_notification(user, existing_user, notify, '')
-                #send email --fill this afterwards
-                #email to referee
+                # email to referee
                 subject = "[Invitation]"
                 content = "<br>Dear sir,</br><br></br><br></br>"+message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
 
@@ -175,24 +172,6 @@ def admin_approve_referee(request):
                 dict = {'status' : 'Not-Done', 'message' : 'Email-Id already exists!' }
         else:
             dict = {'status' : 'Not-Done', 'message' : 'Fill the Fields appropriately!' }
-            
-    #elif request.method == 'GET':
-    #    for referee in User.objects.filter(is_active = False):
-    #        ref = Referee.objects.get(user = referee)
-    #        dict = {}
-    #        dict['referee'] = referee.username
-    #        dict['full_name'] = referee.first_name + ' ' + referee.last_name
-    #        guide_user = User.objects.get(id = ref.added_by.id)
-    #        guide = Faculty.objects.get(user = guide_user)
-    #        dict['added_by'] = guide.first_name + ' ' + guide.middle_name +' ' + guide.last_name
-    #        user_form = UserForm(instance = referee)
-    #        referee_form = RefereeForm(instance = ref)
-    #        dict['userform'] = user_form
-    #        dict['refereeform'] = referee_form
-    #        suggested_referees.append(dict)
-    #else:
-    #    #simply
-    #    return redirect(reverse(URL_BAD_REQUEST))
     
     return render(request, 'app/admin/approve_referee.html', 
         {'dict' :dict,
@@ -223,8 +202,6 @@ def admin_evaluate_reports(request):
             dict['id'] = thesis.id
             dict['referee_name'] = panelmember.referee.user.first_name + ' ' + panelmember.referee.user.last_name
             dict['referee_id'] = panelmember.referee.id
-            print(panelmember.referee.id)
-
             all_thesis.append(dict)
         
         return render(request, 'app/admin/view_finalReports.html', {
@@ -259,10 +236,9 @@ def admin_evaluate_reports(request):
             if total_feedbacks == thesis.indian_referees_required + thesis.foreign_referees_required:
                 _update_student_status(thesis, STATUS_ID_THESIS_FEEDBACKS_RECEIVED) 
 
-            #dict = {'status' : 'OK', 'message' : 'Feedback Report Sent Successfully!'}
-            #send notification to all guide
+            # send notification to all guide
             send_notification_to_all_guides(admin, thesis, "A feedback report has been sent of student " + thesis.student.first_name + " " + thesis.student.last_name)
-            #email
+            # email
             subject = "[Feed Back reports] of the Thesis titled" + thesis.title
             content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+"A feedback report has been sent of student " + thesis.student.first_name + " " + thesis.student.last_name +'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
         
@@ -286,7 +262,7 @@ def admin_view_request_for_synopsis(request):
     user = auth.get_user(request)
 
     if request.method == "GET":
-        all_thesis = []     # list of dict
+        all_thesis = []
         
         for thesis in Thesis.objects.all():
             if  thesis.status.id > STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS and thesis.status.id < STATUS_ID_SUBMIT_SYNOPSIS:
@@ -328,7 +304,7 @@ def admin_evaluate_request_for_synopsis(request):
             _update_student_status(thesis, STATUS_ID_REQUEST_SPGC_TO_UPLOAD_SYNOPSIS)
         # notify student about approval/rejection
         send_notification(user, thesis.student.user, notification_message, '')
-        ###email to student
+        # email to student
         subject = "[Regarding Submission of Synopsis]"
         content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
 
@@ -349,7 +325,7 @@ def admin_preSubmissionSeminars(request):
     user = auth.get_user(request)
 
     if request.method == "GET":
-        all_thesis = []     # list of dict
+        all_thesis = []
         
         for thesis in Thesis.objects.all():
             if  thesis.status.id >= STATUS_ID_PRE_SUBMISSION and thesis.status.id < STATUS_ID_SUBMIT_THESIS:
@@ -393,7 +369,7 @@ def admin_preSubmissionSeminars_evaluate(request):
 
         # notify student about approval/rejection of seminar
         send_notification(user, thesis.student.user, notification_message, '')
-        ###email to student
+        # email to student
         subject = "[Regarding PreSubmission seminar]"
         content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
 
@@ -472,7 +448,6 @@ def admin_panelapproval(request):
 
 @login_required
 def admin_panelapproval_evaluate(request):
-    print('Entered')
     if not validate_request(request): return redirect(reverse(URL_FORBIDDEN))
     
     user = auth.get_user(request)
@@ -486,10 +461,8 @@ def admin_panelapproval_evaluate(request):
         thesis = Thesis.objects.get(id = thesisid)
         
         if isApproved:
-             #notification_message = ""
             _update_student_status(thesis, STATUS_ID_WAITING_FOR_PANEL_APPROVAL_BY_DIRECTOR)    
         else:
-            #notification_message = ""
             for thesisGuides in ThesisGuide.objects.filter(thesis = thesis):
                 guide = thesisGuides.guide
                 allReferees = PanelMember.objects.filter(thesis = thesis).filter(added_by = guide, status = 'G')
@@ -497,18 +470,6 @@ def admin_panelapproval_evaluate(request):
                     referee.status = 'D'
                     referee.save()
             _update_student_status(thesis, STATUS_ID_WAITING_FOR_PANEL_APPROVAL)
-        #change Notifications and Emial
-        # notify student about approval/rejection of seminar
-        #send_notification(user, thesis.student.user, notification_message, '')
-        ###email to student
-        #subject = "[]"
-        #content = "<br>Dear Student,</br><br></br><br></br>"+notification_message+'. Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>PhDPortal."
-
-        #email = []
-        #receiver = thesis.student.user
-        #email.append(receiver.email)
-                    
-        #send_email_task.delay(email, subject, content)
 
         return HttpResponse('0', content_type = 'text/plain')
     else:
@@ -545,28 +506,26 @@ def admin_panel_print(request,id):
         'foreign_referees' : foreign_referees,
         })
 
-
-
     template = get_template('panel.tex')
-    
     rendered_tpl = template.render(context).encode('utf-8')  
     
     with tempfile.TemporaryDirectory() as tempdir:
         shutil.copy(os.getcwd()+"\\texput.tex",tempdir)
         shutil.copy(os.getcwd()+"\\logo.jpg",tempdir)
+        
         with open(tempdir + '/texput.tex', 'wb') as file_:
             file_.write(rendered_tpl)
-        print("**************************************")
+
         for i in range(2):
             m = check_output('xelatex -interaction=nonstopmode -output-directory=' + tempdir + ' ' + tempdir + '\\texput.tex')
-        print(os.listdir(tempdir))
+        
         with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
             pdf = f.read()
-        #tempdir = convert_latex(request, 'final_report.tex',context)
-        print(os.listdir(tempdir))
+
     r = HttpResponse(content_type = 'application/pdf')
     r['Content-Disposition'] = 'attachement;filename = panel_list.pdf'
     r.write(pdf)
+
     return r
 
 @login_required
@@ -578,18 +537,14 @@ def admin_conductSeminar(request):
     if request.method == "POST":
         thesis = Thesis.objects.get(id = int(request.POST['id']))
         student_name = thesis.student.first_name + " " + thesis.student.last_name
-        ##send notifications
+        # send notifications
         notification_message = "It is agreed to conduct the presubmission seminar of the student " +  student_name
         notification_message += ' for the PhD titled "' + thesis.title + '"'
         for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
             send_notification(user, thesisGuide.guide.user, notification_message, '')
         
-        ##sending email
-        ##Email Notification
-
         subject = "[Conducting Open seminar] of " + request.session['full_name']
         content = "<br>Dear Sir/Madam,</br><br></br><br></br>"+notification_message+'.Please Check the PhD Portal for more details.'+"<br></br><br></br>Regards,<br></br>DUPGC."
-        
         email = []
 
         for thesisGuide in ThesisGuide.objects.filter(thesis = thesis):
@@ -659,7 +614,7 @@ def admin_search_student_query(request):
 
             if user_type == type:
                 votes += 2
-            print('Queried User type = ' + user_type)
+
             if user_type == 'S':
                 user_first_name = user.student.first_name
                 user_last_name = user.student.last_name
@@ -686,12 +641,6 @@ def admin_search_student_query(request):
         
         sorted_results = sorted(dict.items(), key = operator.itemgetter(1))
         sorted_results.reverse()
-
-        # print sorted results
-        for item in sorted_results:
-            print(item)
-        print('\n')
-
         result = _clean_user_info_results(sorted_results)
 
         return HttpResponse(json.dumps(result), content_type = 'application/json')
@@ -701,26 +650,20 @@ def admin_search_student_query(request):
 @login_required
 def admin_student_refresh(request,id):
     thesis = Thesis.objects.get(id = id)
-    print('Entered')
+
     if request.method == "GET":
-        #thesisguideapproval = ThesisGuideApproval.objects.filter(thesis = thesis)
-        #for val in thesisguideapproval:
-        #    val.delete()
-            
-        #panelmember = PanelMember.objects.filter(thesis = thesis)
-        #for val in panelmember:
-        #    val.delete()
-        
         ThesisGuideApproval.objects.filter(thesis = thesis).delete()
         PanelMember.objects.filter(thesis = thesis).delete()
         ThesisKeyword.objects.filter(thesis = thesis).delete()
+        CustomKeyword.objects.filter(thesis = thesis).delete()
+        ThesisGuide.objects.filter(thesis = thesis).delete()
         thesis.abstract = ''
         thesis.thesis_modifications = ''
         thesis.panel_signed_copy = ''
         thesis.synopsis = ''
         thesis.thesis = ''
         
-        status_type = StatusType.objects.get(id = 5)
+        status_type = StatusType.objects.get(id = 1)
         thesis.status = status_type
         thesis.save()
         
