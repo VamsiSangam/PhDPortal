@@ -1,8 +1,0 @@
-backends
-patch
-absolute_import
-depends_on_current_app
-CacheBackend
-AMQPBackend
-AppCase
-test_backends

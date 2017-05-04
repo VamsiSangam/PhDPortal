@@ -2,3 +2,20 @@ app/__pycache__/
 app/migrations/__pycache__/
 app/migrations/0*.py
 PhDPortal/__pycache__/
+.vs/
+bin/
+env/
+obj/
+PhDPortal.pyproj
+PhDPortal.pyproj.user
+PhDPortal.sln
+ptvs_virtualenv_proxy.py
+PhDPortal/app/static/Feedback_With_Details/*.pdf
+PhDPortal/app/static/Feedback_Without_Details/*.pdf
+PhDPortal/app/static/General Documents/*.pdf
+PhDPortal/app/static/PanelListSignedCopy/*.pdf
+PhDPortal/app/static/Synopsis/*.pdf
+PhDPortal/app/static/Thesis/*.pdf
+PhDPortal/app/static/ThesisModifications/*.pdf
+PhDPortal/app/static/Feedback_Without_Details/*.pdf
+db.sqlite3

@@ -1,6 +1,0 @@
-IGNORED_EXCEPTIONS
-POLL_FREQUENCY
-TimeoutException
-WebDriverWait
-time
-NoSuchElementException

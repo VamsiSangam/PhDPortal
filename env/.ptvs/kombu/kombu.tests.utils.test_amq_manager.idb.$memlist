@@ -1,7 +1,0 @@
-patch
-absolute_import
-mask_modules
-module_exists
-Case
-Connection
-test_get_manager

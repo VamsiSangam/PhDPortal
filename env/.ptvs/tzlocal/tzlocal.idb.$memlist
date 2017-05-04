@@ -1,8 +1,0 @@
-windows_tz
-darwin
-unix
-reload_localzone
-tests
-sys
-win32
-get_localzone

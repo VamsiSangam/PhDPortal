@@ -1,7 +1,0 @@
-celery
-test_MagicModule
-absolute_import
-depends_on_current_app
-ModernTask
-CompatTask
-AppCase

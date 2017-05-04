@@ -1,8 +1,0 @@
-_unpickle_task
-absolute_import
-depends_on_current_app
-returns
-test_TaskRegistry
-_unpickle_task_v2
-test_unpickle_task
-AppCase

@@ -1,7 +1,0 @@
-register_handler
-GribStubImageFile
-_save
-ImageFile
-_accept
-_handler
-Image

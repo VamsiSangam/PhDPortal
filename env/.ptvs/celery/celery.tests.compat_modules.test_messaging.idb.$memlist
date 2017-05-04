@@ -1,5 +1,0 @@
-absolute_import
-messaging
-test_compat_messaging_module
-AppCase
-depends_on_current_app
