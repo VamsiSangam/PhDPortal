@@ -19,3 +19,5 @@ PhDPortal/app/static/Thesis/*.pdf
 PhDPortal/app/static/ThesisModifications/*.pdf
 PhDPortal/app/static/Feedback_Without_Details/*.pdf
 db.sqlite3
+app/log.txt
+geckodriver.log
